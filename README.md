@@ -335,6 +335,10 @@ This is the main way the player can hold onto items.
 
 Things that are collected in some way from various locations.
 
+## Chests
+
+These are things that can be interacted with in order to obtain [Obtainables](#obtainables)
+
 ## Money
 
 Is used for purchasing items from [Shops](#shops)
@@ -623,6 +627,8 @@ A key that opens the Dungeon's [Boss-Key Door](#boss-key-door)
 
 # Bosses
 
+## Mini Bosess
+
 # Obstacles
 
 ## Doors
@@ -855,18 +861,15 @@ Allows the player to skip to various parts of the day. Found in animal villages,
 
 Must be set on fire to be activated and able to be interacted with. Once the player interacts with it while active, the player sits down and a prompt appears that asks the player when to wake up.
 
-Possible Options:
-- 3am (Post-Midnight)
-- 6am (Sunrise)
-- 9am (Morning)
-- 12pm (Mid-day)
-- 3pm (Afternoon)
-- 6pm (Sunset)
-- 9pm (Night)
-- 12am (Midnight)
+| Name     | Time | [IGT](#in-game-time) |
+|----------|------|----------------------|
+| Midnight | 12am | 0s                   |
+| Sunrise  | 6am  | 360s                 |
+| Noon     | 12pm | 720s                 |
+| Sunset   | 6pm  | 1080s                |
 
 Once selected, the screen fades to black, the time is set to the correct time (in in game time values), and the campfire is deactivated.
-- This does not affect time played.
+- Skipping through the day does not affect time played.
 
 The player character wakes up, gets up, and control is returned to the player.
 
@@ -934,12 +937,20 @@ These are hidden regions that respond to when used with the [Saxophone](#saxopho
 ![Alt text](imgs/sax_region.png)
 
 ### Bombable Walls
-These are walls that are destructable with bombs.
+These are hidden holes filled with rock that are destructable with bombs.
+
+![Alt text](imgs/bombable_wall.png)
 
 ### Burnable Bushes
-### Grass
-### Pits
+These are bushes that can be burned to find hidden entrances.
 
+### Grass
+While all grass is cuttable, some cuttable grass may contain hidden entrances.
+
+### Pits
+These are pits the player can fall into and take damage. They respawn at the place before they fell in.
+
+![Alt text](imgs/pit.png)
 
 ## Underwater
 ### Underwater Caves
@@ -1054,6 +1065,10 @@ Type: Number
 - Ticks Once per second while player has control.
 - Formated as [hour]:[min]:[sec]
 
+## In Game Time
+Type: Number
+- Current [In-Game Time](#daynight-system)
+
 ## Secrets Found
 Type: Boolean List
 - Every secret is assigned a boolean.
@@ -1116,32 +1131,82 @@ Type: Boolean List
 Type: Boolean List
 - Every Armor is assigned a boolean.
 
+## Obtained Boomerangs
+Type: Boolean List
+- Every Boomerang is assigned a boolean.
+
 ## Obtained Demon Pendants
 Type: Boolean List
 - Every [Pendant](#demon-pendants) is assigned a boolean.
 
-## Which Demon Keys Collected
+## Obtained Demon Keys
 Type: Boolean List
 - Every [Demon Key](#demon-keys) is assigned a boolean.
 
 ## Dungeon Information
 
-### Dungeon 1
-### Dungeon 2
-### Dungeon 3
-### Dungeon 4
-### Dungeon 5
-### Dungeon 6
-### Dungeon 7
-### Dungeon 8
+These are for each dungeon. (0-F)
 
-### Cave Dungeon A
-### Cave Dungeon B
-### Cave Dungeon C
-### Cave Dungeon D
-### Cave Dungeon E
-### Cave Dungeon F
+### Boss Defeated
+Type: Bool
+- Is the [Boss](#bosses) defeated?
+
+### Mini-Boss Defeated
+Type: Bool
+- Is the [Mini-Boss](#mini-bosess) defeated?
+
+### Boss-Key Obtained
+Type: Bool
+- Is the [Boss Key](#boss-key) collected?
+
+### Skele-Key Obtained
+Type: Bool
+- Is the [Skeleton Key](#skeleton-key) obtained?
+
+### Keys Obtained
+Type: Boolean List
+- Every [Key](#regular-key) is assigned a boolean.
+
+### Chests Opened
+Type: Boolean List
+- Every [Chest](#chests) chest is assigned a boolean.
 
 
 # Day/Night System
+Secrets, entering houses, and events can occur based on the time of day.
 
+The time updates if the player is in the overworld, otherwise, it stands still.
+- Day Length:
+  | In Game (IG)   | Real Life  |
+  |----------  |----------- |
+  | 1 Minute   | 1 Second   |
+  | 60 Minutes | 60 Seconds |
+  | 1 Hour     | 1 Minute   |
+  | 24 Hours   | 24 Minutes |
+  | 1 Day      | 24 Minutes |
+  | 1 Day      | 1440 Seconds |
+
+## In Game Time
+This is how In Game Time (IGT) is kept track of and stored in game.
+  - Time is incremented every second, and when it reaches 1440, it resets back to 0.
+  - IG Minute = (IGT) % 60
+  - IG Hour (24) = floor( (IGT) / 24 )
+  - IG Hour (12) = floor( (IGT) / 12 ) and if IG Hour (24) > 12, PM, else AM.
+
+## Time Ranges
+Periods for the ability to do things is not at an instantaneous second in time.
+
+The smallest possible period is 15 minutes IGT (15 seconds)
+
+We can represent these with two numbers in increments of 15 minutes IGT.
+- Min = 0  = IGT 0-15
+- Max = 95 = IGT 1425-1440
+
+### Wrapping
+
+If the beginning time is greater than the end time, a wrap-around happens.
+when this occurs, check if the current time is between the beginning time and 95, OR 0 and the end time. If so, then it is valid.
+
+### Time Toggles
+
+We can also have objects toggle a flag in themselves when the time reaches a certain value, and toggle it back off when it reaches the next value. They must, however, set if they are toggled on or off with a function that checks if the value is within range with [Wrapping](#wrapping)
