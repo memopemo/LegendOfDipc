@@ -924,8 +924,18 @@ These allow the player to quickly traverse to other Drain Pipes throughout the w
 
 ## Overworld Obstacles
 ### Ledges
+These are things the player can jump down, and sometimes jump back up (if boots have enough height.)
+
+![Alt text](imgs/ledges.png)
+
 ### Saxophone Regions
+These are hidden regions that respond to when used with the [Saxophone](#saxophone)
+
+![Alt text](imgs/sax_region.png)
+
 ### Bombable Walls
+These are walls that are destructable with bombs.
+
 ### Burnable Bushes
 ### Grass
 ### Pits
@@ -1060,11 +1070,13 @@ Type: Boolean List
 Type: Boolean List
 - Each [Drain Pipe](#drain-pipes) is assigned a boolean. (False = Clogged, True = Unclogged)
 
-## Inventory 
+## Saved Inventory 
+This holds all information about what the player currently has in their inventory, including what in each slot and how much.
 
 ### Type of Consumable Item In Inventory
 Type 1: Special List
 - Each Inventory Slot has an ID that shows what [Consumable Item](#consumable-items) is in that slot.
+
 ### Amount of Consumable Item In Inventory
 Type 2: Number List
 - Each Inventory Slot has the amount that is in that slot.
