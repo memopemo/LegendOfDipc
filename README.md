@@ -624,6 +624,45 @@ A key that can open any door within the dungeon. Useful after you have gotten pa
 A key that opens the Dungeon's [Boss-Key Door](#boss-key-door)
 
 # Enemies
+Enemies are killable objects that exist for a few things:
+1. Provide challenges for the player to overcome
+2. Provide resources like [Money](#money), [Health](#health), and rarely [Consumables](#consumable-items) and [Key Items](#key-items)
+3. Add personality, variety, and surprise to the game's world.
+
+There are two areas enemies can be found: Overworld, and Inside.
+
+Overworld enemies spawn less frequently and in non-civilized locations (not human towns)
+More enemies spawn at night
+
+- pre-set enemies spawn during day
+- random enemies spawn at night
+## Properties of Each Enemy
+### Health
+Allows it to be killed when health reaches 0.
+### Loot Group
+What it drops frequently.
+
+This is so players can get an inkling of what enemies drop. For example when a player is like "im hurting for money" they can kill enemies that drop more money.
+
+#### Loot Groups:
+- Money/Health (default)
+- Money (drops big money)
+- Health (drops big health)
+- Explodey (Drops Bombs)
+- Stinky (drops stink/poision bombs)
+- Trashy (drops trash food)
+- Big Health
+### (Optional) Required Drops
+
+## Dungeon Enemy List
+### Slime
+- Health:
+- Loot Group
+### 1
+- Walks around
+- Sometimes walks towards player
+- Avoids Walls
+
 
 # Bosses
 
