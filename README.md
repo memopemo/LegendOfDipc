@@ -570,6 +570,7 @@ List of all swords:
 
 | Name         | Type   | Damage | ID |
 |--------------|--------|--------|----|
+| Hand         | Stab   | 1      | -1 |
 | Stick        | Stab   | 1      | 0  |
 | Branch       | Swing  | 1      | 1  |
 | Wooden Sword | Triple | 1      | 2  |
@@ -629,13 +630,44 @@ Enemies are killable objects that exist for a few things:
 2. Provide resources like [Money](#money), [Health](#health), and rarely [Consumables](#consumable-items) and [Key Items](#key-items)
 3. Add personality, variety, and surprise to the game's world.
 
-There are two areas enemies can be found: Overworld, and Inside.
+Can be found in:
+- Overworld
+- Dungeons
+- Houses
 
 Overworld enemies spawn less frequently and in non-civilized locations (not human towns)
 More enemies spawn at night
 
 - pre-set enemies spawn during day
 - random enemies spawn at night
+
+Dungeon Enemies spawn in rooms in packs 
+
+
+The hurting and death of an enemy should be satisfying.
+- Satisfying death sound
+- Satisfying visual flair (big poof)
+- Flashy effect when hit
+- Study Zelda 1's hit and death effects.
+  - Instead of disappearing with a "poof" they disapear with a bang, like popping a balloon.
+
+## Dungeon Enemy Packs
+These are invisible objects that keep track of enemies in a single room.
+
+Enemies must be contained in the room, they cannot leave.
+
+Certain things can happen when one is cleared of all enemies:
+- Open a [Kill-All-Enemies Door](#clear-all-enemies-doors)
+- Spawn loot in a preset area
+  - Can be chests, keys, hearts, anything.
+- Place/Remove blocking objects
+  - More versatile dungeon design
+- Toggle or activate certain features of objects
+  - Like pushable blocks
+
+
+
+
 ## Properties of Each Enemy
 ### Health
 Allows it to be killed when health reaches 0.
@@ -644,6 +676,8 @@ What it drops frequently.
 
 This is so players can get an inkling of what enemies drop. For example when a player is like "im hurting for money" they can kill enemies that drop more money.
 
+For player's convenience, all loot groups must be within easy reach.
+
 #### Loot Groups:
 - Money/Health (default)
 - Money (drops big money)
@@ -651,22 +685,133 @@ This is so players can get an inkling of what enemies drop. For example when a p
 - Explodey (Drops Bombs)
 - Stinky (drops stink/poision bombs)
 - Trashy (drops trash food)
-- Big Health
+- Big Health (more likely to drop [Fairies]())
+
 ### (Optional) Required Drops
+Loot that will always drop upon the enemy's death.
+
+Examples: dungeon keys, bombs, etc
 
 ## Dungeon Enemy List
+
 ### Slime
-- Health:
-- Loot Group
-### 1
+Health:
+
+Loot Group: 
+
+#### Action
+- Moves around randomly
+
+#### Purpose
+- Common enemy
+
+#### Physical Description
+- A colored slime with a pair of eyes on it
+
+---
+
+### Imp Skeleton
+Health:
+
+Loot Group: 
+
+#### Action
 - Walks around
 - Sometimes walks towards player
 - Avoids Walls
 
+#### Purpose
+- Common enemy
+
+#### Physical Description:
+- A simple animated and short skeleton, about the same height as the player.
+- Weilds a single dagger.
+
+---
+
+### Weak-looking Magic Enemy
+Health: 
+
+Loot Group:
+
+#### Action
+- Runs around (4 directions)
+- Occasionally charges, then shoots a single magic projectile.
+
+#### Purpose
+- Common Enemy
+
+#### Physical Description
+- A little mage
+
+---
+
+### Lava Enemy
+Health:
+
+Loot Group: Bombs
+
+#### Action
+- Struts around (4d)
+- if there are no fire puddles, shoot out a lava bubble that creates a fire puddle
+- fire puddles are circular areas that set the player on fire.
+
+#### Physical Description
+- A walking and clumsy looking volcano with a face.
+
+---
+
+### Bat
+
+Health:
+
+Loot Group:
+
+#### Action
+- "Flies" around (4d) 
+- Can either be above or at ground level (Switches between them periodically)
+- Can only be hit if the player is also at the same level (airborne or ground level)
+- Can be used for jumping gaps maybe?
+
+#### Physical Description
+- A purple bat with fangs and a devilish smile
+
+### Hoppy Boi
+
+Heath:
+
+Loot Group:
+
+#### Action
+- Jumps around (4d)
+
+#### Physical Description
+
+
 
 # Bosses
+These are the main keepers of story loot ([Story Keys](#demon-keys), [Story Pendants](#demon-pendants))
 
-## Mini Bosess
+# Mini Bosess
+These are fights midway through dungeons.
+
+## Mimic
+- Classic chompy chest boi
+- Location: 2 times randomly throughout the *whole game*
+- Make player suspicious of any chests.
+- Panics player by making the situation dire
+1. Normal Chest opening animation is interupted to surprise player
+2. Player falls in and is chomped to 3 hearts, then spat back out against wall
+3. All exits close.
+4. Boss fight takes place.
+
+### Movement
+
+### Actions
+
+## Mimic 2
+- Stronger version of [Mimic 1](#mimic) later in the game.
+- The two mimics are the same, if one is defeated first the other becomes Mimic 2.
 
 # Obstacles
 
@@ -735,9 +880,55 @@ Allows the player to latch onto with the [Tape Measurer](#tape-measurer).
 Opens or turns on other things. 
 - Can either be pressed once to activate, or turn off if there is no weight on it. 
 - Can be pressed by the Player, Enemies, and [Liftable Blocks](#liftable-blocks).
+
 ## Switch
 Switches on or off at the discresion of the player. 
 - Does not toggle on or off on its own.
+
+# Treasure Containers
+Self explanatory. 
+- Different "skins" of a treasure container, matching the theme
+- Could be locked and need a key (or different requirement) to open.
+- Could activate something upon opening.
+  - Trigger a bunch of enemies to start attacking, open doors, etc.
+- Can only be opened from the front (Less anim work)
+
+## Player Opening Animation
+1. Player sniffs around...
+    - Player is shifted towards infront of the chest if they are off a little bit.
+    - Gameplay is paused.
+    - Player animation shows them sniffing and going all around the sides.
+2. Opens the container... 
+3. Digs in and falls inside away from view...
+4. Pops out and holds the item they got above their head.
+5. Prompt with what item was collected (wait for ok)
+6. Step out to same area as started.
+
+## [Mimic Boss](#mimic) Opening Animation
+
+1. Player sniffs around...
+    - Player is shifted towards infront of the chest if they are off a little bit.
+    - Gameplay is paused.
+    - Player animation shows them sniffing and going all around the sides.
+2. Opens the container-
+3. **AAAAAA** Chomps you hard to 2 hearts
+  
+4. Spits you back out and commence boss fight
+    - Close all exits and only reopen when done with fight.
+
+
+
+## Cardboard Box Chest
+Opens like a cardboard box. Typically found in more urban areas.
+
+## Small Wooden Chest
+Opens like a regular chest. Found in more natural areas.
+
+## Magic Chest
+Opens like a regular chest. Found in main dungeons.
+
+## Beeg Chest
+Can only be opened by the boss key. Found in main dungeons.
 
 # Areas
 
