@@ -62,9 +62,10 @@
 | Hurt - Right Side         | 4    |
 | Hurt - Front              | 4    |
 | Hurt - Behind             | 4    |
-| Open Chest                | 4    |
+| Open Chest                | 1    |
+| Swallowed by Mimic        | 1    |
 | Obtained - Minor          | 1    |
-| Obtaineed - Major         | 1    |
+| Obtained - Major          | 1    |
 | Victory                   | 1    |
 | Ice Boots - Slam          | 4    |
 | RPG - Initiate            | 4    |
@@ -96,4 +97,15 @@
 | Drone - Remove            | 1    |
 | Hover Feather             | 1    |
 | Use Key On Door           | 4    |
+| Push Through Drywall      | 4    |
 | Use Switch                | 4    |
+| Cutscene - Fall from above| 1    |
+| Buffed                    | 1    |
+| Cutscene - Wakeup Start   | 1    |
+| Cutscene - Surprised      | 1    |
+| Cutscene - Ready          | 1    |
+| Cutscene - Confused       | 1    |
+| Cutscene - Look up        | 4    |
+| Cutscene - Game End       | 1    |
+| Cutscene - Jump into Trash| 1    |
+| Cutscene - Jump out of    | 1    |

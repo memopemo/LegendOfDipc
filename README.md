@@ -828,6 +828,11 @@ Doors that can only be traversed in one way, but not back.
 ### Key Door
 A door that requires a key to open.
 
+### Drywall Door
+A door(?) that requires you push on it to crack it open.
+
+Drywall cracks may be more visible on the opposite side of the wall.
+
 ### Boss-Key Door
 A door that requires the Boss Key to open.
 
