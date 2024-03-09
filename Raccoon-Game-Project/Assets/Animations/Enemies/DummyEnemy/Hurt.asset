@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Name: Hurt
+  m_EditorClassIdentifier: 
+  DownAnimationFrames:
+  - Sprite: {fileID: 1301874095207553702, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  - Sprite: {fileID: -624583848522337226, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  - Sprite: {fileID: -210510882975916504, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  UpAnimationFrames:
+  - Sprite: {fileID: -7922036871191303581, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  - Sprite: {fileID: -6243182339939670312, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  - Sprite: {fileID: 5049029918440637692, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  SideAnimationFrames:
+  - Sprite: {fileID: -2158528795742558066, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  - Sprite: {fileID: 7856034114584129815, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  - Sprite: {fileID: -4230842771839258759, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+    HoldForTicks: 25
+  Looping: 0
+  LoopStart: 0
+  LoopEnd: 0

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Name: Stab
+  m_EditorClassIdentifier: 
+  DownAnimationFrames:
+  - Sprite: {fileID: -6681004603089107344, guid: 861348d60df279141b40915b69d4d264, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: 6812877682312521625, guid: 861348d60df279141b40915b69d4d264, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: 8387463428015913861, guid: 861348d60df279141b40915b69d4d264, type: 3}
+    HoldForTicks: 10
+  UpAnimationFrames:
+  - Sprite: {fileID: -3109238598418948403, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: -634934258496422192, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: -1937001047532316966, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
+    HoldForTicks: 10
+  SideAnimationFrames:
+  - Sprite: {fileID: 7529533949473231375, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: -3742038441232624703, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: -2902392226587861056, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+    HoldForTicks: 10
+  Looping: 0
+  LoopStart: 0
+  LoopEnd: 0
