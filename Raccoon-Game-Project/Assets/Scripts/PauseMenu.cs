@@ -17,17 +17,36 @@ public class PauseMenu : MonoBehaviour
             if (SettingsPanel.activeSelf)
             {
                 SettingsPanel.SetActive(false);
+
             }
             else
             {
+                if (!transform.GetChild(0).gameObject.activeSelf)
+                {
+                    FreezeMmanager.FreezeAll<PauseFreezer>();
+                }
+                else
+                {
+                    FreezeMmanager.UnfreezeAll<PauseFreezer>();
+                }
                 transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
             }
 
+        }
+        //Debug pausing without pause screen
+        if(Input.GetKeyDown(KeyCode.Pause))
+        {
+            FreezeMmanager.FreezeAll<PauseFreezer>();
+        }
+        if(Input.GetKeyUp(KeyCode.Pause))
+        {
+            FreezeMmanager.UnfreezeAll<PauseFreezer>();
         }
     }
     public void ButtonUnpause()
     {
         transform.GetChild(0).gameObject.SetActive(false);
+        FreezeMmanager.UnfreezeAll<PauseFreezer>();
     }
     public void ButtonSettings()
     {

@@ -102,7 +102,7 @@ public class Pitable : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

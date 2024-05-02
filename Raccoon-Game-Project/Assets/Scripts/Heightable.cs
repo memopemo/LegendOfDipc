@@ -81,9 +81,5 @@ public class Heightable : MonoBehaviour
         decoySprite.flipY = baseSprite.flipY;
 
     }
-    private void OnDestroy()
-    {
-
-    }
 
 }

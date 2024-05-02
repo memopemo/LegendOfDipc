@@ -52,3 +52,15 @@ Opens or turns on other things.
 Switches on or off at the discresion of the player.
 
 - Does not toggle on or off on its own.
+
+## Pits
+
+Some [Pits](obstacles.md#pits) can lead you to a dungeon level below you, requiring you to navigate and track dungeon levels in 3D space.
+
+### Deep Water
+
+Similar to [Regular Water](obstacles.md#water).
+
+Can be found surrounded by regular water.
+
+It is a darker color and transports the player directly [Underwater](overworld.md#underwater) at their same location when the player activates the [Snorkel](obtainables.md#snorkel) while swimming in it.

@@ -16,7 +16,7 @@ public class HUD_Heart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentHealth = FindFirstObjectByType<PlayerHealth>().currentHealth;
+        currentHealth = PlayerHealth.currentHealth;
         currentHealth = Mathf.Clamp(currentHealth, 0, currentMaxHealth);
 
         currentMaxHealth = (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2;

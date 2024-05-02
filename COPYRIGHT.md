@@ -1,1 +1,3 @@
-By Ryan Trozzolo
+# COPYRIGHT 2024
+
+by Ryan Trozzolo

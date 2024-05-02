@@ -11,6 +11,7 @@ public class JumpingPlayerState : IPlayerState
     const float MAX_JUMP_TIME = 0.5f;
     const float JUMP_HEIGHT_NORMAL = 1;
     const float JUMP_HEIGHT_SUPER = 2;
+    int framesGrounded = 0;
 
     Vector2 movementDirection;
 
@@ -26,6 +27,11 @@ public class JumpingPlayerState : IPlayerState
 
     public void OnUpdate(PlayerStateManager manager)
     {
+        if(framesGrounded < 3) 
+        {
+            framesGrounded++;
+            return;
+        }
         //Constantly move player
         manager.rigidBody.velocity = movementDirection * (DEFAULT_SPEED + manager.additionalSpeed);
 

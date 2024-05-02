@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Name: HeartFall
+  m_EditorClassIdentifier: 
+  DownAnimationFrames:
+  - Sprite: {fileID: -8342904193466101234, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -3465198667238363481, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 8400627511673051144, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 6851225697923698541, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  UpAnimationFrames:
+  - Sprite: {fileID: -8342904193466101234, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -3465198667238363481, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 8400627511673051144, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 6851225697923698541, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  SideAnimationFrames:
+  - Sprite: {fileID: -8342904193466101234, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -3465198667238363481, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 8400627511673051144, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 6851225697923698541, guid: b39e3d1beca0419448ff984b258015e6, type: 3}
+    HoldForTicks: 15
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 3

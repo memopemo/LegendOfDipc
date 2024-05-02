@@ -72,10 +72,10 @@ namespace Animator2D
             spriteRenderer.sprite = GetFrameBasedOnDirection(frame);
             currentFrameTick = 0;
         }
-        public void RestartAnimation()
+        public void RestartAnimation(int frame = 0)
         {
-            currentAnimationFrame = 0;
-            spriteRenderer.sprite = GetFrameBasedOnDirection(0);
+            currentAnimationFrame = frame;
+            spriteRenderer.sprite = GetFrameBasedOnDirection(frame);
             currentFrameTick = 0;
         }
 

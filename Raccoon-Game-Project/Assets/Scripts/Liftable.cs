@@ -32,7 +32,7 @@ public class Liftable : MonoBehaviour
             transform.position += 11 * Time.deltaTime * (Vector3)(Vector2)direction.direction;
             if (heightable.height <= 0)
             {
-                Destroy(gameObject, 0.02f);
+                gameObject.SetActive(false);
             }
             else
             {
@@ -45,12 +45,13 @@ public class Liftable : MonoBehaviour
                     if (hit.collider == colider) continue;
                     if (hit.collider.TryGetComponent(out PlayerStateManager _)) continue;
                     print(hit.collider.gameObject);
-                    Destroy(gameObject, 0.01f);
+                    gameObject.SetActive(false);
                 }
             }
         }
 
     }
+
     public void OnLifted()
     {
 

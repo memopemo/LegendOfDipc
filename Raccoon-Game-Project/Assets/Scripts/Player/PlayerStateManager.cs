@@ -14,7 +14,6 @@ public class PlayerStateManager : MonoBehaviour
     //[NonSerialized] public SpriteRenderer jumpSpriteRenderer;
     [NonSerialized] public Heightable height;
     [NonSerialized] public Animator2D.Animator2D animator;
-    [NonSerialized] public PlayerHealth health;
 
     //* General Variables *//
     public IPlayerState currentPlayerState;
@@ -56,7 +55,6 @@ public class PlayerStateManager : MonoBehaviour
             { KeyCode.KeypadEnter,  new DebugFreeRoamPlayerState()  },
             { KeyCode.KeypadPeriod, new NoInputPlayerState()        },
         };
-
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +68,6 @@ public class PlayerStateManager : MonoBehaviour
         height = GetComponent<Heightable>();
         directionedObject = GetComponent<DirectionedObject>();
         animator = GetComponent<Animator2D.Animator2D>();
-        health = GetComponent<PlayerHealth>();
 
         //State Init
         currentPlayerState = new DefaultPlayerState();
@@ -82,7 +79,7 @@ public class PlayerStateManager : MonoBehaviour
     public void RoomInitialize(Vector2 position, Vector2Int direction)
     {
         transform.position = position;
-        directionedObject.direction = direction;
+        GetComponent<DirectionedObject>().direction = direction;
     }
 
     // Update is called once per frame
@@ -112,11 +109,16 @@ public class PlayerStateManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Equals))
         {
-            health.Heal(1);
+            PlayerHealth.Heal(1, this);
         }
         if (Input.GetKeyDown(KeyCode.Minus))
         {
-            health.TakeDamage(1);
+            PlayerHealth.TakeDamage(1, this);
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            PlayerHealth.debugLockHealth ^= true; 
+            PlayerHealth.SetHealth(int.MaxValue);
         }
         if (Input.GetKeyDown(KeyCode.PageUp))
         {
@@ -145,7 +147,7 @@ public class PlayerStateManager : MonoBehaviour
         {
             //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
             if (height.height > 0) return;
-            GetComponent<PlayerHealth>().TakeDamage(1);
+            PlayerHealth.TakeDamage(1, this);
             Knockback(enemy.transform);
             stateTransitionTimer1 = 25;
             SwitchState(new HurtPlayerState());
@@ -175,7 +177,7 @@ public class PlayerStateManager : MonoBehaviour
     // After falling
     public void SetPlayerBack()
     {
-        GetComponent<PlayerHealth>().TakeDamage(1);
+        PlayerHealth.TakeDamage(1, this);
         transform.position = FallReturnPosition;
         SwitchState(new DefaultPlayerState());
     }
@@ -218,7 +220,8 @@ public class PlayerStateManager : MonoBehaviour
     public void DiveIntoDeepWater()
     {
         FindFirstObjectByType<CircleFadeInUI>().Out();
-        Invoke(nameof(EnterDeepWaterScene), 1);
+        Invoker.InvokeDelayed(() => EnterDeepWaterScene(), 1);
+        Cleanuper.ReadyCleanUpForSceneTransition(1);
         SwitchState(new NoInputPlayerState());
     }
     private void EnterDeepWaterScene()

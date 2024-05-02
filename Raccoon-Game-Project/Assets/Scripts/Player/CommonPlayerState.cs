@@ -17,10 +17,12 @@ class CommonPlayerState
 
     public static void UpdateDirection(PlayerStateManager manager)
     {
+        Debug.Log(manager.directionedObject.direction);
         if (manager.rawInput != Vector2.zero)
         {
             manager.directionedObject.direction = Vector2Int.CeilToInt(manager.rawInput);
         }
+        
     }
     public static float GetJumpHeight()
     {

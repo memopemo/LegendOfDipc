@@ -1,0 +1,51 @@
+# This is a list of most important things to add for the game
+
+- usable item structures (player buttons, getting item and calling code)
+- default error implementation for usable item
+- usage implementation for each item
+  - Food
+  - Poision Bomb
+  - Moss/Skunk Bomb
+  - All other explosive bombs
+  - Lighter
+  - Enemy Cloak
+  - Lifting Gloves
+  - Ram Helmet
+  - Ice Stomp Boots
+  - Gameboy
+  - Flashlight
+  - Magnet
+  - Wall Shield
+  - Magic Wand
+  - Super Magic Wand
+  - 3D Glasses
+  - Saxophone
+  - Umbrella
+  - Tape measurer
+  - Drone & Bomb Drone
+  - Jump Feather
+  - Boomerangs
+  - Shields
+
+- NPC's
+- Shops
+- Cutscenes and Pausing Gameplay
+- Limiting Action Checks to having key-items
+- Poision effects
+- Moss/Skunk Effects
+- Allocating variables for adding status buffs.
+- Adding status buffs
+- Adding the shop for status buffs
+- Saving/Loading
+- Dying/Reloading
+- Title Screen
+- Warp Pipes and map pipe screen
+- "Redstone" aka interchangable signaling between objects
+  - Buttons
+  - Doors
+  - Levers
+  - Spawnable Objects
+  - Saxophone Listeners
+- Lightblocks
+- Darkblocks
+- Spawning one or more objects on actions taken+

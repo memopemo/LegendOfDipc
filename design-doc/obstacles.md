@@ -45,3 +45,19 @@ Opens after defeating the boss.
 ### Mini-Boss Door
 
 Opens after defeating the mini-boss.
+
+## Pits
+
+Player can fall down these and lose health.
+
+Player can also knock objects and enemies into pits to kill/destroy them.
+
+### Water
+
+Regular water in game.
+
+Acts as a conditional pit where the player can't swim.
+
+Plays a special drowning animation if the player falls in.
+
+Player must have [Flippers](obtainables.md#flippers) to swim in them.

@@ -11,6 +11,10 @@ public class DirectionedObject : MonoBehaviour
     {
         get
         {
+            if(Direction == Vector2Int.zero)
+            {
+                print("leakage from: " + gameObject.name);
+            }
             if (Direction.x != 0 && Direction.y != 0)
             {
                 return new Vector2Int(Direction.x, 0); //prioritize left/right over up down.
@@ -34,8 +38,9 @@ public class DirectionedObject : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        
         // This requires that every sprite asset with a direction must be right facing for their side.
         // I use < 0 instead of <= 0 because left would show for like a split second.
-        spriteRenderer.flipX = direction.x < 0;
+        spriteRenderer.flipX = Direction.x < 0;
     }
 }

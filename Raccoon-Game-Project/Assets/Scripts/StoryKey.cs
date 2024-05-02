@@ -9,10 +9,10 @@ public class StoryKey : MonoBehaviour
     void Start()
     {
 
-        index = Common.GetIndexFromName(gameObject);
+        index = GameObjectParser.GetIndexFromName(gameObject);
         if (SaveManager.GetSave().DemonKeys[index])
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         player = FindFirstObjectByType<PlayerStateManager>();
     }
@@ -24,7 +24,7 @@ public class StoryKey : MonoBehaviour
         if (Vector2.Distance(player.transform.position, transform.position) <= 1)
         {
             SaveManager.GetSave().DemonKeys[index] = true;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         GetComponent<Heightable>().height = (Mathf.Sin(Time.time * 4) / 4) + 0.5f;
     }

@@ -8,12 +8,29 @@ public class DefaultPlayerState : IPlayerState
 
     const int ANIM_IDLE = 0;
     const int ANIM_RUN = 1;
-    const int ANIM_JUMP = 3;
+    const int ANIM_STOP_RUN = 1;
+    const int ANIM_JUMP = 2;
     const int ANIM_LAND = 3;
-    float impliedPushingTimer;
+
+    //We specify left to up and up to left because they flip differently for a brief moment.
+    const int ANIM_TURN_DIAG_LEFT_TO_UP = 15;
+    const int ANIM_TURN_DIAG_UP_TO_LEFT = 16;
+    const int ANIM_TURN_DIAG_LEFT_TO_DOWN = 17;
+    const int ANIM_TURN_DIAG_DOWN_TO_LEFT = 18;
+    const int ANIM_TURN_DIAG_RIGHT_TO_UP = 19;
+    const int ANIM_TURN_DIAG_RIGHT_TO_DOWN = 20;
+
+    int runToIdleTransitionFrames;
+    const int RUN_TO_IDLE_HOLD_FRAMES = 0;
+
+    int turnFrames;
+    int turning; //1 is up, -1 is down, 0 is not.
+    const int TURN_HOLD_FRAMES = 5;
+    Vector2Int previousFrameDirection;
 
     void IPlayerState.OnEnter(PlayerStateManager manager)
     {
+
     }
 
     void IPlayerState.OnLeave(PlayerStateManager manager)
@@ -23,7 +40,40 @@ public class DefaultPlayerState : IPlayerState
     void IPlayerState.OnUpdate(PlayerStateManager manager)
     {
         CommonPlayerState.MovePlayerRaw(manager, DEFAULT_SPEED);
+        previousFrameDirection = manager.directionedObject.direction;
+
         CommonPlayerState.UpdateDirection(manager);
+        Vector2Int newDirection = manager.directionedObject.direction;
+
+        // check any direction change that has to do with up.
+        if (   previousFrameDirection == Vector2Int.left
+            && newDirection == Vector2Int.up
+            || previousFrameDirection == Vector2Int.up
+            && newDirection == Vector2Int.left
+            || previousFrameDirection == Vector2Int.right
+            && newDirection == Vector2Int.up
+            || previousFrameDirection == Vector2Int.up
+            && newDirection == Vector2Int.right
+            )
+        {
+            turnFrames = TURN_HOLD_FRAMES;
+            turning = 1;
+        }
+        else
+        // check and direction change that has to do with down.
+        if (   previousFrameDirection == Vector2Int.left
+            && newDirection == Vector2Int.down
+            || previousFrameDirection == Vector2Int.down
+            && newDirection == Vector2Int.left
+            || previousFrameDirection == Vector2Int.right
+            && newDirection == Vector2Int.down
+            || previousFrameDirection == Vector2Int.down
+            && newDirection == Vector2Int.right
+            )
+        {
+            turnFrames = TURN_HOLD_FRAMES;
+            turning = -1;
+        }
 
         // Check Jump
         if (Input.GetButtonDown("Jump"))
@@ -179,19 +229,70 @@ public class DefaultPlayerState : IPlayerState
         // Landing
         if (manager.stateTransitionTimer1 > 0 && manager.previousState is JumpingPlayerState or JumpingLedgePlayerState)
         {
-            manager.animator.SetAnimation(1);
+            manager.animator.SetAnimation(ANIM_LAND);
             return;
         }
 
         // Moving
         if (manager.rigidBody.velocity != Vector2.zero)
         {
-            manager.animator.SetAnimation(2);
+            //Turning (yes its complicated.)
+            if (turnFrames > 0)
+            {
+                if (turning == 1)
+                {
+                    if (previousFrameDirection == Vector2Int.right)
+                    {
+                        manager.animator.SetAnimation(ANIM_TURN_DIAG_RIGHT_TO_UP);
+                    }
+                    //differentiate between left up and up left for mirroring
+                    else if (previousFrameDirection == Vector2Int.left
+                             && manager.directionedObject.direction == Vector2Int.up)
+                    {
+                        manager.animator.SetAnimation(ANIM_TURN_DIAG_LEFT_TO_UP);
+                    }
+                    else if (previousFrameDirection == Vector2Int.up
+                             && manager.directionedObject.direction == Vector2Int.left)
+                    {
+                        manager.animator.SetAnimation(ANIM_TURN_DIAG_UP_TO_LEFT);
+                    }
+                }
+                else
+                {
+                    if (previousFrameDirection == Vector2Int.right)
+                    {
+                        manager.animator.SetAnimation(ANIM_TURN_DIAG_RIGHT_TO_DOWN);
+                    }
+                    //differentiate between left down and down left for mirroring
+                    else if (previousFrameDirection == Vector2Int.left
+                             && manager.directionedObject.direction == Vector2Int.down)
+                    {
+                        manager.animator.SetAnimation(ANIM_TURN_DIAG_LEFT_TO_DOWN);
+                    }
+                    else if (previousFrameDirection == Vector2Int.down
+                             && manager.directionedObject.direction == Vector2Int.left)
+                    {
+                        manager.animator.SetAnimation(ANIM_TURN_DIAG_DOWN_TO_LEFT);
+                    }
+                }
+                turnFrames--;
+                return;
+            }
+            manager.animator.SetAnimation(ANIM_RUN);
+            runToIdleTransitionFrames = RUN_TO_IDLE_HOLD_FRAMES;
+            return;
+        }
+        // Transitioning From Moving to Idle
+        if (manager.rigidBody.velocity == Vector2.zero && runToIdleTransitionFrames > 0)
+        {
+            manager.animator.RestartAnimation();
+            //Debug.Log(runToIdleTransitionFrames);
+            runToIdleTransitionFrames--;
             return;
         }
 
         //Idle
-        manager.animator.SetAnimation(0);
+        manager.animator.SetAnimation(ANIM_IDLE);
 
     }
 }

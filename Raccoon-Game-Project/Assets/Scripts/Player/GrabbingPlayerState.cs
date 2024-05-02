@@ -24,7 +24,7 @@ public class GrabbingPlayerState : IPlayerState
 
         //Snap to grid
         manager.transform.localPosition = -(Vector3)(Vector2)manager.directionedObject.direction;
-        manager.transform.position = Common.SnapToGrid(manager.transform.position);
+        manager.transform.position = SnapGrid.SnapToGridCentered3D(manager.transform.position);
     }
 
     public void OnLeave(PlayerStateManager manager)
