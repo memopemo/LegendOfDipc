@@ -126,8 +126,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 28
-      y: 4
+      x: 4
+      y: 28
       width: 12
       height: 16
     spriteID: 3958de59cbad80f43a5cbf7294647443
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 28, y: 4}
+    uvTransform: {x: 4, y: 28}
   - name: big_money_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0.4615385}
@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
+      y: 52
       width: 14
       height: 13
     spriteID: 84182be16363229449b58f03a2bc8088
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
+    uvTransform: {x: 4, y: 52}
   - name: big_money_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -166,8 +166,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 26
-      y: 28
+      x: 4
+      y: 94
       width: 14
       height: 12
     spriteID: 7e561be1c34f14449b55845d7b7ec585
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 26, y: 28}
+    uvTransform: {x: 4, y: 94}
   - name: big_money_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -201,15 +201,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: big_money_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.4615385}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 48
-      y: 4
-      width: 12
-      height: 16
+      x: 4
+      y: 73
+      width: 14
+      height: 13
     spriteID: 188b276b77dd2fe469ba54c045c28326
     spriteBone: []
     spriteOutline: []
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 48, y: 4}
+    uvTransform: {x: 4, y: 73}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -263,10 +263,10 @@ ScriptedImporter:
     - name: big_money_Frame_4
       frameIndex: 4
       cellRect:
-        x: 2
-        y: 0
-        width: 12
-        height: 16
+        x: 1
+        y: 2
+        width: 14
+        height: 13
       spriteId: 188b276b77dd2fe469ba54c045c28326
     linkedCells: []
     parentIndex: -1

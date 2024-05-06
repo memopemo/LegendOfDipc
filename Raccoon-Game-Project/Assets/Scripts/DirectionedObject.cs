@@ -11,10 +11,6 @@ public class DirectionedObject : MonoBehaviour
     {
         get
         {
-            if(Direction == Vector2Int.zero)
-            {
-                print("leakage from: " + gameObject.name);
-            }
             if (Direction.x != 0 && Direction.y != 0)
             {
                 return new Vector2Int(Direction.x, 0); //prioritize left/right over up down.

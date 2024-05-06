@@ -19,7 +19,7 @@ public static class PlayerHealth
             Die();
             return;
         }
-        player.GetComponent<DamageFlash>().StartFlash();
+        player.GetComponent<Flasher>().StartFlash();
         GameObject.FindFirstObjectByType<CameraFocus>().ShakeScreen(1);
     }
     public static void Heal(int amount, PlayerStateManager player)

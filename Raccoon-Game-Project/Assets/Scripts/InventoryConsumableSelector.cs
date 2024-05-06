@@ -16,7 +16,7 @@ using UnityEngine.UI;
 
 public class InventoryConsumableSelector : MonoBehaviour
 {
-    int selectionIndex;
+    public int selectionIndex;
     //enabled
     public bool WINDOWS_SETTINGS_GAMING_XBOXGAMEBAR_ENABLE = true;
     const int numSlots = 24;

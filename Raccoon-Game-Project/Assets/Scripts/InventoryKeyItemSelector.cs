@@ -15,7 +15,7 @@ using UnityEngine.UI;
  */
 public class InventoryKeyItemSelector : MonoBehaviour
 {
-    int selectionIndex;
+    private int selectionIndex;
     //enabled
     public bool WINDOWS_SETTINGS_GAMING_XBOXGAMEBAR_ENABLE = true;
     const int numSlots = 18;
@@ -26,6 +26,9 @@ public class InventoryKeyItemSelector : MonoBehaviour
     Image image;
     [SerializeField] Sprite imageDisabled;
     Sprite imageEnabled;
+
+    public int SelectionIndex {get => selectionIndex; private set => selectionIndex = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,7 @@ public class InventoryKeyItemSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RectTransform currentIndexedSlotObject = rectTransform.parent.Find(SLOT_NAME + selectionIndex) as RectTransform;
+        RectTransform currentIndexedSlotObject = rectTransform.parent.Find(SLOT_NAME + SelectionIndex) as RectTransform;
         if (currentIndexedSlotObject != null)
         {
             rectTransform.position = Vector3.Lerp(rectTransform.position, currentIndexedSlotObject.position, Time.deltaTime * ANIMATION_SCALE);
@@ -62,28 +65,28 @@ public class InventoryKeyItemSelector : MonoBehaviour
         //Only move if enabled.
         if (IsDownPressed())
         {
-            selectionIndex += rowWidth;
-            selectionIndex %= numSlots;
+            SelectionIndex += rowWidth;
+            SelectionIndex %= numSlots;
         }
         else if (IsUpPressed())
         {
-            selectionIndex -= rowWidth;
-            if (selectionIndex < 0)
+            SelectionIndex -= rowWidth;
+            if (SelectionIndex < 0)
             {
-                selectionIndex = numSlots + selectionIndex;
+                SelectionIndex = numSlots + SelectionIndex;
             }
         }
         else if (IsRightPressed())
         {
-            selectionIndex++;
-            selectionIndex %= numSlots;
+            SelectionIndex++;
+            SelectionIndex %= numSlots;
         }
         else if (IsLeftPressed())
         {
-            selectionIndex--;
-            if (selectionIndex < 0)
+            SelectionIndex--;
+            if (SelectionIndex < 0)
             {
-                selectionIndex = numSlots + selectionIndex;
+                SelectionIndex = numSlots + SelectionIndex;
             }
         }
     }

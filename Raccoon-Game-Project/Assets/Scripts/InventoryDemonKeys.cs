@@ -12,7 +12,7 @@ public class InventoryDemonKeys : MonoBehaviour
     {
         sprite = GetComponent<Image>();
         //get index via gameobject name :)
-        index = Inventory.GetIndexFromName(gameObject);
+        index = GameObjectParser.GetIndexFromName(gameObject);
     }
 
     // Update is called once per frame

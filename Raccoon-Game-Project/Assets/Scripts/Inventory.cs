@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-
+    public Sprite[] itemPreviews;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,8 @@ public class Inventory : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
         }
+        
+        //Debug Keys
         if (Input.GetKeyDown(KeyCode.P))
         {
             SaveManager.Save();
@@ -29,9 +31,4 @@ public class Inventory : MonoBehaviour
 
         }
     }
-    public static int GetIndexFromName(GameObject go) 
-    {
-        return int.Parse(Regex.Match(go.name, @"\d+$", RegexOptions.RightToLeft).Value); //dont ask, copied from internet
-    }
-
 }

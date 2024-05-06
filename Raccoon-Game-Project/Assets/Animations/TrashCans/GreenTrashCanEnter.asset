@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Name: GreenTrashCanEnter
+  m_EditorClassIdentifier: 
+  DownAnimationFrames:
+  - Sprite: {fileID: -6061176527756746077, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -5820110221392094972, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -4005291934963525214, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -325466076385396609, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 215538540484405285, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -7041085410933752736, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6155665881686274819, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -4239445174881700363, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -1388464265804349208, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6721598576544184428, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -2123832306358874055, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 75
+  UpAnimationFrames:
+  - Sprite: {fileID: -6061176527756746077, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -5820110221392094972, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -4005291934963525214, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -325466076385396609, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 215538540484405285, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -7041085410933752736, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6155665881686274819, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -4239445174881700363, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -1388464265804349208, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6721598576544184428, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -2123832306358874055, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 75
+  SideAnimationFrames:
+  - Sprite: {fileID: -6061176527756746077, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -5820110221392094972, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -4005291934963525214, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -325466076385396609, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 215538540484405285, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -7041085410933752736, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6155665881686274819, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -4239445174881700363, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -1388464265804349208, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6721598576544184428, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -2123832306358874055, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+    HoldForTicks: 75
+  Looping: 0
+  LoopStart: 0
+  LoopEnd: 0

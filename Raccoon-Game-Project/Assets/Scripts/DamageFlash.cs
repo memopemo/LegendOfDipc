@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class DamageFlash : MonoBehaviour
+public class Flasher : MonoBehaviour
 {
     [ColorUsage(true, true)]
     [SerializeField] Color flashColor = Color.white;

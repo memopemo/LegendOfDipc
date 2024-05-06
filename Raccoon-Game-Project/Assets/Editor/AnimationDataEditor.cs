@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Animator2D;
-using Unity.VisualScripting;
 using System.Linq;
 
 [CustomEditor(typeof(AnimationData))]
@@ -69,15 +68,15 @@ public class AnimationDataEditor : Editor
             {
                 for (int index = 0; index < sideFrameProperty.arraySize; index++)
                 {
-                    sideFrameProperty.GetArrayElementAtIndex(index).FindPropertyRelative("HoldForTicks").SetUnderlyingValue(result);
+                    sideFrameProperty.GetArrayElementAtIndex(index).FindPropertyRelative("HoldForTicks").uintValue = (uint)result;
                 }
                 for (int index = 0; index < upFrameProperty.arraySize; index++)
                 {
-                    upFrameProperty.GetArrayElementAtIndex(index).FindPropertyRelative("HoldForTicks").SetUnderlyingValue(result);
+                    upFrameProperty.GetArrayElementAtIndex(index).FindPropertyRelative("HoldForTicks").uintValue = (uint)result;
                 }
                 for (int index = 0; index < downFrameProperty.arraySize; index++)
                 {
-                    downFrameProperty.GetArrayElementAtIndex(index).FindPropertyRelative("HoldForTicks").SetUnderlyingValue(result);
+                    downFrameProperty.GetArrayElementAtIndex(index).FindPropertyRelative("HoldForTicks").uintValue = (uint)result;
                 }
             }
         }

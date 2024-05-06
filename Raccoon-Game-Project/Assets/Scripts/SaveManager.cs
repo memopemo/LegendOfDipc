@@ -69,6 +69,21 @@ public static class SaveManager
             saveManager = new SaveFile();
         }
     }
+    //Returns: True if item was sucessfully decremented
+    //  False if The index points to an invalid ID type
+    public static bool UseUpConsumableItem(int index)
+    {
+        SaveFile sf = GetSave();
+        if(sf.InventoryConsumableType[index] <= 0 || sf.InventoryConsumableCount[index] <= 0)
+        {
+            sf.InventoryConsumableType[index] = 0;
+            sf.InventoryConsumableCount[index] = 0;
+            return false;
+        }
+        sf.InventoryConsumableCount[index]--;
+        return true;
+
+    }
     public static void DebugMaxOut()
     {
         SaveFile sf = GetSave();
@@ -77,6 +92,8 @@ public static class SaveManager
         sf.ToiletPaperRolls = 99;
         sf.ComputerBombs = 99;
         sf.ComputerParts = 99;
+        sf.InventoryConsumableCount[0] = 10;
+        sf.InventoryConsumableType[0] = 1;
         SetArrayToTrue(ref sf.HeartContainersCollected);
         SetArrayToTrue(ref sf.SecretsFound);
         SetArrayToTrue(ref sf.ObtainedKeyItems);

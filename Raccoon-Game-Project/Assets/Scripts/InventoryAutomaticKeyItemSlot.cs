@@ -10,7 +10,7 @@ public class InventoryAutomaticKeyItemSlot : MonoBehaviour
     private void Start()
     {
         sprite = GetComponent<Image>();
-        index = Inventory.GetIndexFromName(gameObject);
+        index = GameObjectParser.GetIndexFromName(gameObject);
     }
 
     // Update is called once per frame

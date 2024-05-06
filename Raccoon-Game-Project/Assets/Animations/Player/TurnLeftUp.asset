@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DownAnimationFrames:
   - Sprite: {fileID: 3064119984244712715, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
-    HoldForTicks: 0
+    HoldForTicks: 1
   UpAnimationFrames:
   - Sprite: {fileID: 3064119984244712715, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
-    HoldForTicks: 0
+    HoldForTicks: 1
   SideAnimationFrames:
   - Sprite: {fileID: 3064119984244712715, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
-    HoldForTicks: 0
+    HoldForTicks: 1
   Looping: 0
   LoopStart: 0
   LoopEnd: 0

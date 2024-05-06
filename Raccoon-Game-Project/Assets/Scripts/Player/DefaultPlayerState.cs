@@ -190,10 +190,42 @@ public class DefaultPlayerState : IPlayerState
                     manager.SwitchState(new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y)); ;
                     return;
                 }
+                else if(go.TryGetComponent(out Interactable interactable))
+                {
+                    interactable.Interact();
+                    return;
+                }
             }
 
             manager.SwitchState(new SwordPlayerState());
             return;
+        }
+
+        //Check Consumable Item Use
+        if(Input.GetButtonDown("Fire2"))
+        { 
+            GameObject[] consumableItems = manager.itemGameObjectLookup.ConsumableItems;
+            int[] inventoryConsumableType = SaveManager.GetSave().InventoryConsumableType;
+            int selectionIndex = Object.FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
+            if(SaveManager.UseUpConsumableItem(selectionIndex))
+            {
+                GameObject.Instantiate(
+                    consumableItems[ //get the gameobject..
+                        inventoryConsumableType[ //of the id..
+                            selectionIndex]], //..of the slot currently selected in the inventory
+                            manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction,
+                            Quaternion.identity
+                            );
+            }
+        }
+        if(Input.GetButtonDown("Fire3"))
+        {
+            GameObject.Instantiate(
+                manager.itemGameObjectLookup.UsableKeyItems[ //get the gameobject.. //of the id..
+                        GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex], //..of the slot currently selected in the inventory
+                        manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction,
+                        Quaternion.identity
+                        ); 
         }
 
         /*//Check Shield
@@ -221,6 +253,13 @@ public class DefaultPlayerState : IPlayerState
                 return;
             }
         }
+        //find interactable to set flash. This provides a direct indicator that we can interact because it uses the same function to find the interactable object.
+        CommonPlayerState.ColliderInDirection(manager, out GameObject g, true);
+        if(g && g.TryGetComponent(out Interactable interact))
+        {
+            interact.PlayerCanInteract();
+        }
+
 
         AnimatePlayer(manager);
     }

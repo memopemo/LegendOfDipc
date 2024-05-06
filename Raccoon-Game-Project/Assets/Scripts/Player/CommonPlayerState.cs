@@ -17,7 +17,7 @@ class CommonPlayerState
 
     public static void UpdateDirection(PlayerStateManager manager)
     {
-        Debug.Log(manager.directionedObject.direction);
+        //Debug.Log(manager.directionedObject.direction);
         if (manager.rawInput != Vector2.zero)
         {
             manager.directionedObject.direction = Vector2Int.CeilToInt(manager.rawInput);
@@ -35,7 +35,7 @@ class CommonPlayerState
     }
     // Checks if a collider is in the way of anything.
     // ONLY READ OUTPUT IF YOU ARE SEARCHING FOR A TYPE.
-    public static bool ColliderInDirection(PlayerStateManager manager, out GameObject go)
+    public static bool ColliderInDirection(PlayerStateManager manager, out GameObject go, bool useTriggers = false)
     {
         if (manager.directionedObject.direction.x != 0 && manager.directionedObject.direction.y != 0)
         {
@@ -43,7 +43,7 @@ class CommonPlayerState
             go = null;
             return true; //Not allowed to check diagonally.
         }
-        ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default")};
+        ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default"), useTriggers = useTriggers,};
         List<RaycastHit2D> results = new();
         /* LONG-WINDED EXPLANATION:
          * The box must be a little smaller than 1 so that we cant touch any walls to the side of our check. Only infront.
@@ -74,14 +74,14 @@ class CommonPlayerState
     }
 
     //Checks if a collider exists in the area where the
-    public static bool ColliderAt(PlayerStateManager manager, Vector2Int offsetDirection, out GameObject go, GameObject ignore) 
+    public static bool ColliderAt(PlayerStateManager manager, Vector2Int offsetDirection, out GameObject go, GameObject ignore, bool useTriggers = false) 
     {
         if(offsetDirection.x != 0 && offsetDirection.y != 0) 
         {
             go = null;
             return false;
         }
-        ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default") };
+        ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default"), useTriggers = useTriggers };
         List<RaycastHit2D> results = new();
         Vector3 position = manager.transform.position;
 

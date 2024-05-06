@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 /* Visualizes a health bar above an enemy
@@ -70,9 +71,16 @@ public class EnemyHealthBar : MonoBehaviour
         SpriteRenderer damageBarSprite = damageBar.GetComponent<SpriteRenderer>();
         damageBarSprite.color = new Color(damageBarSprite.color.r, damageBarSprite.color.g, damageBarSprite.color.b, fadeoutTimer);
 
+        if(fadeoutTimer < 1)
+        {
+            damageBarSprite.color = Color.clear;
+        }
+
 
 
         Timer.DecrementTimer(ref fadeoutTimer);
+
+        transform.parent.SetLocalPositionAndRotation(Vector3.up * (transform.parent.GetComponentInParent<Heightable>().height + 1.5f), Quaternion.identity);
     }
     public void ShowHealthBar()
     {

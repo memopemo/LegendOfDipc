@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,6 +29,8 @@ public class PlayerStateManager : MonoBehaviour
      * Only updated when entering certain triggers that set this. For example between dungeon rooms, or a straight path towards water.
      */
     public Vector2 FallReturnPosition;
+
+    public ItemList itemGameObjectLookup;
 
 
     //* Helpful Variables *//
@@ -135,9 +138,6 @@ public class PlayerStateManager : MonoBehaviour
             }
         }
 
-
-        //Update 
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -154,7 +154,6 @@ public class PlayerStateManager : MonoBehaviour
             return;
         }
     }
-
     private void Knockback(Transform from)
     {
         if (knockBackTimer > 0) return;
@@ -228,6 +227,16 @@ public class PlayerStateManager : MonoBehaviour
     {
         KeepPositionExitHandler.position = transform.position;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name + "_Underwater");
+    }
+    public void DisableSprite()
+    {
+        animator.SetAnimation(21);
+        animator.enabled = false;
+    }
+    public void EnableSprite()
+    {
+        animator.SetAnimation(0);
+        animator.enabled = true;
     }
 }
 

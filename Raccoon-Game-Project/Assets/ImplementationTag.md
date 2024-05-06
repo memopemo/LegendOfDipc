@@ -2,6 +2,18 @@
 
 Add to the top of the list for the most recent entry.
 
+## Date: May 3rd?? through May 6th
+
+- Added Money drops
+- Added Save and refill bins
+- Added Poison and Stun Clouds
+- Added Ability of Using Items
+- Added Food Items
+- Added using CSV files for parameters
+- Added turning off player rendering
+- Renamed "Damage Flash" to just "Flasher" for more usability across objects.
+- Removed "Common" Library and split into multiple classes.
+
 ## Date: April 29th - May 1, 24
 
 oh god uhh
