@@ -58,7 +58,7 @@ public class ClimbingPlayerState : IPlayerState
         // Move Player Over Time to lock into grid
         manager.transform.position = Vector3.MoveTowards(
             manager.transform.position,
-            new Vector3(SnapGrid.SnapToGridCentered3D(
+            new Vector3(SnapGrid.SnapToGridCentered(
                 manager.transform.position).x,
                 manager.transform.position.y),
             Time.deltaTime);

@@ -4,16 +4,24 @@ using UnityEngine;
 public class Pitable : MonoBehaviour
 {
     [SerializeField] GameObject splashParticle;
+    [SerializeField] GameObject fallingEffect;
     Heightable height;
     float timePitted;
     const float TIME_FALLING_BEFORE_DONE = 2f;
     bool FallingDownPit; // False is Drowning.
+    ContactFilter2D contactFilter = new ContactFilter2D()
+    {
+        useTriggers = true,
+    };
+
+    PlayerStateManager player;
 
 
     // Start is called before the first frame update
     void Start()
     {
         height = GetComponent<Heightable>();
+        TryGetComponent(out player);
 
     }
 
@@ -36,10 +44,6 @@ public class Pitable : MonoBehaviour
         else
         {
             //Check for pit/water we cant go down.
-            ContactFilter2D contactFilter = new ContactFilter2D()
-            {
-                useTriggers = true,
-            };
             List<Collider2D> results = new List<Collider2D>();
             _ = Physics2D.OverlapPoint(transform.position, contactFilter, results);
             foreach (Collider2D c in results)
@@ -48,7 +52,7 @@ public class Pitable : MonoBehaviour
                 {
                     if (c.TryGetComponent(out Water _))
                     {
-                        if (TryGetComponent(out PlayerStateManager player))
+                        if (player)
                         {
                             if (SaveManager.GetSave().ObtainedKeyUnselectableItems[2])
                             {
@@ -59,17 +63,18 @@ public class Pitable : MonoBehaviour
                         StartFalling();
 
                     }
-                    /*if(c.TryGetComponent(out Pit _))
+                    if(c.TryGetComponent(out Pit _))
                     {
                         Fall();
-                    }*/
+                        StartFalling();
+                    }
                 }
             }
         }
     }
     void StartFalling()
     {
-        if (TryGetComponent(out PlayerStateManager player))
+        if (player)
         {
             player.SwitchState(new FallPlayerState());
         }
@@ -80,15 +85,27 @@ public class Pitable : MonoBehaviour
         }
         timePitted += Time.deltaTime;
     }
+    void Fall()
+    {
+        Instantiate(fallingEffect, transform.position, Quaternion.identity);
+        //Unparent player if he is attached to it.
+        foreach (Transform t in transform)
+        {
+            if (player)
+            {
+               transform.parent = null;
+            }
+        }
+    }
     void Sink()
     {
         Instantiate(splashParticle, transform.position, Quaternion.identity);
         //Unparent player if he is attached to it.
         foreach (Transform t in transform)
         {
-            if (t.TryGetComponent(out PlayerStateManager m))
+            if (player)
             {
-                m.transform.parent = null;
+               transform.parent = null;
             }
         }
 
@@ -96,7 +113,7 @@ public class Pitable : MonoBehaviour
     void OnDone()
     {
         timePitted = 0;
-        if (TryGetComponent(out PlayerStateManager player))
+        if (player)
         {
             player.SetPlayerBack();
         }

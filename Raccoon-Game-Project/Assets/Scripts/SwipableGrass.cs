@@ -16,7 +16,7 @@ public class SwipableGrass : MonoBehaviour
             Instantiate(objectUnderneath, transform.position, Quaternion.identity);
         if (particle)
             Instantiate(particle, transform.position, Quaternion.identity);
-        gameObject.SetActive(false);
+        Destroy(gameObject);
         enabled = false;
     }
     void TickedUpdate()

@@ -12,17 +12,22 @@ public class JumpingPlayerState : IPlayerState
     const float JUMP_HEIGHT_NORMAL = 1;
     const float JUMP_HEIGHT_SUPER = 2;
     int framesGrounded = 0;
+    //Vector2 debugStartJumpPos;
 
     Vector2 movementDirection;
 
     public void OnEnter(PlayerStateManager manager)
     {
         movementDirection = manager.rawInput;
+        //Debug.Log($"Started Jump: {manager.rigidBody.position}");
+        //debugStartJumpPos = manager.rigidBody.position;
     }
 
     public void OnLeave(PlayerStateManager manager)
     {
         manager.defaultSpriteRenderer.enabled = true;
+        //Debug.Log($"Ended Jump: {manager.rigidBody.position}");
+        //Debug.Log($"Distance: {Vector2.Distance(debugStartJumpPos, manager.rigidBody.position)}");
     }
 
     public void OnUpdate(PlayerStateManager manager)

@@ -9,19 +9,9 @@ public class PoofDestroy : MonoBehaviour
     {
     }
     
-    private void OnDisable()
+    private void OnDestroy()
     {
-        if(!gameObject.activeSelf)
-        {
-            Poof();
-        }
-    }
-    private void OnEnable()
-    {
-        if(!gameObject.activeSelf)
-        {
-            Poof();
-        }
+        Poof();
     }
     private void Poof()
     {

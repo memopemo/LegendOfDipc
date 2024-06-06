@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,8 +41,8 @@ public class DefaultPlayerState : IPlayerState
     void IPlayerState.OnUpdate(PlayerStateManager manager)
     {
         CommonPlayerState.MovePlayerRaw(manager, DEFAULT_SPEED);
-        previousFrameDirection = manager.directionedObject.direction;
 
+        previousFrameDirection = manager.directionedObject.direction;
         CommonPlayerState.UpdateDirection(manager);
         Vector2Int newDirection = manager.directionedObject.direction;
 
@@ -206,7 +207,7 @@ public class DefaultPlayerState : IPlayerState
         { 
             GameObject[] consumableItems = manager.itemGameObjectLookup.ConsumableItems;
             int[] inventoryConsumableType = SaveManager.GetSave().InventoryConsumableType;
-            int selectionIndex = Object.FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
+            int selectionIndex = UnityEngine.Object.FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
             if(SaveManager.UseUpConsumableItem(selectionIndex))
             {
                 GameObject.Instantiate(
@@ -218,6 +219,7 @@ public class DefaultPlayerState : IPlayerState
                             );
             }
         }
+        //Check Key Item Use
         if(Input.GetButtonDown("Fire3"))
         {
             GameObject.Instantiate(
@@ -242,17 +244,10 @@ public class DefaultPlayerState : IPlayerState
             useTriggers = true,
             minDepth = manager.transform.position.z,
             maxDepth = manager.transform.position.z + 3
+            
         };
-        List<RaycastHit2D> results = new();
-        int _ = Physics2D.BoxCast(manager.transform.position + Vector3.down * 0.2f, Vector2.one * 0.01f, 0, Vector2.zero, contactFilter, results, 0);
-        foreach (RaycastHit2D hit in results)
-        {
-            if (hit.collider.TryGetComponent(out Water _))
-            {
-                manager.SwitchState(new SwimPlayerState());
-                return;
-            }
-        }
+        if (BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => manager.SwitchState(new SwimPlayerState()), contactFilter)) 
+            return;
         //find interactable to set flash. This provides a direct indicator that we can interact because it uses the same function to find the interactable object.
         CommonPlayerState.ColliderInDirection(manager, out GameObject g, true);
         if(g && g.TryGetComponent(out Interactable interact))
@@ -263,6 +258,112 @@ public class DefaultPlayerState : IPlayerState
 
         AnimatePlayer(manager);
     }
+    
+    bool BoxCastFind<T>( Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
+    {
+        List<RaycastHit2D> results = new();
+        int _ = Physics2D.BoxCast(origin, size, 0, Vector2.zero, contactFilter, results, 0);
+        foreach (RaycastHit2D hit in results)
+        {
+            if (hit.collider.TryGetComponent(out T foundT))
+            {
+                onFind(foundT);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //If result is true, changing state was successful and should return in main update loop early.
+    bool OnJumpButtonPushed(PlayerStateManager manager)
+    {
+        // main goal is to check each conditions for different types of jumping.
+        // conditions can fail both nested, or in the initial condition. If either case happens, move onto the next check until there are no more conditionals to check.
+        // if nothing special happens, we do a regular jump.
+        // if something *does* succeed, return early. (and true if we changed states)
+
+        // as of now, there are no conditions that "fail" to change states, 
+        // but having a bool say "hey we litterally cannot jump right now because of this thing" may be of use in the future for disabling jumping
+        // even if in our current state we *should* be able to jump.
+        // some things that come to mind are low ceilings, status effects, uuhhhhh cant think of anything else
+
+        //Find a ledge top if we are jumping downwards.
+        if (manager.inputY < 0)
+        {
+            bool foundLedge = FindTouching<LedgeTop>(manager.rigidBody, (ledge) => 
+            {
+                manager.SwitchState(new JumpingLedgePlayerState(0, ledge.bottom.transform.position.y, ledge.layersToDecrease));
+                manager.directionedObject.direction = Vector2Int.down;
+            });
+            if(foundLedge) return true;
+        }
+
+        //Find a ledge side if we are jumping sideways.
+        else if (manager.inputX != 0)
+        {
+            bool foundLedge = FindTouching<BackSideLedge>(manager.rigidBody, (ledge) => 
+            {
+                manager.SwitchState(new JumpingLedgePlayerState(-1, 0, ledge.layersToDrop));
+            });
+            if(foundLedge) return true;
+        }
+
+
+        //Find a ledge bottom if we are jumping up a ledge.
+        else if (manager.inputY > 0)
+        {
+            bool tooHigh = false;
+            bool foundLedge = FindTouching<LedgeBottom>(manager.rigidBody, (ledge) => 
+            {
+                //Debug.Log("Found A Bottom Ledge, Jumping Up.");
+                int height = Mathf.RoundToInt(Mathf.Abs(ledge.transform.position.y - ledge.ledgetop.transform.position.y));
+
+                //Debug.Log(height);
+
+                // Is height too high?
+                if (height >= CommonPlayerState.GetJumpHeight() + 1)
+                {
+                    tooHigh = true;
+                    return;
+                }
+
+                // we do this so players cant jump sideways upwards.
+                manager.directionedObject.direction = Vector2Int.up;
+                manager.SwitchState(new JumpingLedgePlayerState(height, ledge.ledgetop.transform.position.y, ledge.ledgetop.layersToDecrease));
+            });
+            if(foundLedge && !tooHigh) return true;
+        }
+        else
+        {
+            // if either ledge check fails or we just arent near one, do a regular jump.
+            manager.SwitchState(new JumpingPlayerState());
+        }
+        manager.animator.SetAnimation(ANIM_JUMP);
+        return true;
+    }
+
+    //Return condition: if we found a T.
+    bool FindTouching<T>(Rigidbody2D rigidbody2D, Action<T> OnFind)
+    {
+        // look through max of 2 objects we are contacting with.
+        ContactPoint2D[] contactPoints = new ContactPoint2D[2];
+        rigidbody2D.GetContacts(contactPoints);
+
+        foreach (var contact in contactPoints)
+        {
+            if (!contact.collider) continue;
+            if (contact.collider.gameObject.TryGetComponent(out T foundT))
+            {
+                OnFind(foundT);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
     void AnimatePlayer(PlayerStateManager manager)
     {
         // Landing
