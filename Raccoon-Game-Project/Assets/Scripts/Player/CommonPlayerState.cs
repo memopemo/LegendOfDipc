@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 class CommonPlayerState
 {
+    public const float DEFAULT_SPEED = 6;
     public static void MovePlayerRaw(PlayerStateManager manager, float speed) 
     {
         manager.rigidBody.velocity = manager.rawInput * (speed + manager.additionalSpeed);
@@ -18,9 +19,12 @@ class CommonPlayerState
     public static void UpdateDirection(PlayerStateManager manager)
     {
         //Debug.Log(manager.directionedObject.direction);
+        //TODO: maybe add anti-stick-flick, doesnt seem to be a problem rn with normal gameplay, 
+        // only when intentionally flicking does it occur.
+        // or add an option to movement when stick flicking.
         if (manager.rawInput != Vector2.zero)
         {
-            manager.directionedObject.direction = Vector2Int.CeilToInt(manager.rawInput);
+            manager.directionedObject.direction = Vector2Int.RoundToInt(manager.rawInput.normalized);
         }
         
     }
@@ -41,7 +45,7 @@ class CommonPlayerState
         {
             Debug.Log("Direction Is Diagonal.");
             go = null;
-            return true; //Not allowed to check diagonally.
+            return false; //Not allowed to check diagonally.
         }
         ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default"), useTriggers = useTriggers,};
         List<RaycastHit2D> results = new();

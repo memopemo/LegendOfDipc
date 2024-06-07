@@ -17,8 +17,7 @@ using UnityEngine.UI;
 public class InventoryConsumableSelector : MonoBehaviour
 {
     public int selectionIndex;
-    //enabled
-    public bool WINDOWS_SETTINGS_GAMING_XBOXGAMEBAR_ENABLE = true;
+    public bool inputtable = true;
     const int numSlots = 24;
     const int rowWidth = 4;
     const string SLOT_NAME = "Slot_";
@@ -46,10 +45,10 @@ public class InventoryConsumableSelector : MonoBehaviour
         if (IsSwitchPressed())
         {
             //toggle
-            WINDOWS_SETTINGS_GAMING_XBOXGAMEBAR_ENABLE ^= true;
+            inputtable ^= true;
         }
 
-        if (!WINDOWS_SETTINGS_GAMING_XBOXGAMEBAR_ENABLE)
+        if (!inputtable)
         {
             image.sprite = imageDisabled;
             return;

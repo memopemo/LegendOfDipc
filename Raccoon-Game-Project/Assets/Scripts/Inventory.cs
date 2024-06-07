@@ -19,7 +19,7 @@ public class Inventory : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
         }
-        
+        #if DEBUG
         //Debug Keys
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -30,5 +30,6 @@ public class Inventory : MonoBehaviour
             SaveManager.DebugMaxOut();
 
         }
+        #endif
     }
 }

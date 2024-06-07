@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // Move around, Jump, Sword, and Shield
@@ -10,8 +11,8 @@ public class DefaultPlayerState : IPlayerState
     const int ANIM_IDLE = 0;
     const int ANIM_RUN = 1;
     const int ANIM_STOP_RUN = 1;
-    const int ANIM_JUMP = 2;
     const int ANIM_LAND = 3;
+    const int ANIM_WALK = 22;
 
     //We specify left to up and up to left because they flip differently for a brief moment.
     const int ANIM_TURN_DIAG_LEFT_TO_UP = 15;
@@ -27,6 +28,7 @@ public class DefaultPlayerState : IPlayerState
     int turnFrames;
     int turning; //1 is up, -1 is down, 0 is not.
     const int TURN_HOLD_FRAMES = 5;
+    private const double WALK_THRESHOLD = 0.5;
     Vector2Int previousFrameDirection;
 
     void IPlayerState.OnEnter(PlayerStateManager manager)
@@ -38,14 +40,20 @@ public class DefaultPlayerState : IPlayerState
     {
     }
 
+    //there will be a HELLA ton of SwitchState then early return statements everywhere.
+    // i am too dumb to think of a better way to do this so *shrug* i guess it will look awful. sorry!
+    // for extremely sure, i WANT the update function to exit prematurely if we change states.
     void IPlayerState.OnUpdate(PlayerStateManager manager)
-    {
+    {   
+        
+        IPlayerState nextState = null; //deffered state transition at the end of the function.
         CommonPlayerState.MovePlayerRaw(manager, DEFAULT_SPEED);
 
         previousFrameDirection = manager.directionedObject.direction;
         CommonPlayerState.UpdateDirection(manager);
         Vector2Int newDirection = manager.directionedObject.direction;
 
+        // agregious.
         // check any direction change that has to do with up.
         if (   previousFrameDirection == Vector2Int.left
             && newDirection == Vector2Int.up
@@ -79,155 +87,32 @@ public class DefaultPlayerState : IPlayerState
         // Check Jump
         if (Input.GetButtonDown("Jump"))
         {
-            //Find a ledge top if we are jumping downwards.
-            if (manager.inputY < 0)
-            {
-                ContactPoint2D[] contactPoints = new ContactPoint2D[2];
-                manager.rigidBody.GetContacts(contactPoints);
-                foreach (var contact in contactPoints)
-                {
-                    if (!contact.collider) continue;
-                    if (contact.collider.gameObject.TryGetComponent(out LedgeTop ledge))
-                    {
-                        manager.animator.SetAnimation(ANIM_JUMP);
-                        manager.SwitchState(new JumpingLedgePlayerState(0, ledge.bottom.transform.position.y, ledge.layersToDecrease));
-                        manager.directionedObject.direction = Vector2Int.down;
-                        //Debug.Log("Found A Top Ledge, Jumping Down.");
-                        return;
-                    }
-                }
-            }
-
-            //Find a ledge side if we are jumping sideways.
-            if (manager.inputX != 0 || manager.inputY > 0)
-            {
-                ContactPoint2D[] contactPoints = new ContactPoint2D[2];
-                manager.rigidBody.GetContacts(contactPoints);
-                foreach (var contact in contactPoints)
-                {
-                    if (!contact.collider) continue;
-                    if (contact.collider.gameObject.TryGetComponent(out BackSideLedge ledge))
-                    {
-                        manager.animator.SetAnimation(ANIM_JUMP);
-                        manager.SwitchState(new JumpingLedgePlayerState(-1, 0, ledge.layersToDrop));
-                        return;
-                    }
-                }
-            }
-
-
-            //Find a ledge bottom if we are jumping up a ledge.
-            if (manager.inputY > 0)
-            {
-                // look through max of 2 objects we are contacting with.
-                ContactPoint2D[] contactPoints = new ContactPoint2D[2];
-                manager.rigidBody.GetContacts(contactPoints);
-
-                foreach (var contact in contactPoints)
-                {
-                    if (!contact.collider) continue;
-                    if (contact.collider.gameObject.TryGetComponent(out LedgeBottom ledge))
-                    {
-                        //Debug.Log("Found A Bottom Ledge, Jumping Up.");
-                        int height = Mathf.RoundToInt(Mathf.Abs(ledge.transform.position.y - ledge.ledgetop.transform.position.y));
-
-                        //Debug.Log(height);
-
-                        // Is height too high?
-                        if (height >= CommonPlayerState.GetJumpHeight() + 1)
-                        {
-                            break;
-                        }
-
-                        // we do this so players cant jump sideways upwards.
-                        manager.directionedObject.direction = Vector2Int.up;
-                        manager.animator.SetAnimation(ANIM_JUMP);
-                        manager.SwitchState(new JumpingLedgePlayerState(height, ledge.ledgetop.transform.position.y, ledge.ledgetop.layersToDecrease));
-                        return;
-                    }
-                }
-            }
-            // if either ledge check fails or we just arent near one, do a regular jump.
-            manager.animator.SetAnimation(ANIM_JUMP);
-            manager.SwitchState(new JumpingPlayerState());
-            return;
+            OnJumpButtonPushed(manager, ref nextState);
         }
 
         //Check Sword
         if (Input.GetButtonDown("Fire1"))
         {
-            //find grabbable
-            /*ContactPoint2D[] contactPoints = new ContactPoint2D[2];
-            manager.rigidBody.GetContacts(contactPoints);
-            foreach (var contact in contactPoints)
+            bool colliderThing = CommonPlayerState.ColliderInDirection(manager, out GameObject go);
+            if (colliderThing)
             {
-                if (!contact.collider) continue;
-                if (contact.collider.gameObject.TryGetComponent(out Grabbable grabbable))
-                {
-                    manager.SwitchState(new GrabbingPlayerState(grabbable));
-                    return;
-                }
-            }*/
-            bool ColliderThing = CommonPlayerState.ColliderInDirection(manager, out GameObject go);
-            if (go)
-            {
-                if (go.TryGetComponent(out Grabbable grabbable))
-                {
-                    manager.SwitchState(new GrabbingPlayerState(grabbable));
-                    return;
-                }
-                else if (go.TryGetComponent(out ClimbableWall climbable))
-                {
-                    manager.SwitchState(new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height));
-                    return;
-                }
-                else if (go.TryGetComponent(out LedgeBottom ledgeBottom))
-                {
-                    manager.SwitchState(new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y));
-                    return;
-                }
-                else if (go.TryGetComponent(out LedgeTop ledgeTop))
-                {
-                    manager.SwitchState(new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y)); ;
-                    return;
-                }
-                else if(go.TryGetComponent(out Interactable interactable))
-                {
-                    interactable.Interact();
-                    return;
-                }
+                HandleConfirmButtonNearColliderType(manager, go, ref nextState);
             }
-
-            manager.SwitchState(new SwordPlayerState());
-            return;
+            else
+            {
+                nextState = new SwordPlayerState();
+            }            
         }
 
         //Check Consumable Item Use
         if(Input.GetButtonDown("Fire2"))
-        { 
-            GameObject[] consumableItems = manager.itemGameObjectLookup.ConsumableItems;
-            int[] inventoryConsumableType = SaveManager.GetSave().InventoryConsumableType;
-            int selectionIndex = UnityEngine.Object.FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
-            if(SaveManager.UseUpConsumableItem(selectionIndex))
-            {
-                GameObject.Instantiate(
-                    consumableItems[ //get the gameobject..
-                        inventoryConsumableType[ //of the id..
-                            selectionIndex]], //..of the slot currently selected in the inventory
-                            manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction,
-                            Quaternion.identity
-                            );
-            }
+        {
+            CreateConsumableItemObject(manager);
         }
         //Check Key Item Use
-        if(Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3"))
         {
-            GameObject.Instantiate(
-                manager.itemGameObjectLookup.UsableKeyItems[ //get the gameobject.. //of the id..
-                        GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex], //..of the slot currently selected in the inventory
-                        manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction,
-                        Quaternion.identity
-                        ); 
+            CreateKeyItemObject(manager);
         }
 
         /*//Check Shield
@@ -246,8 +131,7 @@ public class DefaultPlayerState : IPlayerState
             maxDepth = manager.transform.position.z + 3
             
         };
-        if (BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => manager.SwitchState(new SwimPlayerState()), contactFilter)) 
-            return;
+        BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => nextState = new SwimPlayerState(), contactFilter);
         //find interactable to set flash. This provides a direct indicator that we can interact because it uses the same function to find the interactable object.
         CommonPlayerState.ColliderInDirection(manager, out GameObject g, true);
         if(g && g.TryGetComponent(out Interactable interact))
@@ -257,8 +141,78 @@ public class DefaultPlayerState : IPlayerState
 
 
         AnimatePlayer(manager);
+
+        if(nextState is not null)
+        {
+            manager.SwitchState(nextState);
+        }
+        
+
+        
     }
-    
+    void HandleConfirmButtonNearColliderType(PlayerStateManager manager, GameObject go, ref IPlayerState nextState)
+    {
+        if (go.TryGetComponent(out Grabbable grabbable))
+        {
+            nextState = new GrabbingPlayerState(grabbable);
+        }
+        else if (go.TryGetComponent(out ClimbableWall climbable))
+        {
+            nextState = new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height);
+        }
+        else if (go.TryGetComponent(out LedgeBottom ledgeBottom))
+        {
+            nextState = new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y);
+        }
+        else if (go.TryGetComponent(out LedgeTop ledgeTop))
+        {
+            nextState = new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y);
+        }
+        else if (go.TryGetComponent(out Interactable interactable))
+        {
+            interactable.Interact();
+        }                 
+        else
+        {
+            nextState = new SwordPlayerState();
+        }
+    }
+
+    private static void CreateConsumableItemObject(PlayerStateManager manager)
+    {
+        //Get all information of what we want to instantiate
+        GameObject[] consumableItems = manager.itemGameObjectLookup.ConsumableItems;
+        int[] inventoryConsumableType = SaveManager.GetSave().InventoryConsumableType;
+        int selectionIndex = UnityEngine.Object.FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
+
+        //we want to place it infront of the player
+        Vector3 position = manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction;
+
+        if (!SaveManager.UseUpConsumableItem(selectionIndex)) return; //if we are not clear to create it, then dont. This function also takes care of the inventory item decrement.
+
+        GameObject original = consumableItems[              //get the gameobject..
+                                inventoryConsumableType[    //of the id..
+                                selectionIndex]];           //..of the slot currently selected in the inventory
+
+        GameObject.Instantiate(original, position, Quaternion.identity);
+    }
+
+    private static void CreateKeyItemObject(PlayerStateManager manager)
+    {
+        //Get all information of what we want to instantiate
+
+        //get inventory's currently selected item index...
+        int selectionIndex = GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex;
+        //get the gameobject of the key item through the lookup table using the index...
+        GameObject keyItem = manager.itemGameObjectLookup.UsableKeyItems[selectionIndex];
+
+        //we want to place it infront of the player...
+        Vector3 position = manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction;
+        
+        //create the object we found.
+        GameObject.Instantiate(keyItem, position, Quaternion.identity);
+    }
+
     bool BoxCastFind<T>( Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
     {
         List<RaycastHit2D> results = new();
@@ -275,75 +229,44 @@ public class DefaultPlayerState : IPlayerState
     }
 
     //If result is true, changing state was successful and should return in main update loop early.
-    bool OnJumpButtonPushed(PlayerStateManager manager)
+    void OnJumpButtonPushed(PlayerStateManager manager, ref IPlayerState nextState)
     {
-        // main goal is to check each conditions for different types of jumping.
-        // conditions can fail both nested, or in the initial condition. If either case happens, move onto the next check until there are no more conditionals to check.
-        // if nothing special happens, we do a regular jump.
-        // if something *does* succeed, return early. (and true if we changed states)
-
-        // as of now, there are no conditions that "fail" to change states, 
-        // but having a bool say "hey we litterally cannot jump right now because of this thing" may be of use in the future for disabling jumping
-        // even if in our current state we *should* be able to jump.
-        // some things that come to mind are low ceilings, status effects, uuhhhhh cant think of anything else
-
         //Find a ledge top if we are jumping downwards.
-        if (manager.inputY < 0)
+        if (manager.inputY < 0 && FindTouching(manager.rigidBody, out LedgeTop tledge))
         {
-            bool foundLedge = FindTouching<LedgeTop>(manager.rigidBody, (ledge) => 
-            {
-                manager.SwitchState(new JumpingLedgePlayerState(0, ledge.bottom.transform.position.y, ledge.layersToDecrease));
-                manager.directionedObject.direction = Vector2Int.down;
-            });
-            if(foundLedge) return true;
+            manager.directionedObject.direction = Vector2Int.down;
+            nextState = new JumpingLedgePlayerState(0, tledge.bottom.transform.position.y, tledge.layersToDecrease);
         }
 
         //Find a ledge side if we are jumping sideways.
-        else if (manager.inputX != 0)
+        else if (manager.inputX != 0 && FindTouching(manager.rigidBody, out BackSideLedge bsledge) )
         {
-            bool foundLedge = FindTouching<BackSideLedge>(manager.rigidBody, (ledge) => 
-            {
-                manager.SwitchState(new JumpingLedgePlayerState(-1, 0, ledge.layersToDrop));
-            });
-            if(foundLedge) return true;
+            nextState = new JumpingLedgePlayerState(-1, 0, bsledge.layersToDrop);
         }
 
-
         //Find a ledge bottom if we are jumping up a ledge.
-        else if (manager.inputY > 0)
+        else if (manager.inputY > 0 && FindTouching(manager.rigidBody, out LedgeBottom bLedge))
         {
-            bool tooHigh = false;
-            bool foundLedge = FindTouching<LedgeBottom>(manager.rigidBody, (ledge) => 
+            int height = Mathf.RoundToInt(Mathf.Abs(bLedge.transform.position.y - bLedge.ledgetop.transform.position.y));
+
+            //Debug.Log(height);
+
+            // Is height good?
+            if (height < CommonPlayerState.GetJumpHeight() + 1)
             {
-                //Debug.Log("Found A Bottom Ledge, Jumping Up.");
-                int height = Mathf.RoundToInt(Mathf.Abs(ledge.transform.position.y - ledge.ledgetop.transform.position.y));
-
-                //Debug.Log(height);
-
-                // Is height too high?
-                if (height >= CommonPlayerState.GetJumpHeight() + 1)
-                {
-                    tooHigh = true;
-                    return;
-                }
-
-                // we do this so players cant jump sideways upwards.
                 manager.directionedObject.direction = Vector2Int.up;
-                manager.SwitchState(new JumpingLedgePlayerState(height, ledge.ledgetop.transform.position.y, ledge.ledgetop.layersToDecrease));
-            });
-            if(foundLedge && !tooHigh) return true;
+                nextState = new JumpingLedgePlayerState(height, bLedge.ledgetop.transform.position.y, bLedge.ledgetop.layersToDecrease);
+            }
         }
         else
         {
-            // if either ledge check fails or we just arent near one, do a regular jump.
-            manager.SwitchState(new JumpingPlayerState());
+            // if all ledge checks fail or we just arent near one, do a regular jump.
+            nextState = new JumpingPlayerState();
         }
-        manager.animator.SetAnimation(ANIM_JUMP);
-        return true;
     }
 
     //Return condition: if we found a T.
-    bool FindTouching<T>(Rigidbody2D rigidbody2D, Action<T> OnFind)
+    bool FindTouching<T>(Rigidbody2D rigidbody2D, out T foundT)
     {
         // look through max of 2 objects we are contacting with.
         ContactPoint2D[] contactPoints = new ContactPoint2D[2];
@@ -352,12 +275,13 @@ public class DefaultPlayerState : IPlayerState
         foreach (var contact in contactPoints)
         {
             if (!contact.collider) continue;
-            if (contact.collider.gameObject.TryGetComponent(out T foundT))
+            if (contact.collider.gameObject.TryGetComponent(out T thisT))
             {
-                OnFind(foundT);
+                foundT = thisT;
                 return true;
             }
         }
+        foundT = default;
         return false;
     }
 
@@ -418,7 +342,15 @@ public class DefaultPlayerState : IPlayerState
                 turnFrames--;
                 return;
             }
-            manager.animator.SetAnimation(ANIM_RUN);
+            if(manager.rawInput.magnitude > WALK_THRESHOLD)
+            {
+                manager.animator.SetAnimation(ANIM_RUN);
+            }
+            else
+            {
+                manager.animator.SetAnimation(ANIM_WALK);
+            }
+            
             runToIdleTransitionFrames = RUN_TO_IDLE_HOLD_FRAMES;
             return;
         }

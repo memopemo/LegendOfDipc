@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
             }
 
         }
+        #if DEBUG
         //Debug pausing without pause screen
         if(Input.GetKeyDown(KeyCode.Pause))
         {
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         {
             FreezeMmanager.UnfreezeAll<PauseFreezer>();
         }
+        #endif
     }
     public void ButtonUnpause()
     {

@@ -27,6 +27,7 @@ public class JumpingLedgePlayerState : IPlayerState
 
     // Jump timer
     float jumpUpTimer = 0;
+    const int ANIM_JUMP = 2;
 
     const float DOWN_MAX_VELOCITY = 15;
     private const int DOWN_ACCELERATION = 30; //
@@ -53,6 +54,7 @@ public class JumpingLedgePlayerState : IPlayerState
 
     public void OnEnter(PlayerStateManager manager)
     {
+        manager.animator.SetAnimation(ANIM_JUMP);
         //Disable rigidbody and keep it still.
         manager.rigidBody.bodyType = RigidbodyType2D.Kinematic;
         manager.rigidBody.velocity = Vector2.zero;

@@ -1,3 +1,4 @@
+#if DEBUG
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class DebugFreeRoamPlayerState : IPlayerState
 
     public void OnUpdate(PlayerStateManager manager)
     {
-        if (!Application.isEditor) return;
+        if (Debug.isDebugBuild) return; //failsafe
         manager.transform.position += (Vector3)manager.rawInput*speed;
         if (Input.GetKeyDown(KeyCode.PageUp)) 
         {
@@ -30,3 +31,4 @@ public class DebugFreeRoamPlayerState : IPlayerState
         }
     }
 }
+#endif

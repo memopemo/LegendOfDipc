@@ -44,6 +44,7 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public int generalTimer1;
     [NonSerialized] public int generalTimer2;
 
+    #if DEBUG
     //* Debug Variables *//
 
     // This helps with going between states automatically.
@@ -58,6 +59,7 @@ public class PlayerStateManager : MonoBehaviour
             { KeyCode.KeypadEnter,  new DebugFreeRoamPlayerState()  },
             { KeyCode.KeypadPeriod, new NoInputPlayerState()        },
         };
+    #endif
     // Start is called before the first frame update
     void Start()
     {
@@ -101,7 +103,8 @@ public class PlayerStateManager : MonoBehaviour
 
         // Switch State
         currentPlayerState.OnUpdate(this);
-
+        
+        #if DEBUG
         //debug
         foreach (var x in debugNumpadKeysToState)
         {
@@ -137,6 +140,7 @@ public class PlayerStateManager : MonoBehaviour
                 fl.DecrementLevel(1);
             }
         }
+        #endif
 
     }
 
@@ -218,6 +222,7 @@ public class PlayerStateManager : MonoBehaviour
     }
     public void DiveIntoDeepWater()
     {
+        //this probably shouldnt be my buisness.
         FindFirstObjectByType<CircleFadeInUI>().Out();
         Invoker.InvokeDelayed(() => EnterDeepWaterScene(), 1);
         Cleanuper.ReadyCleanUpForSceneTransition(1);

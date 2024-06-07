@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3820134118618446107}
   - component: {fileID: 9003347714634067573}
   m_Layer: 0
-  m_Name: generic_object_pitfall_Frame_0
+  m_Name: PitfallGeneric
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

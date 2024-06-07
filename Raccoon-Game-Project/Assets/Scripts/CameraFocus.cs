@@ -14,8 +14,9 @@ public class CameraFocus : MonoBehaviour
     Vector2 playerLookAhead;
     const float ORTHO_CAMERA_DISTANCE = 10;
     Vector2 lookaheadVelocity;
-
+    #if DEBUG
     float debugKeyHeldTime = 0;
+    #endif
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +77,7 @@ public class CameraFocus : MonoBehaviour
             shakeIntensity -= Time.deltaTime * 5;
         }
         else shakeIntensity = 0;
-
+        #if DEBUG
         if(Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Comma) )
         {
             debugKeyHeldTime += Time.deltaTime*2;
@@ -94,7 +95,7 @@ public class CameraFocus : MonoBehaviour
         {
             distance -= Time.unscaledDeltaTime*debugKeyHeldTime;
         }
-
+        #endif
     }
     public void OnDrawGizmos()
     {

@@ -70,7 +70,7 @@ public static class SaveManager
         }
     }
     //Returns: True if item was sucessfully decremented
-    //  False if The index points to an invalid ID type
+    //  False if The index points to an invalid ID type, or is 0.
     public static bool UseUpConsumableItem(int index)
     {
         SaveFile sf = GetSave();
@@ -84,6 +84,7 @@ public static class SaveManager
         return true;
 
     }
+    #if DEBUG
     public static void DebugMaxOut()
     {
         SaveFile sf = GetSave();
@@ -110,6 +111,7 @@ public static class SaveManager
         SetArrayToTrue(ref sf.GenericFlags);
 
     }
+    #endif
     static void SetArrayToTrue(ref bool[] a)
     {
         for (int i = 0; i < a.Length; i++)

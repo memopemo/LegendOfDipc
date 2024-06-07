@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Awake()
     {
         //find and verify entrance
@@ -13,10 +12,5 @@ public class Room : MonoBehaviour
         // Tell important objects to set their directions.
         FindFirstObjectByType<PlayerStateManager>().RoomInitialize(entrance.transform.position, entrance.startingDirection);
         FindFirstObjectByType<CameraFocus>().InitializeCameraPosition((Vector2)entrance.startingDirection);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

@@ -3,7 +3,10 @@ using UnityEngine;
 public static class PlayerHealth
 {
     public static int currentHealth = 8;
+    #if DEBUG
     public static bool debugLockHealth = false;
+    #endif
+
     //Do not destroy player. Instead, find gamecontroller to start death cutscene.
 
     public static void Die()

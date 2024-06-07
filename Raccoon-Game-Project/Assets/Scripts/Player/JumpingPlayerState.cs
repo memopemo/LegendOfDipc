@@ -7,20 +7,21 @@ using Animator2D;
 public class JumpingPlayerState : IPlayerState
 {
     float jumpSecs = 0;
+    const int ANIM_JUMP = 2;
     const float DEFAULT_SPEED = 6f;
     const float MAX_JUMP_TIME = 0.5f;
     const float JUMP_HEIGHT_NORMAL = 1;
     const float JUMP_HEIGHT_SUPER = 2;
     int framesGrounded = 0;
-    //Vector2 debugStartJumpPos;
-
-    Vector2 movementDirection;
+    bool tryingToCorrect;
+    Vector2Int initialDirection;
 
     public void OnEnter(PlayerStateManager manager)
     {
-        movementDirection = manager.rawInput;
         //Debug.Log($"Started Jump: {manager.rigidBody.position}");
         //debugStartJumpPos = manager.rigidBody.position;
+        manager.animator.SetAnimation(ANIM_JUMP);
+        initialDirection = Vector2Int.RoundToInt(manager.rawInput);
     }
 
     public void OnLeave(PlayerStateManager manager)
@@ -32,13 +33,26 @@ public class JumpingPlayerState : IPlayerState
 
     public void OnUpdate(PlayerStateManager manager)
     {
+        
         if(framesGrounded < 3) 
         {
             framesGrounded++;
             return;
         }
+        Vector2 actualMovement = manager.rawInput;
+        if(tryingToCorrect)
+        {
+            actualMovement /= 2; //half the speed of movement.
+        }
+        else
+        {
+            if (Vector2Int.RoundToInt(manager.rawInput) != Vector2.zero && Vector2Int.RoundToInt(manager.rawInput) != initialDirection)
+            { 
+                tryingToCorrect = true;
+            }
+        }
         //Constantly move player
-        manager.rigidBody.velocity = movementDirection * (DEFAULT_SPEED + manager.additionalSpeed);
+        manager.rigidBody.velocity = actualMovement * (DEFAULT_SPEED + manager.additionalSpeed);
 
         //Tick jump timer
         jumpSecs += Time.deltaTime;

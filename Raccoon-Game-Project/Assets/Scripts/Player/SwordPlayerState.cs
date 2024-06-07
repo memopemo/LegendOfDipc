@@ -55,7 +55,7 @@ public class SwordPlayerState : IPlayerState
 
     public void OnLeave(PlayerStateManager manager)
     {
-        manager.swordHitBoxObject.gameObject.SetActive(false);
+        manager.swordHitBoxObject.SetActive(false);
     }
 
     public void OnUpdate(PlayerStateManager manager)

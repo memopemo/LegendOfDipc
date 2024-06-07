@@ -19,10 +19,12 @@ public class Pushblock : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime*2);
         if(transform.position == nextPosition)
         {
+
             //Snap to grid
-            transform.position += (Vector3)Vector2.one * 0.5f;
+            SnapGrid.SnapToGridCentered(transform.position);
+            /* transform.position += (Vector3)Vector2.one * 0.5f;
             transform.position = new Vector2(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y));
-            transform.position -= (Vector3)Vector2.one * 0.5f;
+            transform.position -= (Vector3)Vector2.one * 0.5f; */
 
             //just so we dont go into an infinite loop of going between our position and next position
             nextPosition = transform.position;
