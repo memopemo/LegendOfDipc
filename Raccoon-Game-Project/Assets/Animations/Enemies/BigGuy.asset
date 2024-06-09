@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: BigGuy
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -6759063685682855249, guid: 9f7e1424193f98f4491b959ecc6b2883, type: 3}
+  - Sprite: {fileID: 5223381085909798820, guid: 9f7e1424193f98f4491b959ecc6b2883, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: -6759063685682855249, guid: 9f7e1424193f98f4491b959ecc6b2883, type: 3}
+  - Sprite: {fileID: 5223381085909798820, guid: 9f7e1424193f98f4491b959ecc6b2883, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: -6759063685682855249, guid: 9f7e1424193f98f4491b959ecc6b2883, type: 3}
+  - Sprite: {fileID: 5223381085909798820, guid: 9f7e1424193f98f4491b959ecc6b2883, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Idle
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -3019617875564941405, guid: 8bffd2a8e95d6444a9c199fa8cf58fc1, type: 3}
+  - Sprite: {fileID: -8996576961797914452, guid: 8bffd2a8e95d6444a9c199fa8cf58fc1, type: 3}
     HoldForTicks: 10
   UpAnimationFrames:
-  - Sprite: {fileID: -748779395098111703, guid: 8bffd2a8e95d6444a9c199fa8cf58fc1, type: 3}
+  - Sprite: {fileID: -4254494214242901152, guid: 8bffd2a8e95d6444a9c199fa8cf58fc1, type: 3}
     HoldForTicks: 10
   SideAnimationFrames:
-  - Sprite: {fileID: 1250038698003616507, guid: 8bffd2a8e95d6444a9c199fa8cf58fc1, type: 3}
+  - Sprite: {fileID: 1652351423278522855, guid: 8bffd2a8e95d6444a9c199fa8cf58fc1, type: 3}
     HoldForTicks: 10
   Looping: 1
   LoopStart: 0

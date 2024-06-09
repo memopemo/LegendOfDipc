@@ -41,14 +41,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880917091135352140}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 7
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -1514,8 +1514,8 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -9080886003815242245, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -4385644871262670944, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: 6185383895968337279, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -4733489245937682449, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -6406,10 +6406,10 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 9068783222928860401, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -6036833609305201934, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: 1002476816774605630, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -3498239711745250391, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: 6995114825795837839, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -2365620195840582466, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: 2890858609792316539, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -7348121112947458417, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -9799,15 +9799,15 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4856225423379974352}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 7
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
-  prewarm: 1
+  looping: 0
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -11245,12 +11245,12 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 9068783222928860401, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -6036833609305201934, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: 1002476816774605630, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -3498239711745250391, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -9080886003815242245, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
-    - sprite: {fileID: -4385644871262670944, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: 6995114825795837839, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -2365620195840582466, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: 2890858609792316539, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -7348121112947458417, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: 6185383895968337279, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -4733489245937682449, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

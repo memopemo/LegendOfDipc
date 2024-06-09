@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: MoneyFall
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -4639824804808079304, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 5709196328965453124, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -341208811748403586, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 5886815247661476036, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
   UpAnimationFrames:
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -4639824804808079304, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 5709196328965453124, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -341208811748403586, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 5886815247661476036, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
   SideAnimationFrames:
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -4639824804808079304, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 5709196328965453124, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -341208811748403586, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 5886815247661476036, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
   Looping: 1
   LoopStart: 0

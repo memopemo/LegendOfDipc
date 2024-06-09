@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Grab
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 5401082119472857725, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: 5372620992158431976, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: 7462801362937236752, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: -3754363038553820921, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: 234681613860495036, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: 2304791947952974743, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: ClimbIdle
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -2134093602868567843, guid: a7b6344c8ed2913438b1d406fb6d3fc8, type: 3}
+  - Sprite: {fileID: 4972748433282198410, guid: a7b6344c8ed2913438b1d406fb6d3fc8, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: -2134093602868567843, guid: a7b6344c8ed2913438b1d406fb6d3fc8, type: 3}
+  - Sprite: {fileID: 4972748433282198410, guid: a7b6344c8ed2913438b1d406fb6d3fc8, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: -6029804827911175688, guid: a7b6344c8ed2913438b1d406fb6d3fc8, type: 3}
+  - Sprite: {fileID: 4972748433282198410, guid: a7b6344c8ed2913438b1d406fb6d3fc8, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

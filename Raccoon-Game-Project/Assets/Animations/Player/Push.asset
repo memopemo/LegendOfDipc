@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Push
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -6991040616543287473, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: 5313525642904756810, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: 3821938050305615701, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: -5199948715197593614, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: 2112019899067118296, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: 6795824855520190115, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

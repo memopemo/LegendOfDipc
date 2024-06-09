@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: Hurt
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 1301874095207553702, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: 2220625916957106652, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
-  - Sprite: {fileID: -624583848522337226, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: -4689542662842757623, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
-  - Sprite: {fileID: -210510882975916504, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: 7089047388751763157, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
   UpAnimationFrames:
-  - Sprite: {fileID: -7922036871191303581, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: -3781392893028914154, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
-  - Sprite: {fileID: -6243182339939670312, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: 6381809174183327441, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
-  - Sprite: {fileID: 5049029918440637692, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: -8389674799347565142, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
   SideAnimationFrames:
-  - Sprite: {fileID: -2158528795742558066, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: 50056609540668523, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
-  - Sprite: {fileID: 7856034114584129815, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: 2634792451226850816, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
-  - Sprite: {fileID: -4230842771839258759, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
+  - Sprite: {fileID: 4007132080239996441, guid: 645e7a4ce27ee0447ad48eb58ec927c7, type: 3}
     HoldForTicks: 25
   Looping: 0
   LoopStart: 0

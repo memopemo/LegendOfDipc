@@ -96,6 +96,13 @@ public class Pitable : MonoBehaviour
                transform.parent = null;
             }
         }
+        foreach (Transform t in transform)
+        {
+            if(t.GetComponent<PlayerStateManager>())
+            {
+                t.parent = null;
+            }
+        }
     }
     void Sink()
     {
@@ -106,6 +113,13 @@ public class Pitable : MonoBehaviour
             if (player)
             {
                transform.parent = null;
+            }
+        }
+        foreach (Transform t in transform)
+        {
+            if(t.GetComponent<PlayerStateManager>())
+            {
+                t.parent = null;
             }
         }
 

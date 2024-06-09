@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Land
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 5662493369493504253, guid: e7de41461d60d5c43a9fc05c2e550d90, type: 3}
+  - Sprite: {fileID: -6986968611964675377, guid: e7de41461d60d5c43a9fc05c2e550d90, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: 5662493369493504253, guid: e7de41461d60d5c43a9fc05c2e550d90, type: 3}
+  - Sprite: {fileID: -6986968611964675377, guid: e7de41461d60d5c43a9fc05c2e550d90, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: -2668869209498746891, guid: 136a92abd09446b4786c7abd1a2c4a18, type: 3}
+  - Sprite: {fileID: 4386795124449070408, guid: 136a92abd09446b4786c7abd1a2c4a18, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

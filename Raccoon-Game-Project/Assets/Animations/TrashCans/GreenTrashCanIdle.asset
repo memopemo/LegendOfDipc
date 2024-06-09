@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: GreenTrashCanIdle
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -6671365930410110600, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  - Sprite: {fileID: -3269324086836189536, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: -6671365930410110600, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  - Sprite: {fileID: -3269324086836189536, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: -6671365930410110600, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  - Sprite: {fileID: -3269324086836189536, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

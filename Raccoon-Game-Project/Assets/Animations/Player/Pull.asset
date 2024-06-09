@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Pull
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 8522803001332689981, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: -65046371942132275, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: -549328583772295062, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: 2464875710511658451, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: -3855860169402072482, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+  - Sprite: {fileID: 6022066588038977886, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

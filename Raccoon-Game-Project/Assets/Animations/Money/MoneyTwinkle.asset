@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: MoneyTwinkle
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 150
-  - Sprite: {fileID: -9104291608296512763, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 7034743306800084050, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
   UpAnimationFrames:
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 150
-  - Sprite: {fileID: -9104291608296512763, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 7034743306800084050, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
   SideAnimationFrames:
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 150
-  - Sprite: {fileID: -9104291608296512763, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: 7034743306800084050, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -8518406225985709747, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
+  - Sprite: {fileID: -3558865921009385705, guid: 12239021eae2a574c9c306337ea975f1, type: 3}
     HoldForTicks: 15
   Looping: 1
   LoopStart: 0

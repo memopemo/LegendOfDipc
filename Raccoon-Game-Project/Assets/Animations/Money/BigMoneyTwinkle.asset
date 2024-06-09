@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: BigMoneyTwinkle
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 3223647026351955371, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: 841883440940584978, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 150
-  - Sprite: {fileID: -6562726947810809035, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: -6421643503473776153, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -8697300208085786543, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: -7397355034127034627, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
   UpAnimationFrames:
-  - Sprite: {fileID: 3223647026351955371, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: 841883440940584978, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 150
-  - Sprite: {fileID: -6562726947810809035, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: -6421643503473776153, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -8697300208085786543, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: -7397355034127034627, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
   SideAnimationFrames:
-  - Sprite: {fileID: 3223647026351955371, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: 841883440940584978, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 150
-  - Sprite: {fileID: -6562726947810809035, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: -6421643503473776153, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
-  - Sprite: {fileID: -8697300208085786543, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: -7397355034127034627, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
   Looping: 1
   LoopStart: 0

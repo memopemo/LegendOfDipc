@@ -17,7 +17,6 @@ public class Interactable : MonoBehaviour
     public void Interact()
     {
         OnInteract.Invoke();
-        enabled = false;
     }
     public void PlayerCanInteract()
     {

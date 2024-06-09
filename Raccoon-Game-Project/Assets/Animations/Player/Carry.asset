@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Carry
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: -8751180594453979741, guid: 64341bfa9e75af04dae2063fbaadd74d, type: 3}
+  - Sprite: {fileID: -3461016224005657823, guid: 64341bfa9e75af04dae2063fbaadd74d, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: 3779434581915726388, guid: 64341bfa9e75af04dae2063fbaadd74d, type: 3}
+  - Sprite: {fileID: -7958368608612997062, guid: 64341bfa9e75af04dae2063fbaadd74d, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: -3297777644037671466, guid: 64341bfa9e75af04dae2063fbaadd74d, type: 3}
+  - Sprite: {fileID: 7312186920252694382, guid: 64341bfa9e75af04dae2063fbaadd74d, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

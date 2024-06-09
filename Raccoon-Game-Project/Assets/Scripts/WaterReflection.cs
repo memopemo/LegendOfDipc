@@ -6,15 +6,20 @@ using UnityEngine;
 public class WaterReflection : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
-    public SpriteRenderer followRenderer;
-    [SerializeField] float yOffset;
-    [SerializeField] float distanceBehindWater;
+    SpriteRenderer followRenderer;
+    const float yOffset = 1;
+    const float distanceBehindWater = 4;
+    float tspFade;
+    bool exiting;
     Heightable maybeHeightable;
     // Start is called before the first frame update
     void Start()
     {
+        tspFade = 0;
+        exiting = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+        spriteRenderer.color = Color.clear;
+        followRenderer = transform.parent.GetComponent<SpriteRenderer>();
     }
     private void OnValidate()
     {
@@ -28,6 +33,16 @@ public class WaterReflection : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Set Fade
+        tspFade += Time.deltaTime * (exiting ? -1: 1);
+        tspFade = Mathf.Clamp(tspFade, 0,1);
+        spriteRenderer.color = new Color(1,1,1,tspFade);
+        if(exiting && tspFade <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         transform.position = followRenderer.transform.position;
         transform.position += Vector3.forward * distanceBehindWater;
 
@@ -43,5 +58,9 @@ public class WaterReflection : MonoBehaviour
         spriteRenderer.sprite = followRenderer.sprite;
         spriteRenderer.flipX = followRenderer.flipX;
         spriteRenderer.flipY = !followRenderer.flipY;
+    }
+    public void Exit()
+    {
+        exiting = true;
     }
 }

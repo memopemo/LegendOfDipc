@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7493991761971626816}
   - component: {fileID: 209094589439328195}
+  - component: {fileID: 6695149453565824277}
+  - component: {fileID: 6012953510266202028}
+  - component: {fileID: 2141403081135875527}
+  - component: {fileID: 8457274898499287094}
   m_Layer: 0
   m_Name: BombPoisionItem
   m_TagString: Untagged
@@ -87,3 +91,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6695149453565824277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786590383965031118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6012953510266202028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786590383965031118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8d3732b42503d4493fbc3bbdce5c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animations:
+  - {fileID: 11400000, guid: 17c73f18944b6f042b60cdd2289ec948, type: 2}
+  currentAnimation: 0
+  currentAnimationFrame: 0
+--- !u!114 &2141403081135875527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786590383965031118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd41c6743e4c0cd45a4d2f9ba19135a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilBoomSecs: 3
+--- !u!114 &8457274898499287094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786590383965031118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ad14aa867d87a4996431494feeffb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 4856225423379974352, guid: fdc12b9b7b5eff54f8558ab1d37f46fe, type: 3}

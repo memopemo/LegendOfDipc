@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: TurnLeftDown
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 8751305223927920894, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
+  - Sprite: {fileID: -7655431615869846584, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: 8751305223927920894, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
+  - Sprite: {fileID: -7655431615869846584, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: 8751305223927920894, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
+  - Sprite: {fileID: -7655431615869846584, guid: f14cc3df054a2034a92bfc7aacbd6940, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0

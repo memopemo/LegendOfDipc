@@ -78,7 +78,7 @@ ScriptedImporter:
     defaultPivotAlignment: 9
     customPivotPosition: {x: 0.5, y: 0.25}
     spritePadding: 0
-    generateModelPrefab: 1
+    generateModelPrefab: 0
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
@@ -90,12 +90,12 @@ ScriptedImporter:
     defaultPivotAlignment: 9
     customPivotPosition: {x: 0.5, y: 0.25}
     spritePadding: 0
-    generateModelPrefab: 1
+    generateModelPrefab: 0
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638397335520022504
+  platformSettingsDirtyTick: 638534373164217055
   textureAssetName: 
   singleSpriteImportData:
   - name: 

@@ -158,6 +158,16 @@ public class PlayerStateManager : MonoBehaviour
             return;
         }
     }
+    public void HitByExplosion(int amount, Transform from)
+    {
+        //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
+        if (height.height > 0) return;
+        PlayerHealth.TakeDamage(amount, this);
+        Knockback(from);
+        stateTransitionTimer1 = 25;
+        SwitchState(new HurtPlayerState());
+        return;
+    }
     private void Knockback(Transform from)
     {
         if (knockBackTimer > 0) return;

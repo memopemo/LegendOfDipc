@@ -108,6 +108,7 @@ public class CameraFocus : MonoBehaviour
     }
     public void ShakeScreen(float strength = 1)
     {
+        if(shakeIntensity > strength) return;
         shakeIntensity = strength;
     }
 }

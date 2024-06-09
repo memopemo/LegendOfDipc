@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: BlueTrashCanIdle
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 541987506017645090, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  - Sprite: {fileID: -2346492343739562938, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: 541987506017645090, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  - Sprite: {fileID: -2346492343739562938, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
-  - Sprite: {fileID: 541987506017645090, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  - Sprite: {fileID: -2346492343739562938, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
     HoldForTicks: 0
   Looping: 0
   LoopStart: 0
