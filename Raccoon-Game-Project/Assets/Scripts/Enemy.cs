@@ -8,6 +8,7 @@ public abstract class Enemy : MonoBehaviour
     protected float invulnTimer; //Resting break before being able to be hit again.
     protected bool alwaysInvulnerable;
     protected Rigidbody2D rb;
+    protected NoiseMaker noiseMaker;
     protected Health myHealth;
 
     //Common particle effects to spawn in when things happen.
@@ -18,10 +19,13 @@ public abstract class Enemy : MonoBehaviour
     // disable ourselves if we are this far away. Preformance gains.
     const float DISABLE_DISTANCE = 20;
 
+    protected const int NOISE_OFFSET = 3; //use this offset to play custom sound effects.
+
     public void Start()
     {
         // Initialize variables.
         rb = GetComponent<Rigidbody2D>();
+        noiseMaker = GetComponent<NoiseMaker>();
 
         // Set starting health.
         // if we are permanantely invulnerable, dont (we dont need to)
@@ -50,8 +54,8 @@ public abstract class Enemy : MonoBehaviour
         /* Disable ourselves if we are too far away.
          * Other objects can re-enable us if needed (like say a dungeon enemy spawner)
          */
-        GameObject player = FindFirstObjectByType<PlayerStateManager>().gameObject;
-        if (Vector2.Distance(player.transform.position, transform.position) > DISABLE_DISTANCE)
+        PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+        if (player && Vector2.Distance(player.transform.position, transform.position) > DISABLE_DISTANCE)
         {
             gameObject.SetActive(false);
         }

@@ -7,7 +7,8 @@ public class Explosion : MonoBehaviour
     [SerializeField] int amount;
     void Start()
     {
-        FindAnyObjectByType<CameraFocus>().ShakeScreen(4);
+        FindAnyObjectByType<CameraFocus>().ShakeScreen(2);
+        GetComponent<NoiseMaker>().Play(0);
     }
     void OnTriggerEnter2D(Collider2D collider)
     {

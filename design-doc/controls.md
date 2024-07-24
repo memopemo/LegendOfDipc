@@ -33,13 +33,13 @@
 
 Allow the player to use these at any time they have control
 
-| Key | Button  | Action                                |
-|---- |---------|---------------------------------------|
-| E   | Start   | Open Inventory                        |
-| Esc | Select  | Pause Game                            |
-| A   | L       | Decrement Selected Item Category      |
-| S   | R       | Increment Selected Item Category      |
-| D   | ZL      | Toggle betwen Key and Consumable Items|
+| Key | Button       | Action                                |
+|---- |--------------|---------------------------------------|
+| E   | Start        | Open Inventory                        |
+| Esc | Select       | Pause Game                            |
+| A   | L            | Decrement Selected Item Category      |
+| S   | R            | Increment Selected Item Category      |
+| D   | Stick Button | Toggle betwen Key and Consumable Items|
 
 ### Default Movement
 

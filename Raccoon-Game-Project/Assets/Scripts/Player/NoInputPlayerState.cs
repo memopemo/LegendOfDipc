@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Cutscenes
+// Cutscenes. Must be exited at some point!
 public class NoInputPlayerState : IPlayerState
 {
     public void OnEnter(PlayerStateManager manager)

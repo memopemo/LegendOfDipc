@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6773211823555874327}
   - component: {fileID: 1062853960548882410}
   - component: {fileID: 8826119594314395301}
+  - component: {fileID: 8425162700311290020}
   m_Layer: 0
   m_Name: SmallExplosion
   m_TagString: Untagged
@@ -4890,3 +4891,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 4
+--- !u!114 &8425162700311290020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071764436163082100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: 16cace571d96e25449641b8efc9cd251, type: 3}
+    isCancelable: 0
+  interruptableClip: {fileID: 0}

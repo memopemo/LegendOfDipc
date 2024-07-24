@@ -34,6 +34,7 @@ public class Money : MonoBehaviour
        if(Vector2.Distance(transform.position, FindAnyObjectByType<PlayerStateManager>().transform.position) < 0.7f)  //1 unit circle (approx.)
        {
             gameObject.SetActive(false);
+            GetComponent<PoofDestroy>().Poof();
             SaveManager.GetSave().Money += isBig?10:1;
 
        }

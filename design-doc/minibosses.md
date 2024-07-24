@@ -16,7 +16,11 @@ These are fights midway through dungeons.
 
 ### Movement
 
+- hops around the room before settling
+
 ### Actions
+
+- Uses tongue as a means to grab the player, eats them, which causes huge damage.
 
 ## Mimic 2
 

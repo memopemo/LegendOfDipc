@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 // Generic Health Class for keeping track of damage done.
@@ -8,6 +9,11 @@ public class Health : MonoBehaviour
     [SerializeField] UnityEvent OnTakeDamage; // for effects to display when damaged.
     [SerializeField] UnityEvent OnHeal; // for effects to display when 
     public GameObject HealParticle;
+    private NoiseMaker noiseMaker;
+    void Start()
+    {
+        noiseMaker = GetComponent<NoiseMaker>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,10 +26,12 @@ public class Health : MonoBehaviour
 
         currentHealth -= amount;
         if (currentHealth <= 0)
-        {
+        {   
+            
             Die();
             return;
         }
+        noiseMaker.Play(0);
         OnTakeDamage.Invoke();
 
     }
@@ -31,11 +39,13 @@ public class Health : MonoBehaviour
     {
         currentHealth += amount;
         Instantiate(HealParticle, transform);
+        noiseMaker.Play(2);
         OnHeal.Invoke();
     }
     public virtual void Die()
     {
         currentHealth = 0;
+        noiseMaker.Play(1);
         OnDie.Invoke();
         gameObject.SetActive(false);
     }

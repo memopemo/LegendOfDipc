@@ -26,6 +26,7 @@ public class InventoryKeyItemSelector : MonoBehaviour
     Image image;
     [SerializeField] Sprite imageDisabled;
     Sprite imageEnabled;
+    Inventory inventory;
 
     public int SelectionIndex {get => selectionIndex; private set => selectionIndex = value; }
 
@@ -35,11 +36,14 @@ public class InventoryKeyItemSelector : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
         imageEnabled = image.sprite;
+        inventory = FindAnyObjectByType<Inventory>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        if (inventory.inTransition) return;
         RectTransform currentIndexedSlotObject = rectTransform.parent.Find(SLOT_NAME + SelectionIndex) as RectTransform;
         if (currentIndexedSlotObject != null)
         {

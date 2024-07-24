@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +14,7 @@ public class PlayerStateManager : MonoBehaviour
     //[NonSerialized] public SpriteRenderer jumpSpriteRenderer;
     [NonSerialized] public Heightable height;
     [NonSerialized] public Animator2D.Animator2D animator;
+    [NonSerialized] public NoiseMaker noiseMaker;
 
     //* General Variables *//
     public IPlayerState currentPlayerState;
@@ -43,6 +43,7 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public int stateTransitionTimer2;
     [NonSerialized] public int generalTimer1;
     [NonSerialized] public int generalTimer2;
+    [NonSerialized] public GameObject generalGO;
 
     #if DEBUG
     //* Debug Variables *//
@@ -73,6 +74,7 @@ public class PlayerStateManager : MonoBehaviour
         height = GetComponent<Heightable>();
         directionedObject = GetComponent<DirectionedObject>();
         animator = GetComponent<Animator2D.Animator2D>();
+        noiseMaker = GetComponent<NoiseMaker>();
 
         //State Init
         currentPlayerState = new DefaultPlayerState();
@@ -165,6 +167,7 @@ public class PlayerStateManager : MonoBehaviour
         PlayerHealth.TakeDamage(amount, this);
         Knockback(from);
         stateTransitionTimer1 = 25;
+        if(currentPlayerState is HeldItemPlayerState) return;
         SwitchState(new HurtPlayerState());
         return;
     }
@@ -230,6 +233,13 @@ public class PlayerStateManager : MonoBehaviour
         FallReturnPosition = transform.position;
 
     }
+    // This is for custom decrementing of an item when it is ready to be used up
+    public void DecrementConsumableItem()
+    {
+        int selectionIndex = FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
+        SaveManager.DecrementConsumableItem(selectionIndex);
+    }
+
     public void DiveIntoDeepWater()
     {
         //this probably shouldnt be my buisness.

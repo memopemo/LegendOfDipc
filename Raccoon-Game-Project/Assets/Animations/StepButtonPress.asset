@@ -9,20 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
   m_Name: StepButtonPress
   m_EditorClassIdentifier: 
-  DownAnimationFrames:
-  - Sprite: {fileID: 1053184192418623608, guid: 6032d31567dfc5f488f04ebeea809d4d, type: 3}
-    HoldForTicks: 15
-  - Sprite: {fileID: 8332680818310106559, guid: 6032d31567dfc5f488f04ebeea809d4d, type: 3}
-    HoldForTicks: 15
-  UpAnimationFrames:
-  - Sprite: {fileID: 1053184192418623608, guid: 6032d31567dfc5f488f04ebeea809d4d, type: 3}
-    HoldForTicks: 15
-  - Sprite: {fileID: 8332680818310106559, guid: 6032d31567dfc5f488f04ebeea809d4d, type: 3}
-    HoldForTicks: 15
-  SideAnimationFrames:
+  AnimationFrames:
   - Sprite: {fileID: 1053184192418623608, guid: 6032d31567dfc5f488f04ebeea809d4d, type: 3}
     HoldForTicks: 15
   - Sprite: {fileID: 8332680818310106559, guid: 6032d31567dfc5f488f04ebeea809d4d, type: 3}

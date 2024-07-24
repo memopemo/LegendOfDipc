@@ -38,8 +38,8 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Amount: 0.383
+    - _Amount: 0.271
     m_Colors:
-    - _Flash: {r: 1.1681572, g: 0.9827322, b: 0.2018282, a: 0}
+    - _Flash: {r: 24.953306, g: 0.46490142, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

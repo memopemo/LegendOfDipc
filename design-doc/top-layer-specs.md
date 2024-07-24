@@ -9,7 +9,7 @@
 
 ## Visual Style
 
-- Pixel-art
+- Pixel-art (hand drawn?)
 
 - limited color pallete
 

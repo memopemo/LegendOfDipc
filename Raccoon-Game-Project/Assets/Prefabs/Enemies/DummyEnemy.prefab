@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 4713741685935363708}
   - component: {fileID: 4206246801660417328}
   - component: {fileID: 1626203985815311911}
+  - component: {fileID: 5032275112778573545}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: HurtPlayer
@@ -501,6 +502,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 69a6f587e63ad8b44ad4b6fb0624eaea, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
+  finishedFrames: 0
 --- !u!114 &4713741685935363708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +634,31 @@ MonoBehaviour:
   OnAppear:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5032275112778573545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: faf99c239f1dc8d40b5826aaf21ff8d9, type: 3}
+    - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
+    - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
+    - {fileID: 8300000, guid: 50b9e0a8c02f48d438262f7c71d96878, type: 3}
+    - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
+    isCancelable: 0
+  - pool:
+    - {fileID: 8300000, guid: 619794d52890ca846a0bcfe66ea46ee5, type: 3}
+    - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
+    isCancelable: 0
+  interruptableClip: {fileID: 0}
 --- !u!1 &9212373818536585072
 GameObject:
   m_ObjectHideFlags: 0

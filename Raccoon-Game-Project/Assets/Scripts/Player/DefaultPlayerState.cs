@@ -30,6 +30,7 @@ public class DefaultPlayerState : IPlayerState
     const int TURN_HOLD_FRAMES = 5;
     private const double WALK_THRESHOLD = 0.5;
     Vector2Int previousFrameDirection;
+    bool playedStepSound;
 
     void IPlayerState.OnEnter(PlayerStateManager manager)
     {
@@ -188,7 +189,14 @@ public class DefaultPlayerState : IPlayerState
         //we want to place it infront of the player
         Vector3 position = manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction;
 
-        if (!SaveManager.UseUpConsumableItem(selectionIndex)) return; //if we are not clear to create it, then dont. This function also takes care of the inventory item decrement.
+        int itemID = inventoryConsumableType[selectionIndex];
+        if(itemID != 14 && itemID != 15)
+        {
+            if (!SaveManager.UseUpConsumableItem(selectionIndex)) return; //if we are not clear to create it, then dont. This function also takes care of the inventory item decrement.
+        }
+
+        if(!SaveManager.CanUseConsumableItem(selectionIndex)) return; //do not decrement item.
+        
 
         GameObject original = consumableItems[              //get the gameobject..
                                 inventoryConsumableType[    //of the id..
@@ -345,6 +353,18 @@ public class DefaultPlayerState : IPlayerState
             if(manager.rawInput.magnitude > WALK_THRESHOLD)
             {
                 manager.animator.SetAnimation(ANIM_RUN);
+                if(manager.animator.currentAnimationFrame == 0 || manager.animator.currentAnimationFrame == 3)
+                {
+                    if(!playedStepSound)
+                    {
+                        manager.noiseMaker.Play(0);
+                        playedStepSound = true;
+                    }
+                }
+                else
+                {
+                    playedStepSound = false;
+                }
             }
             else
             {

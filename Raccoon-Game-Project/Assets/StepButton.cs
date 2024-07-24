@@ -7,13 +7,15 @@ using UnityEngine;
 public class StepButton : MonoBehaviour
 {
     [SerializeField] private bool isStuck; //once pressed, will not unpress.
-    Animator2D.Animator2D animator;
+    Animator2D.SimpleAnimator2D animator;
     Switch switcher;
+    NoiseMaker noiseMaker;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator2D.Animator2D>();
+        animator = GetComponent<Animator2D.SimpleAnimator2D>();
         switcher = GetComponent<Switch>();
+        noiseMaker = GetComponent<NoiseMaker>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class StepButton : MonoBehaviour
     {
         if (collider.TryGetComponent(out PlayerStateManager _))
         {
+            noiseMaker.Play(0);
             switcher.ActivateSwitchA(1);
         }
     }
@@ -33,6 +36,7 @@ public class StepButton : MonoBehaviour
         if(isStuck) return; //stuck
         if (collider.TryGetComponent(out PlayerStateManager _))
         {
+            noiseMaker.Play(1);
             GetComponent<Switch>().DeactivateSwitchA();
         }
     }

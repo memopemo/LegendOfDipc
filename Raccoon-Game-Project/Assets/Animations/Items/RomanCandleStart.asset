@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Name: RomanCandleStart
+  m_EditorClassIdentifier: 
+  DownAnimationFrames:
+  - Sprite: {fileID: 644154690990014531, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -2907925231961162279, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -1774343478369557070, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 644154690990014531, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -2907925231961162279, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -1774343478369557070, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 644154690990014531, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -2907925231961162279, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -1774343478369557070, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -3354500316884884755, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  UpAnimationFrames:
+  - Sprite: {fileID: 4184561307446806841, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -5254105826509342739, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -7449017745344809550, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 4184561307446806841, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -5254105826509342739, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -7449017745344809550, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 4184561307446806841, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -5254105826509342739, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -7449017745344809550, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 4697201306376617759, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  SideAnimationFrames:
+  - Sprite: {fileID: -6312480985708212106, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 7527902964390740195, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -187268310155147816, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -6312480985708212106, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 7527902964390740195, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -187268310155147816, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -6312480985708212106, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 7527902964390740195, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -187268310155147816, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -4468065730054215311, guid: 638dcbb0e0cf39c44858cd069c186cf1, type: 3}
+    HoldForTicks: 20
+  Looping: 0
+  LoopStart: 0
+  LoopEnd: 0

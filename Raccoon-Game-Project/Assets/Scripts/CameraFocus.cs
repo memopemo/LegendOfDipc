@@ -21,12 +21,29 @@ public class CameraFocus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        if (!target)
+        {
+            PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+            Debug.Assert(player, "No Player Found to focus Camera on.");
+            if(player)
+            {
+                target = player.transform;
+            }
+            else
+            {
+                
+                target = new GameObject("No Player").transform;
+            }
+            
+        }
     }
 
     //Set position so the camera does not fly over to the player from its original position in the editor when the scene starts.
     public void InitializeCameraPosition(Vector3 startingDirection)
     {
-        transform.position = target.position + startingDirection;
+        if(target)
+            transform.position = target.position + startingDirection;
     }
     void OnValidate()
     {
@@ -48,14 +65,17 @@ public class CameraFocus : MonoBehaviour
         _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, distance, Time.deltaTime * followSpeed);
 
         //get player
-        DirectionedObject CurrentPlayer = FindFirstObjectByType<PlayerStateManager>().directionedObject;
-        if (target.gameObject == CurrentPlayer.gameObject)
+        PlayerStateManager CurrentPlayer = FindFirstObjectByType<PlayerStateManager>();
+        if(CurrentPlayer != null)
         {
-            playerLookAhead = Vector2.SmoothDamp(playerLookAhead, CurrentPlayer.direction, ref lookaheadVelocity, lookaheadTime);
-        }
-        else
-        {
-            playerLookAhead = Vector2.SmoothDamp(playerLookAhead, Vector2.zero, ref lookaheadVelocity, followSpeed);
+            if (target.gameObject == CurrentPlayer.gameObject)
+            {
+                playerLookAhead = Vector2.SmoothDamp(playerLookAhead, CurrentPlayer.directionedObject.direction, ref lookaheadVelocity, lookaheadTime);
+            }
+            else
+            {
+                playerLookAhead = Vector2.SmoothDamp(playerLookAhead, Vector2.zero, ref lookaheadVelocity, followSpeed);
+            }
         }
 
         //position camera with regards to previous position.

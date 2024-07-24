@@ -33,6 +33,7 @@ MonoBehaviour:
   - {fileID: 8786590383965031118, guid: 2a5172aac0039d2468bb35f27a000c1b, type: 3}
   - {fileID: 8922810714337661161, guid: 81d1c5ccd2cec1f448313076dd37d674, type: 3}
   UsableKeyItems:
+  - {fileID: 4146058643578100259, guid: 07a1340d2bbe4f045995998e4705684b, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -43,8 +44,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4146058643578100259, guid: 07a1340d2bbe4f045995998e4705684b, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

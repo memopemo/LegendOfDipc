@@ -13,6 +13,7 @@ namespace Animator2D
         public int currentAnimation;
         private int currentFrameTick; //NOTE: Relying on being 60fps. using faster fps is not accounted for!
         public int currentAnimationFrame;
+        public int finishedFrames;
 
         public void Start()
         {
@@ -23,6 +24,10 @@ namespace Animator2D
 
         public void FixedUpdate()
         {
+            // if(gameObject.name == "Player")
+            // {
+            //     print(animations[currentAnimation].SideAnimationFrames[currentAnimationFrame].HoldForTicks);
+            // }
             if (currentFrameTick == animations[currentAnimation].SideAnimationFrames[currentAnimationFrame].HoldForTicks)
             {
                 GetNextFrame();
@@ -46,6 +51,7 @@ namespace Animator2D
             }
             if (currentAnimationFrame > animations[currentAnimation].SideAnimationFrames.Count - 1)
             {
+                finishedFrames += 1;
                 currentAnimationFrame -= 1;
             }
 
@@ -71,6 +77,7 @@ namespace Animator2D
             currentAnimationFrame = frame;
             spriteRenderer.sprite = GetFrameBasedOnDirection(frame);
             currentFrameTick = 0;
+            finishedFrames = 0;
         }
         public void RestartAnimation(int frame = 0)
         {

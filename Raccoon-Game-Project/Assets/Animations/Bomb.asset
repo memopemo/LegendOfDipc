@@ -9,30 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
-  DownAnimationFrames:
+  AnimationFrames:
   - Sprite: {fileID: 8444293232203134758, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
     HoldForTicks: 15
   - Sprite: {fileID: 5224952622436123570, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
     HoldForTicks: 15
   - Sprite: {fileID: 8886918382856436342, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
     HoldForTicks: 15
-  UpAnimationFrames:
-  - Sprite: {fileID: 8444293232203134758, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
-    HoldForTicks: 15
-  - Sprite: {fileID: 5224952622436123570, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
-    HoldForTicks: 15
-  - Sprite: {fileID: 8886918382856436342, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
-    HoldForTicks: 15
-  SideAnimationFrames:
-  - Sprite: {fileID: 8444293232203134758, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
-    HoldForTicks: 15
-  - Sprite: {fileID: 5224952622436123570, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
-    HoldForTicks: 15
-  - Sprite: {fileID: 8886918382856436342, guid: 1c38685a9b8535548b2b5c2890a3a8af, type: 3}
-    HoldForTicks: 15
-  Looping: 1
+  Looping: 0
   LoopStart: 0
-  LoopEnd: 2
+  LoopEnd: 0

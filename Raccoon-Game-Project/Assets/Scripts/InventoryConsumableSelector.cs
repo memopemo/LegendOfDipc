@@ -26,23 +26,26 @@ public class InventoryConsumableSelector : MonoBehaviour
     [NonSerialized] Image image;
     [SerializeField] Sprite imageDisabled;
     Sprite imageEnabled;
+    Inventory inventory;
     // Start is called before the first frame update
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
         imageEnabled = image.sprite;
+        inventory = FindAnyObjectByType<Inventory>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(inventory.inTransition) return;
         RectTransform currentIndexedSlotObject = rectTransform.parent.Find(SLOT_NAME + selectionIndex) as RectTransform;
         if (currentIndexedSlotObject != null)
         {
             rectTransform.position = Vector3.Lerp(rectTransform.position, currentIndexedSlotObject.position, Time.deltaTime * ANIMATION_SCALE);
         }
-        if (IsSwitchPressed())
+        if (UIInput.IsSwitchPressed())
         {
             //toggle
             inputtable ^= true;
@@ -58,12 +61,12 @@ public class InventoryConsumableSelector : MonoBehaviour
             image.sprite = imageEnabled;
         }
         //Only move if enabled.
-        if (IsDownPressed())
+        if (UIInput.IsDownPressed())
         {
             selectionIndex += rowWidth;
             selectionIndex %= numSlots;
         }
-        else if (IsUpPressed())
+        else if (UIInput.IsUpPressed())
         {
             selectionIndex -= rowWidth;
             if (selectionIndex < 0)
@@ -71,12 +74,12 @@ public class InventoryConsumableSelector : MonoBehaviour
                 selectionIndex = numSlots + selectionIndex;
             }
         }
-        else if (IsRightPressed())
+        else if (UIInput.IsRightPressed())
         {
             selectionIndex++;
             selectionIndex %= numSlots;
         }
-        else if (IsLeftPressed())
+        else if (UIInput.IsLeftPressed())
         {
             selectionIndex--;
             if (selectionIndex < 0)
@@ -84,36 +87,5 @@ public class InventoryConsumableSelector : MonoBehaviour
                 selectionIndex = numSlots + selectionIndex;
             }
         }
-    }
-    bool IsDownPressed() 
-    {
-        return Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.S);
-    }
-
-    bool IsUpPressed() 
-    {
-        return Input.GetKeyDown(KeyCode.UpArrow)   ||
-            Input.GetKeyDown(KeyCode.W);
-    }
-
-    bool IsRightPressed()
-    {
-        return Input.GetKeyDown(KeyCode.RightArrow)    ||
-            Input.GetKeyDown(KeyCode.D);
-    }
-
-    bool IsLeftPressed()
-    {
-        return Input.GetKeyDown(KeyCode.LeftArrow)     ||
-            Input.GetKeyDown(KeyCode.A);
-    }
-    bool IsSwitchPressed() 
-    {
-        return Input.GetButtonDown("Fire1") ||
-            Input.GetButtonDown("Fire2") ||
-            Input.GetKeyDown(KeyCode.Return) ||
-            Input.GetKeyDown(KeyCode.Space) ||
-            Input.GetKeyDown(KeyCode.LeftControl);
     }
 }

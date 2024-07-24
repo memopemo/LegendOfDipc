@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6651752584231437536}
   - component: {fileID: 2342084741133098327}
   - component: {fileID: 7483217120653915021}
+  - component: {fileID: 8255492644390974018}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -164,8 +165,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b56681d9c3778ad40aa3543702373ab9, type: 2}
   - {fileID: 11400000, guid: 552567eb7e6e9d64e9e140bf983fa43f, type: 2}
   - {fileID: 11400000, guid: 06c636641cb978c4192e4f6b83c0d6d3, type: 2}
+  - {fileID: 11400000, guid: fb59fcbebfb6b2e4db4cafa29965b67f, type: 2}
+  - {fileID: 11400000, guid: 02909bdb592566d4eb3abe9665b3bb84, type: 2}
+  - {fileID: 11400000, guid: d62128ae141ec4945992cfdcd14fb530, type: 2}
+  - {fileID: 11400000, guid: fb59fcbebfb6b2e4db4cafa29965b67f, type: 2}
+  - {fileID: 11400000, guid: c1fc9139e5e423343884b6856719eddf, type: 2}
+  - {fileID: 11400000, guid: 186ae5d4e0d69ea40acb5509e67f3dab, type: 2}
+  - {fileID: 11400000, guid: 72265e7fb5a3019468e183d79211570c, type: 2}
+  - {fileID: 11400000, guid: eb6599df7ebc9ea48817106409fd8198, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
+  finishedFrames: 0
 --- !u!58 &1761723810690666459
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -325,6 +335,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d30c41fdb283a8439fd1cdc4948c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8255492644390974018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468895260007154293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: 6122c64141200dd4db55734e1c395092, type: 3}
+    isCancelable: 0
+  interruptableClip: {fileID: 0}
 --- !u!1 &3817215317610549563
 GameObject:
   m_ObjectHideFlags: 0

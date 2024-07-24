@@ -84,6 +84,24 @@ public static class SaveManager
         return true;
 
     }
+    public static bool CanUseConsumableItem(int index)
+    {
+        SaveFile sf = GetSave();
+        if(sf.InventoryConsumableType[index] <= 0 || sf.InventoryConsumableCount[index] <= 0)
+        {
+            sf.InventoryConsumableType[index] = 0;
+            sf.InventoryConsumableCount[index] = 0;
+            return false;
+        }
+        return true;
+    }
+    
+    public static void DecrementConsumableItem(int index)
+    {
+        SaveFile sf = GetSave();
+        sf.InventoryConsumableCount[index]--;
+    }
+
     #if DEBUG
     public static void DebugMaxOut()
     {
