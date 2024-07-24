@@ -2,6 +2,30 @@
 
 Add to the top of the list for the most recent entry.
 
+## Date: July 19th through 23rd
+
+I was mostly inspired when Jack told me I should really work on this more.
+
+- Added Shootable Bombs
+- Added Hookshot
+- Added Hookshot block
+- Added some player animations for both
+- Added NoiseMaker, a per-object sound library
+- Utilized Unity's Built-In Audio Mixer
+- Added lever sound effects
+- Added step button sound effects
+- Added default enemy sound effects
+- Added player grass step sound effect
+- Added UI sound effects
+- Added SimpleAnimator2D and its data class, which allows non-directioned objects to use animation.
+- Added transition for inventory screen (fly up, then fly down)
+
+## Date: May 6th through ???
+
+- Added Bombs
+- Uhh i forgot
+- Tried to work on paths (man fuck this)
+
 ## Date: May 3rd?? through May 6th
 
 - Added Money drops
