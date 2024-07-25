@@ -30,11 +30,11 @@ So your total buffs to choose from at any time is (pendants_collected)^2
 
 ## Buffs
 
-![demon buffs image](imgs/demon_buffs.png)
+![demon buffs image]()
 |Image                                                                                     | Buff Name |Description|
 |----------------------------------------------------------------------------------------- |-----------|-----------|
 |![Attack](imgs/demon_buffs_1.png)![Attack+](imgs/demon_buffs_29.png)                      | Attack    | Up's Attack Damage by 1|
-|![Swing](imgs/demon_buffs_8.png)![Swing+](imgs/demon_buffs_36.png)                                   | Swing     | Makes you able to Swing any weapon|
+|![Swing](imgs/demon_buffs_8.png)![Swing+](../imgs/demon_buffs_36.png)                                   | Swing     | Makes you able to Swing any weapon|
 |![Vault](imgs/demon_buffs_15.png)                                                            | Vault     | Sligtly longer hang time when jumping|
 |![Swipe](imgs/demon_buffs_22.png)                                                            | Swipe     | Makes you able to Backhand with any weapon|
 |![Triple Hit](imgs/demon_buffs_43.png)                                                            | Triple Hit| Makes you able to Triple swing with any weapon.|

@@ -19,7 +19,7 @@ public class DebugFreeRoamPlayerState : IPlayerState
 
     public void OnUpdate(PlayerStateManager manager)
     {
-        if (Debug.isDebugBuild) return; //failsafe
+        if (!Debug.isDebugBuild) return; //failsafe
         manager.transform.position += (Vector3)manager.rawInput*speed;
         if (Input.GetKeyDown(KeyCode.PageUp)) 
         {

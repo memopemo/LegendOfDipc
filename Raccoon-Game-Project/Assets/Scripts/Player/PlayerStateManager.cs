@@ -61,8 +61,8 @@ public class PlayerStateManager : MonoBehaviour
             { KeyCode.KeypadPeriod, new NoInputPlayerState()        },
         };
     #endif
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called during initialization of a script. Use for setting up references to gameobjects and components before sending/reading data from them.
+    void Awake()
     {
         //assuming initial place is a safe spot.
         FallReturnPosition = transform.position;
@@ -75,7 +75,11 @@ public class PlayerStateManager : MonoBehaviour
         directionedObject = GetComponent<DirectionedObject>();
         animator = GetComponent<Animator2D.Animator2D>();
         noiseMaker = GetComponent<NoiseMaker>();
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         //State Init
         currentPlayerState = new DefaultPlayerState();
         currentPlayerState.OnEnter(this);
@@ -255,13 +259,25 @@ public class PlayerStateManager : MonoBehaviour
     }
     public void DisableSprite()
     {
-        animator.SetAnimation(21);
-        animator.enabled = false;
+        Transform sprite = transform.Find("Sprite");
+        if(sprite)
+            transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = false;
+        else
+        {
+            Debug.LogWarning("No heightable sprite found.");
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
     public void EnableSprite()
     {
-        animator.SetAnimation(0);
-        animator.enabled = true;
+        Transform sprite = transform.Find("Sprite");
+        if(sprite)
+            transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = true;
+        else
+        {
+            Debug.LogWarning("No heightable sprite found.");
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 }
 

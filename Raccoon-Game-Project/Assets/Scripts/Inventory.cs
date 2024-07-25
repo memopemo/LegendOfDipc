@@ -22,7 +22,7 @@ public class Inventory : MonoBehaviour
         Application.targetFrameRate = 60;
         isOn = false;
         transform.GetChild(0).gameObject.SetActive(false);
-        extent = transform.GetChild(0).GetComponent<RectTransform>().rect.width;
+        extent = transform.GetChild(0).GetComponent<RectTransform>().rect.height;
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
         timer += Time.deltaTime;
         Vector3 tempPos = bg.localPosition;
 
-        bg.localPosition = new Vector3(isOn ? flyIn.Evaluate(timer)*extent : flyOut.Evaluate(timer)*extent, tempPos.y, tempPos.z);
+        bg.localPosition = new Vector3(tempPos.x, isOn ? flyIn.Evaluate(timer)*extent : flyOut.Evaluate(timer)*extent, tempPos.z);
         inTransition = timer < (isOn ? flyIn.keys.Last().time : flyOut.keys.Last().time); //cooldown
 
         #if DEBUG
