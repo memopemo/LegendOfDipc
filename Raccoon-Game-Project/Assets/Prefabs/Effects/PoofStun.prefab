@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8584686532582188375}
   - component: {fileID: 3383524068084997222}
   m_Layer: 0
-  m_Name: Poof
+  m_Name: PoofStun
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1487,7 +1487,10 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 8934784729908925510, guid: bdd0643e001d7164ca56ec3b041e3737, type: 3}
+    - sprite: {fileID: -8637711046083653027, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -2876360026398824517, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -8637711046083653027, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
+    - sprite: {fileID: -2876360026398824517, guid: 2f7e382f82b83de4aa5dbbeef75b36d1, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

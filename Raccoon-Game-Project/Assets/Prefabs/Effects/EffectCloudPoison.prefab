@@ -9767,6 +9767,7 @@ GameObject:
   - component: {fileID: 890675769844008951}
   - component: {fileID: 4894936839933934610}
   - component: {fileID: 8685637464697865112}
+  - component: {fileID: 3250652370125343402}
   m_Layer: 0
   m_Name: EffectCloudPoison
   m_TagString: Untagged
@@ -14630,5 +14631,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.053058147, y: 0.060023546}
+  m_Offset: {x: 0, y: 0}
   m_Radius: 1.5
+--- !u!114 &3250652370125343402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4856225423379974352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6720230dc7b874a98b63f76c93c033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 1

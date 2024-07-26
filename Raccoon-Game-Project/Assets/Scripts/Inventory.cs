@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,14 @@ public class Inventory : MonoBehaviour
             Invoke(nameof(ToggleBG), isOn ? flyOut.keys.Last().time : flyIn.keys.Last().time - 0.5f);
             isOn = !isOn;
             timer = 0;
+            if(isOn)
+            {
+                Invoke(nameof(Pause), 0.5f);
+            }
+            else
+            {
+                FreezeMmanager.UnfreezeAll<PauseFreezer>();
+            }
         }
         if(isOn)
         {
@@ -73,5 +82,9 @@ public class Inventory : MonoBehaviour
     void ToggleBG()
     {
         transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
+    }
+    void Pause()
+    {
+        FreezeMmanager.FreezeAll<PauseFreezer>();
     }
 }

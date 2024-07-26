@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8584686532582188375}
   - component: {fileID: 3383524068084997222}
   m_Layer: 0
-  m_Name: Poof
+  m_Name: PoofFire
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -808,7 +808,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 180
       mode: 0
       spread: 0
       speed:
@@ -1487,7 +1487,13 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 8934784729908925510, guid: bdd0643e001d7164ca56ec3b041e3737, type: 3}
+    - sprite: {fileID: 6925927166748422914, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
+    - sprite: {fileID: 7567407873285171442, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
+    - sprite: {fileID: 513339799301267428, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
+    - sprite: {fileID: -1757335642855331371, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
+    - sprite: {fileID: -7714586373508816260, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
+    - sprite: {fileID: 305905328629084306, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
+    - sprite: {fileID: 2066254723845270352, guid: 4c6c737c57be658418bbc8148c882753, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

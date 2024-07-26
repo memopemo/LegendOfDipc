@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1290532731855776984}
   - component: {fileID: 2128122013405908764}
   - component: {fileID: 8152873024121541057}
+  - component: {fileID: -3545479493172240612}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -91,7 +92,7 @@ SpriteRenderer:
   m_Size: {x: 0.75, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3788700442903066258
@@ -123,6 +124,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72d8133004aabe340929627f779f0a5c, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
+  finishedFrames: 0
 --- !u!114 &1272939400643148194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,3 +298,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-3545479493172240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857793910758234772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147b11135cc723646af1da0809381a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

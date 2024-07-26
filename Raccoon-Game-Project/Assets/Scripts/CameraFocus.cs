@@ -5,7 +5,7 @@ public class CameraFocus : MonoBehaviour
     [SerializeField] Collider2D bounds;
     public Transform target;
     [SerializeField] Vector2 offset;
-    [SerializeField] float distance;
+    [SerializeField] float distance; //units from the middle of the screen to the bottom/top. the full height of the camera box is 2*distance.
     public float shakeIntensity;
 
     [SerializeField] float followSpeed;
@@ -19,7 +19,7 @@ public class CameraFocus : MonoBehaviour
     #endif
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
         if (!target)
@@ -37,6 +37,7 @@ public class CameraFocus : MonoBehaviour
             }
             
         }
+        Camera camera = Camera.main;
     }
 
     //Set position so the camera does not fly over to the player from its original position in the editor when the scene starts.
@@ -61,8 +62,7 @@ public class CameraFocus : MonoBehaviour
     void LateUpdate()
     {
         //set camera properties
-        Camera _camera = GetComponent<Camera>();
-        _camera.orthographicSize = Mathf.Lerp(_camera.orthographicSize, distance, Time.deltaTime * followSpeed);
+        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, distance, Time.deltaTime * followSpeed);
 
         //get player
         PlayerStateManager CurrentPlayer = FindFirstObjectByType<PlayerStateManager>();
@@ -130,5 +130,13 @@ public class CameraFocus : MonoBehaviour
     {
         if(shakeIntensity > strength) return;
         shakeIntensity = strength;
+    }
+    public bool IsOnScreen(Vector2 position)
+    {
+        Rect rect = new(0, 0, distance * 2 * Camera.main.aspect, distance * 2) //make new rect with correct aspect ratio.
+        {
+            center = transform.position
+        };
+        return rect.Contains(position);
     }
 }

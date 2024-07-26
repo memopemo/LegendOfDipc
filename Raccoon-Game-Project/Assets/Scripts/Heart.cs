@@ -25,6 +25,7 @@ public class Heart : MonoBehaviour
                 gameObject.SetActive(false);
                 PlayerHealth.Heal(4, player);
         }
+        
         if (done) //hehe
         {
             if (Random.Range(1, 100) == 37) //hehe

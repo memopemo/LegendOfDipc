@@ -216,6 +216,8 @@ GameObject:
   - component: {fileID: 4206246801660417328}
   - component: {fileID: 1626203985815311911}
   - component: {fileID: 5032275112778573545}
+  - component: {fileID: 127163695993412773}
+  - component: {fileID: 1580135655536457541}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: HurtPlayer
@@ -357,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashParticle: {fileID: 7020248647777366368, guid: a11672e6cd98c134994c572868e93746, type: 3}
-  fallingEffect: {fileID: 0}
+  fallingEffect: {fileID: 7769745493347907057, guid: 50cc7c1fc13b75048846643b553e0940, type: 3}
 --- !u!114 &2475357800452509570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,6 +661,34 @@ MonoBehaviour:
     - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
     isCancelable: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &127163695993412773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b669375777abda42a9c29b54c75b9b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusParticles:
+  - {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
+  - {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
+  - {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
+--- !u!114 &1580135655536457541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d30c41fdb283a8439fd1cdc4948c0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9212373818536585072
 GameObject:
   m_ObjectHideFlags: 0

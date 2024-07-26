@@ -3,29 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonBuffs : MonoBehaviour
+public static class DemonBuffs
 {
     public enum DemonBuff { Inactive,
-    Attack0,  Attack1,  Swing0,    Swing1,    Vault,    Swipe,    TripleHit, 
-    Regen0,   Regen1,   Regen2,    Fasting0,  Fasting1, Teleport, Focus, 
-    Speed0,   Speed1,   Stun0,     Stun1,     Astir,    Miss,     Moment,
-    Defense0, Defense1, Defense2,  Balance,   Punch0,   Punch1,   Resilient,
-    Poision0, Poision1, Flame0,    Flame1,    Reflect,  Trap,     Docile,
-    Target0, Target1,   Puncture0, Puncture1, Cloak,    Zip,      Distract,
-    Loot0,   Loot1,     Vacuum,    Orbiter,   Health,   Plunder,
+    Attack0,    Regen0,     Speed0, Defense0,   Poision0,   Target0,    Loot0, 
+    Swing0,     Fasting0,   Stun0,  Balance,    Flame0,     Puncture0,  Vacuum,
+    Vault,      Teleport,   Astir,  Punch0,     Reflect,    Cloak,      Orbiter,
+    Attack1,    Regen1,     Speed1, Defense1,   Trap,       Zip,        Health0,
+    Swing1,     Focus,      Miss,   Resilient,  Poision1,   Target1,    Loot1,
+    Swipe,      Fasting1,   Stun1,  Punch1,     Flame1,     Puncture1,  Health1,
+    TripleHit,  Regen2,     Moment, Defense2,   Docile,     Distract,   Plunder,
     }
-    [NonSerialized] public DemonBuff[] demonBuffs;
-    [NonSerialized] public float[] buffTimers;
+    [NonSerialized] public static DemonBuff[] demonBuffs = new DemonBuff[NUM_OF_BUFFS];
+    [NonSerialized] public static float[] buffTimers = new float[NUM_OF_BUFFS];
     const int NUM_OF_BUFFS = 3;
-    // Start is called before the first frame update
-    void Start()
-    {
-        demonBuffs = new DemonBuff[NUM_OF_BUFFS];
-        buffTimers = new float[NUM_OF_BUFFS];
-    }
 
-    // Update is called once per frame
-    void Update()
+    //ONLY THE PLAYER MAY CALL THIS!
+    public static void Update()
     {
         for (int i = 0; i < NUM_OF_BUFFS-1; i++)
         {
@@ -36,7 +30,7 @@ public class DemonBuffs : MonoBehaviour
             }
         }
     }
-    public bool HasBuff(DemonBuff wantedBuff)
+    public static bool HasBuff(DemonBuff wantedBuff)
     {
         for (int i = 0; i < NUM_OF_BUFFS-1; i++)
         {

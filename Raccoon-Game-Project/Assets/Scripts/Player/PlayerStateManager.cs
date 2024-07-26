@@ -15,7 +15,6 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public Heightable height;
     [NonSerialized] public Animator2D.Animator2D animator;
     [NonSerialized] public NoiseMaker noiseMaker;
-
     //* General Variables *//
     public IPlayerState currentPlayerState;
     public float additionalSpeed;
@@ -109,6 +108,7 @@ public class PlayerStateManager : MonoBehaviour
 
         // Switch State
         currentPlayerState.OnUpdate(this);
+        DemonBuffs.Update();
         
         #if DEBUG
         //debug
