@@ -12,6 +12,7 @@
 
     public void OnUpdate(PlayerStateManager manager)
     {
+        CommonPlayerState.CheckWater(manager);
         if (manager.stateTransitionTimer1 == 0)
         {
             manager.SwitchState(new DefaultPlayerState());

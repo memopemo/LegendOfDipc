@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6155288292061979859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d1dc9a30d3f4f0bbb9e3d7a0cdb71f, type: 3}
+  m_Name: AnaglyphFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 550
+    layerMask:
+      m_Bits: 4294967295
+    shader: {fileID: 4800000, guid: fc7413ff732c8401fad15eadb52546f3, type: 3}
+    spacing: 0.2
+    focalPoint: 10
+    overlayMode: 1
+    blendMode: 0
+    opacityOverlayRenderTextureFormat: 0
+    depthOverlayBufferBitCount: 24
+    material: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

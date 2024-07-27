@@ -29,7 +29,7 @@ class Freezer : MonoBehaviour
         foreach (Behaviour behaviour in gob.GetComponents(typeof(Behaviour)).Cast<Behaviour>())
         {
             // add behaviours as necessary.
-            if( !behaviour.enabled || behaviour is Freezer || behaviour is Camera)   
+            if( !behaviour.enabled || behaviour is Freezer || behaviour is Camera || behaviour is AudioListener)   
             {
                 continue;
             }

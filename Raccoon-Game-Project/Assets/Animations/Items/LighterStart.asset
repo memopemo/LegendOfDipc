@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: LighterStart
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: 7596150304917537255, guid: cdbc818e84baa3d489dd93d5491fa833, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -8437604534752617649, guid: cdbc818e84baa3d489dd93d5491fa833, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 7184307402141736318, guid: cdbc818e84baa3d489dd93d5491fa833, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 1322067092114748391, guid: cdbc818e84baa3d489dd93d5491fa833, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 3014819699881131407, guid: cdbc818e84baa3d489dd93d5491fa833, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 6384192660224635656, guid: cdbc818e84baa3d489dd93d5491fa833, type: 3}
+    HoldForTicks: 20
+  Looping: 0
+  LoopStart: 0
+  LoopEnd: 0

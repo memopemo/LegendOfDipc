@@ -113,4 +113,32 @@ class CommonPlayerState
         go = null;
         return false;
     }
+
+    public static void CheckWater(PlayerStateManager manager)
+    {
+        ContactFilter2D contactFilter = new()
+        {
+            layerMask = LayerMask.NameToLayer("Default"),
+            useTriggers = true,
+            minDepth = manager.transform.position.z,
+            maxDepth = manager.transform.position.z + 3
+            
+        };
+        BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => manager.SwitchState(new SwimPlayerState()), contactFilter);
+    }
+
+    public static bool BoxCastFind<T>( Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
+    {
+        List<RaycastHit2D> results = new();
+        int _ = Physics2D.BoxCast(origin, size, 0, Vector2.zero, contactFilter, results, 0);
+        foreach (RaycastHit2D hit in results)
+        {
+            if (hit.collider.TryGetComponent(out T foundT))
+            {
+                onFind(foundT);
+                return true;
+            }
+        }
+        return false;
+    }
 }

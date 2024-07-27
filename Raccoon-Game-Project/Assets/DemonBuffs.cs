@@ -27,6 +27,7 @@ public static class DemonBuffs
             if(buffTimers[i] <= 0)
             {
                 demonBuffs[i] = DemonBuff.Inactive;
+                buffTimers[i] = 0;
             }
         }
     }

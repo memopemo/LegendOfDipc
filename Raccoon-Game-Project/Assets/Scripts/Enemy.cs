@@ -51,14 +51,14 @@ public abstract class Enemy : MonoBehaviour
             AIUpdate();
         }
 
-        /* Disable ourselves if we are too far away.
-         * Other objects can re-enable us if needed (like say a dungeon enemy spawner)
-         */
-        PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
-        if (player && Vector2.Distance(player.transform.position, transform.position) > DISABLE_DISTANCE)
-        {
-            gameObject.SetActive(false);
-        }
+        // /* Disable ourselves if we are too far away.
+        //  * Other objects can re-enable us if needed (like say a dungeon enemy spawner)
+        //  */
+        // PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+        // if (player && Vector2.Distance(player.transform.position, transform.position) > DISABLE_DISTANCE)
+        // {
+        //     gameObject.SetActive(false);
+        // }
     }
 
     // This is the only update function that enemies should override.

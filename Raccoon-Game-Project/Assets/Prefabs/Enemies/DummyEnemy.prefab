@@ -432,7 +432,7 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1626203985815311911}
         m_TargetAssemblyTypeName: Switch, Assembly-CSharp
         m_MethodName: ActivateOnDead
         m_Mode: 1
@@ -617,19 +617,7 @@ MonoBehaviour:
       m_Calls: []
   OnDead:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4206246801660417328}
-        m_TargetAssemblyTypeName: EnemyLoot, Assembly-CSharp
-        m_MethodName: SpawnLoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnAwake:
     m_PersistentCalls:
       m_Calls: []
@@ -674,9 +662,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusParticles:
-  - {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
-  - {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
-  - {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
+  - {fileID: 7070755822354513567, guid: f785c07e4dc302f47b19ac52844e6079, type: 3}
+  - {fileID: 7070755822354513567, guid: af3ebbeaa98c31e42864ff2f57090b5e, type: 3}
+  - {fileID: 7070755822354513567, guid: 6b7ecaf01524f294488c1f856f90c66c, type: 3}
 --- !u!114 &1580135655536457541
 MonoBehaviour:
   m_ObjectHideFlags: 0

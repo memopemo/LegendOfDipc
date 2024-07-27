@@ -157,9 +157,10 @@ public class PlayerStateManager : MonoBehaviour
         {
             //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
             if (height.height > 0) return;
+            if(currentPlayerState is HurtPlayerState) return;
             PlayerHealth.TakeDamage(1, this);
             Knockback(enemy.transform);
-            stateTransitionTimer1 = 25;
+            stateTransitionTimer1 = 25; //25 frames of knockback.
             SwitchState(new HurtPlayerState());
             return;
         }

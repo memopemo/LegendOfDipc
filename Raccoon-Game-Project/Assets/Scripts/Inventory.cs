@@ -20,7 +20,6 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 60;
         isOn = false;
         transform.GetChild(0).gameObject.SetActive(false);
         extent = transform.GetChild(0).GetComponent<RectTransform>().rect.height;
