@@ -12,6 +12,7 @@ public class CameraFocus : MonoBehaviour
     [SerializeField] float lookaheadTime;
 
     Vector2 playerLookAhead;
+    PlayerStateManager player;
     const float ORTHO_CAMERA_DISTANCE = 10;
     Vector2 lookaheadVelocity;
     #if DEBUG
@@ -24,7 +25,7 @@ public class CameraFocus : MonoBehaviour
         
         if (!target)
         {
-            PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+            player = FindFirstObjectByType<PlayerStateManager>();
             Debug.Assert(player, "No Player Found to focus Camera on.");
             if(player)
             {
@@ -65,12 +66,11 @@ public class CameraFocus : MonoBehaviour
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, distance, Time.deltaTime * followSpeed);
 
         //get player
-        PlayerStateManager CurrentPlayer = FindFirstObjectByType<PlayerStateManager>();
-        if(CurrentPlayer != null)
+        if(player != null)
         {
-            if (target.gameObject == CurrentPlayer.gameObject)
+            if (target.gameObject == player.gameObject)
             {
-                playerLookAhead = Vector2.SmoothDamp(playerLookAhead, CurrentPlayer.directionedObject.direction, ref lookaheadVelocity, lookaheadTime);
+                playerLookAhead = Vector2.SmoothDamp(playerLookAhead, player.directionedObject.direction, ref lookaheadVelocity, lookaheadTime);
             }
             else
             {

@@ -23,6 +23,7 @@ public static class DemonBuffs
     {
         for (int i = 0; i < NUM_OF_BUFFS-1; i++)
         {
+            if(demonBuffs[i] == DemonBuff.Inactive) return;
             Timer.DecrementTimer(ref buffTimers[i]);
             if(buffTimers[i] <= 0)
             {

@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 namespace Animator2D
@@ -8,10 +9,10 @@ namespace Animator2D
     {
         public SimpleAnimationData[] animations;
         SpriteRenderer spriteRenderer;
-        public int currentAnimation;
-        private int currentFrameTick; //NOTE: Relying on being 60fps. using faster fps is not accounted for!
-        public int currentAnimationFrame;
-        public int finishedFrames;
+        [NonSerialized] public int currentAnimation;
+        [NonSerialized] private int currentFrameTick; //NOTE: Relying on being 60fps. using faster fps is not accounted for!
+        [NonSerialized] public int currentAnimationFrame;
+        [NonSerialized] public int finishedFrames;
 
         public void Start()
         {

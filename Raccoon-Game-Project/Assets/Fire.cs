@@ -16,9 +16,11 @@ public class Fire : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<NoiseMaker>().Play(0);
         print(gameObject.name);
         InvokeRepeating(nameof(FireTick), 4,4); //start firing.
         fireInstance = Instantiate(fireEffect, transform).GetComponent<ParticleSystem>();
+        
 
         //attach attachedObject.
         if(transform.parent != null && transform.parent.TryGetComponent(out Burnable burnable))
@@ -53,6 +55,7 @@ public class Fire : MonoBehaviour
 
     void FireTick()
     {
+        GetComponent<NoiseMaker>().Play(0);
         if(UnityEngine.Random.Range(0,4) == 0) //Burn (1/4th chance)
         {
             Die();
