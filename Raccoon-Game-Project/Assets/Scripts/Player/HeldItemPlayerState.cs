@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 
 class HeldItemPlayerState : IPlayerState
 {
@@ -12,6 +13,7 @@ class HeldItemPlayerState : IPlayerState
     const int HOLD_ENTER_LENGTH_FRAMES = 20;
     const int HOLD_EXIT_LENGTH_FRAMES = 10;
     const int SHOOT_LENGTH_FRAMES = 10;
+    HeldPlayerItem holdingItem;
 
 
     /** Some info:
@@ -19,7 +21,10 @@ class HeldItemPlayerState : IPlayerState
      * 2 is for exiting
      * GeneralTimer1 is for kickback animation.
      */
-   
+    public HeldItemPlayerState(HeldPlayerItem item)
+    {
+        holdingItem = item;
+    }
     
     public void OnEnter(PlayerStateManager manager)
     {
@@ -30,6 +35,10 @@ class HeldItemPlayerState : IPlayerState
 
     public void OnLeave(PlayerStateManager manager)
     {
+        if(holdingItem)
+        {
+            Object.Destroy(holdingItem);
+        }
     }
 
     public void OnUpdate(PlayerStateManager manager)
@@ -47,10 +56,10 @@ class HeldItemPlayerState : IPlayerState
         else if(manager.stateTransitionTimer2 == 0)
         {
             manager.SwitchState(new DefaultPlayerState());
-            GameObject.Destroy(manager.generalGO);
+            Object.Destroy(holdingItem);
         }
 
-        if(manager.generalGO == null) //is all used up?
+        if(holdingItem == null) //is all used up?
         {
             manager.SwitchState(new DefaultPlayerState());
             manager.animator.SetAnimation(0);

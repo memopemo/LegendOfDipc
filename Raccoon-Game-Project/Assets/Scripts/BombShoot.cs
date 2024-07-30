@@ -2,27 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombShoot : MonoBehaviour
+public class BombShoot : HeldPlayerItem
 {
     [SerializeField] int ammo;
     bool used;
     [SerializeField] GameObject shoot;
-    DirectionedObject direction;
 
-    PlayerStateManager player;
-    void Start()
+    new void Start()
     {
+        base.Start();
         //players direction will stay the same
-        player = FindFirstObjectByType<PlayerStateManager>();
-        player.SwitchState(new HeldItemPlayerState());
-        player.generalGO = gameObject;
-        transform.parent = player.transform;
-        transform.localPosition = new Vector2(0,0) + (Vector2)player.directionedObject.direction;
+        transform.localPosition = new Vector2(0,0) + direction;
         InvokeRepeating(nameof(Shoot), 2, 1);
-        direction = GetComponent<DirectionedObject>();
-        direction.direction = player.directionedObject.direction;
+        GetComponent<DirectionedObject>().direction = direction;
     }
-    void Update()
+    protected override void Update()
     {
         if(!Input.GetButton("Fire2"))
         {
@@ -36,7 +30,6 @@ public class BombShoot : MonoBehaviour
                 (player.currentPlayerState as HeldItemPlayerState).ExitCanceled(player);
                 Destroy(gameObject);
             }
-            
         }
     }
 
@@ -55,7 +48,7 @@ public class BombShoot : MonoBehaviour
             //offset bullet visually to better match where the rocket is.
 
             var obj = Instantiate(shoot, transform.position, transform.rotation);
-            obj.GetComponent<DirectionedObject>().direction = player.directionedObject.direction;
+            obj.GetComponent<DirectionedObject>().direction = direction;
 
             (player.currentPlayerState as HeldItemPlayerState).Kickback(player);
 

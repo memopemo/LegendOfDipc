@@ -34,20 +34,20 @@ MonoBehaviour:
   - {fileID: 8922810714337661161, guid: 81d1c5ccd2cec1f448313076dd37d674, type: 3}
   UsableKeyItems:
   - {fileID: 4960648857043262408, guid: d9433f13b9512074493c85b001a280f5, type: 3}
+  - {fileID: 7131586115142719640, guid: a781436feec53c44b9057b7f7b4c6f95, type: 3}
   - {fileID: 0}
+  - {fileID: 7906661301637302047, guid: bf147861c50d5ad40a4d9972142ab356, type: 3}
   - {fileID: 0}
+  - {fileID: 5911373832329431598, guid: 96e49b2ac025c674389781fd4d9f1efa, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 5015729555430519649, guid: 45f32b4697c6faf42a953d21cd09ab6e, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 4146058643578100259, guid: 07a1340d2bbe4f045995998e4705684b, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3599287931856423498, guid: 7530c2d16d625b04298650e5cbb7dcc5, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

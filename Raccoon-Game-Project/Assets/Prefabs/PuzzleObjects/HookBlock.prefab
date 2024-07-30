@@ -198,8 +198,9 @@ GameObject:
   - component: {fileID: 7639139706821552307}
   - component: {fileID: 6008890545901383279}
   - component: {fileID: 377130495769025940}
+  - component: {fileID: 4945395539491162618}
   m_Layer: 0
-  m_Name: GrappleBlock
+  m_Name: HookBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,6 +464,59 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.1819191, y: 0.20112085}
   m_EdgeRadius: 0
+--- !u!114 &4945395539491162618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828025937260295112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0.1
+  m_ApplyToSortingLayers: 000000000db78d1c33c1ce56458f7449
+  m_ShapePath:
+  - {x: -0.6875, y: -0.5625, z: 0}
+  - {x: -0.6875, y: 0.6875, z: 0}
+  - {x: 0.6875, y: 0.6875, z: 0}
+  - {x: 0.6875, y: -0.5625, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 9011503045819750876}
+  m_ShadowShape2DProvider:
+    rid: 6747747508389412883
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0, y: 0.0625, z: 0}
+      m_Extent: {x: 0.62750244, y: 0.56500244, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 0.06
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 0.06
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0.06
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 9011503045819750876}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6747747508389412883
+      type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 
 --- !u!1 &8572463665831490239
 GameObject:
   m_ObjectHideFlags: 0

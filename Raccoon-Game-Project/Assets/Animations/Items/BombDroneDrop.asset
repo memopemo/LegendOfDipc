@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: BombDroneDrop
   m_EditorClassIdentifier: 
   AnimationFrames:
-  - Sprite: {fileID: 2978912562269398115, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: -8473418405782136213, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+    HoldForTicks: 10
+  - Sprite: {fileID: 3236908204618170115, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 30
-  - Sprite: {fileID: -5693072370937438906, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
-    HoldForTicks: 30
-  - Sprite: {fileID: 2978912562269398115, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: -4189544284904829729, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 20
-  - Sprite: {fileID: -5693072370937438906, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: -1908095332522236810, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 20
-  - Sprite: {fileID: 2978912562269398115, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: 1083711992909446496, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: -5693072370937438906, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: -924220933874594299, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: 2993966813869229042, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: -806518491726998127, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: 1205185097493885401, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
+  - Sprite: {fileID: -2121191427619947325, guid: f48e343eb3e08db4bb9eb4c1812996b8, type: 3}
     HoldForTicks: 10
   Looping: 1
   LoopStart: 6

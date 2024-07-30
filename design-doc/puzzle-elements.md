@@ -4,6 +4,10 @@
 
 Can be lifted and placed somewhere else.
 
+## Pushable Blocks
+
+Can be pushed somewhere else, or ontop of something.
+
 ## Dash Blocks
 
 Can only be destroyed by dashing with the [Ram Helmet](obtainables.md#ramming-helmet).

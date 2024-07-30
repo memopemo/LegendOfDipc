@@ -42,7 +42,6 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public int stateTransitionTimer2;
     [NonSerialized] public int generalTimer1;
     [NonSerialized] public int generalTimer2;
-    [NonSerialized] public GameObject generalGO;
 
     #if DEBUG
     //* Debug Variables *//

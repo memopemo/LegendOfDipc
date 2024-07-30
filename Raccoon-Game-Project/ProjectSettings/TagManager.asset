@@ -44,6 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 479049485
+    locked: 0
   - name: Darkness
     uniqueID: 1456390451
     locked: 0
