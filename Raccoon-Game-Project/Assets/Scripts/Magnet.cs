@@ -1,22 +1,25 @@
 using UnityEngine;
 using Unity;
 using Unity.VisualScripting;
-class Magnet : HeldPlayerItem
+
+[RequireComponent(typeof(HeldPlayerItem))]
+class Magnet : MonoBehaviour
 {
     private const int MAGNET_TRAIL_LERP_SPEED = 20;
     private const int MAGNET_RANGE = 8;
     Magnetizable magnetizedObject;
     Vector2 endPoint;
     float startingAngle; //for if our attraction angle is too big from the start.
+    HeldPlayerItem heldPlayerItem;
+    
 
-    new void Start()
+    void Start()
     {
-        base.Start();
         endPoint = defaultEndPoint();
+        heldPlayerItem = GetComponent<HeldPlayerItem>();
     }
-    new void Update()
+    void Update()
     {
-        base.Update();
         Vector2 targetEndPosition = magnetizedObject ? magnetizedObject.transform.position : defaultEndPoint();
         endPoint = Vector2.Lerp(endPoint, targetEndPosition, Vector2.Distance(endPoint, targetEndPosition) * Time.deltaTime * MAGNET_TRAIL_LERP_SPEED);
         if(magnetizedObject)
@@ -26,16 +29,16 @@ class Magnet : HeldPlayerItem
                 magnetizedObject = null;
                 return;
             }
-            if(Vector2Int.RoundToInt((magnetizedObject.transform.position - transform.position).normalized) != direction)
+            if(Vector2Int.RoundToInt((magnetizedObject.transform.position - transform.position).normalized) != heldPlayerItem.direction)
             {
                 magnetizedObject = null;
                 return;
             }
-            magnetizedObject.transform.position = Vector2.MoveTowards(magnetizedObject.transform.position, (Vector2)transform.position + (Vector2)direction * 0.5f, Time.deltaTime * 4);
+            magnetizedObject.transform.position = Vector2.MoveTowards(magnetizedObject.transform.position, (Vector2)transform.position + (Vector2)heldPlayerItem.direction * 0.5f, Time.deltaTime * 4);
         }
     }
 
-    private Vector2 defaultEndPoint() => (Vector2)transform.position + (direction * MAGNET_RANGE);
+    private Vector2 defaultEndPoint() => (Vector2)transform.position + (heldPlayerItem.direction * MAGNET_RANGE);
 
     void FixedUpdate()
     {
@@ -47,13 +50,13 @@ class Magnet : HeldPlayerItem
         }
         if(magnetizedObject != null) return;
         //this shouldnt be that expensive
-        RaycastHit2D[] result = Physics2D.RaycastAll(transform.position, direction, MAGNET_RANGE);
+        RaycastHit2D[] result = Physics2D.RaycastAll(transform.position, heldPlayerItem.direction, MAGNET_RANGE);
         foreach (RaycastHit2D hit in result)
         {
             if (hit.collider.TryGetComponent(out Magnetizable magnetizable))
             {
                 magnetizedObject = magnetizable;
-                magnetizable.BeAttracted(direction);
+                magnetizable.BeAttracted(heldPlayerItem.direction);
                 return;
             }
         }

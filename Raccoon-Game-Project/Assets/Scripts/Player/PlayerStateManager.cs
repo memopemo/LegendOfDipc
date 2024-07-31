@@ -151,27 +151,29 @@ public class PlayerStateManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        CheckDamage(collision.gameObject);
+    }   
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        CheckDamage(collider.gameObject);
+    }
+    private void CheckDamage(GameObject go)
+    {
         //if enemy, take damage.
-        if (collision.gameObject.TryGetComponent(out Enemy enemy))
+        if (go.TryGetComponent(out DamagesPlayer hurtful))
         {
-            //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
-            if (height.height > 0) return;
-            if(currentPlayerState is HurtPlayerState) return;
-            PlayerHealth.TakeDamage(1, this);
-            Knockback(enemy.transform);
-            stateTransitionTimer1 = 25; //25 frames of knockback.
-            SwitchState(new HurtPlayerState());
-            return;
+            TakeDamage(hurtful);
         }
     }
-    public void HitByExplosion(int amount, Transform from)
+    public void TakeDamage(DamagesPlayer hurtful)
     {
         //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
         if (height.height > 0) return;
-        PlayerHealth.TakeDamage(amount, this);
-        Knockback(from);
-        stateTransitionTimer1 = 25;
+        if(currentPlayerState is HurtPlayerState) return;
         if(currentPlayerState is HeldItemPlayerState) return;
+        PlayerHealth.TakeDamage(hurtful.amount, this);
+        Knockback(hurtful.transform);
+        stateTransitionTimer1 = 25; //25 frames of knockback.
         SwitchState(new HurtPlayerState());
         return;
     }

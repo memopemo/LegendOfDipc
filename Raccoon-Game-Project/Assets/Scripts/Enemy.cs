@@ -144,6 +144,19 @@ public abstract class Enemy : MonoBehaviour
             OnHit(sb.gameObject);
             return;
         }
+        if(collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
+        {
+            OnHit(hurtful.gameObject);
+            return;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
+        {
+            OnHit(hurtful.gameObject);
+            return;
+        }
     }
 
 

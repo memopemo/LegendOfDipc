@@ -38,7 +38,6 @@ public class CameraFocus : MonoBehaviour
             }
             
         }
-        Camera camera = Camera.main;
     }
 
     //Set position so the camera does not fly over to the player from its original position in the editor when the scene starts.

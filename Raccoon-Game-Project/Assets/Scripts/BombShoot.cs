@@ -1,33 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BombShoot : HeldPlayerItem
+[RequireComponent(typeof(HeldPlayerItem))]
+public class BombShoot : MonoBehaviour
 {
     [SerializeField] int ammo;
     bool used;
     [SerializeField] GameObject shoot;
+    HeldPlayerItem heldPlayerItem;
 
-    new void Start()
+    void Start()
     {
-        base.Start();
+        heldPlayerItem = GetComponent<HeldPlayerItem>();
         //players direction will stay the same
-        transform.localPosition = new Vector2(0,0) + direction;
+        transform.localPosition = new Vector2(0,0) + heldPlayerItem.direction;
         InvokeRepeating(nameof(Shoot), 2, 1);
-        GetComponent<DirectionedObject>().direction = direction;
+        GetComponent<DirectionedObject>().direction = heldPlayerItem.direction;
     }
-    protected override void Update()
+    void Update()
     {
         if(!Input.GetButton("Fire2"))
         {
             if(used)
             {
-                (player.currentPlayerState as HeldItemPlayerState).ExitUsed(player);
+                //create the used particle
+                (heldPlayerItem.player.currentPlayerState as HeldItemPlayerState).ExitUsed(heldPlayerItem.player);
                 Die();
             }
             else
             {
-                (player.currentPlayerState as HeldItemPlayerState).ExitCanceled(player);
+                (heldPlayerItem.player.currentPlayerState as HeldItemPlayerState).ExitCanceled(heldPlayerItem.player);
                 Destroy(gameObject);
             }
         }
@@ -39,18 +41,16 @@ public class BombShoot : HeldPlayerItem
         {
             if(!used)
             {
-                player.DecrementConsumableItem();
+                heldPlayerItem.player.DecrementConsumableItem();
                 used = true;
             }
 
             ammo--;
 
-            //offset bullet visually to better match where the rocket is.
-
             var obj = Instantiate(shoot, transform.position, transform.rotation);
-            obj.GetComponent<DirectionedObject>().direction = direction;
+            obj.GetComponent<DirectionedObject>().direction = heldPlayerItem.direction;
 
-            (player.currentPlayerState as HeldItemPlayerState).Kickback(player);
+            (heldPlayerItem.player.currentPlayerState as HeldItemPlayerState).Kickback(heldPlayerItem.player);
 
             if(ammo == 0)
             {

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flashlight : HeldPlayerItem
+[RequireComponent(typeof(HeldPlayerItem))]
+public class Flashlight : MonoBehaviour
 {
-    new void Start()
+    void Start()
     {
-        base.Start();
-        transform.localRotation = Quaternion.Euler(0,0, Rotation.DirectionToAngle(direction));
+        HeldPlayerItem heldPlayerItem = GetComponent<HeldPlayerItem>();
+        transform.localRotation = Quaternion.Euler(0,0, Rotation.DirectionToAngle(heldPlayerItem.direction));
     }
 }

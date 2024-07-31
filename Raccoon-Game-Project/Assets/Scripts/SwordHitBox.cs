@@ -25,6 +25,7 @@ public class SwordHitBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponent<DamagesEnemy>().amount = 1;
         boxCollider2D.enabled = false;
         //enforce delay and only continue once delay is finished.
         if (delayTime > 0)

@@ -22,9 +22,5 @@ public class Explosion : MonoBehaviour
                 enemy.ApplyKnockBack(transform);
             }
         }
-        else if(collider.TryGetComponent(out PlayerStateManager player))
-        {
-            player.HitByExplosion(amount, transform);
-        }
     }
 }
