@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(Projectile))]
+[RequireComponent(typeof(FineDirectionedObject))]
 
 public class MoveStraight : MonoBehaviour
 {
-    public Vector2 direction;
-    // Start is called before the first frame update
+    FineDirectionedObject fineDirectionedObject;
     void Start()
     {
+        fineDirectionedObject = GetComponent<FineDirectionedObject>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        transform.position += (Vector3)direction * Time.deltaTime;
+        transform.position += (Vector3)fineDirectionedObject.direction * Time.deltaTime;
     }
 }

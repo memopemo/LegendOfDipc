@@ -220,6 +220,8 @@ GameObject:
   - component: {fileID: 1580135655536457541}
   - component: {fileID: 8305507445192855438}
   - component: {fileID: 8105322531540082707}
+  - component: {fileID: 7736292606478470087}
+  - component: {fileID: 606408888680808082}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: HurtPlayer
@@ -414,10 +416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641cc80c25f7f7947bc6b31f23e5d8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 4
-  hurtParticle: {fileID: 6662679793016555163, guid: edcb8b6d73c00974d9b9fb93ecfbb52e, type: 3}
-  dustParticle: {fileID: 3163248320032323169, guid: 01504e7781095d54ea432980efe09345, type: 3}
-  createDestroyParticle: {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
 --- !u!114 &5353548700338376192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4e1d4a098eca6419c3a91ff228fc6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
+  currentHealth: 10
   OnDie:
     m_PersistentCalls:
       m_Calls:
@@ -464,6 +462,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4713741685935363708}
         m_TargetAssemblyTypeName: DamageFlash, Assembly-CSharp
         m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5104680641947515512}
+        m_TargetAssemblyTypeName: DummyEnemy, Assembly-CSharp
+        m_MethodName: OnTakeDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -745,6 +755,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 0
+--- !u!114 &7736292606478470087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f50c2e36893d8c40a7c1ca4f3a1f07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtParticle: {fileID: 6662679793016555163, guid: edcb8b6d73c00974d9b9fb93ecfbb52e, type: 3}
+--- !u!114 &606408888680808082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7df228bed8d4894f810930cd109d295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dustParticle: {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
+  disabledOnKnockBack:
+  - {fileID: 5104680641947515512}
 --- !u!1 &9212373818536585072
 GameObject:
   m_ObjectHideFlags: 0

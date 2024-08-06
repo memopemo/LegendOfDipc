@@ -1,6 +1,5 @@
 using UnityEngine;
 using Unity;
-using Unity.VisualScripting;
 
 [RequireComponent(typeof(HeldPlayerItem))]
 class Magnet : MonoBehaviour

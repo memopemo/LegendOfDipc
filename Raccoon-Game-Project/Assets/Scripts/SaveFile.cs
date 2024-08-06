@@ -28,7 +28,7 @@ public class SaveFile
     public int CurrentBoomerang;
 
     // House
-    public int[] HouseLayout = new int[24];
+    public int[] HouseLayout = new int[128];
 
     // Collected
     public bool[] HouseItems = new bool[64];

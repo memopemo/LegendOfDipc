@@ -3,6 +3,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject SettingsPanel;
+    [SerializeField] GameObject DebugPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,10 @@ public class PauseMenu : MonoBehaviour
             {
                 SettingsPanel.SetActive(false);
 
+            }
+            else if(DebugPanel.activeSelf)
+            {
+                DebugPanel.SetActive(false);
             }
             else
             {
@@ -59,5 +64,11 @@ public class PauseMenu : MonoBehaviour
     public void ButtonTitle()
     {
         Application.Quit();
+    }
+    public void ButtonDebug()
+    {
+        #if DEBUG
+        DebugPanel.SetActive(true);
+        #endif
     }
 }

@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 /* Visualizes a health bar above an enemy
@@ -26,11 +26,13 @@ public class EnemyHealthBar : MonoBehaviour
     const float DAMAGE_LERP_SPEED = 1;
     [SerializeField] Color[] damageFlashColors;
     int damageFlashincrement;
+    int startHealth;
 
     void Start()
     {
         damageBar = transform.parent.GetChild(1);
         InvokeRepeating(nameof(FlickerHitAmountBar), DAMAGE_FLASH_RATE, DAMAGE_FLASH_RATE);
+        startHealth = GetComponentInParent<Health>().currentHealth;
     }
 
     void FlickerHitAmountBar()
@@ -46,8 +48,7 @@ public class EnemyHealthBar : MonoBehaviour
     void LateUpdate()
     {
         float currentHealth = transform.parent.GetComponentInParent<Health>().currentHealth;
-        float maxHealth = transform.parent.GetComponentInParent<Enemy>().startingHealth;
-        float percentHealth = currentHealth / maxHealth;
+        float percentHealth = currentHealth / startHealth;
 
         //Set Red Area (fills up percentage of the bg from the left
         transform.localScale = new Vector3(Mathf.Lerp(transform.localScale.x, percentHealth, Time.deltaTime * HEALTH_LERP_SPEED), 1, 1);

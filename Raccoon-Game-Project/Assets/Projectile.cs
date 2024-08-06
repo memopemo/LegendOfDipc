@@ -1,34 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
-//do not put a collider on this object!
+
 public class Projectile : MonoBehaviour
 {
     public bool IsMagic;
-    public UnityEvent OnHit;
+    public UnityEvent<Vector2> OnHit;
     public bool isHitting;
-    Vector2 boxSize;
+    float boxSize;
     void Start()
     {
-        boxSize = GetComponent<BoxCollider2D>().size;
+        boxSize = 0.2f;
+        if(TryGetComponent(out CircleCollider2D cc))
+        {
+            boxSize = cc.radius;
+        }
     }
-    void Update()
+    void FixedUpdate()
     {
         if(isHitting) return;
         
-        Collider2D collider;
-        collider = Physics2D.OverlapBox(transform.position, boxSize, 0);
         
-        if(collider)
+        if(TryGetComponent(out FineDirectionedObject moveStraight))
         {
-            if(IsMagic && collider.TryGetComponent(out TilemapCollider2D _))
+            RaycastHit2D raycastHit = Physics2D.CircleCast(transform.position, boxSize, moveStraight.direction, moveStraight.direction.magnitude * Time.deltaTime);
+            if(raycastHit.collider)
+            {
+                if(IsMagic && raycastHit.collider.gameObject.TryGetComponent(out TilemapCollider2D _))
+                {
+                    return;
+                }
+                OnHit.Invoke(raycastHit.normal);
+                isHitting = true;
+                return;
+            }
+        }
+        Collider2D hit;
+        hit = Physics2D.OverlapCircle(transform.position, boxSize);
+        
+        if(hit)
+        {
+            if(IsMagic && hit.gameObject.TryGetComponent(out TilemapCollider2D _))
             {
                 return;
             }
-            OnHit.Invoke();
+            Vector2 normal = (hit.ClosestPoint(transform.position) - (Vector2)transform.position).normalized;
+            print(normal);
+            OnHit.Invoke(normal);
             isHitting = true;
         }
     }

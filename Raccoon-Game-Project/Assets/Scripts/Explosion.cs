@@ -17,9 +17,9 @@ public class Explosion : MonoBehaviour
             //apply damage.
             health.TakeDamage(amount);
             //if enemy, apply knockback aswell.
-            if(collider.TryGetComponent(out Enemy enemy))
+            if(collider.TryGetComponent(out Knockbackable knockbackable))
             {
-                enemy.ApplyKnockBack(transform);
+                knockbackable.ApplyKnockBack(transform);
             }
         }
     }

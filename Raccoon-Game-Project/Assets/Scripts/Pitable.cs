@@ -43,9 +43,12 @@ public class Pitable : MonoBehaviour
         }
         else
         {
+            if(Time.frameCount % 3 != 0) return; //only run every 3 frames.
             //Check for pit/water we cant go down.
+            Physics2D.queriesHitTriggers = true;
             List<Collider2D> results = new List<Collider2D>();
             _ = Physics2D.OverlapPoint(transform.position, contactFilter, results);
+            Physics2D.queriesHitTriggers = false;
             foreach (Collider2D c in results)
             {
                 if (c)
@@ -70,6 +73,7 @@ public class Pitable : MonoBehaviour
                     }
                 }
             }
+
         }
     }
     void StartFalling()

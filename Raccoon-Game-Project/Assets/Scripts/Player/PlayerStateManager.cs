@@ -153,10 +153,6 @@ public class PlayerStateManager : MonoBehaviour
     {
         CheckDamage(collision.gameObject);
     }   
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        CheckDamage(collider.gameObject);
-    }
     private void CheckDamage(GameObject go)
     {
         //if enemy, take damage.
@@ -171,7 +167,7 @@ public class PlayerStateManager : MonoBehaviour
         if (height.height > 0) return;
         if(currentPlayerState is HurtPlayerState) return;
         if(currentPlayerState is HeldItemPlayerState) return;
-        PlayerHealth.TakeDamage(hurtful.amount, this);
+        PlayerHealth.TakeDamage(HitCalculation.HurtPlayerAmount(hurtful.amount), this);
         Knockback(hurtful.transform);
         stateTransitionTimer1 = 25; //25 frames of knockback.
         SwitchState(new HurtPlayerState());

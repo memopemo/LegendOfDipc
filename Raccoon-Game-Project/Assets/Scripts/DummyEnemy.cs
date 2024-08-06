@@ -1,6 +1,8 @@
-public class DummyEnemy : Enemy
+using UnityEngine;
+
+public class DummyEnemy : MonoBehaviour
 {
-    public override void AIOnTakeDamage()
+    public void OnTakeDamage()
     {
 
         Animator2D.Animator2D animator2D = GetComponent<Animator2D.Animator2D>();
@@ -13,8 +15,5 @@ public class DummyEnemy : Enemy
             animator2D.SetAnimation(1);
         }
 
-    }
-    public override void AIUpdate()
-    {
     }
 }

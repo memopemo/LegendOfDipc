@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd841f92f8146f2438ea3b3bb0151d6f, type: 3}
+  m_Name: FurnitureList
+  m_EditorClassIdentifier: 
+  furniture:
+  - {fileID: 4708041714065643189, guid: 8782f2904b4cd5345b92afe795e984f0, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 4636266289153528872, guid: 55862b25e87a24d46b56a3083f9db47b, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}
+  - {fileID: 6115962712926261713, guid: c94a5235db0614741aa1908c9da83a05, type: 3}

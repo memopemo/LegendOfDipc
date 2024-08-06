@@ -25,7 +25,7 @@ public class SwordHitBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<DamagesEnemy>().amount = 1;
+        
         boxCollider2D.enabled = false;
         //enforce delay and only continue once delay is finished.
         if (delayTime > 0)
@@ -44,9 +44,9 @@ public class SwordHitBox : MonoBehaviour
 
         //Set delay
         delayTime = HIT_DELAY;
-
+        int sword = SaveManager.GetSave().CurrentSword;
         //set box width depending on sword swing type.
-        int swordType = SaveManager.GetSave().CurrentSword % 3; //types of swords are always in order: stab = 0, swing = 1, triple = 2. 
+        int swordType = sword % 3; //types of swords are always in order: stab = 0, swing = 1, triple = 2. 
         float width = swordType == 0 ? stabBoxWidth : swipeBoxWidth; //both swing and triple always start with swipe.
         boxCollider2D.size = new Vector2(width, boxCollider2D.size.y);
 
@@ -54,6 +54,7 @@ public class SwordHitBox : MonoBehaviour
         float angle = KurtAngle.GetValueOrDefault(transform.parent.GetComponent<DirectionedObject>().direction, 0);
         transform.eulerAngles = new Vector3(0, 0, angle);
 
+        GetComponent<DamagesEnemy>().amount = (sword / 3) + 1; //for instance, sword 0 does 1 damage.
 
     }
     public void TripleSwipeAgain(int swipeType) //we check the swipe cause triple has both swipe and stab.
