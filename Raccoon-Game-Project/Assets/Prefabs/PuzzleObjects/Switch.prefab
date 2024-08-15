@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6052545416608538949}
   - component: {fileID: 526266409272708695}
   - component: {fileID: 7574732461581192101}
+  - component: {fileID: 4080645682001839887}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Untagged
@@ -107,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &2036860805215133654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,3 +324,30 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f506641372f95374e8cb58144fae2288, type: 3}
     isCancelable: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &4080645682001839887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982733644185336085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409d170fce113ae49ab3b78b5fb76ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onRamInto:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 526266409272708695}
+        m_TargetAssemblyTypeName: Lever, Assembly-CSharp
+        m_MethodName: Flip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

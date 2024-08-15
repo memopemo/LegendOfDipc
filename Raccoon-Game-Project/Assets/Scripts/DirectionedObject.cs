@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class DirectionedObject : MonoBehaviour
 {
+    [SerializeField] Vector2Int initialDirection;
     public Vector2Int direction
     {
         get
@@ -29,6 +30,11 @@ public class DirectionedObject : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if(initialDirection != Vector2Int.zero)
+        {
+            Direction = initialDirection;
+        }
+        
     }
 
     // Update is called once per frame

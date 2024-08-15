@@ -69,7 +69,7 @@ class CommonPlayerState
             else 
             {
                 go = hit.collider.gameObject;
-                Debug.DrawLine(manager.transform.position, hit.point, Color.red, 1);
+                Debug.DrawLine(manager.transform.position+(Vector3)(Vector2)manager.directionedObject.direction*0.5f, hit.point, Color.red, 1);
                 return true;
             }
         }
@@ -124,7 +124,9 @@ class CommonPlayerState
             maxDepth = manager.transform.position.z + 3
             
         };
+        Physics2D.queriesHitTriggers = true; //we want to check triggers.
         BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => manager.SwitchState(new SwimPlayerState()), contactFilter);
+        Physics2D.queriesHitTriggers = false;
     }
 
     public static bool BoxCastFind<T>( Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())

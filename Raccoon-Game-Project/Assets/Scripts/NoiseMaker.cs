@@ -86,4 +86,8 @@ public class NoiseMaker : MonoBehaviour
         }
         Destroy(gameObject, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
     }
+    public void StopInteruptableClip()
+    {
+        Destroy(interruptableClip);
+    }
 }

@@ -13,9 +13,8 @@ public class BombShoot : MonoBehaviour
     {
         heldPlayerItem = GetComponent<HeldPlayerItem>();
         //players direction will stay the same
-        transform.localPosition = new Vector2(0,0) + heldPlayerItem.direction;
+        transform.localPosition = Vector2.zero + heldPlayerItem.player.directionedObject.direction;
         InvokeRepeating(nameof(Shoot), 2, 1);
-        GetComponent<DirectionedObject>().direction = heldPlayerItem.direction;
     }
     void Update()
     {
@@ -48,7 +47,7 @@ public class BombShoot : MonoBehaviour
             ammo--;
 
             var obj = Instantiate(shoot, transform.position, transform.rotation);
-            obj.GetComponent<DirectionedObject>().direction = heldPlayerItem.direction;
+            obj.GetComponent<DirectionedObject>().direction = heldPlayerItem.player.directionedObject.direction;
 
             (heldPlayerItem.player.currentPlayerState as HeldItemPlayerState).Kickback(heldPlayerItem.player);
 

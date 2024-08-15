@@ -18,6 +18,8 @@ MonoBehaviour:
   - Sprite: {fileID: -4844614488903156879, guid: 861348d60df279141b40915b69d4d264, type: 3}
     HoldForTicks: 10
   - Sprite: {fileID: -3854607811616848207, guid: 861348d60df279141b40915b69d4d264, type: 3}
+    HoldForTicks: 60
+  - Sprite: {fileID: -2407320044005788326, guid: 861348d60df279141b40915b69d4d264, type: 3}
     HoldForTicks: 10
   UpAnimationFrames:
   - Sprite: {fileID: 8075586811939807411, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
@@ -25,6 +27,8 @@ MonoBehaviour:
   - Sprite: {fileID: 267768720176083329, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
     HoldForTicks: 10
   - Sprite: {fileID: 7786574672370083233, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
+    HoldForTicks: 60
+  - Sprite: {fileID: -4623408998867497263, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
     HoldForTicks: 10
   SideAnimationFrames:
   - Sprite: {fileID: -8921579436809361785, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
@@ -32,6 +36,8 @@ MonoBehaviour:
   - Sprite: {fileID: -1978633678478430922, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
     HoldForTicks: 10
   - Sprite: {fileID: 8889992473566797544, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+    HoldForTicks: 60
+  - Sprite: {fileID: -4072134236709778853, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
     HoldForTicks: 10
   Looping: 0
   LoopStart: 0

@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 0
   m_Name: Discard
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 1e56ba58b2cca924789c432400e72e9f, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

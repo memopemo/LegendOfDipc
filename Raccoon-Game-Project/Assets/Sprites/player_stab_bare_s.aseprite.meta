@@ -121,14 +121,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: player_stab_bare_s_Frame_0
     originalName: 
-    pivot: {x: 0.44117647, y: 0.47826084}
+    pivot: {x: 0.3846154, y: 0.47826084}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 34
+      width: 39
       height: 23
     spriteID: 40babe2d27d70684d9645c635e5a5b38
     spriteBone: []
@@ -141,14 +141,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: player_stab_bare_s_Frame_1
     originalName: 
-    pivot: {x: 0.44117647, y: 0.47826084}
+    pivot: {x: 0.3846154, y: 0.47826084}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 35
-      width: 34
+      width: 39
       height: 23
     spriteID: bf436bdea8cd5fd4cb367b635c5f3f4e
     spriteBone: []
@@ -161,14 +161,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 35}
   - name: player_stab_bare_s_Frame_2
     originalName: 
-    pivot: {x: 0.48387095, y: 0.47826084}
+    pivot: {x: 0.3846154, y: 0.47826084}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 66
-      width: 31
+      width: 39
       height: 23
     spriteID: ee53696810a342b42922b35a27076abf
     spriteBone: []
@@ -179,6 +179,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 66}
+  - name: player_stab_bare_s_Frame_3
+    originalName: 
+    pivot: {x: 0.45454547, y: 0.47826084}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 97
+      width: 33
+      height: 23
+    spriteID: 659d65f19954b0a459116370a6cabc1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 97}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -193,7 +213,7 @@ ScriptedImporter:
       cellRect:
         x: 9
         y: 13
-        width: 34
+        width: 39
         height: 23
       spriteId: 40babe2d27d70684d9645c635e5a5b38
     - name: player_stab_bare_s_Frame_1
@@ -201,7 +221,7 @@ ScriptedImporter:
       cellRect:
         x: 9
         y: 13
-        width: 34
+        width: 39
         height: 23
       spriteId: bf436bdea8cd5fd4cb367b635c5f3f4e
     - name: player_stab_bare_s_Frame_2
@@ -209,9 +229,17 @@ ScriptedImporter:
       cellRect:
         x: 9
         y: 13
-        width: 31
+        width: 39
         height: 23
       spriteId: ee53696810a342b42922b35a27076abf
+    - name: player_stab_bare_s_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 9
+        y: 13
+        width: 33
+        height: 23
+      spriteId: 659d65f19954b0a459116370a6cabc1e
     linkedCells: []
     parentIndex: -1
   platformSettings:

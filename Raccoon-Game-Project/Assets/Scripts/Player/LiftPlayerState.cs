@@ -49,6 +49,7 @@ public class LiftPlayerState : IPlayerState
             //Snap inside grid (we need to snap it to the nearest *.5*, NOT whole number)
             //TODO: still looks weird.
             liftable.transform.position = SnapGrid.SnapToGridCentered(liftable.transform.position);
+            liftable.OnSetDown();
         }
     }
 

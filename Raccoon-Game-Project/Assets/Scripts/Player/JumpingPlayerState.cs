@@ -15,6 +15,11 @@ public class JumpingPlayerState : IPlayerState
     int framesGrounded = 0;
     bool tryingToCorrect;
     Vector2Int initialDirection;
+    GameObject isIceStompingAndWithWhat;
+    public JumpingPlayerState(GameObject createAtEnd = null)
+    {
+        isIceStompingAndWithWhat = createAtEnd;
+    }
 
     public void OnEnter(PlayerStateManager manager)
     {
@@ -29,6 +34,10 @@ public class JumpingPlayerState : IPlayerState
         manager.defaultSpriteRenderer.enabled = true;
         //Debug.Log($"Ended Jump: {manager.rigidBody.position}");
         //Debug.Log($"Distance: {Vector2.Distance(debugStartJumpPos, manager.rigidBody.position)}");
+        if(isIceStompingAndWithWhat)
+        {
+            Object.Instantiate(isIceStompingAndWithWhat, manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction, Quaternion.identity);
+        }
     }
 
     public void OnUpdate(PlayerStateManager manager)

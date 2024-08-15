@@ -6,17 +6,6 @@ public class Exit : MonoBehaviour
 {
     [SerializeField] SceneReference scene;
     [SerializeField] int entranceNumber; // The place we want to exit out to
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsInvoking())
@@ -25,8 +14,11 @@ public class Exit : MonoBehaviour
         }
         if (collision.TryGetComponent(out PlayerStateManager _))
         {
-            FindFirstObjectByType<CircleFadeInUI>().Out();
-            Invoke(nameof(Enter), 1);
+            #if DEBUG
+                Enter();
+            #endif
+            FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
+            Invoke(nameof(Enter), 1); //exit scene and enter next scene.
         }
     }
     void Enter()
@@ -35,13 +27,14 @@ public class Exit : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 }
+
+//These are to keep our next scene's data global to use it between scenes.
 public static class SceneExitHandler
 {
     public static int CurrentSceneExitIndex = 0;
-
 }
 
-public static class KeepPositionExitHandler
+public static class KeepUnderwaterPositionExitHandler
 {
     public static Vector2 position = Vector2.zero;
 }

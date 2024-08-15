@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 326384268890233842}
   - component: {fileID: 4461773233591016176}
+  - component: {fileID: 2437268239051338486}
   - component: {fileID: 4073476782950186647}
   - component: {fileID: 9138094679390116449}
   - component: {fileID: 782861174301799545}
   - component: {fileID: -7525438586599849473}
-  - component: {fileID: 2437268239051338486}
   m_Layer: 0
   m_Name: BombShoot
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6868169182251322869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21, y: -3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92,6 +92,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2437268239051338486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6868169182251322869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55c71eef9b2f2e469d14883c6a7892d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4073476782950186647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &-7525438586599849473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,17 +162,3 @@ MonoBehaviour:
   currentAnimation: 0
   currentAnimationFrame: 0
   finishedFrames: 0
---- !u!114 &2437268239051338486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6868169182251322869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c55c71eef9b2f2e469d14883c6a7892d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  direction: {x: 0, y: 0}

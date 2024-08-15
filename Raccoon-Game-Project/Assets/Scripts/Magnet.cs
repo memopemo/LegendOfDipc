@@ -14,8 +14,8 @@ class Magnet : MonoBehaviour
 
     void Start()
     {
-        endPoint = defaultEndPoint();
         heldPlayerItem = GetComponent<HeldPlayerItem>();
+        endPoint = defaultEndPoint();
     }
     void Update()
     {
@@ -28,16 +28,16 @@ class Magnet : MonoBehaviour
                 magnetizedObject = null;
                 return;
             }
-            if(Vector2Int.RoundToInt((magnetizedObject.transform.position - transform.position).normalized) != heldPlayerItem.direction)
+            if(Vector2Int.RoundToInt((magnetizedObject.transform.position - transform.position).normalized) != heldPlayerItem.player.directionedObject.direction)
             {
                 magnetizedObject = null;
                 return;
             }
-            magnetizedObject.transform.position = Vector2.MoveTowards(magnetizedObject.transform.position, (Vector2)transform.position + (Vector2)heldPlayerItem.direction * 0.5f, Time.deltaTime * 4);
+            magnetizedObject.transform.position = Vector2.MoveTowards(magnetizedObject.transform.position, (Vector2)transform.position + (Vector2)heldPlayerItem.player.directionedObject.direction * 0.5f, Time.deltaTime * 4);
         }
     }
 
-    private Vector2 defaultEndPoint() => (Vector2)transform.position + (heldPlayerItem.direction * MAGNET_RANGE);
+    private Vector2 defaultEndPoint() => (Vector2)transform.position + (heldPlayerItem.player.directionedObject.direction * MAGNET_RANGE);
 
     void FixedUpdate()
     {
@@ -49,13 +49,13 @@ class Magnet : MonoBehaviour
         }
         if(magnetizedObject != null) return;
         //this shouldnt be that expensive
-        RaycastHit2D[] result = Physics2D.RaycastAll(transform.position, heldPlayerItem.direction, MAGNET_RANGE);
+        RaycastHit2D[] result = Physics2D.RaycastAll(transform.position, heldPlayerItem.player.directionedObject.direction, MAGNET_RANGE);
         foreach (RaycastHit2D hit in result)
         {
             if (hit.collider.TryGetComponent(out Magnetizable magnetizable))
             {
                 magnetizedObject = magnetizable;
-                magnetizable.BeAttracted(heldPlayerItem.direction);
+                magnetizable.BeAttracted(heldPlayerItem.player.directionedObject.direction);
                 return;
             }
         }

@@ -4,11 +4,19 @@ using UnityEngine;
 public class SwimPlayerState : IPlayerState
 {
     const int SWIM_SPEED = 11;
+    const int STEAM_PARTICLE_INDEX = 2;
     Vector2 divePosition = Vector2.zero;
     public void OnEnter(PlayerStateManager manager)
     {
         manager.animator.SetAnimation(8);
         Object.Instantiate(manager.splashParticle, manager.transform.position, manager.transform.rotation);
+        Status status = manager.GetComponent<Status>();
+        if(status.statusTicks[(int)Status.Effect.Fire] != 0)
+        {
+            status.ClearStatus(Status.Effect.Fire);
+            manager.GetComponent<ParticleMaker>().CreateParticle(STEAM_PARTICLE_INDEX);
+        }
+        
     }
     public void OnLeave(PlayerStateManager manager)
     {
@@ -45,8 +53,10 @@ public class SwimPlayerState : IPlayerState
             minDepth = manager.transform.position.z,
             maxDepth = manager.transform.position.z + 3
         };
+        Physics2D.queriesHitTriggers = true;
         List<RaycastHit2D> results = new();
         int _ = Physics2D.BoxCast(manager.transform.position + Vector3.down * 0.2f, Vector2.one * 0.01f, 0, Vector2.zero, contactFilter, results, 0);
+        Physics2D.queriesHitTriggers = false;
         if (Input.GetButtonDown("Fire1"))
         {
             foreach (RaycastHit2D hit in results)

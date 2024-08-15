@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6263527311473739593}
   - component: {fileID: 6646972033067866529}
   - component: {fileID: 8975171738532353075}
+  - component: {fileID: 404965188776608162}
   m_Layer: 0
   m_Name: Liftable Block
   m_TagString: Untagged
@@ -183,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &6263527311473739593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +225,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3439fe57f7aa3d4ca101536c2d811e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &404965188776608162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3629228519530373266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ad14aa867d87a4996431494feeffb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 2992529691740880293, guid: 76f8f67ad8fe67b4bb3a98038c90182a, type: 3}

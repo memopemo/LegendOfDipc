@@ -131,7 +131,9 @@ public class DefaultPlayerState : IPlayerState
             maxDepth = manager.transform.position.z + 3
             
         };
+        Physics2D.queriesHitTriggers = true;
         BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => nextState = new SwimPlayerState(), contactFilter);
+        Physics2D.queriesHitTriggers = false;
         //find interactable to set flash. This provides a direct indicator that we can interact because it uses the same function to find the interactable object.
         CommonPlayerState.ColliderInDirection(manager, out GameObject g, true);
         if(g && g.TryGetComponent(out Interactable interact))
@@ -201,7 +203,8 @@ public class DefaultPlayerState : IPlayerState
                                 inventoryConsumableType[    //of the id..
                                 selectionIndex]];           //..of the slot currently selected in the inventory
 
-        GameObject.Instantiate(original, position, Quaternion.identity);
+        GameObject obj = GameObject.Instantiate(original, position, Quaternion.identity);
+        Debug.Log(obj.transform.position);
     }
 
     private static void CreateKeyItemObject(PlayerStateManager manager)

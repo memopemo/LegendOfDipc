@@ -188,6 +188,7 @@ Allows the player to fall slower after jumping
 
 - Extends the movement range that the player has while jumping, for example, jumping over longer gaps
 - Does not work when jumping off ledges
+- Keeps direction when jumping. Cannot change direction, only move forwards.
 
 ### Tape Measurer
 
@@ -226,6 +227,7 @@ Allows the player to hover for a maximum of 5 seconds to cross very wide gaps.
 
 - The player can only move, cannot do anything else.
 - On key-item button press, lifts the player up to maximum jump-height and stays in the air for 5 seconds.
+- CAN change direction, more useful than the [Umbrella](#umbrella)umbrella because the player can use the hover to weave between gaps.
 
 ## Permanent Key Items
 
@@ -287,7 +289,7 @@ List of all swords:
 
 | Name         | Type   | Damage | ID |
 |--------------|--------|--------|----|
-| Hand         | Stab   | 1      | -1 |
+| None         | Stab   | N/A    | -1 |
 | Stick        | Stab   | 1      | 0  |
 | Branch       | Swing  | 1      | 1  |
 | Wooden Sword | Triple | 1      | 2  |

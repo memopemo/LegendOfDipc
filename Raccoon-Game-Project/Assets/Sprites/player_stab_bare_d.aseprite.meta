@@ -161,15 +161,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 50}
   - name: player_stab_bare_d_Frame_2
     originalName: 
-    pivot: {x: 0.49999997, y: 0.59375}
+    pivot: {x: 0.42105258, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 31
       y: 4
-      width: 16
-      height: 32
+      width: 19
+      height: 38
     spriteID: 7df52beb18b70c748abc6941f2e8bc76
     spriteBone: []
     spriteOutline: []
@@ -179,6 +179,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 31, y: 4}
+  - name: player_stab_bare_d_Frame_3
+    originalName: 
+    pivot: {x: 0.49999997, y: 0.59375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 31
+      y: 50
+      width: 16
+      height: 32
+    spriteID: ae6a6a53f49605443bd07dbe1e89c91b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 31, y: 50}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -208,10 +228,18 @@ ScriptedImporter:
       frameIndex: 2
       cellRect:
         x: 16
+        y: 0
+        width: 19
+        height: 38
+      spriteId: 7df52beb18b70c748abc6941f2e8bc76
+    - name: player_stab_bare_d_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 16
         y: 5
         width: 16
         height: 32
-      spriteId: 7df52beb18b70c748abc6941f2e8bc76
+      spriteId: ae6a6a53f49605443bd07dbe1e89c91b
     linkedCells: []
     parentIndex: -1
   platformSettings:

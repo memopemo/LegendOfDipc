@@ -9,4 +9,10 @@ public class PoofDestroy : MonoBehaviour
     {
         Instantiate(particle, transform.position, Quaternion.identity);
     }
+    
+    public void PoofAndDestroy()
+    {
+        Instantiate(particle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
 }

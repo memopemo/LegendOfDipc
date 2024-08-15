@@ -32,7 +32,7 @@ public class Liftable : MonoBehaviour
             transform.position += 11 * Time.deltaTime * (Vector3)(Vector2)direction.direction;
             if (heightable.height <= 0)
             {
-                gameObject.SetActive(false);
+                Break();
             }
             else
             {
@@ -44,17 +44,25 @@ public class Liftable : MonoBehaviour
 
                     if (hit.collider == colider) continue;
                     if (hit.collider.TryGetComponent(out PlayerStateManager _)) continue;
-                    print(hit.collider.gameObject);
-                    gameObject.SetActive(false);
+                    Break();
                 }
             }
         }
 
     }
+    public void Break()
+    {
+        GetComponent<PoofDestroy>().Poof();
+        Destroy(gameObject);
+    }
 
     public void OnLifted()
     {
 
+    }
+    public void OnSetDown()
+    {
+        GetComponent<PoofDestroy>().Poof();
     }
 
     public void OnThrown(Vector2Int d)

@@ -9,6 +9,7 @@ using UnityEngine;
  */
 
 [RequireComponent(typeof(SpriteRenderer))]
+[Icon("heightable")]
 public class Heightable : MonoBehaviour
 {
 

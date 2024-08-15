@@ -33,12 +33,11 @@ class Knockbackable : MonoBehaviour
         {
             direction.direction = Vector2Int.RoundToInt(-knockBackDirection); //negative because normally its the direction to be knocked back.
         }
-
         // Create dust at feet.
         Instantiate(
             dustParticle,
             transform.position + Vector3.down * 0.5f,
-            Rotation.Get2DAngleFromPoints(transform.position, from.parent.position), transform);
+            Rotation.Get2DAngleFromPoints(transform.position, from.parent ? from.parent.position: from.position), transform);
 
         // Set knockback timer.
         knockBackTimer = 0.2f;

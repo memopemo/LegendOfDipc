@@ -1,35 +1,143 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.Audio;
 
 // Dash forward and move a little bit until you crash into something.
 public class RammingPlayerState : IPlayerState
 {
-    const float WINDUP_SECS = 0.5f;
-    float windupTime;
-    const int WINDUP_ANIM = 0;
-    const int DASH_ANIM = 0;
-    const float DASH_SPEED = CommonPlayerState.DEFAULT_SPEED + 2;
-    
+    const float WINDUP_SECS = 1.28f;
+    float windupTimeAndSpeed = -WINDUP_SECS; //- is windup, + is speed.
+    const int WINDUP_ANIM = 30;
+    const int DASH_ANIM = 31;
+    const int WINDUP_SOUND = 2;
+    const int DASH_SOUND = 3;
+    const int DASH_STEP_SOUND = 4;
+    const float MAX_DASH_SPEED = CommonPlayerState.DEFAULT_SPEED * 4;
+
+    private const int RAM_DAMAGE = 5;
+    private const int DASH_PARTICLE = 0;
+    DamagesEnemy damagesEnemy;
+    AudioSource stepSource;
 
     public void OnEnter(PlayerStateManager manager)
     {
         manager.animator.SetAnimation(WINDUP_ANIM);
+        damagesEnemy = manager.gameObject.AddComponent<DamagesEnemy>();
+        damagesEnemy.amount = RAM_DAMAGE;
+        damagesEnemy.isBuffed = true;
+        manager.noiseMaker.Play(WINDUP_SOUND);
     }
     public void OnLeave(PlayerStateManager manager)
     {
+        Object.Destroy(damagesEnemy);
+        if(stepSource)
+        {
+            Object.Destroy(stepSource.gameObject);
+        }
+        
     }
     public void OnUpdate(PlayerStateManager manager)
     {
-        windupTime += Time.deltaTime;
-        if(windupTime < WINDUP_SECS)
+        if(!Input.GetButton("Fire3") && windupTimeAndSpeed < 0) 
         {
+            manager.SwitchState(new DefaultPlayerState());
+            manager.noiseMaker.StopInteruptableClip();
             return;
         }
-        else
+        else if(windupTimeAndSpeed > 0 && Input.GetButtonDown("Fire3"))
         {
-            manager.animator.SetAnimation(DASH_ANIM);
-            manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction * ( DASH_SPEED + manager.additionalSpeed);
+            manager.SwitchState(new DefaultPlayerState());
+            return;
         }
+
+        //play dash start sound and looping step sound.
+        if(windupTimeAndSpeed < 0 && windupTimeAndSpeed + Time.deltaTime > 0) //play only on the switch from windup to running.
+        {
+            
+            manager.noiseMaker.Play(DASH_SOUND); //zoom!
+
+            //create looping step sound
+            GameObject stepSound = new GameObject();
+            stepSource = stepSound.AddComponent<AudioSource>();
+            stepSource.loop = true;
+            stepSource.clip = manager.noiseMaker.audioClipPools[DASH_STEP_SOUND].pool[0];
+            stepSource.transform.parent = manager.transform;
+            stepSource.transform.localPosition = Vector2.zero;
+            stepSource.outputAudioMixerGroup = (Resources.Load("Base") as AudioMixer).FindMatchingGroups("Master/Effects")[0];
+            stepSource.spatialBlend = 1;
+            stepSource.Play();
+        }
+
+        windupTimeAndSpeed += Time.deltaTime;
+        
+        //movement, but no direction
+        manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction
+            * (windupTimeAndSpeed > 0 ? MAX_DASH_SPEED : windupTimeAndSpeed + manager.additionalSpeed);
+
+        // allow strafing perpendicular
+        if(manager.directionedObject.direction.x != 0) //if x direction is active...
+        {
+            manager.rigidBody.velocity += new Vector2(0, manager.rawInput.y); //then use input y.
+        }
+        else //use input x.
+        {
+            manager.rigidBody.velocity += new Vector2(manager.rawInput.x, 0); 
+        }
+
+        manager.animator.SetAnimation(windupTimeAndSpeed < 0 ? WINDUP_ANIM : DASH_ANIM); //animation
+
+        if(windupTimeAndSpeed < 0) return; //skip next sections if we are still winding up. 
+        
+        if(Time.frameCount % 5 == 0)
+        {
+           GameObject particle = manager.GetComponent<ParticleMaker>().CreateParticle(DASH_PARTICLE);
+           particle.transform.SetPositionAndRotation(
+               particle.transform.position + Vector3.down * 0.5f,
+               Quaternion.Euler(0, 0, Rotation.DirectionToAngle((Vector2)manager.directionedObject.direction) - 90));
+        } 
+
+        if(Time.frameCount % 2 == 0) return; //Don't ram into shit until we are actually running. 
+        // Also only do this every other fame.
+
+
+        //check for hitting something.
+        /* Our Box Cast is SPECIFIC:
+         * We want to be able to graze solid objects and not stop, yet we also want to *actually slam into them if we are directly hitting them.*
+         * There would be a potential case where we are running against a wall where our circle collider does not slide us off the edge, yet it doesnt detect anything.
+         * Using a small box collider instead of a point protects us from this. (edge wont work since it could skip over the wall's edge collider.)
+         */ 
+        Physics2D.queriesHitTriggers = true;
+        RaycastHit2D[] hits = Physics2D.BoxCastAll((Vector2)manager.transform.position
+            + (Vector2)manager.directionedObject.direction
+            * 0.7f, Vector2.one, 0, Vector2.zero);
+        Physics2D.queriesHitTriggers = false;
+        foreach (var hit in hits)
+        {
+            //Important
+            if(hit.collider.gameObject == manager.gameObject) continue; //ignore player
+            if(hit.collider.gameObject.TryGetComponent(out Hittable hittable))
+            {
+                hittable.OnHit(damagesEnemy);
+            }
+            else if(hit.collider.gameObject.TryGetComponent(out Rammable rammable))
+            {
+                rammable.OnRamInto();
+                if(rammable.isSolid)
+                {
+                    manager.SwitchState(new BonkPlayerState());
+                    return;
+                }
+            }
+            else if(!hit.collider.isTrigger) //we have hit a brick wall.
+            {
+                //todo: add a Slam into wall effect.
+                manager.SwitchState(new BonkPlayerState());
+                return;
+            }
+        } 
+        CommonPlayerState.CheckWater(manager); //No dashing over water!!! 
+        
     }
 }

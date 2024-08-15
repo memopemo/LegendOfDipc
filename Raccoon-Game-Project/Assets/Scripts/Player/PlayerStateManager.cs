@@ -43,7 +43,7 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public int generalTimer1;
     [NonSerialized] public int generalTimer2;
 
-    #if DEBUG
+#if DEBUG
     //* Debug Variables *//
 
     // This helps with going between states automatically.
@@ -58,7 +58,7 @@ public class PlayerStateManager : MonoBehaviour
             { KeyCode.KeypadEnter,  new DebugFreeRoamPlayerState()  },
             { KeyCode.KeypadPeriod, new NoInputPlayerState()        },
         };
-    #endif
+#endif
     // Awake is called during initialization of a script. Use for setting up references to gameobjects and components before sending/reading data from them.
     void Awake()
     {
@@ -108,8 +108,8 @@ public class PlayerStateManager : MonoBehaviour
         // Switch State
         currentPlayerState.OnUpdate(this);
         DemonBuffs.Update();
-        
-        #if DEBUG
+
+#if DEBUG
         //debug
         foreach (var x in debugNumpadKeysToState)
         {
@@ -126,9 +126,9 @@ public class PlayerStateManager : MonoBehaviour
         {
             PlayerHealth.TakeDamage(1, this);
         }
-        if(Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            PlayerHealth.debugLockHealth ^= true; 
+            PlayerHealth.debugLockHealth ^= true;
             PlayerHealth.SetHealth(int.MaxValue);
         }
         if (Input.GetKeyDown(KeyCode.PageUp))
@@ -145,14 +145,14 @@ public class PlayerStateManager : MonoBehaviour
                 fl.DecrementLevel(1);
             }
         }
-        #endif
+#endif
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CheckDamage(collision.gameObject);
-    }   
+    }
     private void CheckDamage(GameObject go)
     {
         //if enemy, take damage.
@@ -165,15 +165,14 @@ public class PlayerStateManager : MonoBehaviour
     {
         //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
         if (height.height > 0) return;
-        if(currentPlayerState is HurtPlayerState) return;
-        if(currentPlayerState is HeldItemPlayerState) return;
+        if (currentPlayerState is HurtPlayerState or HeldItemPlayerState or RammingPlayerState) return;
         PlayerHealth.TakeDamage(HitCalculation.HurtPlayerAmount(hurtful.amount), this);
         Knockback(hurtful.transform);
         stateTransitionTimer1 = 25; //25 frames of knockback.
         SwitchState(new HurtPlayerState());
         return;
     }
-    private void Knockback(Transform from)
+    public void Knockback(Transform from)
     {
         if (knockBackTimer > 0) return;
 
@@ -231,7 +230,6 @@ public class PlayerStateManager : MonoBehaviour
                 return;
             }
         }
-        print("Found a safe spot.");
         FallReturnPosition = transform.position;
 
     }
@@ -252,13 +250,13 @@ public class PlayerStateManager : MonoBehaviour
     }
     private void EnterDeepWaterScene()
     {
-        KeepPositionExitHandler.position = transform.position;
+        KeepUnderwaterPositionExitHandler.position = transform.position;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name + "_Underwater");
     }
     public void DisableSprite()
     {
         Transform sprite = transform.Find("Sprite");
-        if(sprite)
+        if (sprite)
             transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = false;
         else
         {
@@ -269,7 +267,7 @@ public class PlayerStateManager : MonoBehaviour
     public void EnableSprite()
     {
         Transform sprite = transform.Find("Sprite");
-        if(sprite)
+        if (sprite)
             transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = true;
         else
         {
