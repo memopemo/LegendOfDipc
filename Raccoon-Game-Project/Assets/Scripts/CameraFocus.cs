@@ -15,6 +15,8 @@ public class CameraFocus : MonoBehaviour
     PlayerStateManager player;
     const float ORTHO_CAMERA_DISTANCE = 10;
     Vector2 lookaheadVelocity;
+
+    public bool hasGlassesOn;
     #if DEBUG
     float debugKeyHeldTime = 0;
     #endif
