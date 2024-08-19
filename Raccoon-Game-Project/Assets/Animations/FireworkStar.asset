@@ -9,36 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
   m_Name: FireworkStar
   m_EditorClassIdentifier: 
-  DownAnimationFrames:
-  - Sprite: {fileID: 7189787007178338036, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: 2062785448431834080, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: 3799458348877809725, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: 5175480336513451223, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  UpAnimationFrames:
+  AnimationFrames:
   - Sprite: {fileID: 6569108861018599762, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
+    HoldForTicks: 10
   - Sprite: {fileID: 8500296793549913109, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
+    HoldForTicks: 10
   - Sprite: {fileID: -1286067862841863246, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: 5743293690960461722, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  SideAnimationFrames:
-  - Sprite: {fileID: 7018527315535510974, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: -6752168160218316154, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: 3044942768111797589, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
-  - Sprite: {fileID: -5214447084119121876, guid: c31a4ec5ea59abd438048ea962c29cd3, type: 3}
-    HoldForTicks: 0
+    HoldForTicks: 10
   Looping: 1
   LoopStart: 0
-  LoopEnd: 3
+  LoopEnd: 2

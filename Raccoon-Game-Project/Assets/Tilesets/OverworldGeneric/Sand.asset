@@ -79,7 +79,7 @@ MonoBehaviour:
     m_PerlinScale: 0.5
     m_Output: 1
     m_ColliderType: 1
-    m_RandomTransform: 0
+    m_RandomTransform: 5
     m_Neighbors: 01000000010000000100000001000000
     m_NeighborPositions:
     - {x: 0, y: 1, z: 0}
@@ -87,5 +87,18 @@ MonoBehaviour:
     - {x: 0, y: -1, z: 0}
     - {x: 1, y: 0, z: 0}
     m_RuleTransform: 1
+  - m_Id: 3
+    m_Sprites:
+    - {fileID: 8401094888083760031, guid: 2cca65f3d9fad6b43a16c1adcab19ec4, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 1
+    m_ColliderType: 1
+    m_RandomTransform: 5
+    m_Neighbors: 
+    m_NeighborPositions: []
+    m_RuleTransform: 0
   sibings:
   - {fileID: 11400000}

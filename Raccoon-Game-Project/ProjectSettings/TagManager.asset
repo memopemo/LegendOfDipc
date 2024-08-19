@@ -18,7 +18,7 @@ TagManager:
   - Middle
   - Top
   - Ceiling
-  - 
+  - Magic
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Light
     uniqueID: 1232375621
+    locked: 0
+  - name: Trees
+    uniqueID: 371550963
     locked: 0
   m_RenderingLayers:
   - Default

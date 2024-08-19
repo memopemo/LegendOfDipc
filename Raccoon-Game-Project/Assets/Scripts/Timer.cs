@@ -1,4 +1,5 @@
 using UnityEngine;
+//generic functions for decrementing timers.
 public static class Timer
 {
     public static void DecrementTimer(ref int timer)

@@ -76,7 +76,6 @@ public class GrabbingPlayerState : IPlayerState
             manager.animator.SetAnimation(11);
         }
 
-        //THIS WAS WHERE I GAVE UP
         if(secsPulling > 1f) 
         {
             //Check behind player if they can pull it and not risk squishing themself.

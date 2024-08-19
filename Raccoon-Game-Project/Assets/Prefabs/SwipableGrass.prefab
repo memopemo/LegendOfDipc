@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9069878826454874572}
   - component: {fileID: -3884235381278965247}
   - component: {fileID: 7537660969032772327}
+  - component: {fileID: 5595595353477316149}
   m_Layer: 0
   m_Name: SwipableGrass
   m_TagString: Untagged
@@ -50,7 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectUnderneath: {fileID: 0}
-  particle: {fileID: 3818739325133587612, guid: 46062ef23b02cf84387ae16fedf4e327, type: 3}
+  randomHeart: {fileID: 23659668587296901, guid: 56ae16493ec2a8f4593df616de16c6e4, type: 3}
+  randomMoney: {fileID: 4857793910758234772, guid: 785aaebc19b83f7448f120bc84ce4a46, type: 3}
 --- !u!212 &4912795399785360223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -221,3 +223,16 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isSolid: 0
+--- !u!114 &5595595353477316149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071401619642075243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ad14aa867d87a4996431494feeffb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 3818739325133587612, guid: 46062ef23b02cf84387ae16fedf4e327, type: 3}

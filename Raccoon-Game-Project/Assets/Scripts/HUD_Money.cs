@@ -14,7 +14,7 @@ public class HUD_Money : MonoBehaviour
     {
         int actualValue = SaveManager.GetSave().Money;
         //Play Tick Sound if ticking and on every 3rd frame.
-        if(Time.frameCount % 3 == 0 && displayValue != actualValue)
+        if((Time.frameCount % 3 == 0 && displayValue != actualValue) || (displayValue + 1 == actualValue))
         {
             AudioSource.PlayClipAtPoint(ticker,FindFirstObjectByType<CameraFocus>().transform.position);
         }

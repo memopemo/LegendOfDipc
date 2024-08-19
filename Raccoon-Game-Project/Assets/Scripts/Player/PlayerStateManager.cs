@@ -54,7 +54,6 @@ public class PlayerStateManager : MonoBehaviour
             { KeyCode.Keypad2,      new SnorkelPlayerState()        },
             { KeyCode.Keypad3,      new RammingPlayerState()        },
             { KeyCode.Keypad4,      new ClimbingPlayerState(-5,5)   },
-            { KeyCode.Keypad5,      new GrapplePlayerState()        },
             { KeyCode.KeypadEnter,  new DebugFreeRoamPlayerState()  },
             { KeyCode.KeypadPeriod, new NoInputPlayerState()        },
         };
@@ -104,10 +103,24 @@ public class PlayerStateManager : MonoBehaviour
         Timer.DecrementTimer(ref stateTransitionTimer2);
         Timer.DecrementTimer(ref generalTimer1);
         Timer.DecrementTimer(ref generalTimer2);
+        
+        if(DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed0))
+        {
+            additionalSpeed = 1;
+        }
+        else if(DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed1))
+        {
+            additionalSpeed = 2;
+        }
+        else
+        {
+            additionalSpeed = 0;
+        }
 
         // Switch State
         currentPlayerState.OnUpdate(this);
         DemonBuffs.Update();
+        
 
 #if DEBUG
         //debug
@@ -165,7 +178,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
         if (height.height > 0) return;
-        if (currentPlayerState is HurtPlayerState or HeldItemPlayerState or RammingPlayerState) return;
+        if (currentPlayerState is HurtPlayerState or HeldItemPlayerState or RammingPlayerState or CloakedPlayerState) return;
         PlayerHealth.TakeDamage(HitCalculation.HurtPlayerAmount(hurtful.amount), this);
         Knockback(hurtful.transform);
         stateTransitionTimer1 = 25; //25 frames of knockback.

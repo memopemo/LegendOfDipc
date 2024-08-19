@@ -80,6 +80,7 @@ public class Heightable : MonoBehaviour
         decoySprite.sprite = baseSprite.sprite;
         decoySprite.flipX = baseSprite.flipX;
         decoySprite.flipY = baseSprite.flipY;
+        decoySprite.color = baseSprite.color;
 
     }
 

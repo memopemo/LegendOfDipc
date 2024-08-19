@@ -44,11 +44,7 @@ public class Grapple : MonoBehaviour
         //check around player if we are like, close to a wall. Update() will update the hookpoint afterwards.
         length = 0.1f;
         hookPoint.position = player.transform.position + (Vector3)direction/2;
-        
-        player.transform.parent = transform;
-        player.SwitchState(new NoInputPlayerState());
-        player.animator.SetAnimation(PLAYER_ANIM);
-        player.rigidBody.velocity = Vector2.zero;
+        player.SwitchState(new GrapplePlayerState(player, transform));
         noiseMaker.Play(SND_EXTEND);
         CheckSurrounding();
         //initialize tape position, sprite, and flip based on direction.
@@ -139,7 +135,6 @@ public class Grapple : MonoBehaviour
     {
         hookPoint.DetachChildren();
         player.SwitchState(new DefaultPlayerState());
-        player.transform.parent = null;
         noiseMaker.Play(SND_RETRACT_FINISH, true);
         Destroy(gameObject);
     }
@@ -162,7 +157,7 @@ public class Grapple : MonoBehaviour
                     transform.parent = obj.transform;
                     noiseMaker.Play(SND_LATCH, true);
                     PlayRetractSound();
-                    player.animator.SetAnimation(PLAYER_ANIM + 1);
+                    (player.currentPlayerState as GrapplePlayerState).StartDragAnimation(player);
                     transform.position = ray.collider.transform.position - (Vector3)(direction * length);
                     return;
                 }

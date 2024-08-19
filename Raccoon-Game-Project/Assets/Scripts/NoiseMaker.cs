@@ -11,21 +11,21 @@ public class NoiseMaker : MonoBehaviour
 
     //Plays at specific point.
     //-1 means ignore.
-    public void Play(int clipPool, Vector3 position, bool interrupt = false, int specificClip = -1)
+    public void Play(int clipPool, Vector3 position, bool interrupt = false)
     {
-        if(GetClip(clipPool, out AudioClip clipWanted, specificClip) == false) return;
-        PlaySoundEffectAtPoint(clipWanted, position, audioClipPools[clipPool].isCancelable, interrupt);
+        if(GetClip(clipPool, out AudioClip clipWanted) == false) return;
+        PlaySoundEffectAtPoint(clipWanted, position, interrupt, audioClipPools[clipPool]);
     }
 
     //Plays at transform.
-    public void Play(int clipPool, bool interrupt = false, int specificClip = -1)
+    public void Play(int clipPool, bool interrupt = false)
     {
-        if(GetClip(clipPool, out AudioClip clipWanted, specificClip) == false) return;
-        PlaySoundEffectAtPoint(clipWanted, transform.position, audioClipPools[clipPool].isCancelable, interrupt);
+        if(GetClip(clipPool, out AudioClip clipWanted) == false) return;
+        PlaySoundEffectAtPoint(clipWanted, transform.position, interrupt, audioClipPools[clipPool]);
         
     }
 
-    bool GetClip(int clipPool, out AudioClip clip, int specificClip = -1)
+    bool GetClip(int clipPool, out AudioClip clip)
     { 
         clip = null;
         //range checks
@@ -34,48 +34,31 @@ public class NoiseMaker : MonoBehaviour
             Debug.LogError($"Clip Pool: {clipPool} is not in range of 0 to {audioClipPools.Count-1} ");
             return false;
         }
-        if(specificClip != -1 && (specificClip < 0 || specificClip > audioClipPools[clipPool].pool.Count-1))
-        {
-            Debug.LogError($"specific clip given: {specificClip} is not in range of 0 to {audioClipPools[clipPool].pool.Count-1} ");
-            return false;
-        }
-        
         //is clip not null
         AudioClip clipWanted;
-        if (specificClip != -1)
-        {
-            clipWanted = audioClipPools[clipPool].pool[specificClip];
-        }
-        else
-        {
-            clipWanted = audioClipPools[clipPool].pool[Random.Range(0, audioClipPools[clipPool].pool.Count)];
-        }
-
-        if (!clipWanted)
-        {
-            Debug.LogWarning($"Clip Pool: {clipPool} index {specificClip} is not assigned.");
-            return false;
-        }
+        clipWanted = audioClipPools[clipPool].pool[Random.Range(0, audioClipPools[clipPool].pool.Count)];
         clip = clipWanted;
         return true;
     }
     
     //lul copied from the docs
-    public void PlaySoundEffectAtPoint(AudioClip clip, Vector3 position, bool interuptable, bool isInterupting)
-    {
-        PlaySoundEffectAtPoint(clip, position, 1f, interuptable, isInterupting);
-    }
-    public void PlaySoundEffectAtPoint(AudioClip clip, Vector3 position, [UnityEngine.Internal.DefaultValue("1.0F")] float volume, bool interuptable, bool isInterupting)
+    public void PlaySoundEffectAtPoint(AudioClip clip, Vector3 position, bool isInterupting, ListWrapper clipDetails)
     {
         GameObject gameObject = new(clip.name);
         gameObject.transform.position = position;
+        if(clipDetails.followNoiseMaker)
+        {
+            gameObject.transform.parent = transform;
+        }
         AudioSource audioSource = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
         audioSource.outputAudioMixerGroup = (Resources.Load("Base") as AudioMixer).FindMatchingGroups("Master/Effects")[0];
         audioSource.clip = clip;
+        audioSource.pitch = clipDetails.varyPitch ? Random.Range(0.8f, 1.2f): 1;
+        audioSource.loop = clipDetails.looping;
         audioSource.spatialBlend = 1f;
-        audioSource.volume = volume;
+        audioSource.volume = 1f;
         audioSource.Play();
-        if(interuptable)
+        if(clipDetails.isCancelable)
         {
             Destroy(interruptableClip);
             interruptableClip = gameObject;
@@ -86,8 +69,26 @@ public class NoiseMaker : MonoBehaviour
         }
         Destroy(gameObject, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
     }
-    public void StopInteruptableClip()
+    public void StopInteruptableClip(bool cut = true)
     {
-        Destroy(interruptableClip);
+        if(cut)
+        {
+            Destroy(interruptableClip);
+        }
+        else
+        {
+            StartCoroutine("FadeOutInteruptableClip");
+        }
+    }
+    IEnumerator FadeOutInteruptableClip()
+    {
+        AudioSource interruptableAudioSource = interruptableClip.GetComponent<AudioSource>();
+        while (interruptableAudioSource.volume > 0)
+        {
+            interruptableAudioSource.volume -= Time.deltaTime*5;
+            yield return null;
+        }
+        Destroy(interruptableClip); //destroy when done.
+        
     }
 }

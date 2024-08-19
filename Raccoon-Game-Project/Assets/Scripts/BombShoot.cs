@@ -47,7 +47,7 @@ public class BombShoot : MonoBehaviour
             ammo--;
 
             var obj = Instantiate(shoot, transform.position, transform.rotation);
-            obj.GetComponent<DirectionedObject>().direction = heldPlayerItem.player.directionedObject.direction;
+            obj.GetComponent<FineDirectionedObject>().direction = heldPlayerItem.player.directionedObject.direction * 30;
 
             (heldPlayerItem.player.currentPlayerState as HeldItemPlayerState).Kickback(heldPlayerItem.player);
 
@@ -59,11 +59,9 @@ public class BombShoot : MonoBehaviour
             anim.SetAnimation(1);
             anim.RestartAnimation();
         }
-
     }
     void Die()
     {
-        Destroy(gameObject);
-        GetComponent<PoofDestroy>()?.Poof();
+        GetComponent<PoofDestroy>().PoofAndDestroy();
     }
 }

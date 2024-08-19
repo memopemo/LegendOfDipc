@@ -8,7 +8,7 @@ public class Heart : MonoBehaviour
     [SerializeField] AnimationCurve bounce;
     float time;
     Vector2 direction;
-    bool done;
+    bool doneFalling;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +20,9 @@ public class Heart : MonoBehaviour
     {
         var player = FindAnyObjectByType<PlayerStateManager>();
         if(!player) return;
-        if(Vector2.Distance(transform.position, player.transform.position) < 0.7f)  //1 unit circle (approx.)
+        if (doneFalling)
         {
-                gameObject.SetActive(false);
-                PlayerHealth.Heal(4, player);
-        }
-        
-        if (done) //hehe
-        {
-            if (Random.Range(1, 100) == 37) //hehe
+            if (Random.Range(1, 100) == 37)
             {
                 GetComponent<Animator2D.Animator2D>().RestartAnimation();
             }
@@ -43,9 +37,18 @@ public class Heart : MonoBehaviour
         {
             GetComponent<Animator2D.Animator2D>().SetAnimation(Random.Range(1,3));
             direction = Vector2.zero;
-            done = true;
+            doneFalling = true;
         }
         
         
+    }
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if(!doneFalling) return;
+        if(collider.TryGetComponent(out PlayerStateManager _) || collider.TryGetComponent(out SwordHitBox _))
+        {
+            gameObject.SetActive(false);
+            PlayerHealth.Heal(4, FindFirstObjectByType<PlayerStateManager>());
+        }
     }
 }

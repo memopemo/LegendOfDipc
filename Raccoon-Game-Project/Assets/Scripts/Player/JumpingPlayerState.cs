@@ -10,8 +10,6 @@ public class JumpingPlayerState : IPlayerState
     const int ANIM_JUMP = 2;
     const float DEFAULT_SPEED = 6f;
     const float MAX_JUMP_TIME = 0.5f;
-    const float JUMP_HEIGHT_NORMAL = 1;
-    const float JUMP_HEIGHT_SUPER = 2;
     int framesGrounded = 0;
     bool tryingToCorrect;
     Vector2Int initialDirection;
@@ -72,7 +70,7 @@ public class JumpingPlayerState : IPlayerState
         // (-4h/t^2)*x^2 + (4h/t)x
         // where h is the max height, and t is the length of the jump (in our case seconds)
         // and no I did not just pull that out of my ass, I used Mathway.
-        float jumpHeight = GetJumpHeight();
+        float jumpHeight = CommonPlayerState.GetJumpHeight();
         float a = -4 * jumpHeight / (MAX_JUMP_TIME * MAX_JUMP_TIME);
         float b = 4 * jumpHeight / MAX_JUMP_TIME;
         manager.height.height = (a * jumpSecs * jumpSecs) + (b * jumpSecs); // y = ax^2 + bx
@@ -87,15 +85,5 @@ public class JumpingPlayerState : IPlayerState
             manager.height.height = 0;
             return;
         }
-    }
-
-    public float GetJumpHeight() 
-    {
-        //TODO: change jump height based on what we have. 
-        if (true)
-        {
-            return JUMP_HEIGHT_SUPER;
-        }
-        //else return JUMP_HEIGHT_NORMAL;
     }
 }

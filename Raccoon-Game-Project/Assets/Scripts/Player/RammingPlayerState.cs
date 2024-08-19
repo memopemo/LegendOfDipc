@@ -19,7 +19,8 @@ public class RammingPlayerState : IPlayerState
     private const int RAM_DAMAGE = 5;
     private const int DASH_PARTICLE = 0;
     DamagesEnemy damagesEnemy;
-    AudioSource stepSource;
+    int framesImpactingCount;
+    const int FRAMES_IMPACTING = 4;
 
     public void OnEnter(PlayerStateManager manager)
     {
@@ -32,10 +33,7 @@ public class RammingPlayerState : IPlayerState
     public void OnLeave(PlayerStateManager manager)
     {
         Object.Destroy(damagesEnemy);
-        if(stepSource)
-        {
-            Object.Destroy(stepSource.gameObject);
-        }
+        manager.noiseMaker.StopInteruptableClip(false);
         
     }
     public void OnUpdate(PlayerStateManager manager)
@@ -43,7 +41,7 @@ public class RammingPlayerState : IPlayerState
         if(!Input.GetButton("Fire3") && windupTimeAndSpeed < 0) 
         {
             manager.SwitchState(new DefaultPlayerState());
-            manager.noiseMaker.StopInteruptableClip();
+            manager.noiseMaker.StopInteruptableClip(false);
             return;
         }
         else if(windupTimeAndSpeed > 0 && Input.GetButtonDown("Fire3"))
@@ -55,26 +53,24 @@ public class RammingPlayerState : IPlayerState
         //play dash start sound and looping step sound.
         if(windupTimeAndSpeed < 0 && windupTimeAndSpeed + Time.deltaTime > 0) //play only on the switch from windup to running.
         {
-            
+            Object.Instantiate(manager.poofParticle, manager.transform.position, Quaternion.identity); //create poof particle
             manager.noiseMaker.Play(DASH_SOUND); //zoom!
-
-            //create looping step sound
-            GameObject stepSound = new GameObject();
-            stepSource = stepSound.AddComponent<AudioSource>();
-            stepSource.loop = true;
-            stepSource.clip = manager.noiseMaker.audioClipPools[DASH_STEP_SOUND].pool[0];
-            stepSource.transform.parent = manager.transform;
-            stepSource.transform.localPosition = Vector2.zero;
-            stepSource.outputAudioMixerGroup = (Resources.Load("Base") as AudioMixer).FindMatchingGroups("Master/Effects")[0];
-            stepSource.spatialBlend = 1;
-            stepSource.Play();
+            manager.noiseMaker.Play(DASH_STEP_SOUND);
         }
 
         windupTimeAndSpeed += Time.deltaTime;
-        
-        //movement, but no direction
-        manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction
-            * (windupTimeAndSpeed > 0 ? MAX_DASH_SPEED : windupTimeAndSpeed + manager.additionalSpeed);
+        //freeze if we are impacting.
+        if(framesImpactingCount <= 0)
+        {
+            //movement, but no direction
+            manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction
+                * (windupTimeAndSpeed > 0 ? MAX_DASH_SPEED : windupTimeAndSpeed + manager.additionalSpeed);
+        }
+        else
+        {
+            framesImpactingCount--;
+            manager.rigidBody.velocity = Vector2.zero;
+        }
 
         // allow strafing perpendicular
         if(manager.directionedObject.direction.x != 0) //if x direction is active...
@@ -124,6 +120,11 @@ public class RammingPlayerState : IPlayerState
             else if(hit.collider.gameObject.TryGetComponent(out Rammable rammable))
             {
                 rammable.OnRamInto();
+                //if its collidable but not solid (aka breakable)
+                if(!hit.collider.isTrigger)
+                {
+                    framesImpactingCount = FRAMES_IMPACTING; //slow us down a peg.
+                }
                 if(rammable.isSolid)
                 {
                     manager.SwitchState(new BonkPlayerState());

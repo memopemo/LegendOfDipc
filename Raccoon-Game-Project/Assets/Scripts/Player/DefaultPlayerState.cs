@@ -158,7 +158,7 @@ public class DefaultPlayerState : IPlayerState
         {
             nextState = new GrabbingPlayerState(grabbable);
         }
-        else if (go.TryGetComponent(out ClimbableWall climbable))
+        else if (go.TryGetComponent(out ClimbableWall climbable) && manager.directionedObject.direction.x == 0)
         {
             nextState = new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height);
         }

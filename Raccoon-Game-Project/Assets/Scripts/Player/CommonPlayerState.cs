@@ -7,6 +7,9 @@ using UnityEngine.UIElements;
 class CommonPlayerState
 {
     public const float DEFAULT_SPEED = 6;
+    public const int BOOT_INVENTORY_INDEX = 4;
+    public const int JUMP_HEIGHT_NORMAL = 1;
+    public const int JUMP_HEIGHT_SUPER = 2;
     public static void MovePlayerRaw(PlayerStateManager manager, float speed) 
     {
         manager.rigidBody.velocity = manager.rawInput * (speed + manager.additionalSpeed);
@@ -30,11 +33,17 @@ class CommonPlayerState
     }
     public static float GetJumpHeight()
     {
+
         //TODO: change jump height based on what we have. 
-        if (true)
+        if (SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX+1])
         {
-            return 2;
+            return JUMP_HEIGHT_SUPER;
         }
+        else if(SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX])
+        {
+            return JUMP_HEIGHT_NORMAL;
+        }
+        return 0;
         //else return JUMP_HEIGHT_NORMAL;
     }
     // Checks if a collider is in the way of anything.

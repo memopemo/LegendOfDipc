@@ -4907,4 +4907,5 @@ MonoBehaviour:
   - pool:
     - {fileID: 8300000, guid: 16cace571d96e25449641b8efc9cd251, type: 3}
     isCancelable: 0
+    varyPitch: 1
   interruptableClip: {fileID: 0}

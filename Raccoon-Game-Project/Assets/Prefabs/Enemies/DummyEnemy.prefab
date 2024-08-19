@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &1381766346318566656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,11 +656,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
     - {fileID: 8300000, guid: 50b9e0a8c02f48d438262f7c71d96878, type: 3}
     - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
+    - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
     isCancelable: 0
+    varyPitch: 1
   - pool:
     - {fileID: 8300000, guid: 619794d52890ca846a0bcfe66ea46ee5, type: 3}
     - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
     isCancelable: 0
+    varyPitch: 1
   interruptableClip: {fileID: 0}
 --- !u!114 &127163695993412773
 MonoBehaviour:

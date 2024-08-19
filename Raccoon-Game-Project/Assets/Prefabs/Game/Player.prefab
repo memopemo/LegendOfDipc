@@ -180,6 +180,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 176e1ecfbb788944585e04e2cbe0bccf, type: 2}
   - {fileID: 11400000, guid: 176e1ecfbb788944585e04e2cbe0bccf, type: 2}
   - {fileID: 11400000, guid: 686b9396e4c9dfc4f861f13693a4aa7b, type: 2}
+  - {fileID: 11400000, guid: c7dda762757896148aa17dee798702af, type: 2}
+  - {fileID: 11400000, guid: b175aa29b33c0bc4f8ffac402a593529, type: 2}
+  - {fileID: 11400000, guid: 48c432c827622f24b9305041dfb9d47b, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
   finishedFrames: 0
@@ -273,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashParticle: {fileID: 7020248647777366368, guid: a11672e6cd98c134994c572868e93746, type: 3}
-  fallingEffect: {fileID: 0}
+  fallingEffect: {fileID: 7769745493347907057, guid: 50cc7c1fc13b75048846643b553e0940, type: 3}
 --- !u!114 &2342084741133098327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +361,33 @@ MonoBehaviour:
   - pool:
     - {fileID: 8300000, guid: 6122c64141200dd4db55734e1c395092, type: 3}
     isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+  - pool:
+    - {fileID: 8300000, guid: 16cace571d96e25449641b8efc9cd251, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+  - pool:
+    - {fileID: 8300000, guid: 4a746bb401d19a044911dbadf12eb2bc, type: 3}
+    isCancelable: 1
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+  - pool:
+    - {fileID: 8300000, guid: 8256f5102d541b64ca85b0569aa6847d, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+  - pool:
+    - {fileID: 8300000, guid: 0de82dc9dfefd0c41b8d53d556136b80, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
   interruptableClip: {fileID: 0}
 --- !u!114 &2624884996407416195
 MonoBehaviour:

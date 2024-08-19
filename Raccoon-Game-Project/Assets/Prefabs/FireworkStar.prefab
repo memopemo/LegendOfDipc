@@ -9,15 +9,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6586854418379143057}
-  - component: {fileID: 2121903291378354288}
   - component: {fileID: 613816343941236680}
-  - component: {fileID: 8653612603184942314}
+  - component: {fileID: 2121903291378354288}
   - component: {fileID: 8769266929654134070}
-  - component: {fileID: -6649411266811907859}
   - component: {fileID: -7156303044988524647}
   - component: {fileID: 3975654265647111850}
-  - component: {fileID: 4602453251491646306}
-  - component: {fileID: 3237600416562573227}
+  - component: {fileID: 1105548222201923957}
+  - component: {fileID: -4394217722991289244}
+  - component: {fileID: -2315009336050849364}
+  - component: {fileID: -3909972002985126022}
+  - component: {fileID: -6654095412812355789}
   m_Layer: 0
   m_Name: FireworkStar
   m_TagString: Untagged
@@ -40,19 +41,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121903291378354288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4505911748967574392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ad14aa867d87a4996431494feeffb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 2071764436163082100, guid: 9a1cea54574daf54c8ea765ac0d81538, type: 3}
 --- !u!212 &613816343941236680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -108,7 +96,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8653612603184942314
+--- !u!114 &2121903291378354288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,10 +105,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4505911748967574392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
+  m_Script: {fileID: 11500000, guid: f3ad14aa867d87a4996431494feeffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDirection: {x: 0, y: 0}
+  particle: {fileID: 2071764436163082100, guid: 9a1cea54574daf54c8ea765ac0d81538, type: 3}
 --- !u!114 &8769266929654134070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,23 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 1289753722777704823, guid: 7f0cea1ce8bab504bb2e3d61520588dc, type: 3}
   startParticle: {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
---- !u!114 &-6649411266811907859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4505911748967574392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f8d3732b42503d4493fbc3bbdce5c64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animations:
-  - {fileID: 11400000, guid: a0f1c884c0a8be34c9ec5f0ff7830acf, type: 2}
-  currentAnimation: 0
-  currentAnimationFrame: 0
-  finishedFrames: 0
 --- !u!114 &-7156303044988524647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,66 +187,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73696f488451a5a48b45db9afd7311aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &4602453251491646306
-CircleCollider2D:
+--- !u!114 &1105548222201923957
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505911748967574392}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.54999995}
-  m_Radius: 0.49999997
---- !u!50 &3237600416562573227
-Rigidbody2D:
-  serializedVersion: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6879b7b3695d7347b2f7db94809a939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
+--- !u!114 &-4394217722991289244
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4505911748967574392}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6efef9289d7b1af4cb4820bf2b5778cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2315009336050849364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505911748967574392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d4cd0d48945b54da4d20100a61e4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3909972002985126022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505911748967574392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6018e597a0d42b545a21ba89197f5945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animations:
+  - {fileID: 11400000, guid: 57743876830045e4f883aa21ed2daf49, type: 2}
+--- !u!114 &-6654095412812355789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505911748967574392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae8b386e3fc5a5418de0b97dbde672f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMagic: 0
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2121903291378354288}
+        m_TargetAssemblyTypeName: PoofDestroy, Assembly-CSharp
+        m_MethodName: PoofAndDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  isHitting: 0

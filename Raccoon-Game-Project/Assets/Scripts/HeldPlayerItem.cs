@@ -6,6 +6,7 @@ using UnityEngine;
 public class HeldPlayerItem : MonoBehaviour
 {
     [NonSerialized] public PlayerStateManager player;
+    [SerializeField] bool isKeyItem; //key items use Fire3, consumable items use Fire2.
     void Awake()
     {
         player = FindFirstObjectByType<PlayerStateManager>();
@@ -21,7 +22,7 @@ public class HeldPlayerItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!Input.GetButton("Fire3"))
+        if(!Input.GetButton(isKeyItem? "Fire3" : "Fire2"))
         {
             (player.currentPlayerState as HeldItemPlayerState).ExitCanceled(player);
             Destroy(gameObject);
