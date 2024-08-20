@@ -56,6 +56,9 @@ TagManager:
   - name: Trees
     uniqueID: 371550963
     locked: 0
+  - name: 3DGlasses
+    uniqueID: 2001835809
+    locked: 0
   m_RenderingLayers:
   - Default
   - 

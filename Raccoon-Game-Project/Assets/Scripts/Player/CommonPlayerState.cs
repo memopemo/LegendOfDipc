@@ -33,7 +33,7 @@ class CommonPlayerState
     }
     public static float GetJumpHeight()
     {
-
+        
         //TODO: change jump height based on what we have. 
         if (SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX+1])
         {

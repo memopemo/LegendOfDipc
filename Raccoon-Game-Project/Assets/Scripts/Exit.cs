@@ -24,6 +24,10 @@ public class Exit : MonoBehaviour
     void Enter()
     {
         SceneExitHandler.CurrentSceneExitIndex = entranceNumber;
+        if(Random.Range(0,1_000_000) == 0)
+        {
+            SceneManager.LoadScene("error");   
+        }
         SceneManager.LoadScene(scene);
     }
 }
