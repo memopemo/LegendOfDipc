@@ -74,6 +74,20 @@ Loot that will always drop upon the enemy's death.
 
 Examples: dungeon keys, bombs, etc
 
+### Enemy Scaling
+
+Because [Dungeons](areas.md#dungeons) can be beaten in any order, we have to make sure enemies are scaled according to the players progress.
+
+Enemies scale their health by how many [Bosses](bosses.md) the player has defeated. (or keys? or pendants? or heart containers? im not sure what it should scale by)
+
+Enemies also do not scale and keep the level if they were found at in previous dungeons that have been beaten already.
+
+- For example, the Xth dungeon the player has defeated will have enemies at level X.
+
+This allows the player to percieve enemies as incredibly easy if they backtrack and go through it again.
+
+The health scaling is linearly. +(CONST * Level) health
+
 ## Dungeon Enemy List
 
 ### Slime
