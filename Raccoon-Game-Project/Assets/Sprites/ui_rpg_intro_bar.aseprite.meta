@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc29269b9cb25774fbe98b30346c155a
+guid: 0e901f67b751a884ea2bf8bf5401457f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638598276611773554
+  platformSettingsDirtyTick: 638598303091802014
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: point_light
+  - name: ui_rpg_intro_bar
     originalName: 
-    pivot: {x: 0.5, y: 0.49802375}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 3, z: 0, w: 3}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 254
-      height: 253
-    spriteID: aa99e8ecd6437ff48977c599330d6d46
+      width: 1
+      height: 7
+    spriteID: 79b49bd1916f1174f89aa090b865996f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,23 +139,163 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: ui_rpg_intro_bar_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 3, z: 0, w: 3}
+    rect:
+      serializedVersion: 2
+      x: 13
+      y: 4
+      width: 1
+      height: 7
+    spriteID: a4d6df94e9c39864195be81c53d9fb4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13, y: 4}
+  - name: ui_rpg_intro_bar_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 3, z: 0, w: 3}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 4
+      width: 1
+      height: 7
+    spriteID: b385eddd21e943b4483f73865360653e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 4}
+  - name: ui_rpg_intro_bar_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 3, z: 0, w: 3}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 19
+      width: 1
+      height: 7
+    spriteID: db4f036c0e1a7eb49a7e2039ad59d136
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 19}
+  - name: ui_rpg_intro_bar_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 3, z: 0, w: 3}
+    rect:
+      serializedVersion: 2
+      x: 13
+      y: 19
+      width: 1
+      height: 7
+    spriteID: 791c82332a78839448f7a04c917624fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 13, y: 19}
+  - name: ui_rpg_intro_bar_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 3, z: 0, w: 3}
+    rect:
+      serializedVersion: 2
+      x: 22
+      y: 19
+      width: 1
+      height: 7
+    spriteID: 8571ae28ecf02304a82c0f2fa6d1e7c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 22, y: 19}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1638984933
-    name: point_light
+    guid: -795606795
+    name: ui_rpg_intro_bar
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: point_light
+    - name: ui_rpg_intro_bar_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 2
-        width: 254
-        height: 253
-      spriteId: aa99e8ecd6437ff48977c599330d6d46
+        x: 0
+        y: 0
+        width: 1
+        height: 7
+      spriteId: 79b49bd1916f1174f89aa090b865996f
+    - name: ui_rpg_intro_bar_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 1
+        height: 7
+      spriteId: a4d6df94e9c39864195be81c53d9fb4a
+    - name: ui_rpg_intro_bar_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 1
+        height: 7
+      spriteId: b385eddd21e943b4483f73865360653e
+    - name: ui_rpg_intro_bar_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 1
+        height: 7
+      spriteId: db4f036c0e1a7eb49a7e2039ad59d136
+    - name: ui_rpg_intro_bar_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 1
+        height: 7
+      spriteId: 791c82332a78839448f7a04c917624fc
+    - name: ui_rpg_intro_bar_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 0
+        width: 1
+        height: 7
+      spriteId: 8571ae28ecf02304a82c0f2fa6d1e7c8
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,4 +325,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 1, y: 7}

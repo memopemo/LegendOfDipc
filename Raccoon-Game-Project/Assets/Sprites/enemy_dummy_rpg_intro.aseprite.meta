@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc29269b9cb25774fbe98b30346c155a
+guid: 3e1730adcf730a1479b6930c38743f2b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638598276611773554
+  platformSettingsDirtyTick: 638598303167384559
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: point_light
+  - name: enemy_dummy_rpg_intro
     originalName: 
-    pivot: {x: 0.5, y: 0.49802375}
+    pivot: {x: 0.5338983, y: 0.51449275}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 254
-      height: 253
-    spriteID: aa99e8ecd6437ff48977c599330d6d46
+      width: 59
+      height: 69
+    spriteID: 63a560c1051e598419e6c08fcbcc0f66
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,20 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1638984933
-    name: point_light
+    guid: -2136239300
+    name: enemy_dummy_rpg_intro
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: point_light
+    - name: enemy_dummy_rpg_intro
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 2
-        width: 254
-        height: 253
-      spriteId: aa99e8ecd6437ff48977c599330d6d46
+        x: 17
+        y: 0
+        width: 59
+        height: 69
+      spriteId: 63a560c1051e598419e6c08fcbcc0f66
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,4 +185,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 97, y: 71}

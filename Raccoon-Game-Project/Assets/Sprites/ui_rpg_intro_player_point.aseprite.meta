@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc29269b9cb25774fbe98b30346c155a
+guid: 06968975d9d436f4fb547798779e8dbd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638598276611773554
+  platformSettingsDirtyTick: 638598303167384559
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: point_light
+  - name: ui_rpg_intro_player_point
     originalName: 
-    pivot: {x: 0.5, y: 0.49802375}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 254
-      height: 253
-    spriteID: aa99e8ecd6437ff48977c599330d6d46
+      width: 97
+      height: 71
+    spriteID: eba9fcacc42b4b24b9aa085d4085f647
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,23 +139,51 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: ui_rpg_intro_player_point_Frame_1
+    originalName: 
+    pivot: {x: 0.48876402, y: 0.5378788}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 83
+      width: 89
+      height: 66
+    spriteID: 3aa82d48175daed49b860a422e0d7f39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 83}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1638984933
-    name: point_light
+    guid: 1182435062
+    name: ui_rpg_intro_player_point
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: point_light
+    - name: ui_rpg_intro_player_point_Frame_0
       frameIndex: 0
       cellRect:
-        x: 1
-        y: 2
-        width: 254
-        height: 253
-      spriteId: aa99e8ecd6437ff48977c599330d6d46
+        x: 0
+        y: 0
+        width: 97
+        height: 71
+      spriteId: eba9fcacc42b4b24b9aa085d4085f647
+    - name: ui_rpg_intro_player_point_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 5
+        y: 0
+        width: 89
+        height: 66
+      spriteId: 3aa82d48175daed49b860a422e0d7f39
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,4 +213,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 97, y: 71}

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc29269b9cb25774fbe98b30346c155a
+guid: c0533735acd20414a89be97792596efb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 5
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 0
@@ -87,7 +87,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 5
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 0
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638598276611773554
+  platformSettingsDirtyTick: 638598708661329192
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,58 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: point_light
+  - name: effect_rpgboy_strike_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.49802375}
+    pivot: {x: 1, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 49
+      width: 158
+      height: 8
+    spriteID: 7205c05b05bd71646b6221266e58fc87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 49}
+  - name: effect_rpgboy_strike_Frame_1
+    originalName: 
+    pivot: {x: 1, y: 0.42857146}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 27
+      width: 159
+      height: 14
+    spriteID: 150277dcda82d9b449588e99a50417ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 27}
+  - name: effect_rpgboy_strike_Frame_2
+    originalName: 
+    pivot: {x: 1, y: 0.4666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 254
-      height: 253
-    spriteID: aa99e8ecd6437ff48977c599330d6d46
+      width: 157
+      height: 15
+    spriteID: d98d44a791cd8a74da1d1b3fd5f3113c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,23 +179,67 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: effect_rpgboy_strike_Frame_3
+    originalName: 
+    pivot: {x: 1, y: 0.4}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 65
+      width: 157
+      height: 5
+    spriteID: 4204100ceaf35b248a42a96573e985dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 65}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1638984933
-    name: point_light
+    guid: 1198673230
+    name: effect_rpgboy_strike
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: point_light
+    - name: effect_rpgboy_strike_Frame_0
       frameIndex: 0
+      cellRect:
+        x: 2
+        y: 4
+        width: 158
+        height: 8
+      spriteId: 7205c05b05bd71646b6221266e58fc87
+    - name: effect_rpgboy_strike_Frame_1
+      frameIndex: 1
       cellRect:
         x: 1
         y: 2
-        width: 254
-        height: 253
-      spriteId: aa99e8ecd6437ff48977c599330d6d46
+        width: 159
+        height: 14
+      spriteId: 150277dcda82d9b449588e99a50417ed
+    - name: effect_rpgboy_strike_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 3
+        y: 1
+        width: 157
+        height: 15
+      spriteId: d98d44a791cd8a74da1d1b3fd5f3113c
+    - name: effect_rpgboy_strike_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 3
+        y: 6
+        width: 157
+        height: 5
+      spriteId: 4204100ceaf35b248a42a96573e985dc
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,4 +269,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 256, y: 256}
+  canvasSize: {x: 160, y: 16}
