@@ -6,7 +6,6 @@ public class RPGboy : MonoBehaviour
 {
     [SerializeField] GameObject combatScreen;
     RPGable rPGable;
-    GameObject battleScreen;
     int ANIM_PLAYER_POINT = 4;
 
     // Start is called before the first frame update
@@ -26,20 +25,28 @@ public class RPGboy : MonoBehaviour
                 rPGable = testRPGable;
             }
         }
-        Invoke(nameof(StartBattle), 0.75f);
         FreezeMmanager.FreezeAll<PauseFreezer>();
+        Invoke(nameof(StartBattle), 0.3f);
+        if(rPGable == null)
+        {
+            Invoke(nameof(FailedBattle), 1.5f);
+        }
+        Invoke(nameof(Die), 1.5f);
+        
     }
     void StartBattle()
     {
-        battleScreen = Instantiate(combatScreen, FindFirstObjectByType<Canvas>().transform);
-        battleScreen.GetComponent<BattleSceneStarter>().rPGable = rPGable;
-        Invoke(nameof(TempEscapeBattle), 2);
-    }
+        FindFirstObjectByType<UIRPGBoyIntroBar>().Play(rPGable);
         
-    void TempEscapeBattle()
-    {
-        FreezeMmanager.UnfreezeAll<PauseFreezer>();
-        Destroy(gameObject);
-        Destroy(battleScreen);
     }
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+    void FailedBattle()
+    {
+        Destroy(gameObject);
+        FreezeMmanager.UnfreezeAll<PauseFreezer>();
+    }
+
 }

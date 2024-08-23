@@ -361,13 +361,13 @@ MonoBehaviour:
   - pool:
     - {fileID: 8300000, guid: 6122c64141200dd4db55734e1c395092, type: 3}
     isCancelable: 0
-    varyPitch: 0
+    varyPitch: 1
     looping: 0
     followNoiseMaker: 0
   - pool:
     - {fileID: 8300000, guid: 16cace571d96e25449641b8efc9cd251, type: 3}
     isCancelable: 0
-    varyPitch: 0
+    varyPitch: 1
     looping: 0
     followNoiseMaker: 0
   - pool:
@@ -384,10 +384,10 @@ MonoBehaviour:
     followNoiseMaker: 0
   - pool:
     - {fileID: 8300000, guid: 0de82dc9dfefd0c41b8d53d556136b80, type: 3}
-    isCancelable: 0
-    varyPitch: 0
-    looping: 0
-    followNoiseMaker: 0
+    isCancelable: 1
+    varyPitch: 1
+    looping: 1
+    followNoiseMaker: 1
   interruptableClip: {fileID: 0}
 --- !u!114 &2624884996407416195
 MonoBehaviour:
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_CastsShadows: 1
   m_SelfShadows: 0
   m_AlphaCutoff: 0.1
-  m_ApplyToSortingLayers: 000000000db78d1c33c1ce56458f7449
+  m_ApplyToSortingLayers: 000000000db78d1c33c1ce56458f7449f36a2516
   m_ShapePath:
   - {x: -0.4375, y: -0.6875, z: 0}
   - {x: -0.4375, y: 0.8125, z: 0}

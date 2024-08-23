@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 // Freezes this object's behaviopurs based on what it will freeze on
 // Enabling freezing is strictly explicit. You must add this component if you want to freeze, and you must also subscribe to what you want to be frozen by.
@@ -29,7 +30,7 @@ class Freezer : MonoBehaviour
         foreach (Behaviour behaviour in gob.GetComponents(typeof(Behaviour)).Cast<Behaviour>())
         {
             // add behaviours as necessary.
-            if( !behaviour.enabled || behaviour is Freezer || behaviour is Camera || behaviour is AudioListener)   
+            if( !behaviour.enabled || behaviour is Freezer || behaviour is Camera || behaviour is AudioListener || behaviour is PixelPerfectCamera)   
             {
                 continue;
             }

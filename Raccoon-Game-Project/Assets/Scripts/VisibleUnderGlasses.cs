@@ -16,6 +16,7 @@ public class VisibleUnderGlasses : MonoBehaviour
     }
     void Update()
     {
-        rendererFuck2010AssUnityisms.enabled = cameraFocus.hasGlassesOn;
+        if(cameraFocus)
+            rendererFuck2010AssUnityisms.enabled = cameraFocus.hasGlassesOn;
     }
 }

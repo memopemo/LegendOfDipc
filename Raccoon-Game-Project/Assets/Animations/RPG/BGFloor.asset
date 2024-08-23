@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: BGFloor
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: 1278432695800900223, guid: 45eb90b88a569264f87ea07ee8ec5737, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -8737668388429218195, guid: 45eb90b88a569264f87ea07ee8ec5737, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: 6414165951543834755, guid: 45eb90b88a569264f87ea07ee8ec5737, type: 3}
+    HoldForTicks: 40
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 3

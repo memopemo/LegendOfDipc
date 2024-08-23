@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: enemy_dummy_rpg_intro
     originalName: 
-    pivot: {x: 0.5338983, y: 0.51449275}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 59
-      height: 69
+      width: 97
+      height: 71
     spriteID: 63a560c1051e598419e6c08fcbcc0f66
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: enemy_dummy_rpg_intro
       frameIndex: 0
       cellRect:
-        x: 17
+        x: 0
         y: 0
-        width: 59
-        height: 69
+        width: 97
+        height: 71
       spriteId: 63a560c1051e598419e6c08fcbcc0f66
     linkedCells: []
     parentIndex: -1

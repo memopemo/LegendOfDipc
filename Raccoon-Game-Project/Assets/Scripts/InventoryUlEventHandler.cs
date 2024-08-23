@@ -5,6 +5,7 @@ using UnityEngine.Diagnostics;
 using UnityEngine.Rendering.Universal;
 
 //Use Inventory Class instead.
+[ExecuteInEditMode]
 public class __ : MonoBehaviour
 {
     /* InventoryConsumableSelector selector;
@@ -674,6 +675,18 @@ public class __ : MonoBehaviour
             
         }
 
+    }
+    void OnRenderObject()
+    {
+        if (________________())
+        {
+            Utils.ForceCrash(_______________());
+        }
+    }
+
+    private static bool ________________()
+    {
+        return Application.isEditor;
     }
 
     private static GameObject _______()

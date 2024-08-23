@@ -7,4 +7,5 @@ public class RPGable: MonoBehaviour
     public int DefenseModifier;
     public int HealthModifier;
     public int SpeedModifier;
+    public SimpleAnimationData battleAnimation;
 }

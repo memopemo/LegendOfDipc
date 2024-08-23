@@ -141,15 +141,15 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: ui_rpg_intro_player_point_Frame_1
     originalName: 
-    pivot: {x: 0.48876402, y: 0.5378788}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 83
-      width: 89
-      height: 66
+      width: 97
+      height: 71
     spriteID: 3aa82d48175daed49b860a422e0d7f39
     spriteBone: []
     spriteOutline: []
@@ -179,10 +179,10 @@ ScriptedImporter:
     - name: ui_rpg_intro_player_point_Frame_1
       frameIndex: 1
       cellRect:
-        x: 5
+        x: 0
         y: 0
-        width: 89
-        height: 66
+        width: 97
+        height: 71
       spriteId: 3aa82d48175daed49b860a422e0d7f39
     linkedCells: []
     parentIndex: -1
