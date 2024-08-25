@@ -31,17 +31,21 @@ public class RPGboy : MonoBehaviour
         {
             Invoke(nameof(FailedBattle), 1.5f);
         }
-        Invoke(nameof(Die), 1.5f);
+        Invoke(nameof(Die), 3f);
         
     }
     void StartBattle()
     {
-        FindFirstObjectByType<UIRPGBoyIntroBar>().Play(rPGable);
+        UIRPGBoyIntroBar bar = FindFirstObjectByType<UIRPGBoyIntroBar>(FindObjectsInactive.Include);
+        bar.gameObject.SetActive(true);
+        bar.Play(rPGable);
         
     }
     void Die()
     {
-        Destroy(gameObject);
+        UIRPGBoyIntroBar bar = FindFirstObjectByType<UIRPGBoyIntroBar>(FindObjectsInactive.Include);
+        bar.gameObject.SetActive(false);
+        Destroy(gameObject);  
     }
     void FailedBattle()
     {

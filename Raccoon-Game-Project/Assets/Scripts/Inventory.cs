@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public Sprite[] itemPreviews;
+    public ItemSpriteList itemPreviews;
     [SerializeField] AudioClip[] sounds;
     [SerializeField] AnimationCurve flyIn;
     [SerializeField] AnimationCurve flyOut;

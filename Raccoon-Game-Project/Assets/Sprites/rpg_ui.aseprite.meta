@@ -340,6 +340,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
+  - name: rpg_ui_10
+    originalName: 
+    pivot: {x: 0, y: 1}
+    alignment: 1
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 68
+      y: 28
+      width: 8
+      height: 8
+    spriteID: 262d82f992a89fe49bce2ba7ba2e5435
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
     guid: -1191568956

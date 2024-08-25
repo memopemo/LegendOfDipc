@@ -20,7 +20,7 @@ public class InventoryConsumableSlot : MonoBehaviour
     }
     private void Update()
     {
-        image.sprite = inventory.itemPreviews[SaveManager.GetSave().InventoryConsumableType[index]];
+        image.sprite = inventory.itemPreviews.consumableItems[SaveManager.GetSave().InventoryConsumableType[index]];
         foreach(var i in transform.GetComponentsInChildren<TMP_Text>()) 
         {
             i.text = SaveManager.GetSave().InventoryConsumableCount[index].ToString();

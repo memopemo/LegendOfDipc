@@ -2,6 +2,7 @@ using UnityEngine;
 //Player Health referenced throughout the life of the game, in between rooms and areas that may not even have any player in them.
 public static class PlayerHealth
 {
+    public static int STARTING_HEART_CONTAINERS = 3;
     public static int currentHealth = 8;
     #if DEBUG
     public static bool debugLockHealth = false;
