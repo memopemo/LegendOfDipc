@@ -51,7 +51,7 @@ public class GrabbingPlayerState : IPlayerState
             secsPushing = 0;
             secsPulling += Time.deltaTime;
             //Check if we can lift.
-            if (grabbable.TryGetComponent(out Liftable l))
+            if (grabbable.TryGetComponent(out Liftable l) && SaveManager.GetSave().ObtainedKeyUnselectableItems[1])
             {
                 if (secsPulling > 0.5f)
                 {

@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c706966ea51e7ac4f8c999938fa30be0, type: 3}
+  m_Name: ChestTreasureList
+  m_EditorClassIdentifier: 
+  chestTreasure:
+  - giveWhat: 0
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 0}
+  - giveWhat: 1
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 9113817642459462969, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: -6959045939153906757, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: -7461589655530948148, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: -2380377604426966327, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: -6907347399781504045, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 5
+    spriteInsideChest: {fileID: -8133724249412717751, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 6
+    spriteInsideChest: {fileID: 7976172361386981902, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 7
+    spriteInsideChest: {fileID: 1342472135254370113, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 8
+    spriteInsideChest: {fileID: 5652655176034507034, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 9
+    spriteInsideChest: {fileID: 5617018988522029515, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 10
+    spriteInsideChest: {fileID: -6552075922434921610, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 11
+    spriteInsideChest: {fileID: 6383690574480498288, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 12
+    spriteInsideChest: {fileID: 4172537317493885778, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 13
+    spriteInsideChest: {fileID: -634533551533058118, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 14
+    spriteInsideChest: {fileID: 7017987009056360990, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 15
+    spriteInsideChest: {fileID: -2240817637272795608, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 16
+    spriteInsideChest: {fileID: -2989481445587284, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 17
+    spriteInsideChest: {fileID: -247636722872542219, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: -827779732845397269, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: -827779732845397269, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: 3162581917629093997, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: -5746151829216926306, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: 3760688317879385643, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 5
+    spriteInsideChest: {fileID: 5779541040229889675, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: -6928556903907651944, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: -3195384718093436064, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: 1319909978937901201, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: -6795231328572613548, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 5
+    spriteInsideChest: {fileID: -6198458306118065701, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 6
+    spriteInsideChest: {fileID: 4889475546882983899, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 7
+    spriteInsideChest: {fileID: 8779605294830372207, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 8
+    spriteInsideChest: {fileID: 210377729939747664, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 9
+    spriteInsideChest: {fileID: -6464895052674090155, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 10
+    spriteInsideChest: {fileID: -749317251694047803, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 11
+    spriteInsideChest: {fileID: -8939800259644722691, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 12
+    spriteInsideChest: {fileID: 8451743034432073017, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 13
+    spriteInsideChest: {fileID: -3786819131532374746, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 14
+    spriteInsideChest: {fileID: -8127555361355417858, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 15
+    spriteInsideChest: {fileID: 3792884336495295322, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 16
+    spriteInsideChest: {fileID: 3126882371405884934, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 17
+    spriteInsideChest: {fileID: 3578533747115386608, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 18
+    spriteInsideChest: {fileID: 1879688228904176479, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 4
+    indexOrQuantity: 5
+    spriteInsideChest: {fileID: 8823845980507149369, guid: a1f69180d6fe90041b1176d2020feab3, type: 3}
+  - giveWhat: 4
+    indexOrQuantity: 10
+    spriteInsideChest: {fileID: -4365711296320719210, guid: a1f69180d6fe90041b1176d2020feab3, type: 3}
+  - giveWhat: 4
+    indexOrQuantity: 20
+    spriteInsideChest: {fileID: 8651736712273990007, guid: a1f69180d6fe90041b1176d2020feab3, type: 3}
+  - giveWhat: 4
+    indexOrQuantity: 50
+    spriteInsideChest: {fileID: 2993253878372258459, guid: a1f69180d6fe90041b1176d2020feab3, type: 3}
+  - giveWhat: 4
+    indexOrQuantity: 100
+    spriteInsideChest: {fileID: -7802821950526715395, guid: a1f69180d6fe90041b1176d2020feab3, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: -4060241907049840230, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: 7280937681284718841, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: 5400527915198059297, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: 5766622453041929607, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: 8030122130996460306, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 5
+    spriteInsideChest: {fileID: -7588301085608897287, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 6
+    spriteInsideChest: {fileID: -6692678790208708542, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 7
+    spriteInsideChest: {fileID: 1015192982245025755, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 8
+    spriteInsideChest: {fileID: 5698033361212879630, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 9
+    spriteInsideChest: {fileID: 7260778366312407551, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 10
+    spriteInsideChest: {fileID: 6126650342571240328, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 6
+    indexOrQuantity: 11
+    spriteInsideChest: {fileID: -7947543923049136340, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 7
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: -2773877989101134493, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 7
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: 3558225220232783575, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 7
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: 530958836744781788, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 7
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: 1296801762804971983, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 8
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 4003015942410543056, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 8
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: 8372989489643538704, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 8
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: -3195384718093436064, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 8
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: -8083377869115731763, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 9
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 9
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 9
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 9
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}

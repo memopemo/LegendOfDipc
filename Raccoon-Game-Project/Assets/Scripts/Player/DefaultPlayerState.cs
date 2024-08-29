@@ -98,7 +98,7 @@ public class DefaultPlayerState : IPlayerState
             {
                 HandleConfirmButtonNearColliderType(manager, go, ref nextState);
             }
-            else
+            else //sword is usable.
             {
                 nextState = new SwordPlayerState();
             }            
@@ -158,15 +158,15 @@ public class DefaultPlayerState : IPlayerState
         {
             nextState = new GrabbingPlayerState(grabbable);
         }
-        else if (go.TryGetComponent(out ClimbableWall climbable) && manager.directionedObject.direction.x == 0)
+        else if (go.TryGetComponent(out ClimbableWall climbable) && manager.directionedObject.direction.x == 0 && SaveManager.GetSave().ObtainedKeyUnselectableItems[3])
         {
             nextState = new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height);
         }
-        else if (go.TryGetComponent(out LedgeBottom ledgeBottom))
+        else if (go.TryGetComponent(out LedgeBottom ledgeBottom) && SaveManager.GetSave().ObtainedKeyItems[17])
         {
             nextState = new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y);
         }
-        else if (go.TryGetComponent(out LedgeTop ledgeTop))
+        else if (go.TryGetComponent(out LedgeTop ledgeTop) && SaveManager.GetSave().ObtainedKeyItems[17])
         {
             nextState = new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y);
         }
@@ -210,9 +210,12 @@ public class DefaultPlayerState : IPlayerState
     private static void CreateKeyItemObject(PlayerStateManager manager)
     {
         //Get all information of what we want to instantiate
-
         //get inventory's currently selected item index...
         int selectionIndex = GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex;
+    
+        //check if we have the ability to create to create the key item.
+        if(!SaveManager.GetSave().ObtainedKeyItems[selectionIndex]) return;
+
         //get the gameobject of the key item through the lookup table using the index...
         GameObject keyItem = manager.itemGameObjectLookup.UsableKeyItems[selectionIndex];
 

@@ -263,8 +263,14 @@ public class PlayerStateManager : MonoBehaviour
     }
     private void EnterDeepWaterScene()
     {
+        string underwaterVariantSceneName = SceneManager.GetActiveScene().name + "_Underwater";
         KeepUnderwaterPositionExitHandler.position = transform.position;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name + "_Underwater");
+        if(SceneUtility.GetBuildIndexByScenePath(underwaterVariantSceneName) == -1)
+        {
+            SceneManager.LoadScene("error");
+            return;
+        }
+        SceneManager.LoadScene(underwaterVariantSceneName);
     }
     public void DisableSprite()
     {

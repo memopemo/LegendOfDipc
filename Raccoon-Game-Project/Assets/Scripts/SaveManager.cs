@@ -61,12 +61,15 @@ public static class SaveManager
             {
                 Debug.Log("Save file not valid. Generating blank one");
                 saveManager = new SaveFile();
+                InitializeSave();
             }
 
         }
         else
         {
+            Debug.Log("Save file not found. Generating blank one");
             saveManager = new SaveFile();
+            InitializeSave();
         }
     }
     //Returns: True if item was sucessfully decremented
@@ -102,6 +105,32 @@ public static class SaveManager
         sf.InventoryConsumableCount[index]--;
     }
 
+    //adds a single new item to the inventory
+    public static void AddConsumableItem(int type)
+    {
+        if(type <= 0 || type > 18)
+        {
+            Debug.LogError($"Adding Consumable Item {type} is not 1-18!");
+            return;
+        }
+        SaveFile sf = GetSave();
+        //find either an empty slot or the same type.
+        for(int i = 0; i < sf.InventoryConsumableCount.Length; i++)
+        {
+            if(sf.InventoryConsumableType[i] == type)
+            {
+                sf.InventoryConsumableCount[i]++;
+                return;
+            }
+            else if(sf.InventoryConsumableType[i] == 0)
+            {
+                sf.InventoryConsumableType[i] = type;
+                sf.InventoryConsumableCount[i] = 1;
+                return;
+            }
+        }
+    }
+
     #if DEBUG
     public static void DebugMaxOut()
     {
@@ -130,6 +159,18 @@ public static class SaveManager
 
     }
     #endif
+    
+    static void InitializeSave()
+    {
+        //Everything else is already set to 0, but missing items must be -1.
+        SaveFile sf = GetSave();
+        sf.CurrentSword = -1;
+        sf.CurrentShield = -1;
+        sf.CurrentBoomerang = -1;
+        sf.CurrentArmor = -1;
+
+    }
+    
     static void SetArrayToTrue(ref bool[] a)
     {
         for (int i = 0; i < a.Length; i++)

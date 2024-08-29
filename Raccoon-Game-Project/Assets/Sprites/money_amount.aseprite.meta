@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c0533735acd20414a89be97792596efb
+guid: a1f69180d6fe90041b1176d2020feab3
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -75,7 +75,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 5
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 0
@@ -87,7 +87,7 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 5
+    defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
     spritePadding: 0
     generateModelPrefab: 0
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638598708661329192
+  platformSettingsDirtyTick: 638598303167384559
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,58 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: effect_rpgboy_strike_Frame_0
+  - name: money_amount_Frame_0
     originalName: 
-    pivot: {x: 1, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 49
-      width: 158
-      height: 8
-    spriteID: 7205c05b05bd71646b6221266e58fc87
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 49}
-  - name: effect_rpgboy_strike_Frame_1
-    originalName: 
-    pivot: {x: 1, y: 0.42857146}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 27
-      width: 157
-      height: 14
-    spriteID: 150277dcda82d9b449588e99a50417ed
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 27}
-  - name: effect_rpgboy_strike_Frame_2
-    originalName: 
-    pivot: {x: 1, y: 0.4666667}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 157
-      height: 15
-    spriteID: d98d44a791cd8a74da1d1b3fd5f3113c
+      width: 16
+      height: 16
+    spriteID: 30eedcde12e7007489ff3e3c0a95f172
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,18 +139,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: effect_rpgboy_strike_Frame_3
+  - name: money_amount_Frame_1
     originalName: 
-    pivot: {x: 1.0000001, y: 0.4}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 65
-      width: 156
-      height: 5
-    spriteID: 4204100ceaf35b248a42a96573e985dc
+      y: 28
+      width: 16
+      height: 16
+    spriteID: 1e71f34701ae71d4e82cfeb4659cc11f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,48 +158,116 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 65}
+    uvTransform: {x: 4, y: 28}
+  - name: money_amount_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 16
+      height: 16
+    spriteID: 3813c37651be40d489aded2909c30238
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: money_amount_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 16
+      height: 16
+    spriteID: 96acdfbdd9f12c7449f307cdedafc218
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: money_amount_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 100
+      width: 16
+      height: 16
+    spriteID: 17a70e788fd5e1a4d89f81955649e2a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 100}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1198673230
-    name: effect_rpgboy_strike
+    guid: -1317780657
+    name: money_amount
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: effect_rpgboy_strike_Frame_0
+    - name: money_amount_Frame_0
       frameIndex: 0
       cellRect:
-        x: 2
-        y: 4
-        width: 158
-        height: 8
-      spriteId: 7205c05b05bd71646b6221266e58fc87
-    - name: effect_rpgboy_strike_Frame_1
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 30eedcde12e7007489ff3e3c0a95f172
+    - name: money_amount_Frame_1
       frameIndex: 1
       cellRect:
-        x: 3
-        y: 2
-        width: 157
-        height: 14
-      spriteId: 150277dcda82d9b449588e99a50417ed
-    - name: effect_rpgboy_strike_Frame_2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 1e71f34701ae71d4e82cfeb4659cc11f
+    - name: money_amount_Frame_2
       frameIndex: 2
       cellRect:
-        x: 3
-        y: 1
-        width: 157
-        height: 15
-      spriteId: d98d44a791cd8a74da1d1b3fd5f3113c
-    - name: effect_rpgboy_strike_Frame_3
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 3813c37651be40d489aded2909c30238
+    - name: money_amount_Frame_3
       frameIndex: 3
       cellRect:
-        x: 4
-        y: 6
-        width: 156
-        height: 5
-      spriteId: 4204100ceaf35b248a42a96573e985dc
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 96acdfbdd9f12c7449f307cdedafc218
+    - name: money_amount_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 17a70e788fd5e1a4d89f81955649e2a6
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -269,4 +297,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 160, y: 16}
+  canvasSize: {x: 16, y: 16}

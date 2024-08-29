@@ -57,7 +57,7 @@ public class SwimPlayerState : IPlayerState
         List<RaycastHit2D> results = new();
         int _ = Physics2D.BoxCast(manager.transform.position + Vector3.down * 0.2f, Vector2.one * 0.01f, 0, Vector2.zero, contactFilter, results, 0);
         Physics2D.queriesHitTriggers = false;
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && SaveManager.GetSave().ObtainedKeyUnselectableItems[0])
         {
             foreach (RaycastHit2D hit in results)
             {

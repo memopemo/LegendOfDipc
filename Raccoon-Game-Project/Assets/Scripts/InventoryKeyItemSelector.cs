@@ -28,8 +28,7 @@ public class InventoryKeyItemSelector : MonoBehaviour
     Sprite imageEnabled;
     Inventory inventory;
 
-    public int SelectionIndex {get => selectionIndex; private set => selectionIndex = value; }
-
+    public int SelectionIndex;
     // Start is called before the first frame update
     void Start()
     {

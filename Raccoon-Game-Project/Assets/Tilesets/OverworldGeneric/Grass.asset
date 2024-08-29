@@ -113,9 +113,9 @@ MonoBehaviour:
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
-    m_Output: 0
+    m_Output: 1
     m_ColliderType: 1
-    m_RandomTransform: 0
+    m_RandomTransform: 2
     m_Neighbors: 02000000030000000300000003000000
     m_NeighborPositions:
     - {x: 0, y: 1, z: 0}
@@ -130,9 +130,9 @@ MonoBehaviour:
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
-    m_Output: 0
+    m_Output: 1
     m_ColliderType: 1
-    m_RandomTransform: 0
+    m_RandomTransform: 2
     m_Neighbors: 02000000030000000300000003000000
     m_NeighborPositions:
     - {x: 0, y: -1, z: 0}
@@ -215,9 +215,9 @@ MonoBehaviour:
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
     m_PerlinScale: 0.5
-    m_Output: 0
+    m_Output: 1
     m_ColliderType: 1
-    m_RandomTransform: 0
+    m_RandomTransform: 2
     m_Neighbors: 02000000020000000300000003000000
     m_NeighborPositions:
     - {x: -1, y: 0, z: 0}
@@ -282,3 +282,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b5dff58f8c2e5db4e910e979604d113f, type: 2}
   - {fileID: 11400000, guid: 89f3af647a5e4ab45bd948b9994719f7, type: 2}
   - {fileID: 11400000, guid: 794626357aef8f44cae702ba161d4e5d, type: 2}
+  - {fileID: 11400000, guid: d05e79b9c037ccf45bd76488bbb0b043, type: 2}

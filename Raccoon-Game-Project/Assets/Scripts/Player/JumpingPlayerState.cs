@@ -23,6 +23,11 @@ public class JumpingPlayerState : IPlayerState
     {
         //Debug.Log($"Started Jump: {manager.rigidBody.position}");
         //debugStartJumpPos = manager.rigidBody.position;
+        if(CommonPlayerState.GetJumpHeight() == 0)
+        {
+            manager.SwitchState(new DefaultPlayerState());
+            return;
+        }
         manager.animator.SetAnimation(ANIM_JUMP);
         initialDirection = Vector2Int.RoundToInt(manager.rawInput);
     }
