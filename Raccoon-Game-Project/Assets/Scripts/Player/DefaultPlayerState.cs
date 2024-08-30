@@ -114,6 +114,14 @@ public class DefaultPlayerState : IPlayerState
         {
             CreateKeyItemObject(manager);
         }
+        if(Input.GetButtonDown("Shield"))
+        {
+            nextState = new ShieldPlayerState();
+        }
+        if(Input.GetButtonDown("Boomerang"))
+        {
+            nextState = new BoomerangPlayerState();
+        }
 
         /*//Check Shield
         if (Input.GetButtonDown("Shield"))

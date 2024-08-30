@@ -22,6 +22,7 @@ public class PlayerStateManager : MonoBehaviour
     public GameObject splashParticle;
     public GameObject healParticle;
     public GameObject swordHitBoxObject;
+    public GameObject boomerang;
     private float knockBackTimer;
     private Vector2 knockBackDirection;
     /* This is where the player should be placed after they fall into a pit.
@@ -171,14 +172,37 @@ public class PlayerStateManager : MonoBehaviour
         //if enemy, take damage.
         if (go.TryGetComponent(out DamagesPlayer hurtful))
         {
-            TakeDamage(hurtful);
+            AttemptToTakeDamage(hurtful);
         }
+    }
+    public void AttemptToTakeDamage(DamagesPlayer hurtful)
+    {
+        if (height.height > 0) return;
+        if (currentPlayerState is HurtPlayerState or HeldItemPlayerState or RammingPlayerState or CloakedPlayerState) return;
+        if(currentPlayerState is ShieldPlayerState)
+        {
+            //add to currently tracked thing that can damage us.
+            //this is so if we are still touching it when we stop shielding, we get hurt immediately.
+            (currentPlayerState as ShieldPlayerState).AddDamagesPlayer(hurtful);
+
+            //get direction of hurt (think of an arrow drawn from hurtful to player)
+            Vector2Int directionOfHurt = Vector2Int.RoundToInt((transform.position - hurtful.transform.position).normalized);
+            Vector2Int direction = directionedObject.direction;
+
+            //are we facing close to the opposite direction of the attack? (allow 45 degree edge cases.)
+            bool xPortion = directionOfHurt.x != 0 && direction.x != 0 && directionOfHurt.x == -direction.x;
+            bool yPortion = directionOfHurt.y != 0 && direction.y != 0 && directionOfHurt.y == -direction.y;
+            
+            if(xPortion || yPortion)
+            {
+                //Shield Blocks Damage.
+                return;
+            }
+        }
+        TakeDamage(hurtful);
     }
     public void TakeDamage(DamagesPlayer hurtful)
     {
-        //TODO: replace this with to take in account enemy heights, player heights, and if the enemy does not have a height.
-        if (height.height > 0) return;
-        if (currentPlayerState is HurtPlayerState or HeldItemPlayerState or RammingPlayerState or CloakedPlayerState) return;
         PlayerHealth.TakeDamage(HitCalculation.HurtPlayerAmount(hurtful.amount), this);
         Knockback(hurtful.transform);
         stateTransitionTimer1 = 25; //25 frames of knockback.
