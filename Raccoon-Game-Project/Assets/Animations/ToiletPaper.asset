@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: ToiletPaper
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: -3807949529119473170, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: -1406014451789785343, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: 347901620057479513, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: -684627823786176711, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: -122497201857126184, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: -1851706534841412427, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: -5807655949021056748, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: 1084850770572310046, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  - Sprite: {fileID: -7769518453945612875, guid: 5ab59a2a61aa3d043bdc792060285306, type: 3}
+    HoldForTicks: 30
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 8

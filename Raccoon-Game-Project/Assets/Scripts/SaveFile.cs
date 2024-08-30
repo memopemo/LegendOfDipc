@@ -44,7 +44,7 @@ public class SaveFile
     public Dungeon[] dungeons = new Dungeon[14];
 
     //etc flags
-    public bool[] OverworldTreasure = new bool[16];
+    public bool[] OverworldTreasure = new bool[50];
     public bool[] GenericFlags = new bool[10];
 }
 

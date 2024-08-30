@@ -152,6 +152,19 @@ public class DefaultPlayerState : IPlayerState
 
         
     }
+    public void CheckWallStapleWall(PlayerStateManager manager)
+    {
+        CommonPlayerState.ColliderInDirection(manager, out GameObject go, true);
+
+        if (go.TryGetComponent(out LedgeBottom ledgeBottom))
+        {
+            manager.SwitchState(new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y));
+        }
+        else if (go.TryGetComponent(out LedgeTop ledgeTop))
+        {
+            manager.SwitchState(new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y));
+        }
+    }
     void HandleConfirmButtonNearColliderType(PlayerStateManager manager, GameObject go, ref IPlayerState nextState)
     {
         if (go.TryGetComponent(out Grabbable grabbable))
@@ -162,11 +175,11 @@ public class DefaultPlayerState : IPlayerState
         {
             nextState = new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height);
         }
-        else if (go.TryGetComponent(out LedgeBottom ledgeBottom) && SaveManager.GetSave().ObtainedKeyItems[17])
+        else if (go.TryGetComponent(out LedgeBottom ledgeBottom) && (GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
         {
             nextState = new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y);
         }
-        else if (go.TryGetComponent(out LedgeTop ledgeTop) && SaveManager.GetSave().ObtainedKeyItems[17])
+        else if (go.TryGetComponent(out LedgeTop ledgeTop) && (GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
         {
             nextState = new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y);
         }

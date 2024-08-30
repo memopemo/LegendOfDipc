@@ -3,7 +3,7 @@ using UnityEngine;
 public static class PlayerHealth
 {
     public static int STARTING_HEART_CONTAINERS = 3;
-    public static int currentHealth = 8;
+    public static int currentHealth = 6;
     #if DEBUG
     public static bool debugLockHealth = false;
     #endif
@@ -26,10 +26,13 @@ public static class PlayerHealth
         player.GetComponent<Flasher>().StartFlash();
         GameObject.FindFirstObjectByType<CameraFocus>().ShakeScreen(1);
     }
-    public static void Heal(int amount, PlayerStateManager player)
+    public static void Heal(int amount, PlayerStateManager player = null)
     {
         currentHealth += amount;
-        GameObject.Instantiate(player.healParticle, player.transform);
+        if(player)
+        {
+            GameObject.Instantiate(player.healParticle, player.transform);
+        }
     }
     public static void SetHealth(int health)
     {
