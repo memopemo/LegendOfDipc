@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: DemonKey
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: -1389182016719677614, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: 1745599242160373307, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -749731178896824, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -8934654575816455851, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -4019989759937512562, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: 113756257605272909, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -5803535858309525877, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -5022869089579065125, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: 3484845039368533368, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -5975801501084242670, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -5369777874429812693, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  - Sprite: {fileID: -6304799901421615064, guid: 65438d4302c83594a87d1136b29c6ed7, type: 3}
+    HoldForTicks: 40
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 11

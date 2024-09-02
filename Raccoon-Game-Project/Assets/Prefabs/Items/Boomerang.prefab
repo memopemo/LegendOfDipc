@@ -255,7 +255,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClipPools:
   - pool:
-    - {fileID: 8300000, guid: da055ac4029e0a44eaa91bffd3e4fc3a, type: 3}
+    - {fileID: 8300000, guid: 2ff46d86d7d910f4688ce5dca777a96e, type: 3}
+    - {fileID: 8300000, guid: 010c8102b3b55f24697f63f38e8d0b4f, type: 3}
+    - {fileID: 8300000, guid: c9f09efa646ccc244b265af87068a08d, type: 3}
+    isCancelable: 1
+    varyPitch: 0
+    looping: 1
+    followNoiseMaker: 1
+  - pool:
+    - {fileID: 8300000, guid: 51f0f8e65d1bb274b9c1b71e5b4574ba, type: 3}
     isCancelable: 0
     varyPitch: 0
     looping: 0

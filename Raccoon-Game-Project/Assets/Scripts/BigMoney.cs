@@ -39,4 +39,13 @@ public class Money : MonoBehaviour
 
        }
     }
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if(time < 1.5f) return;
+        if(collider.TryGetComponent(out Boomerang b))
+        {
+          transform.parent = b.transform;
+        }
+    }
+
 }

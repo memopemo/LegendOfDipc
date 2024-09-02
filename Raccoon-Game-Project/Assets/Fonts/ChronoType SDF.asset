@@ -56,7 +56,7 @@ Material:
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.5
-    - _FaceDilate: 0
+    - _FaceDilate: -0.1
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.05
@@ -74,8 +74,8 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.73125
-    - _ScaleRatioC: 0.365625
+    - _ScaleRatioB: 0.82124996
+    - _ScaleRatioC: 0.41062498
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
     sourceFontFileName: 
     sourceFontFileGUID: d257687ff614f4d4f8f3d4c6b5d0cb5b
     faceIndex: 0
-    pointSizeSamplingMode: 0
+    pointSizeSamplingMode: 1
     pointSize: 124
     padding: 9
     paddingMode: 2

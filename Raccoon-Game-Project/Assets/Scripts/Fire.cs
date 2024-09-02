@@ -51,6 +51,17 @@ public class Fire : MonoBehaviour
             transform.localPosition = Vector2.Lerp(transform.localPosition, Vector2.zero, Time.deltaTime/2);
             transform.localScale = Vector2.Lerp(transform.localScale, Vector2.one, Time.deltaTime/2);
         }
+        if(Time.frameCount % 5 == 0)
+        {
+            if(FindObjectsByType<Fire>(FindObjectsSortMode.None).Length > 5)
+            {
+                foreach(var ps in GetComponentsInChildren<ParticleSystem>())
+                {
+                    var main = ps.main;
+                    main.maxParticles = 3;
+                }   
+            }
+        }
     }
 
     void FireTick()

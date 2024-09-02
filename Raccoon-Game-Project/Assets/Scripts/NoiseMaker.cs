@@ -45,7 +45,7 @@ public class NoiseMaker : MonoBehaviour
     public void PlaySoundEffectAtPoint(AudioClip clip, Vector3 position, bool isInterupting, ListWrapper clipDetails)
     {
         GameObject gameObject = new(clip.name);
-        gameObject.transform.position = position;
+        gameObject.transform.position = new Vector3(position.x, position.y, -10); //play specifically at camera's level.
         if(clipDetails.followNoiseMaker)
         {
             gameObject.transform.parent = transform;
@@ -55,7 +55,7 @@ public class NoiseMaker : MonoBehaviour
         audioSource.clip = clip;
         audioSource.pitch = clipDetails.varyPitch ? Random.Range(0.8f, 1.2f): 1;
         audioSource.loop = clipDetails.looping;
-        audioSource.spatialBlend = 1f;
+        audioSource.spatialBlend = clipDetails.spatialBlend;
         audioSource.volume = 1f;
         audioSource.Play();
         if(clipDetails.isCancelable)
@@ -67,7 +67,10 @@ public class NoiseMaker : MonoBehaviour
         {
             Destroy(interruptableClip);
         }
-        Destroy(gameObject, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+        if(!clipDetails.looping)
+        {
+            Destroy(gameObject, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+        }
     }
     public void StopInteruptableClip(bool cut = true)
     {

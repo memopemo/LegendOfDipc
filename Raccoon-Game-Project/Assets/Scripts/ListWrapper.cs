@@ -11,4 +11,5 @@ public class ListWrapper
     public bool varyPitch;
     public bool looping;
     public bool followNoiseMaker;
+    public float spatialBlend;
 }

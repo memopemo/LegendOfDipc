@@ -75,16 +75,16 @@ MonoBehaviour:
     spriteInsideChest: {fileID: -827779732845397269, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 2
     indexOrQuantity: 1
-    spriteInsideChest: {fileID: -827779732845397269, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
-  - giveWhat: 2
-    indexOrQuantity: 2
     spriteInsideChest: {fileID: 3162581917629093997, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 2
-    indexOrQuantity: 3
+    indexOrQuantity: 2
     spriteInsideChest: {fileID: -5746151829216926306, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 2
-    indexOrQuantity: 4
+    indexOrQuantity: 3
     spriteInsideChest: {fileID: 3760688317879385643, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 2
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: -6928556903907651944, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 2
     indexOrQuantity: 5
     spriteInsideChest: {fileID: 5779541040229889675, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
@@ -213,7 +213,7 @@ MonoBehaviour:
     spriteInsideChest: {fileID: 8372989489643538704, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 8
     indexOrQuantity: 2
-    spriteInsideChest: {fileID: -3195384718093436064, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+    spriteInsideChest: {fileID: 2547940616398334622, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 8
     indexOrQuantity: 3
     spriteInsideChest: {fileID: -8083377869115731763, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}

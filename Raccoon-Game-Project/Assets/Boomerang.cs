@@ -11,9 +11,15 @@ public class Boomerang : MonoBehaviour
     bool isReturning;
     PlayerStateManager player;
     NoiseMaker noiseMaker;
+    float timeTraveled;
     // Start is called before the first frame update
     void Start()
     {
+        if(FindObjectsByType<Boomerang>(FindObjectsSortMode.None).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        
         boomerang = SaveManager.GetSave().CurrentBoomerang;
         if(boomerang < 0 || boomerang >= 4)
         {
@@ -23,10 +29,17 @@ public class Boomerang : MonoBehaviour
         }
         GetComponent<SpriteRenderer>().sprite = boomerangSprites[boomerang];
         player = FindAnyObjectByType<PlayerStateManager>();
-        GetComponent<FineDirectionedObject>().direction = (Vector2)player.directionedObject.direction * SPEED;
+        FineDirectionedObject fineDirectioned = GetComponent<FineDirectionedObject>();
+        fineDirectioned.direction = (Vector2)player.directionedObject.direction * SPEED;
+        if(player.rawInput.x != 0 && player.rawInput.y != 0)
+        {
+            fineDirectioned.direction = player.rawInput.normalized * SPEED;
+        }
         GetComponent<Homing>().speed = SPEED;
         GetComponent<DamagesEnemy>().amount = boomerang*3;
+        GetComponent<Projectile>().IsMagic = boomerang == 3;
         noiseMaker = GetComponent<NoiseMaker>();
+        noiseMaker.Play(0);
     }
 
     // Update is called once per frame
@@ -34,15 +47,16 @@ public class Boomerang : MonoBehaviour
     {
         if(Time.frameCount % 3 == 0)
         {
-            if(transform.rotation.eulerAngles.z == 0)
-            {
-                noiseMaker.Play(0);
-            }
             transform.Rotate(Vector3.back*90);
         }
         if (isReturning && Vector2.Distance(transform.position, player.transform.position) < 1f)
         {
             Destroy(gameObject);
+        }
+        timeTraveled += Time.deltaTime * SPEED;
+        if(timeTraveled > (boomerang+1)*5)
+        {
+            OnHitSomething(); //return early.
         }
     }
     public void OnHitSomething()
@@ -50,6 +64,7 @@ public class Boomerang : MonoBehaviour
         GetComponent<Projectile>().isHitting = false;
         if(!isReturning)
         {
+            noiseMaker.Play(1);
             isReturning = true;
             GetComponent<Homing>().enabled = true;
             GetComponent<Homing>().target = player.transform;

@@ -210,20 +210,20 @@ public class DefaultPlayerState : IPlayerState
 
         //we want to place it infront of the player
         Vector3 position = manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction;
-
-        int itemID = inventoryConsumableType[selectionIndex];
-        if(itemID != 14 && itemID != 15)
-        {
-            if (!SaveManager.UseUpConsumableItem(selectionIndex)) return; //if we are not clear to create it, then dont. This function also takes care of the inventory item decrement.
-        }
-
-        if(!SaveManager.CanUseConsumableItem(selectionIndex)) return; //do not decrement item.
-        
-
         GameObject original = consumableItems[              //get the gameobject..
                                 inventoryConsumableType[    //of the id..
                                 selectionIndex]];           //..of the slot currently selected in the inventory
-
+        int itemID = inventoryConsumableType[selectionIndex];
+        
+        if(itemID != 14 || itemID != 15)
+        {
+            if (!SaveManager.UseUpConsumableItem(selectionIndex)) return; //if we are not clear to create it, then dont. This function also takes care of the inventory item decrement.
+        }
+        else
+        {
+            if(!SaveManager.CanUseConsumableItem(selectionIndex)) return; //do not decrement item.
+        }
+        
         GameObject obj = GameObject.Instantiate(original, position, Quaternion.identity);
         Debug.Log(obj.transform.position);
     }

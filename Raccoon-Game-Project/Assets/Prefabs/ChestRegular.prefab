@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6566060630873587060}
   - component: {fileID: 202375572685521226}
   - component: {fileID: 8662439350683842270}
+  - component: {fileID: -2272962110840038816}
   m_Layer: 0
   m_Name: ChestRegular
   m_TagString: Untagged
@@ -52,6 +53,8 @@ MonoBehaviour:
   chestTreasureList: {fileID: 11400000, guid: 8b03f8ccf5d84f64fb358508e8c18f52, type: 2}
   itemList: {fileID: 11400000, guid: 834b9f90fa3a1004587c85d34424c9fb, type: 2}
   indexIntoChestTreasureList: 1
+  isImportant: 0
+  itemHeldUp: {fileID: 4371142976222173633, guid: 09ca29899ba5c614994632f813ff2bb9, type: 3}
 --- !u!212 &8631953604537904891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -233,3 +236,29 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   flashTime: 0.25
+--- !u!114 &-2272962110840038816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972331622997679771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: baefbb384ca4bc747b64a6c0856008f7, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+  - pool:
+    - {fileID: 8300000, guid: eaf61b1ac31d0d846918588199237bb5, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+  interruptableClip: {fileID: 0}

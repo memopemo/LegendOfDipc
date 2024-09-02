@@ -51,3 +51,31 @@ MonoBehaviour:
   - {fileID: -2240817637272795608, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - {fileID: -2989481445587284, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - {fileID: -247636722872542219, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  swords:
+  - {fileID: -4060241907049840230, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 7280937681284718841, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 5400527915198059297, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 5766622453041929607, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 8030122130996460306, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -7588301085608897287, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -6692678790208708542, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 1015192982245025755, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 5698033361212879630, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 7260778366312407551, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 6126650342571240328, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -7947543923049136340, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  shields:
+  - {fileID: -2773877989101134493, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 3558225220232783575, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 530958836744781788, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 1296801762804971983, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  armors:
+  - {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  boomerangs:
+  - {fileID: 4003015942410543056, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 8372989489643538704, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: 2547940616398334622, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - {fileID: -8083377869115731763, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}

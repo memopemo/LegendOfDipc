@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e9bf0defda5c94e9799387eadbe73e, type: 3}
+  m_Name: Obtain
+  m_EditorClassIdentifier: 
+  DownAnimationFrames:
+  - Sprite: {fileID: -981051601841647906, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -2128675313910154153, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 6397442338269240934, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  UpAnimationFrames:
+  - Sprite: {fileID: 7347604888591152972, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -5998923303029824058, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 1932167257065075418, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  SideAnimationFrames:
+  - Sprite: {fileID: 7347604888591152972, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -5998923303029824058, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 1932167257065075418, guid: 716ec624463785847834217682b3ae50, type: 3}
+    HoldForTicks: 20
+  Looping: 0
+  LoopStart: 0
+  LoopEnd: 0

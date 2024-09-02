@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 8105322531540082707}
   - component: {fileID: 7736292606478470087}
   - component: {fileID: 606408888680808082}
+  - component: {fileID: 260681841709917732}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: HurtPlayer
@@ -659,11 +660,17 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
     isCancelable: 0
     varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: 619794d52890ca846a0bcfe66ea46ee5, type: 3}
     - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
     isCancelable: 0
     varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}
 --- !u!114 &127163695993412773
 MonoBehaviour:
@@ -787,6 +794,24 @@ MonoBehaviour:
   dustParticle: {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
   disabledOnKnockBack:
   - {fileID: 5104680641947515512}
+--- !u!114 &260681841709917732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6a22197d832c14d9271ae5f6f8c0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIShockedSprite: {fileID: -4830867232697093189, guid: 3e1730adcf730a1479b6930c38743f2b, type: 3}
+  AttackModifier: 0
+  DefenseModifier: 0
+  HealthModifier: 0
+  SpeedModifier: 0
+  battleAnimation: {fileID: 0}
 --- !u!1 &9212373818536585072
 GameObject:
   m_ObjectHideFlags: 0

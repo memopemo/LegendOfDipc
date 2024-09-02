@@ -184,6 +184,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7dda762757896148aa17dee798702af, type: 2}
   - {fileID: 11400000, guid: b175aa29b33c0bc4f8ffac402a593529, type: 2}
   - {fileID: 11400000, guid: 48c432c827622f24b9305041dfb9d47b, type: 2}
+  - {fileID: 11400000, guid: bf7bd0ddb680fe24a87a6090dae31cff, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
   finishedFrames: 0

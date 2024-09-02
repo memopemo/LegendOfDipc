@@ -11,8 +11,12 @@ public class Chest : MonoBehaviour
     [SerializeField] ItemList itemList; //for only getting the amount of item types.
     [SerializeField] int indexIntoChestTreasureList;
     ChestTreasureList.ChestTreasure chestTreasure;
+    [SerializeField] bool isImportant; //if important, player holds both hands up.
+    [SerializeField] GameObject itemHeldUp;
+    NoiseMaker noiseMaker;
     void Start()
     {
+        noiseMaker = GetComponent<NoiseMaker>();
         simpleAnimator2D = GetComponent<SimpleAnimator2D>();
         GetComponent<Interactable>().OnInteract.AddListener(OpenChest);
         SaveFile sf = SaveManager.GetSave();
@@ -55,22 +59,39 @@ public class Chest : MonoBehaviour
         StartCoroutine(nameof(OpenChestSteps));
     }
 
+
     public IEnumerator OpenChestSteps()
     {
+        noiseMaker.Play(0); //play open sound
+        PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>(); //get player reference for later.
         FreezeMmanager.FreezeAll<PauseFreezer>(); //pause game
         simpleAnimator2D.SetAnimation(1); //open box
 
-        yield return new WaitForSeconds(1.4f);//wait for box open to finish
-        Vector3 player = FindFirstObjectByType<PlayerStateManager>().transform.position;
-        GameObject heldAbovePlayer = Instantiate(new GameObject(), player + Vector3.up + Vector3.back*1, Quaternion.identity); //create sprite to be held up...
-        heldAbovePlayer.AddComponent<SpriteRenderer>().sprite = chestTreasure.spriteInsideChest; //what sprite is it...
+        yield return new WaitForSeconds(0.75f);
+
+        Vector2Int ogDirection = player.directionedObject.direction; //keep og direction after we are done.
+        player.directionedObject.direction = Vector2Int.down;
+
+        noiseMaker.Play(1,FindFirstObjectByType<Camera>().transform.position); //play "tadaaaaa!" sound
+
+        yield return new WaitForSeconds(0.53f);
+        player.directionedObject.direction = isImportant ? Vector2Int.down : Vector2Int.up; //set actual player's direction for types of importance of items.
+        player.animator.SetAnimation(36); //play hold up item animation
+        
+        yield return new WaitForSeconds(0.17f); //wait for player animation to finish
+
+        Vector3 playerPos = player.transform.position; //use tf
+        GameObject heldAbovePlayer = Instantiate(itemHeldUp, playerPos + Vector3.up + Vector3.back*1, Quaternion.identity); //create sprite to be held up...
+        heldAbovePlayer.GetComponent<SpriteRenderer>().sprite = chestTreasure.spriteInsideChest; //what sprite is it...
 
         ApplyChestsContents();
 
         yield return new WaitForSeconds(2f);
-        Destroy(heldAbovePlayer);
-        FreezeMmanager.UnfreezeAll<PauseFreezer>();
-        SetAsUsed();
+        
+        player.directionedObject.direction = ogDirection; //set og position.
+        Destroy(heldAbovePlayer); //get rid of spawned item.
+        FreezeMmanager.UnfreezeAll<PauseFreezer>(); //return gameplay back to useable state
+        SetAsUsed(); //done.
     }
 
     void ApplyChestsContents()

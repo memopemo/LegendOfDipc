@@ -126,11 +126,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 71
+      x: 40
+      y: 37
       width: 26
       height: 24
-    spriteID: 47a8e0d767ee96543a8eef813adddf9e
+    spriteID: 4e0a9a3e0a2774345ada8229584ba274
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 71}
+    uvTransform: {x: 40, y: 37}
   - name: player_swimming_d_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0.4074074}
@@ -147,10 +147,130 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 37
       width: 28
       height: 27
-    spriteID: 1496c171e49878c42a9e7e8cd94a89cb
+    spriteID: 9f2cf578217eb6e4384a0190dd84d38f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 37}
+  - name: player_swimming_d_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.45833334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 4
+      width: 28
+      height: 24
+    spriteID: 897f8b63bf6d3324b83378ce96dcbd3a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 4}
+  - name: player_swimming_d_Frame_3
+    originalName: 
+    pivot: {x: 0.56, y: 0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 72
+      width: 25
+      height: 21
+    spriteID: 18ef396f58b19f54cba0b437257259f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: 72}
+  - name: player_swimming_d_Frame_4
+    originalName: 
+    pivot: {x: 0.5357143, y: 0.44444445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 72
+      width: 28
+      height: 18
+    spriteID: 7a99fd511d3e6654b93effc8eb101388
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 72}
+  - name: player_swimming_d_Frame_5
+    originalName: 
+    pivot: {x: 0.516129, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 37
+      width: 31
+      height: 20
+    spriteID: 39cc0f351de4ca74f9dc633cc19a0741
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 37}
+  - name: player_swimming_d_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5217391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 4
+      width: 32
+      height: 23
+    spriteID: 24d602e85ac807b4babc307e5de98166
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 4}
+  - name: player_swimming_d_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.59999996}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 32
+      height: 25
+    spriteID: 17fc28f5e2233d14fb210b8a1cdfc1a3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,18 +279,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: player_swimming_d_Frame_2
+  - name: player_swimming_d_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: 0.45833334}
+    pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 39
-      width: 28
-      height: 24
-    spriteID: 43b4ba7ecb7898143a517db8e19ce5b6
+      y: 72
+      width: 24
+      height: 25
+    spriteID: bcd27bbdeeaab004aa497d6aa0b4800b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,7 +298,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 39}
+    uvTransform: {x: 4, y: 72}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -195,7 +315,7 @@ ScriptedImporter:
         y: 7
         width: 26
         height: 24
-      spriteId: 47a8e0d767ee96543a8eef813adddf9e
+      spriteId: 4e0a9a3e0a2774345ada8229584ba274
     - name: player_swimming_d_Frame_1
       frameIndex: 1
       cellRect:
@@ -203,7 +323,7 @@ ScriptedImporter:
         y: 5
         width: 28
         height: 27
-      spriteId: 1496c171e49878c42a9e7e8cd94a89cb
+      spriteId: 9f2cf578217eb6e4384a0190dd84d38f
     - name: player_swimming_d_Frame_2
       frameIndex: 2
       cellRect:
@@ -211,7 +331,55 @@ ScriptedImporter:
         y: 5
         width: 28
         height: 24
-      spriteId: 43b4ba7ecb7898143a517db8e19ce5b6
+      spriteId: 897f8b63bf6d3324b83378ce96dcbd3a
+    - name: player_swimming_d_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 2
+        y: 4
+        width: 25
+        height: 21
+      spriteId: 18ef396f58b19f54cba0b437257259f5
+    - name: player_swimming_d_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 1
+        y: 8
+        width: 28
+        height: 18
+      spriteId: 7a99fd511d3e6654b93effc8eb101388
+    - name: player_swimming_d_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 6
+        width: 31
+        height: 20
+      spriteId: 39cc0f351de4ca74f9dc633cc19a0741
+    - name: player_swimming_d_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 4
+        width: 32
+        height: 23
+      spriteId: 24d602e85ac807b4babc307e5de98166
+    - name: player_swimming_d_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 1
+        width: 32
+        height: 25
+      spriteId: 17fc28f5e2233d14fb210b8a1cdfc1a3
+    - name: player_swimming_d_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 4
+        y: 3
+        width: 24
+        height: 25
+      spriteId: bcd27bbdeeaab004aa497d6aa0b4800b
     linkedCells: []
     parentIndex: -1
   platformSettings:

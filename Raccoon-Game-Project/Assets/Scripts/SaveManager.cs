@@ -60,17 +60,20 @@ public static class SaveManager
             catch (System.Exception)
             {
                 Debug.Log("Save file not valid. Generating blank one");
-                saveManager = new SaveFile();
-                InitializeSave();
+                ResetSave();
             }
 
         }
         else
         {
             Debug.Log("Save file not found. Generating blank one");
-            saveManager = new SaveFile();
-            InitializeSave();
+            ResetSave();
         }
+    }
+    public static void ResetSave()
+    {
+        saveManager = new SaveFile();
+        InitializeSave();
     }
     //Returns: True if item was sucessfully decremented
     //  False if The index points to an invalid ID type, or is 0.
@@ -84,6 +87,11 @@ public static class SaveManager
             return false;
         }
         sf.InventoryConsumableCount[index]--;
+        //if we have used our last item.
+        if(sf.InventoryConsumableCount[index] == 0)
+        {
+            sf.InventoryConsumableType[index] = 0; //remove item type
+        }
         return true;
 
     }

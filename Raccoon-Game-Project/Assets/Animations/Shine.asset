@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: Shine
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: 4494439622317746322, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -3370492552985545906, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 0
+  - Sprite: {fileID: 2068633362147637922, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 2032400738486700251, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -6516362240367992709, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 5889654161310636105, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 4508702835797486939, guid: ecef9f522bc44644395d4dd51aa03263, type: 3}
+    HoldForTicks: 20
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 6

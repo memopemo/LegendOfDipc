@@ -14,10 +14,8 @@ public class Exit : MonoBehaviour
         }
         if (collision.TryGetComponent(out PlayerStateManager _))
         {
-            #if DEBUG
-                Enter();
-            #endif
             FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
+            FreezeMmanager.FreezeAll<PauseFreezer>();
             Invoke(nameof(Enter), 1); //exit scene and enter next scene.
         }
     }

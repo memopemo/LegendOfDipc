@@ -50,5 +50,9 @@ public class Heart : MonoBehaviour
             gameObject.SetActive(false);
             PlayerHealth.Heal(4, FindFirstObjectByType<PlayerStateManager>());
         }
+        else if(collider.TryGetComponent(out Boomerang b))
+        {
+            transform.parent = b.transform;
+        }
     }
 }

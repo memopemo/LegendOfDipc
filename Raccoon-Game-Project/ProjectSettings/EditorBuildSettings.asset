@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene_Underwater.unity
     guid: de9da1cb91ee7ca4f942f773b75f62d9
+  - enabled: 1
+    path: Assets/Scenes/aaa.unity
+    guid: 72d0a7cc26933594cb2088223e331e41
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
