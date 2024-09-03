@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: Kiwi
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: -3130554581320596336, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -1527744663137979891, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -3130554581320596336, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -1527744663137979891, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -2256822281568738992, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -5908613532574799328, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -2256822281568738992, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  - Sprite: {fileID: -5908613532574799328, guid: 1e682641e01af974ea8822f14aa83c4b, type: 3}
+    HoldForTicks: 32
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 7

@@ -18,7 +18,7 @@ public class BombShoot : MonoBehaviour
     }
     void Update()
     {
-        if(!Input.GetButton("Fire2"))
+        if(!Buttons.IsButtonHeld(Buttons.ConsumableItem))
         {
             if(used)
             {

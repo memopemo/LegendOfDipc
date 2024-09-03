@@ -40,7 +40,7 @@ public class GrabbingPlayerState : IPlayerState
             manager.SwitchState(new DefaultPlayerState());
             return;
         }
-        if (!Input.GetButton("Fire1"))
+        if (!Buttons.IsButtonHeld(Buttons.Sword))
         {
             manager.SwitchState(new DefaultPlayerState());
             return;

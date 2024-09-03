@@ -65,7 +65,7 @@ public class LiftPlayerState : IPlayerState
         CommonPlayerState.MovePlayerRaw(manager, CARRY_SPEED);
         CommonPlayerState.UpdateDirection(manager);
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Buttons.IsButtonDown(Buttons.Sword))
         {
             // is placable object and do we have space to set it down?
             if (!liftable.isThrown)

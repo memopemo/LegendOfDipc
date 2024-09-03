@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3810642793473749147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.45787, y: -1.3926263, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4590167525737263189}
   - component: {fileID: 508946565367981076}
   - component: {fileID: 5013040781899181624}
+  - component: {fileID: 7570044377088265587}
   m_Layer: 0
   m_Name: ToiletPaper
   m_TagString: Untagged
@@ -245,3 +246,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342cd626747b5a244999afb05569cb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7570044377088265587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4906058759334518686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: f069698d31ae7104b979d5a5795eece5, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 1
+    followNoiseMaker: 1
+    spatialBlend: 1
+  - pool:
+    - {fileID: 8300000, guid: 4221838547b4bd2469d16e56814de735, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  interruptableClip: {fileID: 0}

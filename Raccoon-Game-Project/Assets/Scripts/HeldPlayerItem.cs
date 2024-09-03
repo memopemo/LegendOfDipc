@@ -22,7 +22,7 @@ public class HeldPlayerItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!Input.GetButton(isKeyItem? "Fire3" : "Fire2"))
+        if(!Buttons.IsButtonHeld(isKeyItem? Buttons.KeyItem: Buttons.ConsumableItem))
         {
             (player.currentPlayerState as HeldItemPlayerState).ExitCanceled(player);
             Destroy(gameObject);

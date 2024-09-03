@@ -56,7 +56,7 @@ public class RPGSelector : MonoBehaviour
     void HandleActionSelectionInput()
     {
         //handle input
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(UIInput.IsDownPressed)
         {
             actionBorders[actionSelection].sprite = deselectedActionBorder;
             if(actionSelection == SELECTABLE_ITEMS - 1) 
@@ -65,7 +65,7 @@ public class RPGSelector : MonoBehaviour
                 actionSelection++;
             actionBorders[actionSelection].sprite = selectedActionBorder;
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
+        else if(UIInput.IsUpPressed)
         {
             actionBorders[actionSelection].sprite = deselectedActionBorder;
             if(actionSelection == 0) 
@@ -74,7 +74,7 @@ public class RPGSelector : MonoBehaviour
                 actionSelection--;
             actionBorders[actionSelection].sprite = selectedActionBorder;
         }
-        else if(Input.GetKeyDown(KeyCode.RightArrow)
+        else if(UIInput.IsRightPressed
                  && (actionSelection == (int)BattleScene.PlayerAction.ConsumableItem || actionSelection == (int)BattleScene.PlayerAction.KeyItem))
         {
             isSelectingItem = true;
@@ -96,7 +96,7 @@ public class RPGSelector : MonoBehaviour
         {
             itemWindow.isActive = false;
         }
-        if(Input.GetButtonDown("Fire1"))
+        if(Buttons.IsButtonDown(Buttons.Sword))
         {
             itemWindow.isActive = false;
             battleScene.OnPlayerSelectedAction((BattleScene.PlayerAction)actionSelection);
@@ -108,7 +108,7 @@ public class RPGSelector : MonoBehaviour
     {
         int width = itemWindow.isConsumableMode ? 4 : 3;
         int ogSelection = itemSelection;
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(UIInput.IsDownPressed)
         {
             itemSelection += width;
             if(itemSelection >= 6*width)
@@ -117,7 +117,7 @@ public class RPGSelector : MonoBehaviour
             }
             
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
+        else if(UIInput.IsUpPressed)
         {
             itemSelection -= width;
             if(itemSelection < 0)
@@ -125,7 +125,7 @@ public class RPGSelector : MonoBehaviour
                 itemSelection = (itemSelection % width) + 5 * width;
             }
         }
-        else if(Input.GetKeyDown(KeyCode.RightArrow))
+        else if(UIInput.IsRightPressed)
         {
             itemSelection++;
             if(itemSelection >= 6 * width)
@@ -133,7 +133,7 @@ public class RPGSelector : MonoBehaviour
                 itemSelection = 0;
             }
         }
-        else if(Input.GetKeyDown(KeyCode.LeftArrow))
+        else if(UIInput.IsLeftPressed)
         {
             if(itemSelection % width == 0)
             {
@@ -146,12 +146,12 @@ public class RPGSelector : MonoBehaviour
                 itemSelection = (6*width)-1;
             }
         }
-        if(Input.GetButtonDown("Fire2"))
+        if(Buttons.IsButtonDown(Buttons.KeyItem))
         {
             exit();
             return;
         }
-        if(Input.GetButtonDown("Fire1"))
+        if(Buttons.IsButtonDown(Buttons.Sword))
         {
             battleScene.itemIndex = itemSelection;
             itemWindow.isActive = false;

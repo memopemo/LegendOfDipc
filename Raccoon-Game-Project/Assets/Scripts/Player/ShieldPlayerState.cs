@@ -20,7 +20,7 @@ public class ShieldPlayerState : IPlayerState
     public void OnUpdate(PlayerStateManager manager)
     {
         CommonPlayerState.MovePlayerRaw(manager, SPEED);
-        if(!Input.GetButton("Shield"))
+        if(!Buttons.IsButtonHeld(Buttons.Shield))
         {
             //are we still touching when leaving?
             if(currentlyTouchingEnemy && manager.rigidBody.IsTouching(currentlyTouchingEnemy.GetComponent<Collider2D>()))

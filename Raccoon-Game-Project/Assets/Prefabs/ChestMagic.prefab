@@ -255,10 +255,12 @@ MonoBehaviour:
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
-    - {fileID: 8300000, guid: 73a7d2a68deeefa4fa6836beede41607, type: 3}
+    - {fileID: 8300000, guid: 44abe96b74b8b6b408f31f473cc1dc20, type: 3}
     isCancelable: 0
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}

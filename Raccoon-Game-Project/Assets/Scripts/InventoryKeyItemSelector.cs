@@ -49,7 +49,7 @@ public class InventoryKeyItemSelector : MonoBehaviour
             rectTransform.position = Vector3.Lerp(rectTransform.position, currentIndexedSlotObject.position, Time.deltaTime * ANIMATION_SCALE);
         }
 
-        if (IsSwitchPressed())
+        if (UIInput.IsSwitchPressed)
         {
             //toggle
             WINDOWS_SETTINGS_GAMING_XBOXGAMEBAR_ENABLE ^= true;
@@ -66,12 +66,12 @@ public class InventoryKeyItemSelector : MonoBehaviour
         }
 
         //Only move if enabled.
-        if (IsDownPressed())
+        if (UIInput.IsDownPressed)
         {
             SelectionIndex += rowWidth;
             SelectionIndex %= numSlots;
         }
-        else if (IsUpPressed())
+        else if (UIInput.IsUpPressed)
         {
             SelectionIndex -= rowWidth;
             if (SelectionIndex < 0)
@@ -79,12 +79,12 @@ public class InventoryKeyItemSelector : MonoBehaviour
                 SelectionIndex = numSlots + SelectionIndex;
             }
         }
-        else if (IsRightPressed())
+        else if (UIInput.IsRightPressed)
         {
             SelectionIndex++;
             SelectionIndex %= numSlots;
         }
-        else if (IsLeftPressed())
+        else if (UIInput.IsLeftPressed)
         {
             SelectionIndex--;
             if (SelectionIndex < 0)
@@ -92,37 +92,6 @@ public class InventoryKeyItemSelector : MonoBehaviour
                 SelectionIndex = numSlots + SelectionIndex;
             }
         }
-    }
-    bool IsDownPressed()
-    {
-        return Input.GetKeyDown(KeyCode.DownArrow) ||
-            Input.GetKeyDown(KeyCode.S);
-    }
-
-    bool IsUpPressed()
-    {
-        return Input.GetKeyDown(KeyCode.UpArrow) ||
-            Input.GetKeyDown(KeyCode.W);
-    }
-
-    bool IsRightPressed()
-    {
-        return Input.GetKeyDown(KeyCode.RightArrow) ||
-            Input.GetKeyDown(KeyCode.D);
-    }
-
-    bool IsLeftPressed()
-    {
-        return Input.GetKeyDown(KeyCode.LeftArrow) ||
-            Input.GetKeyDown(KeyCode.A);
-    }
-    bool IsSwitchPressed()
-    {
-        return Input.GetButtonDown("Fire1") ||
-            Input.GetButtonDown("Fire2") ||
-            Input.GetKeyDown(KeyCode.Return) ||
-            Input.GetKeyDown(KeyCode.Space) ||
-            Input.GetKeyDown(KeyCode.LeftControl);
     }
 }
 

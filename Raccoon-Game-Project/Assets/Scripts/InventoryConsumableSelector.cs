@@ -45,7 +45,7 @@ public class InventoryConsumableSelector : MonoBehaviour
         {
             rectTransform.position = Vector3.Lerp(rectTransform.position, currentIndexedSlotObject.position, Time.deltaTime * ANIMATION_SCALE);
         }
-        if (UIInput.IsSwitchPressed())
+        if (UIInput.IsSwitchPressed)
         {
             //toggle
             inputtable ^= true;
@@ -61,12 +61,12 @@ public class InventoryConsumableSelector : MonoBehaviour
             image.sprite = imageEnabled;
         }
         //Only move if enabled.
-        if (UIInput.IsDownPressed())
+        if (UIInput.IsDownPressed)
         {
             selectionIndex += rowWidth;
             selectionIndex %= numSlots;
         }
-        else if (UIInput.IsUpPressed())
+        else if (UIInput.IsUpPressed)
         {
             selectionIndex -= rowWidth;
             if (selectionIndex < 0)
@@ -74,12 +74,12 @@ public class InventoryConsumableSelector : MonoBehaviour
                 selectionIndex = numSlots + selectionIndex;
             }
         }
-        else if (UIInput.IsRightPressed())
+        else if (UIInput.IsRightPressed)
         {
             selectionIndex++;
             selectionIndex %= numSlots;
         }
-        else if (UIInput.IsLeftPressed())
+        else if (UIInput.IsLeftPressed)
         {
             selectionIndex--;
             if (selectionIndex < 0)

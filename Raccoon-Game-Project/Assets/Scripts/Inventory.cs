@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         Transform bg = transform.GetChild(0);
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Buttons.IsButtonDown(Buttons.Inventory))
         {
             if(inTransition) return;
             Invoke(nameof(ToggleBG), isOn ? flyOut.keys.Last().time : flyIn.keys.Last().time - 0.5f);
@@ -45,17 +45,17 @@ public class Inventory : MonoBehaviour
         }
         if(isOn)
         {
-            if(UIInput.IsUpPressed() || UIInput.IsDownPressed())
+            if(UIInput.IsUpPressed || UIInput.IsDownPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[0],FindFirstObjectByType<PlayerStateManager>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[0],FindFirstObjectByType<Camera>().transform.position);
             }
-            else if(UIInput.IsLeftPressed() || UIInput.IsRightPressed())
+            else if(UIInput.IsLeftPressed || UIInput.IsRightPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[1],FindFirstObjectByType<PlayerStateManager>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[1],FindFirstObjectByType<Camera>().transform.position);
             }
-            else if(UIInput.IsSwitchPressed())
+            else if(UIInput.IsSwitchPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[2],FindFirstObjectByType<PlayerStateManager>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[2],FindFirstObjectByType<Camera>().transform.position);
             }
         }
         timer += Time.deltaTime;
@@ -76,6 +76,7 @@ public class Inventory : MonoBehaviour
 
         }
         #endif
+        Buttons.UpdateAxis();
     }
     void ToggleBG()
     {

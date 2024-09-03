@@ -37,11 +37,11 @@ class CommonPlayerState
         //TODO: change jump height based on what we have. 
         if (SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX+1])
         {
-            return JUMP_HEIGHT_SUPER;
+            return JUMP_HEIGHT_SUPER; //+1 so it looks bigger.
         }
         else if(SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX])
         {
-            return JUMP_HEIGHT_NORMAL;
+            return JUMP_HEIGHT_NORMAL; //+1 so it looks bigger.
         }
         return 0;
         //else return JUMP_HEIGHT_NORMAL;

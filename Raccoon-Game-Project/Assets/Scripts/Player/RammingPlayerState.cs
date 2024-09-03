@@ -38,13 +38,13 @@ public class RammingPlayerState : IPlayerState
     }
     public void OnUpdate(PlayerStateManager manager)
     {
-        if(!Input.GetButton("Fire3") && windupTimeAndSpeed < 0) 
+        if(!Buttons.IsButtonUp(Buttons.KeyItem) && windupTimeAndSpeed < 0) 
         {
             manager.SwitchState(new DefaultPlayerState());
             manager.noiseMaker.StopInteruptableClip(false);
             return;
         }
-        else if(windupTimeAndSpeed > 0 && Input.GetButtonDown("Fire3"))
+        else if(windupTimeAndSpeed > 0 && Buttons.IsButtonDown(Buttons.KeyItem))
         {
             manager.SwitchState(new DefaultPlayerState());
             return;

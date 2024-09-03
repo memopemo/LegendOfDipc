@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 657241184945567523}
   - component: {fileID: 4848634515577973406}
   - component: {fileID: 2728029075682134484}
+  - component: {fileID: 3679964951742224069}
   m_Layer: 0
   m_Name: StoryKey_0
   m_TagString: Untagged
@@ -5052,3 +5053,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations:
   - {fileID: 11400000, guid: a44e063afdaac414f9ce9f25d2d060cf, type: 2}
+--- !u!114 &3679964951742224069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8593102164299501131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: f069698d31ae7104b979d5a5795eece5, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 1
+    followNoiseMaker: 1
+    spatialBlend: 1
+  - pool:
+    - {fileID: 8300000, guid: 4221838547b4bd2469d16e56814de735, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  interruptableClip: {fileID: 0}

@@ -16,7 +16,7 @@ public class BombDropper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Buttons.IsButtonDown(Buttons.Sword))
         {
             Instantiate(bomb,transform.position, transform.rotation);
             animator2D.SetAnimation(1);

@@ -44,7 +44,7 @@ public class Drone : MonoBehaviour
         }
         else
         {
-            if(Input.GetButtonDown("Fire2"))
+            if(Buttons.IsButtonDown(Buttons.ConsumableItem))
             {
                 isReturning = true;
             }

@@ -33,7 +33,7 @@ public class HoverPlayerState : IPlayerState
             isHovering = true;
         }
         
-        if(isHovering && (secs > MAX_FLOAT_TIME || !Input.GetButton("Fire3"))) //hover to falling
+        if(isHovering && (secs > MAX_FLOAT_TIME || !Buttons.IsButtonHeld(Buttons.KeyItem))) //hover to falling
         {
             isHovering = false;
         }

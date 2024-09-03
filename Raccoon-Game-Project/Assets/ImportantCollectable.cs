@@ -36,6 +36,7 @@ public class ImportantCollectable : MonoBehaviour
                 }
                 break;
         }
+        GetComponent<NoiseMaker>().Play(0);
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class ImportantCollectable : MonoBehaviour
             }
             GetComponent<PoofDestroy>().Poof();
             Destroy(gameObject);
+            GetComponent<NoiseMaker>().Play(1);
         }
     }
 }

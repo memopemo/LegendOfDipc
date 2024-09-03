@@ -85,13 +85,13 @@ public class DefaultPlayerState : IPlayerState
         }
 
         // Check Jump
-        if (Input.GetButtonDown("Jump"))
+        if (Buttons.IsButtonDown(Buttons.Jump))
         {
             OnJumpButtonPushed(manager, ref nextState);
         }
 
         //Check Sword
-        if (Input.GetButtonDown("Fire1"))
+        if (Buttons.IsButtonDown(Buttons.Sword))
         {
             bool colliderThing = CommonPlayerState.ColliderInDirection(manager, out GameObject go);
             if (colliderThing)
@@ -105,29 +105,23 @@ public class DefaultPlayerState : IPlayerState
         }
 
         //Check Consumable Item Use
-        if(Input.GetButtonDown("Fire2"))
+        if(Buttons.IsButtonDown(Buttons.ConsumableItem))
         {
             CreateConsumableItemObject(manager);
         }
         //Check Key Item Use
-        if (Input.GetButtonDown("Fire3"))
+        if (Buttons.IsButtonDown(Buttons.KeyItem))
         {
             CreateKeyItemObject(manager);
         }
-        if(Input.GetButtonDown("Shield"))
+        if(Buttons.IsButtonDown(Buttons.Shield))
         {
             nextState = new ShieldPlayerState();
         }
-        if(Input.GetButtonDown("Boomerang"))
+        if(Buttons.IsButtonDown(Buttons.Boomerang))
         {
             nextState = new BoomerangPlayerState();
         }
-
-        /*//Check Shield
-        if (Input.GetButtonDown("Shield"))
-        {
-            manager.SwitchState(new ShieldPlayerState());
-        }*/
 
         // Check if in water
         // we can use a z range checker to only check on the tilemap, say for instance we have a platform above we can stand on.

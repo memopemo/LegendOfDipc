@@ -70,7 +70,7 @@ public class SwordPlayerState : IPlayerState
         // Enforce triple hit
         // (after triple hit is complete,
         // player is forced to wait until they go back to default state to triple hit again)
-        if(!Input.GetButtonDown("Fire1") || tripleHitCount == 2) return;
+        if(!Buttons.IsButtonDown(Buttons.Sword) || tripleHitCount == 2) return;
         if (typeOfSword == SWORD_3HIT)
         {
             if (swordTimerSecs < minNextInputSecs || swordTimerSecs > maxNext3SwipeInputSecs) return;

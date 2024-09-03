@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4092632174796857428}
   - component: {fileID: 4652211178907307396}
   - component: {fileID: 6154610153154072810}
+  - component: {fileID: 9175182072260035760}
   m_Layer: 0
   m_Name: HeartContainer_0
   m_TagString: Untagged
@@ -4965,6 +4966,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 7070755822354513567, guid: c1fe54c009e9f1c4ea8e76940073343b, type: 3}
+--- !u!114 &9175182072260035760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074758580439271339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClipPools:
+  - pool:
+    - {fileID: 8300000, guid: f069698d31ae7104b979d5a5795eece5, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 1
+    followNoiseMaker: 1
+    spatialBlend: 1
+  - pool:
+    - {fileID: 8300000, guid: 4221838547b4bd2469d16e56814de735, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  interruptableClip: {fileID: 0}
 --- !u!1 &6112167541889879260
 GameObject:
   m_ObjectHideFlags: 0

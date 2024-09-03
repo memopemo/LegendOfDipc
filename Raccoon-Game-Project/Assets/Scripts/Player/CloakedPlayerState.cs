@@ -27,7 +27,7 @@ public class CloakedPlayerState : IPlayerState
             return;
         }
        
-        if(Input.GetButtonUp("Fire3"))
+        if(Buttons.IsButtonUp(Buttons.KeyItem))
         {
             manager.animator.SetAnimation(CLOAK_END);
             return; //return so animation is not set again.

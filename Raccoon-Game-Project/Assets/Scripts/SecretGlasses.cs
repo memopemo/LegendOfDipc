@@ -17,7 +17,7 @@ public class SecretGlasses : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetButtonUp("Fire3"))
+        if(Buttons.IsButtonUp(Buttons.KeyItem))
         {
             cameraa.GetComponent<CameraFocus>().hasGlassesOn = false;
             cameraa.GetComponent<UniversalAdditionalCameraData>().SetRenderer(0);
