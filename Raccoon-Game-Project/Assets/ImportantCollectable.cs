@@ -1,7 +1,7 @@
 using UnityEngine;
 public class ImportantCollectable : MonoBehaviour
 {
-    public enum Type {HeartContainer, StoryKey, Pendant}
+    public enum Type {HeartContainer, StoryKey, Pendant, ToiletPaper}
     [SerializeField] Type type;
     int index;
     PlayerStateManager player;
@@ -9,7 +9,6 @@ public class ImportantCollectable : MonoBehaviour
     void Start()
     {
         index = GameObjectParser.GetIndexFromName(gameObject);
-        player = FindAnyObjectByType<PlayerStateManager>();
         save = SaveManager.GetSave();
 
         //if nothing happens OR errors, then it will stay deactivated.
@@ -35,32 +34,31 @@ public class ImportantCollectable : MonoBehaviour
                     gameObject.SetActive(true);
                 }
                 break;
+            case Type.ToiletPaper:
+                gameObject.SetActive(true);
+                break;
         }
         GetComponent<NoiseMaker>().Play(0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnCollect()
     {
-        if(!player)return;
-        if (Vector2.Distance(player.transform.position, transform.position) <= 1)
+        switch (type)
         {
-            switch (type)
-            {
-                case Type.HeartContainer:
-                    save.HeartContainersCollected[index] = true;
-                    PlayerHealth.Heal(2);
-                    break;
-                case Type.StoryKey:
-                    save.DemonKeys[index] = true;
-                    break;
-                case Type.Pendant:
-                    save.Pendants[index] = true;
-                    break;
-            }
-            GetComponent<PoofDestroy>().Poof();
-            Destroy(gameObject);
-            GetComponent<NoiseMaker>().Play(1);
+            case Type.HeartContainer:
+                save.HeartContainersCollected[index] = true;
+                PlayerHealth.Heal(2);
+                break;
+            case Type.StoryKey:
+                save.DemonKeys[index] = true;
+                break;
+            case Type.Pendant:
+                save.Pendants[index] = true;
+                break;
+            case Type.ToiletPaper:
+                save.ToiletPaperRolls++;
+                break;
         }
+        GetComponent<NoiseMaker>().Play(1);
     }
 }

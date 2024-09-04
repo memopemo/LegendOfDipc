@@ -38,6 +38,11 @@ public class NoiseMaker : MonoBehaviour
         AudioClip clipWanted;
         clipWanted = audioClipPools[clipPool].pool[Random.Range(0, audioClipPools[clipPool].pool.Count)];
         clip = clipWanted;
+        if(clip == null)
+        {
+            Debug.LogError("Clip is null");
+            return false;
+        }
         return true;
     }
     

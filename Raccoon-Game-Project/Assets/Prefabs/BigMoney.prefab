@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 9097786991365029589}
   - component: {fileID: 6853879968939540311}
   - component: {fileID: 4057067876411215547}
+  - component: {fileID: 1962973870385395552}
   m_Layer: 0
   m_Name: BigMoney
   m_TagString: Untagged
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2552949275940208984, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  m_Sprite: {fileID: 7270816221199864016, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +93,7 @@ SpriteRenderer:
   m_Size: {x: 0.75, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6722635651452185512
@@ -107,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &5407721062322944537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,3 +312,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147b11135cc723646af1da0809381a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1962973870385395552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725250054155492222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625ede78550fc848990775f72633aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2679141004893890026}
+        m_TargetAssemblyTypeName: Money, Assembly-CSharp
+        m_MethodName: OnCollect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

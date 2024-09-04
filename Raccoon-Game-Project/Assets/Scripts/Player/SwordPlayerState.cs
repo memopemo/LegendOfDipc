@@ -51,6 +51,7 @@ public class SwordPlayerState : IPlayerState
         NudgeInDirectionToLookCool(manager);
         manager.swordHitBoxObject.SetActive(true);
         swordHitBox = manager.swordHitBoxObject.GetComponent<SwordHitBox>();
+        manager.noiseMaker.Play(6);
     }
 
     public void OnLeave(PlayerStateManager manager)
@@ -79,6 +80,7 @@ public class SwordPlayerState : IPlayerState
             swordTimerSecs = 0;
             NudgeInDirectionToLookCool(manager);
             swordHitBox.TripleSwipeAgain(tripleHitCount);
+            
         }
         else
         {
@@ -87,6 +89,7 @@ public class SwordPlayerState : IPlayerState
             swordTimerSecs = 0;
             NudgeInDirectionToLookCool(manager);
         }
+        
     }
 
     // nudges the player a little bit forward to give some weight to swinging.

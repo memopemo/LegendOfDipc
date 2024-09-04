@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 6536396319307603046}
   - component: {fileID: 5065928698606219440}
   - component: {fileID: 4703660430934983186}
+  - component: {fileID: 7710397853720605145}
   m_Layer: 0
   m_Name: Pendant_0
   m_TagString: Untagged
@@ -5066,3 +5067,42 @@ MonoBehaviour:
     followNoiseMaker: 0
     spatialBlend: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &7710397853720605145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984344995859829972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625ede78550fc848990775f72633aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6153816183690751389}
+        m_TargetAssemblyTypeName: ImportantCollectable, Assembly-CSharp
+        m_MethodName: OnCollect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8401471454272566912}
+        m_TargetAssemblyTypeName: PoofDestroy, Assembly-CSharp
+        m_MethodName: PoofAndDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

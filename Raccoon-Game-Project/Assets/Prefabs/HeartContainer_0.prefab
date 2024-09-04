@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4652211178907307396}
   - component: {fileID: 6154610153154072810}
   - component: {fileID: 9175182072260035760}
+  - component: {fileID: 3822067150076298063}
   m_Layer: 0
   m_Name: HeartContainer_0
   m_TagString: Untagged
@@ -4982,7 +4983,7 @@ MonoBehaviour:
   - pool:
     - {fileID: 8300000, guid: f069698d31ae7104b979d5a5795eece5, type: 3}
     isCancelable: 0
-    varyPitch: 1
+    varyPitch: 0
     looping: 1
     followNoiseMaker: 1
     spatialBlend: 1
@@ -4994,6 +4995,45 @@ MonoBehaviour:
     followNoiseMaker: 0
     spatialBlend: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &3822067150076298063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4074758580439271339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d625ede78550fc848990775f72633aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnCollect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2183494514224515355}
+        m_TargetAssemblyTypeName: ImportantCollectable, Assembly-CSharp
+        m_MethodName: OnCollect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6154610153154072810}
+        m_TargetAssemblyTypeName: PoofDestroy, Assembly-CSharp
+        m_MethodName: PoofAndDestroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6112167541889879260
 GameObject:
   m_ObjectHideFlags: 0

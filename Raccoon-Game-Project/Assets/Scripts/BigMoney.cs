@@ -31,13 +31,6 @@ public class Money : MonoBehaviour
        {
             GetComponent<Animator2D.Animator2D>().RestartAnimation();
        }
-       if(Vector2.Distance(transform.position, FindAnyObjectByType<PlayerStateManager>().transform.position) < 0.7f)  //1 unit circle (approx.)
-       {
-            gameObject.SetActive(false);
-            GetComponent<PoofDestroy>().Poof();
-            SaveManager.GetSave().Money += isBig?10:1;
-
-       }
     }
     void OnTriggerStay2D(Collider2D collider)
     {
@@ -46,6 +39,10 @@ public class Money : MonoBehaviour
         {
           transform.parent = b.transform;
         }
+    }
+    public void OnCollect()
+    {
+        SaveManager.GetSave().Money += isBig?10:1;
     }
 
 }

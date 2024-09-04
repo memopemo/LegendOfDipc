@@ -366,30 +366,87 @@ MonoBehaviour:
     varyPitch: 1
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: 16cace571d96e25449641b8efc9cd251, type: 3}
     isCancelable: 0
     varyPitch: 1
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: 4a746bb401d19a044911dbadf12eb2bc, type: 3}
     isCancelable: 1
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: 8256f5102d541b64ca85b0569aa6847d, type: 3}
     isCancelable: 0
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: 0de82dc9dfefd0c41b8d53d556136b80, type: 3}
     isCancelable: 1
     varyPitch: 1
     looping: 1
     followNoiseMaker: 1
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: 979654cb196a2ba4bb713b8aaaa3e6e5, type: 3}
+    - {fileID: 8300000, guid: a8f04ded879fc2846b6fd9a49f77cc20, type: 3}
+    - {fileID: 8300000, guid: 8cefd1fa2962df24db190934af705034, type: 3}
+    - {fileID: 8300000, guid: 0e0baca48ec82a04dab51b03692d0e11, type: 3}
+    - {fileID: 8300000, guid: d2fab78c6cd83384d9093fd4d3b6f74e, type: 3}
+    - {fileID: 8300000, guid: 1141f39423c402a45bd290e715d9f49b, type: 3}
+    - {fileID: 8300000, guid: afc23c651ef245b4393195d00c9f08da, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: 4b9d1835ca837314c9d29c3c15a97275, type: 3}
+    - {fileID: 8300000, guid: 6f56a46611f784346acf31b27b0b4a66, type: 3}
+    - {fileID: 8300000, guid: c175d3050b31e914db638e61ead125f3, type: 3}
+    - {fileID: 8300000, guid: ff957be48c7adc14b836d8bd2706af80, type: 3}
+    - {fileID: 8300000, guid: 279837bff09a139499daabdd30fc9e0b, type: 3}
+    - {fileID: 8300000, guid: e47c08da08b09a34eba3a70106588994, type: 3}
+    - {fileID: 8300000, guid: 0c43de1f7fdf3784794b556c098fb5eb, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: b3646e2b5cf5244448b2adeedd122570, type: 3}
+    - {fileID: 8300000, guid: 2ff99965f7a676244b951d400cdf885a, type: 3}
+    - {fileID: 8300000, guid: f21bbbfb920c5024b9748b0beafb1d07, type: 3}
+    - {fileID: 8300000, guid: ef3d4db576e48984bbf65c240a6e35bd, type: 3}
+    - {fileID: 8300000, guid: ca3019d6152780e48a221d6944aaa626, type: 3}
+    - {fileID: 8300000, guid: 0900eb1396bdb604880004bddb111db8, type: 3}
+    - {fileID: 8300000, guid: 60baadfb93a55354bae5ec029c623263, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: 734972962cb33a7459a6a28f4f4a6a0f, type: 3}
+    - {fileID: 8300000, guid: 3c30a5d6b36dabb48aaa602f91aec5cc, type: 3}
+    - {fileID: 8300000, guid: 614c0def9bfa0ac4fb10be99aa5c2f4c, type: 3}
+    - {fileID: 8300000, guid: 3daeed47a573ff84ab283bca210aa938, type: 3}
+    - {fileID: 8300000, guid: 30eb3b283bbd7b24b8f453c358787c3e, type: 3}
+    - {fileID: 8300000, guid: edaa74e93a3e4bf4dbcf6243bee89770, type: 3}
+    - {fileID: 8300000, guid: c97bd4fdf78aea742a806f964380f0ff, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}
 --- !u!114 &2624884996407416195
 MonoBehaviour:
