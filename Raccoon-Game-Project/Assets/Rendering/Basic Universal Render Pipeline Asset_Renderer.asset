@@ -76,7 +76,7 @@ MonoBehaviour:
   m_RendererFeatureMap: 
   m_UseNativeRenderPass: 0
   m_TransparencySortMode: 3
-  m_TransparencySortAxis: {x: 0.01, y: 0.01, z: 100}
+  m_TransparencySortAxis: {x: 0.01, y: 1, z: 100}
   m_HDREmulationScale: 1
   m_LightRenderTextureScale: 0.5
   m_LightBlendStyles:

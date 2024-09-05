@@ -12,7 +12,7 @@ public static class Buttons
     public static Button IncrementItem = new("R", KeyCode.S);
     public static Button DecrementItem = new("L", KeyCode.A);
     public static Button ToggleItem = new("SR", KeyCode.D);
-    public static Button Pause = new("Select", KeyCode.P);
+    public static Button Pause = new("Select", KeyCode.Escape);
     public static Button Inventory = new("Start", KeyCode.E);
     public static Vector2Int AxisDown;
     public static Vector2Int AxisHeld;

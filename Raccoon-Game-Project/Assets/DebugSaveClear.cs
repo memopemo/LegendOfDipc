@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DebugSaveClear : MonoBehaviour
 {
+    #if DEBUG
     public void ClearSave()
     {
         SaveManager.ResetSave();
     }
+    #endif
 }

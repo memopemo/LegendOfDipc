@@ -47,7 +47,7 @@ public static class SaveManager
          * 
          * That may be easy?
          */
-        File.WriteAllText(SaveFilePath, JsonUtility.ToJson(GetSave()));
+        File.WriteAllText(SaveFilePath, JsonUtility.ToJson(GetSave(), true));
     }
     static void Load()
     {

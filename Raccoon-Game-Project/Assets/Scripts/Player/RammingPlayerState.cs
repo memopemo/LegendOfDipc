@@ -38,7 +38,7 @@ public class RammingPlayerState : IPlayerState
     }
     public void OnUpdate(PlayerStateManager manager)
     {
-        if(!Buttons.IsButtonUp(Buttons.KeyItem) && windupTimeAndSpeed < 0) 
+        if(!Buttons.IsButtonHeld(Buttons.KeyItem) && windupTimeAndSpeed < 0) 
         {
             manager.SwitchState(new DefaultPlayerState());
             manager.noiseMaker.StopInteruptableClip(false);
