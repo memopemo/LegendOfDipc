@@ -19,10 +19,6 @@ public class Drone : MonoBehaviour
         cameraFocus.SetTarget(transform);
         rb = GetComponent<Rigidbody2D>();
         heightable = GetComponent<Heightable>();
-        Invoke(nameof(LateStart),0.5f);
-    }
-    void LateStart()
-    {
         player = FindAnyObjectByType<PlayerStateManager>();
         player.SwitchState(new NoInputPlayerState());
     }

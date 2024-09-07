@@ -63,6 +63,7 @@ public class Chest : MonoBehaviour
     public IEnumerator OpenChestSteps()
     {
         noiseMaker.Play(0); //play open sound
+        FindAnyObjectByType<SongPlayer>().StartFadeOut(0.75f);
         PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>(); //get player reference for later.
         FreezeMmanager.FreezeAll<PauseFreezer>(); //pause game
         simpleAnimator2D.SetAnimation(1); //open box
@@ -85,13 +86,16 @@ public class Chest : MonoBehaviour
         heldAbovePlayer.GetComponent<SpriteRenderer>().sprite = chestTreasure.spriteInsideChest; //what sprite is it...
 
         ApplyChestsContents();
+        yield return new WaitForSeconds(1.5f);
+        FindAnyObjectByType<SongPlayer>().StartFadeIn(1);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         
         player.directionedObject.direction = ogDirection; //set og position.
         Destroy(heldAbovePlayer); //get rid of spawned item.
         FreezeMmanager.UnfreezeAll<PauseFreezer>(); //return gameplay back to useable state
         SetAsUsed(); //done.
+        
     }
 
     void ApplyChestsContents()

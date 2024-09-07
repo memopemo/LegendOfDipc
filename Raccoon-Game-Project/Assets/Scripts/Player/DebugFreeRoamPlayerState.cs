@@ -9,12 +9,12 @@ public class DebugFreeRoamPlayerState : IPlayerState
     float speed = 1;
     public void OnEnter(PlayerStateManager manager)
     {
-        manager.rigidBody.simulated = false;
+        manager.gameObject.layer = 2;
     }
 
     public void OnLeave(PlayerStateManager manager)
     {
-        manager.rigidBody.simulated = true;
+        manager.gameObject.layer = 0;
     }
 
     public void OnUpdate(PlayerStateManager manager)

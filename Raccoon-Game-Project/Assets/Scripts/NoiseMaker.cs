@@ -40,7 +40,7 @@ public class NoiseMaker : MonoBehaviour
         clip = clipWanted;
         if(clip == null)
         {
-            Debug.LogError("Clip is null");
+            Debug.LogWarning("Clip is null");
             return false;
         }
         return true;

@@ -82,7 +82,7 @@ public static class Buttons
             TriggerAxisUp = Vector2Int.zero;
         }
         TriggerAxisHeld = inputtedTriggerAxis;
-        Debug.Log($"Held:{AxisHeld} Down:{AxisDown} Up:{AxisUp}");
+        //Debug.Log($"Held:{AxisHeld} Down:{AxisDown} Up:{AxisUp}");
     }
     static bool GetTriggerDown(string trigger)
     {
@@ -105,20 +105,12 @@ public static class Buttons
 }
 /** Not To be accessed Directly.
 */
-public struct Button
+public class Button
 {
     public Button(string controllerName, KeyCode keyCode)
     {
         ControllerName = controllerName;
         KeyName = keyCode;
-    }
-    public static bool operator ==(Button a, Button b)
-    {
-        return a.ControllerName == b.ControllerName && a.KeyName == b.KeyName;
-    }
-    public static bool operator !=(Button a, Button b)
-    {
-        return a.ControllerName != b.ControllerName && a.KeyName != b.KeyName;
     }
     public string ControllerName;
     public KeyCode KeyName;

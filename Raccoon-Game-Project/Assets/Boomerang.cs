@@ -45,7 +45,7 @@ public class Boomerang : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.frameCount % 3 == 0)
+        if(Time.frameCount % 4 == 0)
         {
             transform.Rotate(Vector3.back*90);
         }
@@ -56,20 +56,27 @@ public class Boomerang : MonoBehaviour
         timeTraveled += Time.deltaTime * SPEED;
         if(timeTraveled > (boomerang+1)*5)
         {
-            OnHitSomething(); //return early.
+            Return();
         }
     }
-    public void OnHitSomething()
+    public void Return()
     {
         GetComponent<Projectile>().isHitting = false;
         if(!isReturning)
         {
-            noiseMaker.Play(1);
             isReturning = true;
             GetComponent<Homing>().enabled = true;
             GetComponent<Homing>().target = player.transform;
             GetComponent<MoveStraight>().enabled = false;
-
         }
+    }
+    public void OnHitSomething()
+    {
+        if(!isReturning)
+        {
+            noiseMaker.Play(1);
+        }
+        Return();
+        
     }
 }

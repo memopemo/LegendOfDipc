@@ -16,6 +16,7 @@ public class Exit : MonoBehaviour
         {
             FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
             FreezeMmanager.FreezeAll<PauseFreezer>();
+            FindAnyObjectByType<SongPlayer>().OnSceneChange(scene);
             Invoke(nameof(Enter), 1); //exit scene and enter next scene.
         }
     }
