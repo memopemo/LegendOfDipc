@@ -103,8 +103,7 @@ public static class Buttons
         else return false;
     }
 }
-/** Not To be accessed Directly.
-*/
+
 public class Button
 {
     public Button(string controllerName, KeyCode keyCode)

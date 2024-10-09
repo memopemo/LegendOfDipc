@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,8 +14,8 @@ class CSVReader
         {
             lists.Add(lines[i].Split(','));
         }
-        Debug.Log(lists.ToArray());
+        //Debug.Log(lists.ToArray());
         return lists.ToArray();
-        
+
     }
 }

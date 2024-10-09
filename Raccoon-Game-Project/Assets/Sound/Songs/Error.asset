@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9dbda45e38cb04897bb6429a4b5371, type: 3}
   m_Name: Error
   m_EditorClassIdentifier: 
-  song: {fileID: 8300000, guid: 1751d08cc0278f547992592c2084ddb5, type: 3}
-  LoopStartSamples: 0
-  LoopEndSamples: 2128000
+  song: {fileID: 8300000, guid: 8f0589c8d85b4184cb89966fc2e4f059, type: 3}
+  LoopStartSamples: 1661931
+  LoopEndSamples: 3322471

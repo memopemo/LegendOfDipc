@@ -44,8 +44,8 @@ public class DefaultPlayerState : IPlayerState
     // i am too dumb to think of a better way to do this so *shrug* i guess it will look awful. sorry!
     // for extremely sure, i WANT the update function to exit prematurely if we change states.
     void IPlayerState.OnUpdate(PlayerStateManager manager)
-    {   
-        
+    {
+
         IPlayerState nextState = null; //deffered state transition at the end of the function.
         CommonPlayerState.MovePlayerRaw(manager, DEFAULT_SPEED);
 
@@ -55,7 +55,7 @@ public class DefaultPlayerState : IPlayerState
 
         // agregious.
         // check any direction change that has to do with up.
-        if (   previousFrameDirection == Vector2Int.left
+        if (previousFrameDirection == Vector2Int.left
             && newDirection == Vector2Int.up
             || previousFrameDirection == Vector2Int.up
             && newDirection == Vector2Int.left
@@ -70,7 +70,7 @@ public class DefaultPlayerState : IPlayerState
         }
         else
         // check and direction change that has to do with down.
-        if (   previousFrameDirection == Vector2Int.left
+        if (previousFrameDirection == Vector2Int.left
             && newDirection == Vector2Int.down
             || previousFrameDirection == Vector2Int.down
             && newDirection == Vector2Int.left
@@ -101,11 +101,11 @@ public class DefaultPlayerState : IPlayerState
             else //sword is usable.
             {
                 nextState = new SwordPlayerState();
-            }            
+            }
         }
 
         //Check Consumable Item Use
-        if(Buttons.IsButtonDown(Buttons.ConsumableItem))
+        if (Buttons.IsButtonDown(Buttons.ConsumableItem))
         {
             CreateConsumableItemObject(manager);
         }
@@ -114,11 +114,11 @@ public class DefaultPlayerState : IPlayerState
         {
             CreateKeyItemObject(manager);
         }
-        if(Buttons.IsButtonDown(Buttons.Shield))
+        if (Buttons.IsButtonDown(Buttons.Shield))
         {
             nextState = new ShieldPlayerState();
         }
-        if(Buttons.IsButtonDown(Buttons.Boomerang))
+        if (Buttons.IsButtonDown(Buttons.Boomerang))
         {
             nextState = new BoomerangPlayerState();
         }
@@ -131,14 +131,14 @@ public class DefaultPlayerState : IPlayerState
             useTriggers = true,
             minDepth = manager.transform.position.z,
             maxDepth = manager.transform.position.z + 3
-            
+
         };
         Physics2D.queriesHitTriggers = true;
         BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => nextState = new SwimPlayerState(), contactFilter);
         Physics2D.queriesHitTriggers = false;
         //find interactable to set flash. This provides a direct indicator that we can interact because it uses the same function to find the interactable object.
         CommonPlayerState.ColliderInDirection(manager, out GameObject g, true);
-        if(g && g.TryGetComponent(out Interactable interact))
+        if (g && g.TryGetComponent(out Interactable interact))
         {
             interact.PlayerCanInteract();
         }
@@ -146,13 +146,13 @@ public class DefaultPlayerState : IPlayerState
 
         AnimatePlayer(manager);
 
-        if(nextState is not null)
+        if (nextState is not null)
         {
             manager.SwitchState(nextState);
         }
-        
 
-        
+
+
     }
     public void CheckWallStapleWall(PlayerStateManager manager)
     {
@@ -177,18 +177,18 @@ public class DefaultPlayerState : IPlayerState
         {
             nextState = new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height);
         }
-        else if (go.TryGetComponent(out LedgeBottom ledgeBottom) && (GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
+        else if (go.TryGetComponent(out LedgeBottom ledgeBottom) && (SelectedItem.KeyItem == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
         {
             nextState = new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y);
         }
-        else if (go.TryGetComponent(out LedgeTop ledgeTop) && (GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
+        else if (go.TryGetComponent(out LedgeTop ledgeTop) && (SelectedItem.KeyItem == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
         {
             nextState = new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y);
         }
         else if (go.TryGetComponent(out Interactable interactable))
         {
             interactable.Interact();
-        }                 
+        }
         else
         {
             nextState = new SwordPlayerState();
@@ -200,7 +200,7 @@ public class DefaultPlayerState : IPlayerState
         //Get all information of what we want to instantiate
         GameObject[] consumableItems = manager.itemGameObjectLookup.ConsumableItems;
         int[] inventoryConsumableType = SaveManager.GetSave().InventoryConsumableType;
-        int selectionIndex = UnityEngine.Object.FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
+        int selectionIndex = SelectedItem.ConsumableItem;
 
         //we want to place it infront of the player
         Vector3 position = manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction;
@@ -208,40 +208,40 @@ public class DefaultPlayerState : IPlayerState
                                 inventoryConsumableType[    //of the id..
                                 selectionIndex]];           //..of the slot currently selected in the inventory
         int itemID = inventoryConsumableType[selectionIndex];
-        
-        if(itemID != 14 || itemID != 15)
+
+        if (itemID != 14 || itemID != 15)
         {
             if (!SaveManager.UseUpConsumableItem(selectionIndex)) return; //if we are not clear to create it, then dont. This function also takes care of the inventory item decrement.
         }
         else
         {
-            if(!SaveManager.CanUseConsumableItem(selectionIndex)) return; //do not decrement item.
+            if (!SaveManager.CanUseConsumableItem(selectionIndex)) return; //do not decrement item.
         }
-        
+
         GameObject obj = GameObject.Instantiate(original, position, Quaternion.identity);
-        Debug.Log(obj.transform.position);
+        //Debug.Log(obj.transform.position);
     }
 
     private static void CreateKeyItemObject(PlayerStateManager manager)
     {
         //Get all information of what we want to instantiate
         //get inventory's currently selected item index...
-        int selectionIndex = GameObject.FindAnyObjectByType<InventoryKeyItemSelector>(FindObjectsInactive.Include).SelectionIndex;
-    
+        int selectionIndex = SelectedItem.KeyItem;
+
         //check if we have the ability to create to create the key item.
-        if(!SaveManager.GetSave().ObtainedKeyItems[selectionIndex]) return;
+        if (!SaveManager.GetSave().ObtainedKeyItems[selectionIndex]) return;
 
         //get the gameobject of the key item through the lookup table using the index...
         GameObject keyItem = manager.itemGameObjectLookup.UsableKeyItems[selectionIndex];
 
         //we want to place it infront of the player...
         Vector3 position = manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction;
-        
+
         //create the object we found.
         GameObject.Instantiate(keyItem, position, Quaternion.identity);
     }
 
-    bool BoxCastFind<T>( Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
+    bool BoxCastFind<T>(Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
     {
         List<RaycastHit2D> results = new();
         int _ = Physics2D.BoxCast(origin, size, 0, Vector2.zero, contactFilter, results, 0);
@@ -262,12 +262,20 @@ public class DefaultPlayerState : IPlayerState
         //Find a ledge top if we are jumping downwards.
         if (manager.inputY < 0 && FindTouching(manager.rigidBody, out LedgeTop tledge))
         {
-            manager.directionedObject.direction = Vector2Int.down;
-            nextState = new JumpingLedgePlayerState(0, tledge.bottom.transform.position.y, tledge.layersToDecrease);
+            //do not jump if we are blocked at the bottom by an object.
+
+            //get bottom y position at our x position.
+            Vector3 pos = new(manager.transform.position.x, tledge.bottom.transform.position.y - 0.5f);
+
+            if (!BoxCastFind<Collider2D>(pos, Vector2.one * 0.5f, (x) => { }))
+            {
+                manager.directionedObject.direction = Vector2Int.down;
+                nextState = new JumpingLedgePlayerState(0, tledge.bottom.transform.position.y, tledge.layersToDecrease);
+            }
         }
 
         //Find a ledge side if we are jumping sideways.
-        else if (manager.inputX != 0 && FindTouching(manager.rigidBody, out BackSideLedge bsledge) )
+        else if (manager.inputX != 0 && FindTouching(manager.rigidBody, out BackSideLedge bsledge))
         {
             nextState = new JumpingLedgePlayerState(-1, 0, bsledge.layersToDrop);
         }
@@ -370,12 +378,12 @@ public class DefaultPlayerState : IPlayerState
                 turnFrames--;
                 return;
             }
-            if(manager.rawInput.magnitude > WALK_THRESHOLD)
+            if (manager.rawInput.magnitude > WALK_THRESHOLD)
             {
                 manager.animator.SetAnimation(ANIM_RUN);
-                if(manager.animator.currentAnimationFrame == 0 || manager.animator.currentAnimationFrame == 3)
+                if (manager.animator.currentAnimationFrame == 0 || manager.animator.currentAnimationFrame == 3)
                 {
-                    if(!playedStepSound)
+                    if (!playedStepSound)
                     {
                         manager.noiseMaker.Play(0);
                         playedStepSound = true;
@@ -390,7 +398,7 @@ public class DefaultPlayerState : IPlayerState
             {
                 manager.animator.SetAnimation(ANIM_WALK);
             }
-            
+
             runToIdleTransitionFrames = RUN_TO_IDLE_HOLD_FRAMES;
             return;
         }

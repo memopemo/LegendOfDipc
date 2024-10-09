@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Tilemaps;
 
 class CommonPlayerState
 {
@@ -10,13 +10,13 @@ class CommonPlayerState
     public const int BOOT_INVENTORY_INDEX = 4;
     public const int JUMP_HEIGHT_NORMAL = 1;
     public const int JUMP_HEIGHT_SUPER = 2;
-    public static void MovePlayerRaw(PlayerStateManager manager, float speed) 
+    public static void MovePlayerRaw(PlayerStateManager manager, float speed)
     {
         manager.rigidBody.velocity = manager.rawInput * (speed + manager.additionalSpeed);
     }
     public static void MovePlayerSmooth(PlayerStateManager manager, float speed)
     {
-        manager.rigidBody.AddForce(manager.rawInput * (speed+manager.additionalSpeed) * Time.deltaTime * 60);
+        manager.rigidBody.AddForce(manager.rawInput * (speed + manager.additionalSpeed) * Time.deltaTime * 60);
     }
 
     public static void UpdateDirection(PlayerStateManager manager)
@@ -29,17 +29,17 @@ class CommonPlayerState
         {
             manager.directionedObject.direction = Vector2Int.RoundToInt(manager.rawInput.normalized);
         }
-        
+
     }
     public static float GetJumpHeight()
     {
-        
+
         //TODO: change jump height based on what we have. 
-        if (SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX+1])
+        if (SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX + 1])
         {
             return JUMP_HEIGHT_SUPER; //+1 so it looks bigger.
         }
-        else if(SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX])
+        else if (SaveManager.GetSave().ObtainedKeyUnselectableItems[BOOT_INVENTORY_INDEX])
         {
             return JUMP_HEIGHT_NORMAL; //+1 so it looks bigger.
         }
@@ -48,7 +48,7 @@ class CommonPlayerState
     }
     // Checks if a collider is in the way of anything.
     // ONLY READ OUTPUT IF YOU ARE SEARCHING FOR A TYPE.
-    public static bool ColliderInDirection(PlayerStateManager manager, out GameObject go, bool useTriggers = false)
+    public static bool ColliderInDirection(PlayerStateManager manager, out GameObject go, bool useTriggers = false, bool useTiles = false)
     {
         if (manager.directionedObject.direction.x != 0 && manager.directionedObject.direction.y != 0)
         {
@@ -56,7 +56,7 @@ class CommonPlayerState
             go = null;
             return false; //Not allowed to check diagonally.
         }
-        ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default"), useTriggers = useTriggers,};
+        ContactFilter2D contactFilter = new ContactFilter2D() { layerMask = LayerMask.NameToLayer("Default"), useTriggers = useTriggers };
         List<RaycastHit2D> results = new();
         /* LONG-WINDED EXPLANATION:
          * The box must be a little smaller than 1 so that we cant touch any walls to the side of our check. Only infront.
@@ -71,14 +71,16 @@ class CommonPlayerState
          * Placing a box inside the wall will not work, as our box is too small (by design) to hit anything.
          * 
          */
-        int _ = Physics2D.BoxCast(manager.transform.position+(Vector3)(Vector2)manager.directionedObject.direction*0.5f, Vector2.one*0.51f, 0, manager.directionedObject.direction, contactFilter, results, 0.5f);
+
+        int _ = Physics2D.BoxCast(manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction * 0.5f, Vector2.one * 0.51f, 0, manager.directionedObject.direction, contactFilter, results, 0.5f);
         foreach (RaycastHit2D hit in results)
         {
             if (hit.collider.gameObject == manager.gameObject) continue;
-            else 
+            else if (!useTiles && hit.collider.TryGetComponent(out TilemapCollider2D _)) continue;
+            else
             {
                 go = hit.collider.gameObject;
-                Debug.DrawLine(manager.transform.position+(Vector3)(Vector2)manager.directionedObject.direction*0.5f, hit.point, Color.red, 1);
+                Debug.DrawLine(manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction * 0.5f, hit.point, Color.red, 1);
                 return true;
             }
         }
@@ -86,10 +88,11 @@ class CommonPlayerState
         return false;
     }
 
+
     //Checks if a collider exists in the area where the
-    public static bool ColliderAt(PlayerStateManager manager, Vector2Int offsetDirection, out GameObject go, GameObject ignore, bool useTriggers = false) 
+    public static bool ColliderAt(PlayerStateManager manager, Vector2Int offsetDirection, out GameObject go, GameObject ignore, bool useTriggers = false)
     {
-        if(offsetDirection.x != 0 && offsetDirection.y != 0) 
+        if (offsetDirection.x != 0 && offsetDirection.y != 0)
         {
             go = null;
             return false;
@@ -106,8 +109,8 @@ class CommonPlayerState
         //-.01f so that we dont check 3 tiles forward. we only want 2
         //0.95 because we dont want to hit the sides
 
-        
-        int _ = Physics2D.BoxCast(position, Vector2.one*0.95f, 0, offsetDirection, contactFilter, results, offsetDirection.magnitude-0.2f);
+
+        int _ = Physics2D.BoxCast(position, Vector2.one * 0.95f, 0, offsetDirection, contactFilter, results, offsetDirection.magnitude - 0.2f);
         foreach (RaycastHit2D hit in results)
         {
             if (hit.collider.gameObject == manager.gameObject) continue;
@@ -131,14 +134,14 @@ class CommonPlayerState
             useTriggers = true,
             minDepth = manager.transform.position.z,
             maxDepth = manager.transform.position.z + 3
-            
+
         };
         Physics2D.queriesHitTriggers = true; //we want to check triggers.
         BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => manager.SwitchState(new SwimPlayerState()), contactFilter);
         Physics2D.queriesHitTriggers = false;
     }
 
-    public static bool BoxCastFind<T>( Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
+    public static bool BoxCastFind<T>(Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
     {
         List<RaycastHit2D> results = new();
         int _ = Physics2D.BoxCast(origin, size, 0, Vector2.zero, contactFilter, results, 0);

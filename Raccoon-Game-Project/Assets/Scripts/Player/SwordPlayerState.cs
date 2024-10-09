@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordPlayerState : IPlayerState
@@ -26,6 +24,7 @@ public class SwordPlayerState : IPlayerState
     const float nudgeSword = 2f;
 
     const int SWORD_ANIM_OFFSET = 4;
+    const int SWORD_SOUND_OFFSET = 6;
 
     SwordHitBox swordHitBox;
 
@@ -42,7 +41,7 @@ public class SwordPlayerState : IPlayerState
 
         int anim = SWORD_ANIM_OFFSET;
 
-        if (typeOfSword == 0) 
+        if (typeOfSword == 0)
         {
             anim += SWING_STAB;
         }
@@ -51,7 +50,7 @@ public class SwordPlayerState : IPlayerState
         NudgeInDirectionToLookCool(manager);
         manager.swordHitBoxObject.SetActive(true);
         swordHitBox = manager.swordHitBoxObject.GetComponent<SwordHitBox>();
-        manager.noiseMaker.Play(6);
+        manager.noiseMaker.Play(SWORD_SOUND_OFFSET);
     }
 
     public void OnLeave(PlayerStateManager manager)
@@ -63,15 +62,15 @@ public class SwordPlayerState : IPlayerState
     {
         swordTimerSecs += Time.deltaTime;
         // Check if player waited too long / cant bc of triple swipe.
-        if(swordTimerSecs > maxTotalSwordAnimation)
-        {     
+        if (swordTimerSecs > maxTotalSwordAnimation)
+        {
             manager.SwitchState(new DefaultPlayerState());
         }
 
         // Enforce triple hit
         // (after triple hit is complete,
         // player is forced to wait until they go back to default state to triple hit again)
-        if(!Buttons.IsButtonDown(Buttons.Sword) || tripleHitCount == 2) return;
+        if (!Buttons.IsButtonDown(Buttons.Sword) || tripleHitCount == 2) return;
         if (typeOfSword == SWORD_3HIT)
         {
             if (swordTimerSecs < minNextInputSecs || swordTimerSecs > maxNext3SwipeInputSecs) return;
@@ -80,7 +79,7 @@ public class SwordPlayerState : IPlayerState
             swordTimerSecs = 0;
             NudgeInDirectionToLookCool(manager);
             swordHitBox.TripleSwipeAgain(tripleHitCount);
-            
+            manager.noiseMaker.Play(SWORD_SOUND_OFFSET);
         }
         else
         {
@@ -89,7 +88,7 @@ public class SwordPlayerState : IPlayerState
             swordTimerSecs = 0;
             NudgeInDirectionToLookCool(manager);
         }
-        
+
     }
 
     // nudges the player a little bit forward to give some weight to swinging.

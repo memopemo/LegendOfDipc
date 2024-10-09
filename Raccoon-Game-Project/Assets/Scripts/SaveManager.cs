@@ -80,7 +80,7 @@ public static class SaveManager
     public static bool UseUpConsumableItem(int index)
     {
         SaveFile sf = GetSave();
-        if(sf.InventoryConsumableType[index] <= 0 || sf.InventoryConsumableCount[index] <= 0)
+        if (sf.InventoryConsumableType[index] <= 0 || sf.InventoryConsumableCount[index] <= 0)
         {
             sf.InventoryConsumableType[index] = 0;
             sf.InventoryConsumableCount[index] = 0;
@@ -88,7 +88,7 @@ public static class SaveManager
         }
         sf.InventoryConsumableCount[index]--;
         //if we have used our last item.
-        if(sf.InventoryConsumableCount[index] == 0)
+        if (sf.InventoryConsumableCount[index] == 0)
         {
             sf.InventoryConsumableType[index] = 0; //remove item type
         }
@@ -98,7 +98,7 @@ public static class SaveManager
     public static bool CanUseConsumableItem(int index)
     {
         SaveFile sf = GetSave();
-        if(sf.InventoryConsumableType[index] <= 0 || sf.InventoryConsumableCount[index] <= 0)
+        if (sf.InventoryConsumableType[index] <= 0 || sf.InventoryConsumableCount[index] <= 0)
         {
             sf.InventoryConsumableType[index] = 0;
             sf.InventoryConsumableCount[index] = 0;
@@ -106,7 +106,7 @@ public static class SaveManager
         }
         return true;
     }
-    
+
     public static void DecrementConsumableItem(int index)
     {
         SaveFile sf = GetSave();
@@ -116,21 +116,21 @@ public static class SaveManager
     //adds a single new item to the inventory
     public static void AddConsumableItem(int type)
     {
-        if(type <= 0 || type > 18)
+        if (type <= 0 || type > 18)
         {
             Debug.LogError($"Adding Consumable Item {type} is not 1-18!");
             return;
         }
         SaveFile sf = GetSave();
         //find either an empty slot or the same type.
-        for(int i = 0; i < sf.InventoryConsumableCount.Length; i++)
+        for (int i = 0; i < sf.InventoryConsumableCount.Length; i++)
         {
-            if(sf.InventoryConsumableType[i] == type)
+            if (sf.InventoryConsumableType[i] == type)
             {
                 sf.InventoryConsumableCount[i]++;
                 return;
             }
-            else if(sf.InventoryConsumableType[i] == 0)
+            else if (sf.InventoryConsumableType[i] == 0)
             {
                 sf.InventoryConsumableType[i] = type;
                 sf.InventoryConsumableCount[i] = 1;
@@ -139,7 +139,7 @@ public static class SaveManager
         }
     }
 
-    #if DEBUG
+#if DEBUG
     public static void DebugMaxOut()
     {
         SaveFile sf = GetSave();
@@ -166,8 +166,8 @@ public static class SaveManager
         SetArrayToTrue(ref sf.GenericFlags);
 
     }
-    #endif
-    
+#endif
+
     static void InitializeSave()
     {
         //Everything else is already set to 0, but missing items must be -1.
@@ -178,7 +178,7 @@ public static class SaveManager
         sf.CurrentArmor = -1;
 
     }
-    
+
     static void SetArrayToTrue(ref bool[] a)
     {
         for (int i = 0; i < a.Length; i++)

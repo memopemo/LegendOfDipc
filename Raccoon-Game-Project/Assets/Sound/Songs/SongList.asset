@@ -17,9 +17,9 @@ MonoBehaviour:
     - Key:
         sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
         scenePath: Assets/Scenes/SampleScene.unity
-      Value: {fileID: 11400000, guid: 9ec44445e8391554eadf7c38f4698d90, type: 2}
-    - Key:
-        sceneAsset: {fileID: 102900000, guid: 72d0a7cc26933594cb2088223e331e41, type: 3}
-        scenePath: Assets/Scenes/aaa.unity
       Value: {fileID: 11400000, guid: 0806ae155a93bc5478e7c981bb048227, type: 2}
+    - Key:
+        sceneAsset: {fileID: 102900000, guid: 369ceb200c2b6a048b7edf5de5ad3c54, type: 3}
+        scenePath: Assets/Scenes/PlayerHouse.unity
+      Value: {fileID: 11400000, guid: 9ec44445e8391554eadf7c38f4698d90, type: 2}
   errorSong: {fileID: 11400000, guid: 0806ae155a93bc5478e7c981bb048227, type: 2}

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Animator2D;
 
 // Be airborn and constantly move. 
 public class JumpingPlayerState : IPlayerState
@@ -41,7 +38,7 @@ public class JumpingPlayerState : IPlayerState
         manager.defaultSpriteRenderer.enabled = true;
         //Debug.Log($"Ended Jump: {manager.rigidBody.position}");
         //Debug.Log($"Distance: {Vector2.Distance(debugStartJumpPos, manager.rigidBody.position)}");
-        if(isIceStompingAndWithWhat)
+        if (isIceStompingAndWithWhat)
         {
             Object.Instantiate(isIceStompingAndWithWhat, manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction, Quaternion.identity);
         }
@@ -49,21 +46,21 @@ public class JumpingPlayerState : IPlayerState
 
     public void OnUpdate(PlayerStateManager manager)
     {
-        
-        if(framesGrounded < 3) 
+
+        if (framesGrounded < 3)
         {
             framesGrounded++;
             return;
         }
         Vector2 actualMovement = manager.rawInput;
-        if(tryingToCorrect)
+        if (tryingToCorrect)
         {
-            actualMovement /= 2; //half the speed of movement.
+            actualMovement /= 2;
         }
         else
         {
             if (Vector2Int.RoundToInt(manager.rawInput) != Vector2.zero && Vector2Int.RoundToInt(manager.rawInput) != initialDirection)
-            { 
+            {
                 tryingToCorrect = true;
             }
         }
@@ -80,13 +77,13 @@ public class JumpingPlayerState : IPlayerState
         // where h is the max height, and t is the length of the jump (in our case seconds)
         // and no I did not just pull that out of my ass, I used Mathway.
         float jumpHeight = CommonPlayerState.GetJumpHeight() + 1f;
-        float a = -4 * jumpHeight / (actualMaxJumpTime * actualMaxJumpTime);
-        float b = 4 * jumpHeight / actualMaxJumpTime;
-        manager.height.height = (a * jumpSecs * jumpSecs) + (b * jumpSecs); // y = ax^2 + bx
+        float parabolaWidth = -4 * jumpHeight / (actualMaxJumpTime * actualMaxJumpTime);
+        float slopeAtStart = 4 * jumpHeight / actualMaxJumpTime;
+        manager.height.height = (parabolaWidth * jumpSecs * jumpSecs) + (slopeAtStart * jumpSecs);
 
 
         //Check if done
-        if (jumpSecs > actualMaxJumpTime) 
+        if (jumpSecs > actualMaxJumpTime)
         {
             //Leave
             manager.stateTransitionTimer1 = 10;

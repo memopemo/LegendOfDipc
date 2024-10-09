@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8035443113996816239}
   - component: {fileID: 8219529430110856638}
   - component: {fileID: 5500820091762434216}
+  - component: {fileID: 1292368872384952233}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -205,6 +206,18 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 0
+--- !u!114 &1292368872384952233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565504677571733922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd49e939a366fc43b63f9e0a181de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045304196485504967
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +843,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3629228519530373266, guid: 0d25cc8bb68edae4e9faefe4a925cfae, type: 3}
       propertyPath: m_Name
-      value: Liftable Block Variant
+      value: LiftableLightBlock
       objectReference: {fileID: 0}
     - target: {fileID: 6823803993727337595, guid: 0d25cc8bb68edae4e9faefe4a925cfae, type: 3}
       propertyPath: m_LocalPosition.x

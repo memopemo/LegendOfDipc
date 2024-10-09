@@ -3,44 +3,49 @@ using UnityEngine;
 public static class PlayerHealth
 {
     public static int STARTING_HEART_CONTAINERS = 3;
-    public static int currentHealth = 6;
-    #if DEBUG
+    public static int currentHealth = STARTING_HEART_CONTAINERS * 2;
+    public static bool dying;
+#if DEBUG
     public static bool debugLockHealth = false;
-    #endif
+#endif
 
-    //Do not destroy player. Instead, find gamecontroller to start death cutscene.
+    //Do not destroy player.
 
-    public static void Die()
+    public static void Die(PlayerStateManager player)
     {
         currentHealth = 0;
+        dying = true;
+        player.Die();
+
     }
     public static void TakeDamage(int amount, PlayerStateManager player)
     {
-
+        if (dying) return;
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            Die();
+            Die(player);
             return;
         }
-        player.GetComponent<Flasher>().StartFlash();
         GameObject.FindFirstObjectByType<CameraFocus>().ShakeScreen(1);
     }
     public static void Heal(int amount, PlayerStateManager player = null)
     {
         currentHealth += amount;
-        if(player)
+        if (player)
         {
             GameObject.Instantiate(player.healParticle, player.transform);
         }
     }
     public static void SetHealth(int health)
     {
-        if (currentHealth <= 0)
-        {
-            Die();
-            return;
-        }
         currentHealth = health;
+    }
+    public static void UnDie()
+    {
+        currentHealth = STARTING_HEART_CONTAINERS * 2;
+        dying = false;
+
+
     }
 }

@@ -23,6 +23,7 @@ public class PlayerStateManager : MonoBehaviour
     public GameObject healParticle;
     public GameObject swordHitBoxObject;
     public GameObject boomerang;
+    public GameObject deathScreen;
     private float knockBackTimer;
     private Vector2 knockBackDirection;
     /* This is where the player should be placed after they fall into a pit.
@@ -104,12 +105,12 @@ public class PlayerStateManager : MonoBehaviour
         Timer.DecrementTimer(ref stateTransitionTimer2);
         Timer.DecrementTimer(ref generalTimer1);
         Timer.DecrementTimer(ref generalTimer2);
-        
-        if(DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed0))
+
+        if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed0))
         {
             additionalSpeed = 1;
         }
-        else if(DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed1))
+        else if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed1))
         {
             additionalSpeed = 2;
         }
@@ -121,7 +122,7 @@ public class PlayerStateManager : MonoBehaviour
         // Switch State
         currentPlayerState.OnUpdate(this);
         DemonBuffs.Update();
-        
+
 
 #if DEBUG
         //debug
@@ -179,31 +180,29 @@ public class PlayerStateManager : MonoBehaviour
     {
         if (height.height > 0) return;
         if (currentPlayerState is HurtPlayerState or HeldItemPlayerState or RammingPlayerState or CloakedPlayerState) return;
-        if(currentPlayerState is ShieldPlayerState)
-        {
-            //add to currently tracked thing that can damage us.
-            //this is so if we are still touching it when we stop shielding, we get hurt immediately.
-            (currentPlayerState as ShieldPlayerState).AddDamagesPlayer(hurtful);
-
-            //get direction of hurt (think of an arrow drawn from hurtful to player)
-            Vector2Int directionOfHurt = Vector2Int.RoundToInt((transform.position - hurtful.transform.position).normalized);
-            Vector2Int direction = directionedObject.direction;
-
-            //are we facing close to the opposite direction of the attack? (allow 45 degree edge cases.)
-            bool xPortion = directionOfHurt.x != 0 && direction.x != 0 && directionOfHurt.x == -direction.x;
-            bool yPortion = directionOfHurt.y != 0 && direction.y != 0 && directionOfHurt.y == -direction.y;
-            
-            if(xPortion || yPortion)
-            {
-                //Shield Blocks Damage.
-                return;
-            }
-        }
+        if (currentPlayerState is ShieldPlayerState && DoesShieldBlockDamage(hurtful)) return;
         TakeDamage(hurtful);
+    }
+    public bool DoesShieldBlockDamage(DamagesPlayer hurtful)
+    {
+        //add to currently tracked thing that can damage us.
+        //this is so if we are still touching it when we stop shielding, we get hurt immediately.
+        (currentPlayerState as ShieldPlayerState).AddDamagesPlayer(hurtful);
+
+        //get direction of hurt (think of an arrow drawn from hurtful to player)
+        Vector2Int directionOfHurt = Vector2Int.RoundToInt((transform.position - hurtful.transform.position).normalized);
+        Vector2Int direction = directionedObject.direction;
+
+        //are we facing close to the opposite direction of the attack? (allow 45 degree edge cases.)
+        bool xPortion = directionOfHurt.x != 0 && direction.x != 0 && directionOfHurt.x == -direction.x;
+        bool yPortion = directionOfHurt.y != 0 && direction.y != 0 && directionOfHurt.y == -direction.y;
+
+        return xPortion || yPortion;
     }
     public void TakeDamage(DamagesPlayer hurtful)
     {
         PlayerHealth.TakeDamage(HitCalculation.HurtPlayerAmount(hurtful.amount), this);
+        GetComponent<Flasher>().StartFlash();
         Knockback(hurtful.transform);
         stateTransitionTimer1 = 25; //25 frames of knockback.
         SwitchState(new HurtPlayerState());
@@ -273,7 +272,7 @@ public class PlayerStateManager : MonoBehaviour
     // This is for custom decrementing of an item when it is ready to be used up
     public void DecrementConsumableItem()
     {
-        int selectionIndex = FindAnyObjectByType<InventoryConsumableSelector>(FindObjectsInactive.Include).selectionIndex;
+        int selectionIndex = SelectedItem.ConsumableItem;
         SaveManager.DecrementConsumableItem(selectionIndex);
     }
 
@@ -289,7 +288,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         string underwaterVariantSceneName = SceneManager.GetActiveScene().name + "_Underwater";
         KeepUnderwaterPositionExitHandler.position = transform.position;
-        if(SceneUtility.GetBuildIndexByScenePath(underwaterVariantSceneName) == -1)
+        if (SceneUtility.GetBuildIndexByScenePath(underwaterVariantSceneName) == -1)
         {
             SceneManager.LoadScene("error");
             return;
@@ -318,5 +317,22 @@ public class PlayerStateManager : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
         }
     }
+    public void Die()
+    {
+        DisableSprite();
+        SwitchState(new NoInputPlayerState());
+        rigidBody.velocity = Vector3.zero;
+        Instantiate(deathScreen, transform.position, Quaternion.identity);
+    }
+    /*
+    private void OnDrawGizmos()
+    {
+        //manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction * 0.5f, Vector2.one * 0.51f, 0, manager.directionedObject.direction, contactFilter, results, 0.5f
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position + (Vector3)(Vector2)directionedObject.direction * 0.5f, Vector2.one * 0.51f);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube((transform.position + (Vector3)(Vector2)directionedObject.direction * 0.5f) + (Vector3)((Vector2)directionedObject.direction * 0.5f), Vector2.one * 0.51f);
+    }
+    */
 }
 

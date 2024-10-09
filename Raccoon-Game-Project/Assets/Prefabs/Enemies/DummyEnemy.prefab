@@ -662,7 +662,7 @@ MonoBehaviour:
     varyPitch: 1
     looping: 0
     followNoiseMaker: 0
-    spatialBlend: 0
+    spatialBlend: 1
   - pool:
     - {fileID: 8300000, guid: 619794d52890ca846a0bcfe66ea46ee5, type: 3}
     - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
@@ -670,7 +670,7 @@ MonoBehaviour:
     varyPitch: 1
     looping: 0
     followNoiseMaker: 0
-    spatialBlend: 0
+    spatialBlend: 1
   interruptableClip: {fileID: 0}
 --- !u!114 &127163695993412773
 MonoBehaviour:

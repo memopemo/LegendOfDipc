@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8398491851912605276}
   - component: {fileID: 131853010901692977}
   - component: {fileID: 8840665690210888222}
-  - component: {fileID: 1326750008109216351}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -72,7 +71,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -111,7 +110,7 @@ MonoBehaviour:
   bounds: {fileID: 0}
   target: {fileID: 0}
   offset: {x: 0, y: 0}
-  distance: 8
+  distance: 7
   shakeIntensity: 0
   followSpeed: 3
   lookaheadTime: 0
@@ -172,27 +171,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d30c41fdb283a8439fd1cdc4948c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1326750008109216351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3745281166524759360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 480
-  m_RefResolutionY: 270
-  m_CropFrame: 0
-  m_GridSnapping: 0
-  m_FilterMode: 0
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0

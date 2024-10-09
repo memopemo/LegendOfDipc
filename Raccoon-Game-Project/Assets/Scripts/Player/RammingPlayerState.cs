@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.Audio;
 
 // Dash forward and move a little bit until you crash into something.
 public class RammingPlayerState : IPlayerState
@@ -34,24 +30,24 @@ public class RammingPlayerState : IPlayerState
     {
         Object.Destroy(damagesEnemy);
         manager.noiseMaker.StopInteruptableClip(false);
-        
+
     }
     public void OnUpdate(PlayerStateManager manager)
     {
-        if(!Buttons.IsButtonHeld(Buttons.KeyItem) && windupTimeAndSpeed < 0) 
+        if (!Buttons.IsButtonHeld(Buttons.KeyItem) && isWindingUp())
         {
             manager.SwitchState(new DefaultPlayerState());
             manager.noiseMaker.StopInteruptableClip(false);
             return;
         }
-        else if(windupTimeAndSpeed > 0 && Buttons.IsButtonDown(Buttons.KeyItem))
+        else if (!isWindingUp() && Buttons.IsButtonDown(Buttons.KeyItem))
         {
             manager.SwitchState(new DefaultPlayerState());
             return;
         }
 
         //play dash start sound and looping step sound.
-        if(windupTimeAndSpeed < 0 && windupTimeAndSpeed + Time.deltaTime > 0) //play only on the switch from windup to running.
+        if (isWindingUp() && windupTimeAndSpeed + Time.deltaTime > 0) //play only on the switch from windup to running.
         {
             Object.Instantiate(manager.poofParticle, manager.transform.position, Quaternion.identity); //create poof particle
             manager.noiseMaker.Play(DASH_SOUND); //zoom!
@@ -60,11 +56,11 @@ public class RammingPlayerState : IPlayerState
 
         windupTimeAndSpeed += Time.deltaTime;
         //freeze if we are impacting.
-        if(framesImpactingCount <= 0)
+        if (isFreezeImpacting())
         {
             //movement, but no direction
             manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction
-                * (windupTimeAndSpeed > 0 ? MAX_DASH_SPEED : windupTimeAndSpeed + manager.additionalSpeed);
+                * (!isWindingUp() ? MAX_DASH_SPEED : windupTimeAndSpeed + manager.additionalSpeed);
         }
         else
         {
@@ -73,29 +69,29 @@ public class RammingPlayerState : IPlayerState
         }
 
         // allow strafing perpendicular
-        if(manager.directionedObject.direction.x != 0) //if x direction is active...
+        if (manager.directionedObject.direction.x != 0) //if x direction is active...
         {
             manager.rigidBody.velocity += new Vector2(0, manager.rawInput.y); //then use input y.
         }
         else //use input x.
         {
-            manager.rigidBody.velocity += new Vector2(manager.rawInput.x, 0); 
+            manager.rigidBody.velocity += new Vector2(manager.rawInput.x, 0);
         }
 
-        manager.animator.SetAnimation(windupTimeAndSpeed < 0 ? WINDUP_ANIM : DASH_ANIM); //animation
+        manager.animator.SetAnimation(isWindingUp() ? WINDUP_ANIM : DASH_ANIM); //animation
 
-        if(windupTimeAndSpeed < 0) return; //skip next sections if we are still winding up. 
-        
-        if(Time.frameCount % 5 == 0)
+        if (isWindingUp()) return; //skip next sections if we are still winding up. 
+
+        if (Time.frameCount % 5 == 0)
         {
-           GameObject particle = manager.GetComponent<ParticleMaker>().CreateParticle(DASH_PARTICLE);
-           particle.transform.SetPositionAndRotation(
-               particle.transform.position + Vector3.down * 0.5f,
-               Quaternion.Euler(0, 0, Rotation.DirectionToAngle((Vector2)manager.directionedObject.direction) - 90));
-        } 
+            GameObject particle = manager.GetComponent<ParticleMaker>().CreateParticle(DASH_PARTICLE);
+            particle.transform.SetPositionAndRotation(
+                particle.transform.position + Vector3.down * 0.5f,
+                Quaternion.Euler(0, 0, Rotation.DirectionToAngle((Vector2)manager.directionedObject.direction) - 90));
+        }
 
-        if(Time.frameCount % 2 == 0) return; //Don't ram into shit until we are actually running. 
-        // Also only do this every other fame.
+        if (Time.frameCount % 2 == 0) return; //Don't ram into shit until we are actually running. 
+                                              // Also only do this every other fame.
 
 
         //check for hitting something.
@@ -103,7 +99,7 @@ public class RammingPlayerState : IPlayerState
          * We want to be able to graze solid objects and not stop, yet we also want to *actually slam into them if we are directly hitting them.*
          * There would be a potential case where we are running against a wall where our circle collider does not slide us off the edge, yet it doesnt detect anything.
          * Using a small box collider instead of a point protects us from this. (edge wont work since it could skip over the wall's edge collider.)
-         */ 
+         */
         Physics2D.queriesHitTriggers = true;
         RaycastHit2D[] hits = Physics2D.BoxCastAll((Vector2)manager.transform.position
             + (Vector2)manager.directionedObject.direction
@@ -112,33 +108,40 @@ public class RammingPlayerState : IPlayerState
         foreach (var hit in hits)
         {
             //Important
-            if(hit.collider.gameObject == manager.gameObject) continue; //ignore player
-            if(hit.collider.gameObject.TryGetComponent(out Hittable hittable))
+            if (hit.collider.gameObject == manager.gameObject) continue; //ignore player
+            if (hit.collider.gameObject.TryGetComponent(out Hittable hittable))
             {
                 hittable.OnHit(damagesEnemy);
+                if (!hittable.TryGetComponent(out Knockbackable _))
+                {
+                    manager.SwitchState(new BonkPlayerState());
+                }
             }
-            else if(hit.collider.gameObject.TryGetComponent(out Rammable rammable))
+            else if (hit.collider.gameObject.TryGetComponent(out Rammable rammable))
             {
                 rammable.OnRamInto();
                 //if its collidable but not solid (aka breakable)
-                if(!hit.collider.isTrigger)
+                if (!hit.collider.isTrigger)
                 {
                     framesImpactingCount = FRAMES_IMPACTING; //slow us down a peg.
                 }
-                if(rammable.isSolid)
+                if (rammable.isSolid)
                 {
                     manager.SwitchState(new BonkPlayerState());
                     return;
                 }
             }
-            else if(!hit.collider.isTrigger) //we have hit a brick wall.
+            else if (!hit.collider.isTrigger) //we have hit a brick wall.
             {
                 //todo: add a Slam into wall effect.
                 manager.SwitchState(new BonkPlayerState());
                 return;
             }
-        } 
+        }
         CommonPlayerState.CheckWater(manager); //No dashing over water!!! 
-        
+
     }
+
+    bool isWindingUp() => windupTimeAndSpeed < 0;
+    bool isFreezeImpacting() => framesImpactingCount >= 0;
 }
