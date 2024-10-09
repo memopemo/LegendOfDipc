@@ -15,7 +15,7 @@ public class Exit : MonoBehaviour
         if (collision.TryGetComponent(out PlayerStateManager _))
         {
             FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
-            FreezeMmanager.FreezeAll<PauseFreezer>();
+            FreezeManager.FreezeAll<PauseFreezer>();
 
             try
             {

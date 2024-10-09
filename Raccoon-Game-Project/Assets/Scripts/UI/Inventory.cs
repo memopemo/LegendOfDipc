@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
             }
             else
             {
-                FreezeMmanager.UnfreezeAll<PauseFreezer>();
+                FreezeManager.UnfreezeAll<PauseFreezer>();
             }
         }
         if(isOn)
@@ -86,6 +86,6 @@ public class Inventory : MonoBehaviour
     }
     void Pause()
     {
-        FreezeMmanager.FreezeAll<PauseFreezer>();
+        FreezeManager.FreezeAll<PauseFreezer>();
     }
 }

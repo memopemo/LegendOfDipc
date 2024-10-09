@@ -25,7 +25,7 @@ public class RPGboy : MonoBehaviour
                 rPGable = testRPGable;
             }
         }
-        FreezeMmanager.FreezeAll<PauseFreezer>();
+        FreezeManager.FreezeAll<PauseFreezer>();
         Invoke(nameof(StartBattle), 0.3f);
         if(rPGable == null)
         {
@@ -50,7 +50,7 @@ public class RPGboy : MonoBehaviour
     void FailedBattle()
     {
         Destroy(gameObject);
-        FreezeMmanager.UnfreezeAll<PauseFreezer>();
+        FreezeManager.UnfreezeAll<PauseFreezer>();
     }
 
 }

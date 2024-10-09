@@ -15,7 +15,7 @@ public class DeathScreen : MonoBehaviour
         blueness = 0;
         sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(1, 0, 0, 1);
-        FreezeMmanager.FreezeAll<CutSceneFreezer>();
+        FreezeManager.FreezeAll<CutSceneFreezer>();
 
         yield return new WaitForSeconds(0.5f); //reaction to getting hit
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-static class FreezeMmanager{
+static class FreezeManager{
     //Generic for finding specific freezers.
     public static void FreezeAll<F>() where F : Freezer
     {

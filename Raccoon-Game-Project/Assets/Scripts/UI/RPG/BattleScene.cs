@@ -162,7 +162,7 @@ public class BattleScene : MonoBehaviour
         //allow gameplay to resume.
         FindFirstObjectByType<CameraFocus>(FindObjectsInactive.Include).gameObject.SetActive(true);
         FindFirstObjectByType<Canvas>(FindObjectsInactive.Include).gameObject.SetActive(true);
-        FreezeMmanager.UnfreezeAll<PauseFreezer>(); //this was set by the RPGBoy
+        FreezeManager.UnfreezeAll<PauseFreezer>(); //this was set by the RPGBoy
     }
 
 }

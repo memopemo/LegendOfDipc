@@ -62,7 +62,7 @@ public class Chest : MonoBehaviour
         noiseMaker.Play(0); //play open sound
         FindAnyObjectByType<SongPlayer>().StartFadeOut(0.75f);
         PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>(); //get player reference for later.
-        FreezeMmanager.FreezeAll<PauseFreezer>(); //pause game
+        FreezeManager.FreezeAll<PauseFreezer>(); //pause game
         simpleAnimator2D.SetAnimation(1); //open box
 
         yield return new WaitForSeconds(0.75f);
@@ -90,7 +90,7 @@ public class Chest : MonoBehaviour
 
         player.directionedObject.direction = ogDirection; //set og position.
         Destroy(heldAbovePlayer); //get rid of spawned item.
-        FreezeMmanager.UnfreezeAll<PauseFreezer>(); //return gameplay back to useable state
+        FreezeManager.UnfreezeAll<PauseFreezer>(); //return gameplay back to useable state
         SetAsUsed(); //done.
 
     }

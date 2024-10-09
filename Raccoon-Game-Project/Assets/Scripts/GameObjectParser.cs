@@ -1,6 +1,5 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
-
 public static class GameObjectParser
 {
     public static int GetIndexFromName(GameObject go)

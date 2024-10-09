@@ -10,12 +10,12 @@ public class Saxophone : MonoBehaviour
 
         CameraFocus camera = FindFirstObjectByType<CameraFocus>();
 
-        FreezeMmanager.FreezeAll<CutSceneFreezer>();
+        FreezeManager.FreezeAll<CutSceneFreezer>();
         //animate player
         //play sax sound
         yield return new WaitForSeconds(3f);
 
-        FreezeMmanager.UnfreezeAll<CutSceneFreezer>();
+        FreezeManager.UnfreezeAll<CutSceneFreezer>();
 
         Saxable[] saxables = FindObjectsByType<Saxable>(FindObjectsSortMode.None);
 
