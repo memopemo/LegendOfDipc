@@ -262,10 +262,12 @@ MonoBehaviour:
     varyPitch: 0
     looping: 1
     followNoiseMaker: 1
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: 51f0f8e65d1bb274b9c1b71e5b4574ba, type: 3}
     isCancelable: 0
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}

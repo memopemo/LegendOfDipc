@@ -1,5 +1,5 @@
 using UnityEngine;
 
-public class Water : MonoBehaviour
+public class Water : Pit
 {
 }

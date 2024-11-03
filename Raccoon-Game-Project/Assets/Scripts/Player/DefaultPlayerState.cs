@@ -53,32 +53,13 @@ public class DefaultPlayerState : IPlayerState
         CommonPlayerState.UpdateDirection(manager);
         Vector2Int newDirection = manager.directionedObject.direction;
 
-        // agregious.
-        // check any direction change that has to do with up.
-        if (previousFrameDirection == Vector2Int.left
-            && newDirection == Vector2Int.up
-            || previousFrameDirection == Vector2Int.up
-            && newDirection == Vector2Int.left
-            || previousFrameDirection == Vector2Int.right
-            && newDirection == Vector2Int.up
-            || previousFrameDirection == Vector2Int.up
-            && newDirection == Vector2Int.right
-            )
+        //check for direction change for diagonal sprites
+        if ((previousFrameDirection + newDirection).y == 1)
         {
             turnFrames = TURN_HOLD_FRAMES;
             turning = 1;
         }
-        else
-        // check and direction change that has to do with down.
-        if (previousFrameDirection == Vector2Int.left
-            && newDirection == Vector2Int.down
-            || previousFrameDirection == Vector2Int.down
-            && newDirection == Vector2Int.left
-            || previousFrameDirection == Vector2Int.right
-            && newDirection == Vector2Int.down
-            || previousFrameDirection == Vector2Int.down
-            && newDirection == Vector2Int.right
-            )
+        else if ((previousFrameDirection + newDirection).y == -1)
         {
             turnFrames = TURN_HOLD_FRAMES;
             turning = -1;
@@ -93,12 +74,8 @@ public class DefaultPlayerState : IPlayerState
         //Check Sword
         if (Buttons.IsButtonDown(Buttons.Sword))
         {
-            bool colliderThing = CommonPlayerState.ColliderInDirection(manager, out GameObject go);
-            if (colliderThing)
-            {
-                HandleConfirmButtonNearColliderType(manager, go, ref nextState);
-            }
-            else //sword is usable.
+            //if we do find something, then activate it, else use sword.
+            if (!manager.directionCheck.EvaluateAnything((col) => { HandleConfirmButtonNearColliderType(manager, col.gameObject, ref nextState); }))
             {
                 nextState = new SwordPlayerState();
             }
@@ -122,26 +99,8 @@ public class DefaultPlayerState : IPlayerState
         {
             nextState = new BoomerangPlayerState();
         }
-
-        // Check if in water
-        // we can use a z range checker to only check on the tilemap, say for instance we have a platform above we can stand on.
-        ContactFilter2D contactFilter = new()
-        {
-            layerMask = LayerMask.NameToLayer("Default"),
-            useTriggers = true,
-            minDepth = manager.transform.position.z,
-            maxDepth = manager.transform.position.z + 3
-
-        };
-        Physics2D.queriesHitTriggers = true;
-        BoxCastFind<Water>(manager.transform.position + (Vector3.down * 0.2f), Vector2.one * 0.01f, (water) => nextState = new SwimPlayerState(), contactFilter);
-        Physics2D.queriesHitTriggers = false;
-        //find interactable to set flash. This provides a direct indicator that we can interact because it uses the same function to find the interactable object.
-        CommonPlayerState.ColliderInDirection(manager, out GameObject g, true);
-        if (g && g.TryGetComponent(out Interactable interact))
-        {
-            interact.PlayerCanInteract();
-        }
+        manager.waterCheck.Evaluate<Water>((_) => nextState = new SwimPlayerState());
+        manager.directionCheck.Evaluate<Interactable>((interact) => { interact.PlayerCanInteract(); });
 
 
         AnimatePlayer(manager);
@@ -150,23 +109,24 @@ public class DefaultPlayerState : IPlayerState
         {
             manager.SwitchState(nextState);
         }
-
-
-
     }
+
     public void CheckWallStapleWall(PlayerStateManager manager)
     {
-        CommonPlayerState.ColliderInDirection(manager, out GameObject go, true);
-
-        if (go.TryGetComponent(out LedgeBottom ledgeBottom))
+        Collider2D foundCollider = null;
+        if (manager.directionCheck.EvaluateAnything((c) => foundCollider = c))
         {
-            manager.SwitchState(new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y));
-        }
-        else if (go.TryGetComponent(out LedgeTop ledgeTop))
-        {
-            manager.SwitchState(new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y));
+            if (foundCollider.TryGetComponent(out LedgeBottom ledgeBottom))
+            {
+                manager.SwitchState(new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y));
+            }
+            else if (foundCollider.TryGetComponent(out LedgeTop ledgeTop))
+            {
+                manager.SwitchState(new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y));
+            }
         }
     }
+
     void HandleConfirmButtonNearColliderType(PlayerStateManager manager, GameObject go, ref IPlayerState nextState)
     {
         if (go.TryGetComponent(out Grabbable grabbable))
@@ -241,33 +201,22 @@ public class DefaultPlayerState : IPlayerState
         GameObject.Instantiate(keyItem, position, Quaternion.identity);
     }
 
-    bool BoxCastFind<T>(Vector2 origin, Vector2 size, Action<T> onFind, ContactFilter2D contactFilter = new())
-    {
-        List<RaycastHit2D> results = new();
-        int _ = Physics2D.BoxCast(origin, size, 0, Vector2.zero, contactFilter, results, 0);
-        foreach (RaycastHit2D hit in results)
-        {
-            if (hit.collider.TryGetComponent(out T foundT))
-            {
-                onFind(foundT);
-                return true;
-            }
-        }
-        return false;
-    }
-
     //If result is true, changing state was successful and should return in main update loop early.
     void OnJumpButtonPushed(PlayerStateManager manager, ref IPlayerState nextState)
     {
+        CollisionCheck collisionAtBottomCheck = new(manager.GetComponent<Collider2D>());
+
         //Find a ledge top if we are jumping downwards.
-        if (manager.inputY < 0 && FindTouching(manager.rigidBody, out LedgeTop tledge))
+        if (manager.inputY < 0 && CollisionCheck.EvaluateTouching(manager.rigidBody, out LedgeTop tledge))
         {
             //do not jump if we are blocked at the bottom by an object.
-
             //get bottom y position at our x position.
-            Vector3 pos = new(manager.transform.position.x, tledge.bottom.transform.position.y - 0.5f);
-
-            if (!BoxCastFind<Collider2D>(pos, Vector2.one * 0.5f, (x) => { }))
+            collisionAtBottomCheck
+            .SetRelativePosition(new Vector2(0, (tledge.bottom.transform.position - manager.transform.position + (Vector3.down * 0.5f)).y))
+            .SetBoxSize(0.5f)
+            .SetType(CollisionCheck.CollisionType.SingleBox)
+            .SetDebug(true);
+            if (!collisionAtBottomCheck.EvaluateAnything((_) => { }))
             {
                 manager.directionedObject.direction = Vector2Int.down;
                 nextState = new JumpingLedgePlayerState(0, tledge.bottom.transform.position.y, tledge.layersToDecrease);
@@ -275,17 +224,15 @@ public class DefaultPlayerState : IPlayerState
         }
 
         //Find a ledge side if we are jumping sideways.
-        else if (manager.inputX != 0 && FindTouching(manager.rigidBody, out BackSideLedge bsledge))
+        else if (manager.inputX != 0 && CollisionCheck.EvaluateTouching(manager.rigidBody, out BackSideLedge bsledge))
         {
             nextState = new JumpingLedgePlayerState(-1, 0, bsledge.layersToDrop);
         }
 
         //Find a ledge bottom if we are jumping up a ledge.
-        else if (manager.inputY > 0 && FindTouching(manager.rigidBody, out LedgeBottom bLedge))
+        else if (manager.inputY > 0 && CollisionCheck.EvaluateTouching(manager.rigidBody, out LedgeBottom bLedge))
         {
             int height = Mathf.RoundToInt(Mathf.Abs(bLedge.transform.position.y - bLedge.ledgetop.transform.position.y));
-
-            //Debug.Log(height);
 
             // Is height good?
             if (height < CommonPlayerState.GetJumpHeight() + 1)
@@ -300,29 +247,6 @@ public class DefaultPlayerState : IPlayerState
             nextState = new JumpingPlayerState();
         }
     }
-
-    //Return condition: if we found a T.
-    bool FindTouching<T>(Rigidbody2D rigidbody2D, out T foundT)
-    {
-        // look through max of 2 objects we are contacting with.
-        ContactPoint2D[] contactPoints = new ContactPoint2D[2];
-        rigidbody2D.GetContacts(contactPoints);
-
-        foreach (var contact in contactPoints)
-        {
-            if (!contact.collider) continue;
-            if (contact.collider.gameObject.TryGetComponent(out T thisT))
-            {
-                foundT = thisT;
-                return true;
-            }
-        }
-        foundT = default;
-        return false;
-    }
-
-
-
 
     void AnimatePlayer(PlayerStateManager manager)
     {

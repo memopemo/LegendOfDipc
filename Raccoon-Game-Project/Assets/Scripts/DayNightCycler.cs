@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DayNightCycler : MonoBehaviour
+public static class DayNightSystem
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public static float timeOfDay;
+    public static int days;
+    public const int SECONDS_IN_DAY = 3600; //1 hour of real-time gameplay per day.
 
-    // Update is called once per frame
-    void Update()
+
+    // This is supposed to be called when we are outside.
+    public static void UpdateTimeOutside()
     {
-        
+        timeOfDay += Time.deltaTime;
+        if (timeOfDay > SECONDS_IN_DAY)
+        {
+            timeOfDay -= SECONDS_IN_DAY;
+            days++;
+        }
+    }
+    public static float GetDayProgress()
+    {
+        return timeOfDay / SECONDS_IN_DAY;
     }
 }

@@ -16,12 +16,12 @@ public class ScrollingClouds : MonoBehaviour
     {
         Transform camera = FindFirstObjectByType<Camera>().transform;
         scroll += direction * Time.deltaTime;
-        scroll.x %= 16;
-        scroll.y %= 16;
+        scroll.x %= GameDefinitions.UNIT_PIXELS;
+        scroll.y %= GameDefinitions.UNIT_PIXELS;
         transform.position = (Vector3)scroll + (camera.position / 2);
         transform.position = new Vector3(transform.position.x, transform.position.y, distance);
-        transform.position = Vector3Int.RoundToInt(transform.position * 16);
-        transform.position = transform.position / 16;
+        transform.position = Vector3Int.RoundToInt(transform.position * GameDefinitions.UNIT_PIXELS);
+        transform.position = transform.position / GameDefinitions.UNIT_PIXELS;
 
     }
 }

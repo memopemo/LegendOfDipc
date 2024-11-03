@@ -138,7 +138,7 @@ public class RammingPlayerState : IPlayerState
                 return;
             }
         }
-        CommonPlayerState.CheckWater(manager); //No dashing over water!!! 
+        manager.waterCheck.Evaluate<Water>((_) => manager.SwitchState(new SwimPlayerState())); //No dashing over water!!! 
 
     }
 

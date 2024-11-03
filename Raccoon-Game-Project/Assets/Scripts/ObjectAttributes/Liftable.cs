@@ -10,12 +10,15 @@ public class Liftable : MonoBehaviour
     [NonSerialized] public Heightable heightable;
     DirectionedObject direction;
     float downVelocity = -4f;
+    CollisionCheck collisionCheck;
     // Start is called before the first frame update
     void Start()
     {
         colider = GetComponent<Collider2D>();
         direction = GetComponent<DirectionedObject>();
         heightable = GetComponent<Heightable>();
+        collisionCheck = new(GetComponent<Collider2D>());
+        collisionCheck.SetBoxSize(0.75f);
     }
 
     // Update is called once per frame
@@ -36,16 +39,7 @@ public class Liftable : MonoBehaviour
             }
             else
             {
-                ContactFilter2D contactFilter = new() { layerMask = LayerMask.NameToLayer("Default") };
-                List<RaycastHit2D> results = new();
-                int _ = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0, Vector2.zero, contactFilter, results);
-                foreach (RaycastHit2D hit in results)
-                {
-
-                    if (hit.collider == colider) continue;
-                    if (hit.collider.TryGetComponent(out PlayerStateManager _)) continue;
-                    Break();
-                }
+                collisionCheck.EvaluateAnythingBut<PlayerStateManager>((_) => Break());
             }
         }
 

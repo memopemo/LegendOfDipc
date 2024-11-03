@@ -12,9 +12,10 @@ public class GrabbingPlayerState : IPlayerState
     const float secsToPushPull = 1f;
     float secsPulling;
     float secsPushing;
+    CollisionCheck pushPullCheck;
 
-    public GrabbingPlayerState(Grabbable grabbable) 
-    {  
+    public GrabbingPlayerState(Grabbable grabbable)
+    {
         this.grabbable = grabbable;
     }
 
@@ -25,30 +26,38 @@ public class GrabbingPlayerState : IPlayerState
         //Snap to grid
         manager.transform.localPosition = -(Vector3)(Vector2)manager.directionedObject.direction;
         manager.transform.position = SnapGrid.SnapToGridCentered(manager.transform.position);
+        pushPullCheck = new(grabbable.GetComponent<Collider2D>());
+        pushPullCheck
+            .SetType(CollisionCheck.CollisionType.DraggedBox)
+            .SetBoxSize(0.90f)
+            .SetDragPositionFromDirection(-1, manager.directionedObject)
+            .SetDebug(true);
+        manager.gameObject.AddComponent<ExclusionAttribute>();
     }
 
     public void OnLeave(PlayerStateManager manager)
     {
         manager.transform.parent = null;
+        Object.Destroy(manager.GetComponent<ExclusionAttribute>());
     }
 
     public void OnUpdate(PlayerStateManager manager)
     {
         //Debug.Log(manager.transform.parent);
-        if (manager.transform.parent == null)
+        if (manager.transform.parent == null || !Buttons.IsButtonHeld(Buttons.Sword))
         {
             manager.SwitchState(new DefaultPlayerState());
-            return;
-        }
-        if (!Buttons.IsButtonHeld(Buttons.Sword))
-        {
-            manager.SwitchState(new DefaultPlayerState());
+            grabbable.Ungrab();
             return;
         }
         //wanting to move opposite of direction (pulling)
         if (manager.rawInput == -manager.directionedObject.direction)
         {
             secsPushing = 0;
+            if (secsPulling == 0)
+            {
+                grabbable.StartPull(-manager.directionedObject.direction);
+            }
             secsPulling += Time.deltaTime;
             //Check if we can lift.
             if (grabbable.TryGetComponent(out Liftable l) && SaveManager.GetSave().ObtainedKeyUnselectableItems[1])
@@ -56,46 +65,62 @@ public class GrabbingPlayerState : IPlayerState
                 if (secsPulling > 0.5f)
                 {
                     manager.stateTransitionTimer1 = 20;
-                    manager.SwitchState(new LiftPlayerState(l)); 
+                    manager.SwitchState(new LiftPlayerState(l));
                 }
             }
             manager.animator.SetAnimation(13);
         }
-        
+
         //wanting to move in direction (pushing)
         else if (manager.rawInput == manager.directionedObject.direction)
         {
             secsPulling = 0;
+            if (secsPushing == 0)
+            {
+                grabbable.StartPush(manager.directionedObject.direction);
+            }
             secsPushing += Time.deltaTime;
             manager.animator.SetAnimation(12);
         }
         else
         {
+            if (secsPulling > 0)
+            {
+                grabbable.EndPull(-manager.directionedObject.direction);
+            }
+            if (secsPushing > 0)
+            {
+                grabbable.EndPush(manager.directionedObject.direction);
+            }
             secsPulling = 0;
             secsPushing = 0;
             manager.animator.SetAnimation(11);
         }
 
-        if(secsPulling > 1f) 
+        if (secsPulling > 1f)
         {
             //Check behind player if they can pull it and not risk squishing themself.
-            if (CommonPlayerState.ColliderAt(manager, -manager.directionedObject.direction, out _, grabbable.gameObject)) return;
-            Debug.Log("Pulled a " + grabbable.name);
-            grabbable.Pull(-manager.directionedObject.direction);
-            secsPulling = 0;
-        }
-        if (secsPushing > 1f) 
-        {
-            //check 2 tiles infront of player if they can push it.
-            //I guess this makes a requirement that all pushable objects must be 1x1
-            if (CommonPlayerState.ColliderAt(manager, manager.directionedObject.direction * 2, out GameObject a, grabbable.gameObject)) 
+            pushPullCheck.SetDragPositionFromDirection(-2, manager.directionedObject);
+
+            if (!pushPullCheck.EvaluateAnythingBut<ExclusionAttribute>((a) => { Debug.Log(a.gameObject); }))
             {
-                Debug.Log(a);
-                return;
+                Debug.Log("Pulled a " + grabbable.name);
+                grabbable.Pull(-manager.directionedObject.direction);
+                secsPulling = 0;
+            }
+            grabbable.gameObject.layer = 0;
+        }
+        if (secsPushing > 1f)
+        {
+            pushPullCheck.SetDragPositionFromDirection(1, manager.directionedObject);
+            if (!pushPullCheck.EvaluateAnythingBut<ExclusionAttribute>((a) => { Debug.Log(a.gameObject); }))
+            {
+                Debug.Log("Pushed a " + grabbable.name);
+                grabbable.Push(manager.directionedObject.direction);
+                secsPushing = 0;
             };
-            Debug.Log("Pushed a " + grabbable.name);
-            grabbable.Push(manager.directionedObject.direction);
-            secsPushing = 0;
+            grabbable.gameObject.layer = 0;
+
         }
     }
 }

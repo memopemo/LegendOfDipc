@@ -29,7 +29,7 @@ public class LiftPlayerState : IPlayerState
         ThrowOrDrop(manager);
 
     }
-    void ThrowOrDrop(PlayerStateManager manager) 
+    void ThrowOrDrop(PlayerStateManager manager)
     {
         if (liftable.isThrown)
         {
@@ -57,7 +57,7 @@ public class LiftPlayerState : IPlayerState
     {
         manager.animator.SetAnimation(14);
 
-        if (manager.stateTransitionTimer1 > 0) 
+        if (manager.stateTransitionTimer1 > 0)
         {
             //TODO: lifting animation
             return;
@@ -67,17 +67,11 @@ public class LiftPlayerState : IPlayerState
 
         if (Buttons.IsButtonDown(Buttons.Sword))
         {
-            // is placable object and do we have space to set it down?
-            if (!liftable.isThrown)
-            {
-                if (CommonPlayerState.ColliderInDirection(manager, out _)) 
-                {
-                    return;
-                }
-            }
+            // check if somethings in the way of placing down.
+            if (!liftable.isThrown && manager.directionCheck.EvaluateAnything((_) => { })) return;
             //Throw or drop liftable.
             manager.SwitchState(new DefaultPlayerState());
         }
-        
+
     }
 }

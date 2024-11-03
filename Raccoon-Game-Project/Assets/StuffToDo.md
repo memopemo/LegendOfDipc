@@ -37,7 +37,7 @@
 - ~~Adding status buffs~~
 - Adding the shop for status buffs
 - ~~Saving/Loading~~
-- Dying/Reloading
+- ~~Dying/Reloading~~
 - Title Screen
 - Warp Pipes and map pipe screen
 - ~~"Redstone" aka interchangable signaling between objects~~
@@ -45,7 +45,7 @@
   - Doors
   - ~~Levers~~
   - Spawnable Objects
-  - Saxophone Listeners
+  - ~~Saxophone Listeners~~
 - ~~Lightblocks~~
 - ~~Darkblocks~~
 - ~~Spawning one or more objects on actions taken~~

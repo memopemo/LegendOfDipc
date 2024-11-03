@@ -7,67 +7,65 @@ public class Fire : MonoBehaviour
 {
     Burnable attachedObject; //object to burn.
     [SerializeField] GameObject replicator; //new fire to make.
-    [SerializeField] GameObject fireEffect; 
+    [SerializeField] GameObject fireEffect;
     ParticleSystem fireInstance;
     ContactFilter2D cf = new()
     {
         useTriggers = true,
     };
+    CollisionCheck findBurnable;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Invoke(nameof(PlayFireSound), UnityEngine.Random.Range(0, 0.5f));
-        InvokeRepeating(nameof(FireTick), 4,4); //start firing.
+        InvokeRepeating(nameof(FireTick), 4, 4); //start firing.
         fireInstance = Instantiate(fireEffect, transform).GetComponent<ParticleSystem>();
-        
+
 
         //attach attachedObject.
-        if(transform.parent != null && transform.parent.TryGetComponent(out Burnable burnable))
+        if (transform.parent != null && transform.parent.TryGetComponent(out Burnable burnable))
         {
             attachedObject = burnable;
             return;
         }
-        Physics2D.queriesHitTriggers = true;
-        List<RaycastHit2D> results = new();
-        int _ = Physics2D.BoxCast(transform.position, Vector2.one*1.5f, 0, Vector2.zero, cf, results, 0);
-        Physics2D.queriesHitTriggers = false;
-        foreach (RaycastHit2D hit in results)
+        //for some reason start is not being called here to initialize the find burnable.
+        findBurnable = new(GetComponent<Collider2D>());
+        findBurnable
+        .SetType(CollisionCheck.CollisionType.SingleBox)
+        .SetFindTriggers(true)
+        .SetBoxSize(1.5f)
+        .SetDebug(true);
+        findBurnable.Evaluate<Burnable>((burnable) =>
         {
-            if (hit.collider.TryGetComponent(out Burnable burnable1))
-            {
-                Fire alreadyHasFire = burnable1.transform.GetComponentInChildren<Fire>();
-                if (alreadyHasFire) continue;
-                attachedObject = burnable1;
-                transform.parent = attachedObject.transform;
-                return;
-            }
-        }   
+            attachedObject = burnable;
+            transform.parent = attachedObject.transform;
+        }, new((b) => b.GetComponentInChildren<Fire>() == null));
     }
     void Update()
     {
-        if(attachedObject)
+        if (attachedObject)
         {
             //slowly move towards our burnable object.
-            transform.localPosition = Vector2.Lerp(transform.localPosition, Vector2.zero, Time.deltaTime/2);
-            transform.localScale = Vector2.Lerp(transform.localScale, Vector2.one, Time.deltaTime/2);
+            transform.localPosition = Vector2.Lerp(transform.localPosition, Vector2.zero, Time.deltaTime / 2);
+            transform.localScale = Vector2.Lerp(transform.localScale, Vector2.one, Time.deltaTime / 2);
         }
-        if(Time.frameCount % 5 == 0)
+        if (Time.frameCount % 5 == 0)
         {
-            if(FindObjectsByType<Fire>(FindObjectsSortMode.None).Length > 5)
+            if (FindObjectsByType<Fire>(FindObjectsSortMode.None).Length > 5)
             {
-                foreach(var ps in GetComponentsInChildren<ParticleSystem>())
+                foreach (var ps in GetComponentsInChildren<ParticleSystem>())
                 {
                     var main = ps.main;
                     main.maxParticles = 3;
-                }   
+                }
             }
         }
     }
 
     void FireTick()
     {
-        
-        if(UnityEngine.Random.Range(0,4) == 0) //Burn (1/4th chance)
+
+        if (UnityEngine.Random.Range(0, 4) == 0) //Burn (1/4th chance)
         {
             Die();
         }
@@ -84,28 +82,24 @@ public class Fire : MonoBehaviour
 
     void SpreadFire()
     {
-        Physics2D.queriesHitTriggers = true;
-        List<RaycastHit2D> results = new();
-        int _ = Physics2D.BoxCast(transform.position, Vector2.one*1.5f, 0, Vector2.zero, cf, results, 0);
-        Physics2D.queriesHitTriggers = false;
-        foreach (RaycastHit2D hit in results)
+        findBurnable = new(GetComponent<Collider2D>());
+        findBurnable
+        .SetType(CollisionCheck.CollisionType.SingleBox)
+        .SetFindTriggers(true)
+        .SetBoxSize(1.5f)
+        .SetDebug(true);
+        findBurnable.Evaluate<Burnable>((burnable) =>
         {
-            if (hit.collider.TryGetComponent(out Burnable burnable))
-            {
-                Fire alreadyHasFire = burnable.transform.GetComponentInChildren<Fire>();
-                if (alreadyHasFire) continue;
-                GameObject go = Instantiate(replicator, burnable.transform);
-                go.transform.position = transform.position;
-                return;
-            }
-        }
+            GameObject newFire = Instantiate(replicator, burnable.transform);
+            newFire.transform.position = transform.position;
+        }, new((b) => b.GetComponentInChildren<Fire>() == null));
     }
     void Die()
     {
-            if(attachedObject)
-            { attachedObject.Burn(); }
-            transform.DetachChildren();
-            fireInstance.Stop();
-            Destroy(gameObject,0.5f);
+        if (attachedObject)
+        { attachedObject.Burn(); }
+        transform.DetachChildren();
+        fireInstance.Stop();
+        Destroy(gameObject, 0.5f);
     }
 }

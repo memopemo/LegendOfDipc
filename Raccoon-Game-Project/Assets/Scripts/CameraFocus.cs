@@ -5,7 +5,7 @@ public class CameraFocus : MonoBehaviour
     [SerializeField] Collider2D bounds;
     public Transform target;
     [SerializeField] Vector2 offset;
-    [SerializeField] float distance; //units from the middle of the screen to the bottom/top. the full height of the camera box is 2*distance.
+    const float distance = GameDefinitions.SCREEN_HEIGHT_PIXELS / 2f / GameDefinitions.UNIT_PIXELS; //units from the middle of the screen to the bottom/top. the full height of the camera box is 2*distance.
     public float shakeIntensity;
 
     [SerializeField] float followSpeed;
@@ -17,35 +17,35 @@ public class CameraFocus : MonoBehaviour
     Vector2 lookaheadVelocity;
 
     public bool hasGlassesOn;
-    #if DEBUG
-    float debugKeyHeldTime = 0;
-    #endif
+#if DEBUG
+    bool noScrolling = false;
+#endif
 
     // Start is called before the first frame update
     void Awake()
     {
-        
+        print(distance);
         if (!target)
         {
             player = FindFirstObjectByType<PlayerStateManager>();
             Debug.Assert(player, "No Player Found to focus Camera on.");
-            if(player)
+            if (player)
             {
                 target = player.transform;
             }
             else
             {
-                
+
                 target = new GameObject("No Player").transform;
             }
-            
+
         }
     }
 
     //Set position so the camera does not fly over to the player from its original position in the editor when the scene starts.
     public void InitializeCameraPosition(Vector3 startingDirection)
     {
-        if(target)
+        if (target)
             transform.position = target.position + startingDirection;
     }
     void OnValidate()
@@ -63,11 +63,18 @@ public class CameraFocus : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+#if DEBUG
+        if (Input.GetKeyDown(KeyCode.ScrollLock))
+        {
+            noScrolling = !noScrolling;
+        }
+        if (noScrolling) return;
+#endif
         //set camera properties
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, distance, Time.deltaTime * followSpeed);
 
         //get player
-        if(player != null)
+        if (player != null)
         {
             if (target.gameObject == player.gameObject)
             {
@@ -98,25 +105,7 @@ public class CameraFocus : MonoBehaviour
             shakeIntensity -= Time.deltaTime * 5;
         }
         else shakeIntensity = 0;
-        #if DEBUG
-        if(Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Comma) )
-        {
-            debugKeyHeldTime += Time.deltaTime*2;
-        }
-        else
-        {
-            debugKeyHeldTime = 1;
-        }
-        //debug zooming
-        if(Input.GetKey(KeyCode.Period))
-        {
-            distance += Time.unscaledDeltaTime*debugKeyHeldTime;
-        }
-        if(Input.GetKey(KeyCode.Comma))
-        {
-            distance -= Time.unscaledDeltaTime*debugKeyHeldTime;
-        }
-        #endif
+
     }
     public void OnDrawGizmos()
     {
@@ -129,7 +118,7 @@ public class CameraFocus : MonoBehaviour
     }
     public void ShakeScreen(float strength = 1)
     {
-        if(shakeIntensity > strength) return;
+        if (shakeIntensity > strength) return;
         shakeIntensity = strength;
     }
     public bool IsOnScreen(Vector2 position)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class Hittable : MonoBehaviour
 {
     Health myHealth;
@@ -20,7 +20,7 @@ public class Hittable : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
+        if (collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
         {
             OnHit(hurtful);
             return;
@@ -28,16 +28,16 @@ public class Hittable : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
+        if (collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
         {
-            
+
             return;
         }
     }
     public virtual void OnHit(DamagesEnemy from)
     {
         TakeDamage(from.amount, from.isBuffed);
-        if(knockbackable)
+        if (knockbackable)
         {
             knockbackable.ApplyKnockBack(from.transform);
         }
@@ -53,11 +53,11 @@ public class Hittable : MonoBehaviour
          * So it would look better if the direction of the particles came from the two biggest visual objects: the player and enemy.
          */
         Instantiate(hurtParticle, transform.position, Rotation.Get2DAngleFromPoints(transform.position, FindFirstObjectByType<PlayerStateManager>().transform.position));
-        
-        if(myHealth)
+
+        if (myHealth)
         {
             //Update Health
-            if(isPlayer)
+            if (isPlayer)
             {
                 myHealth.TakeDamage(HitCalculation.PlayerHurtEnemyAmount(amount));
             }
@@ -67,13 +67,13 @@ public class Hittable : MonoBehaviour
                 myHealth.TakeDamage(amount);
             }
         }
-        
-        
+
+
         //Make sure we cant take more damage for some time.
         invulnTimer = 0.5f;
 
         EnemyHealthBar healthBar = GetComponentInChildren<EnemyHealthBar>();
-        if(healthBar)
+        if (healthBar)
         {
             healthBar.ShowHealthBar();
         }
@@ -82,6 +82,6 @@ public class Hittable : MonoBehaviour
     {
         Timer.DecrementTimer(ref invulnTimer);
     }
-    
+
 
 }

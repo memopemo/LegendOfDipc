@@ -7,6 +7,11 @@ public class SongPlayer : MonoBehaviour
     [SerializeField] SceneSongs sceneSongs;
     Song currentSong;
     AudioSource source;
+    float targetVolume;
+
+    // velocity is 1/volumeChangeInSecs
+    float volumeChangeInSecs; //how many seconds should it take to go from max to mute and vice versa?
+
     void Start()
     {
         source = GetComponent<AudioSource>();
@@ -46,6 +51,14 @@ public class SongPlayer : MonoBehaviour
             source.timeSamples = currentSong.LoopStartSamples + (source.timeSamples - currentSong.LoopEndSamples);
             source.Play();
         }
+        if (source.volume < targetVolume)
+        {
+            source.volume += 1 / volumeChangeInSecs * Time.deltaTime;
+        }
+        else if (source.volume > targetVolume)
+        {
+            source.volume -= 1 / volumeChangeInSecs * Time.deltaTime;
+        }
     }
     public void OnSceneChange(SceneReference sceneReference)
     {
@@ -62,35 +75,21 @@ public class SongPlayer : MonoBehaviour
     }
     IEnumerator FadeAndSwitchSong()
     {
-        yield return FadeOut();
+        const float speed = 1;
+        StartFadeOut(speed);
+        yield return new WaitForSeconds(speed);
         source.clip = currentSong.song;
         source.Play();
-        yield return FadeIn();
+        StartFadeIn(speed);
     }
     public void StartFadeOut(float inSecs = 1)
     {
-        StartCoroutine(FadeOut(inSecs));
+        targetVolume = 0;
+        volumeChangeInSecs = inSecs;
     }
     public void StartFadeIn(float inSecs = 1)
     {
-        StartCoroutine(FadeIn(inSecs));
-    }
-    IEnumerator FadeOut(float speed = 1)
-    {
-        while (source.volume > 0)
-        {
-            source.volume -= Time.deltaTime * (1 / speed);
-            yield return null; //wait for next frame.
-        }
-        source.volume = 0;
-    }
-    IEnumerator FadeIn(float speed = 1)
-    {
-        while (source.volume < 1)
-        {
-            source.volume += Time.deltaTime * (1 / speed);
-            yield return null; //wait for next frame.
-        }
-        source.volume = 1;
+        targetVolume = 1;
+        volumeChangeInSecs = inSecs;
     }
 }

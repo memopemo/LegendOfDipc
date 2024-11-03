@@ -10,7 +10,7 @@ public class HouseFurnitureCreator : MonoBehaviour
         int[] houseLayout = SaveManager.GetSave().HouseLayout;
         for (int position = 0; position < houseLayout.Length; position++)
         {
-            Vector2 placement = new Vector2Int(position % 16, position / 16);
+            Vector2 placement = new Vector2Int(position % GameDefinitions.UNIT_PIXELS, position / GameDefinitions.UNIT_PIXELS);
             Instantiate(furnitureList.furniture[houseLayout[position]], (Vector3)placement, Quaternion.identity);
         }
     }

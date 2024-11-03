@@ -9,13 +9,13 @@ public class RPGSelector : MonoBehaviour
     int itemSelection;
     Vector2 initPosition;
     const float SPEED = 20;
-    const float SELECTION_WIDTH = 40/16f;
+    const float SELECTION_WIDTH = 40f / GameDefinitions.UNIT_PIXELS;
     Vector2 ItemSelectionOffset = new Vector2(3.5f, -1.5f);
     const int SELECTABLE_ITEMS = 5;
     [SerializeField] Sprite selectedActionBorder;
     [SerializeField] Sprite deselectedActionBorder;
     [SerializeField] SpriteRenderer[] actionBorders;
-    [SerializeField] 
+    [SerializeField]
     BattleScene battleScene;
     RPGItemSelectorWindow itemWindow;
     bool isSelectingItem;
@@ -39,7 +39,7 @@ public class RPGSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isSelectingItem)
+        if (!isSelectingItem)
         {
             HandleActionSelectionInput();
         }
@@ -49,32 +49,32 @@ public class RPGSelector : MonoBehaviour
         }
 
         //cursor position
-        
-        transform.localPosition += Vector3.back*1.5f;
-        
+
+        transform.localPosition += Vector3.back * 1.5f;
+
     }
     void HandleActionSelectionInput()
     {
         //handle input
-        if(UIInput.IsDownPressed)
+        if (UIInput.IsDownPressed)
         {
             actionBorders[actionSelection].sprite = deselectedActionBorder;
-            if(actionSelection == SELECTABLE_ITEMS - 1) 
+            if (actionSelection == SELECTABLE_ITEMS - 1)
                 actionSelection = 0;
-            else 
+            else
                 actionSelection++;
             actionBorders[actionSelection].sprite = selectedActionBorder;
         }
-        else if(UIInput.IsUpPressed)
+        else if (UIInput.IsUpPressed)
         {
             actionBorders[actionSelection].sprite = deselectedActionBorder;
-            if(actionSelection == 0) 
-                actionSelection = SELECTABLE_ITEMS-1;
-            else 
+            if (actionSelection == 0)
+                actionSelection = SELECTABLE_ITEMS - 1;
+            else
                 actionSelection--;
             actionBorders[actionSelection].sprite = selectedActionBorder;
         }
-        else if(UIInput.IsRightPressed
+        else if (UIInput.IsRightPressed
                  && (actionSelection == (int)BattleScene.PlayerAction.ConsumableItem || actionSelection == (int)BattleScene.PlayerAction.KeyItem))
         {
             isSelectingItem = true;
@@ -82,12 +82,12 @@ public class RPGSelector : MonoBehaviour
             GameObject.Find($"Slot_{itemSelection}").GetComponent<SpriteRenderer>().sprite = selectedActionBorder;
             return;
         }
-        if(actionSelection == (int)BattleScene.PlayerAction.ConsumableItem)
+        if (actionSelection == (int)BattleScene.PlayerAction.ConsumableItem)
         {
             itemWindow.isActive = true;
             itemWindow.isConsumableMode = true;
         }
-        else if(actionSelection == (int)BattleScene.PlayerAction.KeyItem)
+        else if (actionSelection == (int)BattleScene.PlayerAction.KeyItem)
         {
             itemWindow.isActive = true;
             itemWindow.isConsumableMode = false;
@@ -96,95 +96,95 @@ public class RPGSelector : MonoBehaviour
         {
             itemWindow.isActive = false;
         }
-        if(Buttons.IsButtonDown(Buttons.Sword))
+        if (Buttons.IsButtonDown(Buttons.Sword))
         {
             itemWindow.isActive = false;
             battleScene.OnPlayerSelectedAction((BattleScene.PlayerAction)actionSelection);
         }
 
-        transform.localPosition = Vector2.Lerp(transform.localPosition, initPosition + (SELECTION_WIDTH * actionSelection * Vector2.down), Time.deltaTime*SPEED);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, initPosition + (SELECTION_WIDTH * actionSelection * Vector2.down), Time.deltaTime * SPEED);
     }
     void HandleItemSelectionInput()
     {
         int width = itemWindow.isConsumableMode ? 4 : 3;
         int ogSelection = itemSelection;
-        if(UIInput.IsDownPressed)
+        if (UIInput.IsDownPressed)
         {
             itemSelection += width;
-            if(itemSelection >= 6*width)
+            if (itemSelection >= 6 * width)
             {
                 itemSelection %= width;
             }
-            
+
         }
-        else if(UIInput.IsUpPressed)
+        else if (UIInput.IsUpPressed)
         {
             itemSelection -= width;
-            if(itemSelection < 0)
+            if (itemSelection < 0)
             {
                 itemSelection = (itemSelection % width) + 5 * width;
             }
         }
-        else if(UIInput.IsRightPressed)
+        else if (UIInput.IsRightPressed)
         {
             itemSelection++;
-            if(itemSelection >= 6 * width)
+            if (itemSelection >= 6 * width)
             {
                 itemSelection = 0;
             }
         }
-        else if(UIInput.IsLeftPressed)
+        else if (UIInput.IsLeftPressed)
         {
-            if(itemSelection % width == 0)
+            if (itemSelection % width == 0)
             {
                 exit();
                 return;
             }
             itemSelection--;
-            if(itemSelection == -1)
+            if (itemSelection == -1)
             {
-                itemSelection = (6*width)-1;
+                itemSelection = (6 * width) - 1;
             }
         }
-        if(Buttons.IsButtonDown(Buttons.KeyItem))
+        if (Buttons.IsButtonDown(Buttons.KeyItem))
         {
             exit();
             return;
         }
-        if(Buttons.IsButtonDown(Buttons.Sword))
+        if (Buttons.IsButtonDown(Buttons.Sword))
         {
             battleScene.itemIndex = itemSelection;
             itemWindow.isActive = false;
-            battleScene.OnPlayerSelectedAction((BattleScene.PlayerAction)actionSelection); 
+            battleScene.OnPlayerSelectedAction((BattleScene.PlayerAction)actionSelection);
             exit();
             return;
         }
-        itemSelection %= width*6; //just in case.
+        itemSelection %= width * 6; //just in case.
         print(itemSelection);
         //if there is a difference, change sprites. This may be stupid.
-        if(ogSelection != itemSelection)
+        if (ogSelection != itemSelection)
         {
-            int previousSlot = itemWindow.isConsumableMode? ogSelection : KeyIndexToConsumableIndex(ogSelection);
-            int currentSlot = itemWindow.isConsumableMode? itemSelection : KeyIndexToConsumableIndex(itemSelection);
+            int previousSlot = itemWindow.isConsumableMode ? ogSelection : KeyIndexToConsumableIndex(ogSelection);
+            int currentSlot = itemWindow.isConsumableMode ? itemSelection : KeyIndexToConsumableIndex(itemSelection);
             GameObject.Find($"Slot_{previousSlot}").GetComponent<SpriteRenderer>().sprite = deselectedActionBorder;
             GameObject.Find($"Slot_{currentSlot}").GetComponent<SpriteRenderer>().sprite = selectedActionBorder;
         }
-        
-        Vector2 selectionPosition = 2 * new Vector2(itemSelection % width , itemSelection / width * -1);
-        transform.localPosition = Vector2.Lerp(transform.localPosition, initPosition + ItemSelectionOffset + selectionPosition, Time.deltaTime*10);
+
+        Vector2 selectionPosition = 2 * new Vector2(itemSelection % width, itemSelection / width * -1);
+        transform.localPosition = Vector2.Lerp(transform.localPosition, initPosition + ItemSelectionOffset + selectionPosition, Time.deltaTime * 10);
 
         void exit()
         {
             isSelectingItem = false;
-            GameObject.Find($"Slot_{itemSelection}").GetComponent<SpriteRenderer>().sprite = deselectedActionBorder;         
+            GameObject.Find($"Slot_{itemSelection}").GetComponent<SpriteRenderer>().sprite = deselectedActionBorder;
         }
     }
     int ConsumableIndexToKeyIndex(int i)
     {
-        return i - (i/4);
+        return i - (i / 4);
     }
     int KeyIndexToConsumableIndex(int i)
     {
-        return i + (i/3);
+        return i + (i / 3);
     }
 }

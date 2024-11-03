@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Heightable))]
 public class Pitable : MonoBehaviour
 {
     [SerializeField] GameObject splashParticle;
@@ -9,10 +10,6 @@ public class Pitable : MonoBehaviour
     float timePitted;
     const float TIME_FALLING_BEFORE_DONE = 2f;
     bool FallingDownPit; // False is Drowning.
-    ContactFilter2D contactFilter = new ContactFilter2D()
-    {
-        useTriggers = true,
-    };
 
     PlayerStateManager player;
 
@@ -43,37 +40,32 @@ public class Pitable : MonoBehaviour
         }
         else
         {
-            if(Time.frameCount % 3 != 0) return; //only run every 3 frames.
-            //Check for pit/water we cant go down.
-            Physics2D.queriesHitTriggers = true;
-            List<Collider2D> results = new List<Collider2D>();
-            _ = Physics2D.OverlapPoint(transform.position, contactFilter, results);
-            Physics2D.queriesHitTriggers = false;
-            foreach (Collider2D c in results)
+            if (Time.frameCount % 3 != 0) return; //only run every 3 frames.
+            CollisionCheck pitCheck = new(GetComponent<Collider2D>());
+            pitCheck
+            .SetType(CollisionCheck.CollisionType.Point)
+            .SetFindTriggers(true)
+            .SetDebug(true);
+            pitCheck.Evaluate<Pit>((p) =>
             {
-                if (c)
+                if (p.TryGetComponent(out Water _))
                 {
-                    if (c.TryGetComponent(out Water _))
+                    if (player)
                     {
-                        if (player)
+                        if (SaveManager.GetSave().ObtainedKeyUnselectableItems[2])
                         {
-                            if (SaveManager.GetSave().ObtainedKeyUnselectableItems[2])
-                            {
-                                return;
-                            }
+                            return;
                         }
-                        Sink();
-                        StartFalling();
-
                     }
-                    if(c.TryGetComponent(out Pit _))
-                    {
-                        Fall();
-                        StartFalling();
-                    }
+                    Sink();
+                    StartFalling();
                 }
-            }
-
+                else
+                {
+                    Fall();
+                    StartFalling();
+                }
+            });
         }
     }
     void StartFalling()
@@ -97,12 +89,12 @@ public class Pitable : MonoBehaviour
         {
             if (player)
             {
-               transform.parent = null;
+                transform.parent = null;
             }
         }
         foreach (Transform t in transform)
         {
-            if(t.GetComponent<PlayerStateManager>())
+            if (t.GetComponent<PlayerStateManager>())
             {
                 t.parent = null;
             }
@@ -116,12 +108,12 @@ public class Pitable : MonoBehaviour
         {
             if (player)
             {
-               transform.parent = null;
+                transform.parent = null;
             }
         }
         foreach (Transform t in transform)
         {
-            if(t.GetComponent<PlayerStateManager>())
+            if (t.GetComponent<PlayerStateManager>())
             {
                 t.parent = null;
             }

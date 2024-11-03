@@ -132,9 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations:
   - {fileID: 11400000, guid: 54aa60f770d0cc046b8d2f40614df1cb, type: 2}
-  currentAnimation: 0
-  currentAnimationFrame: 0
-  finishedFrames: 0
 --- !u!58 &3431859491927426390
 CircleCollider2D:
   m_ObjectHideFlags: 0

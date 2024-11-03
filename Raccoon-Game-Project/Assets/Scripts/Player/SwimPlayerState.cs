@@ -6,17 +6,27 @@ public class SwimPlayerState : IPlayerState
     const int SWIM_SPEED = 11;
     const int STEAM_PARTICLE_INDEX = 2;
     Vector2 divePosition = Vector2.zero;
+    CollisionCheck waterCheck;
     public void OnEnter(PlayerStateManager manager)
     {
         manager.animator.SetAnimation(8);
         Object.Instantiate(manager.splashParticle, manager.transform.position, manager.transform.rotation);
         Status status = manager.GetComponent<Status>();
-        if(status.statusTicks[(int)Status.Effect.Fire] != 0)
+        if (status.statusTicks[(int)Status.Effect.Fire] != 0)
         {
             status.ClearStatus(Status.Effect.Fire);
             manager.GetComponent<ParticleMaker>().CreateParticle(STEAM_PARTICLE_INDEX);
         }
-        
+        waterCheck = new(manager.GetComponent<Collider2D>());
+        waterCheck
+            .SetFindTriggers(true)
+            .SetRelativePosition(Vector3.down * 0.2f)
+            .SetBoxSize(Vector2.one * 0.01f)
+            .SetZRange(manager.transform.position.z, manager.transform.position.z + 3)
+            .SetCollisionLayer(LayerMask.NameToLayer("Default"))
+            .SetType(CollisionCheck.CollisionType.Point)
+            .SetDebug(true);
+
     }
     public void OnLeave(PlayerStateManager manager)
     {
@@ -44,43 +54,13 @@ public class SwimPlayerState : IPlayerState
             }
         }
 
-        //if touching water, return from function.
-
-        ContactFilter2D contactFilter = new()
-        {
-            layerMask = LayerMask.NameToLayer("Default"),
-            useTriggers = true,
-            minDepth = manager.transform.position.z,
-            maxDepth = manager.transform.position.z + 3
-        };
-        Physics2D.queriesHitTriggers = true;
-        List<RaycastHit2D> results = new();
-        int _ = Physics2D.BoxCast(manager.transform.position + Vector3.down * 0.2f, Vector2.one * 0.01f, 0, Vector2.zero, contactFilter, results, 0);
-        Physics2D.queriesHitTriggers = false;
         if (Buttons.IsButtonDown(Buttons.Sword) && SaveManager.GetSave().ObtainedKeyUnselectableItems[0])
         {
-            foreach (RaycastHit2D hit in results)
-            {
-
-                if (hit.collider.TryGetComponent(out DeepWater _))
-                {
-                    manager.DiveIntoDeepWater();
-                    return;
-                }
-                Debug.Log("Nope. Not deepwater.");
-            }
+            waterCheck.Evaluate<DeepWater>((_) => manager.DiveIntoDeepWater());
         }
-        foreach (RaycastHit2D hit in results)
+        else if (!waterCheck.Evaluate<Water>((_) => { }))
         {
-            if (hit.collider.TryGetComponent(out Water _))
-            {
-                // Update will usually end here.
-                return;
-            }
+            manager.SwitchState(new DefaultPlayerState());
         }
-        // The only way we would be able to hit this is if there was no water at all. Thus, we switch back to default. :)
-        // SMARTS!
-        manager.SwitchState(new DefaultPlayerState());
-
     }
 }

@@ -44,6 +44,9 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public int stateTransitionTimer2;
     [NonSerialized] public int generalTimer1;
     [NonSerialized] public int generalTimer2;
+    CollisionCheck spaceCheck;
+    public CollisionCheck directionCheck;
+    public CollisionCheck waterCheck;
 
 #if DEBUG
     //* Debug Variables *//
@@ -74,6 +77,26 @@ public class PlayerStateManager : MonoBehaviour
         directionedObject = GetComponent<DirectionedObject>();
         animator = GetComponent<Animator2D.Animator2D>();
         noiseMaker = GetComponent<NoiseMaker>();
+        spaceCheck = new(GetComponent<Collider2D>());
+        spaceCheck
+            .SetType(CollisionCheck.CollisionType.Circle)
+            .SetCircleRadius(1.5f)
+            .SetDebug(true);
+        directionCheck = new(GetComponent<Collider2D>());
+        directionCheck
+            .MoveFromDirection(0.5f, directionedObject)
+            .SetDragPositionFromDirection(0.5f, directionedObject)
+            .SetType(CollisionCheck.CollisionType.DraggedBox)
+            .SetFindTriggers(false)
+            .SetDebug(true)
+            .SetBoxSize(0.51f);
+        waterCheck = new(GetComponent<Collider2D>());
+        waterCheck
+            .SetFindTriggers(true)
+            .SetZRange(transform.position.z, transform.position.z + 3)
+            .SetRelativePosition(Vector2.down * 0.2f)
+            .SetType(CollisionCheck.CollisionType.Point);
+
     }
 
     // Start is called before the first frame update
@@ -106,6 +129,7 @@ public class PlayerStateManager : MonoBehaviour
         Timer.DecrementTimer(ref generalTimer1);
         Timer.DecrementTimer(ref generalTimer2);
 
+
         if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed0))
         {
             additionalSpeed = 1;
@@ -118,6 +142,10 @@ public class PlayerStateManager : MonoBehaviour
         {
             additionalSpeed = 0;
         }
+
+        directionCheck
+            .MoveFromDirection(0.5f, directionedObject)
+            .SetDragPositionFromDirection(0.5f, directionedObject);
 
         // Switch State
         currentPlayerState.OnUpdate(this);
@@ -185,7 +213,6 @@ public class PlayerStateManager : MonoBehaviour
     }
     public bool DoesShieldBlockDamage(DamagesPlayer hurtful)
     {
-        //add to currently tracked thing that can damage us.
         //this is so if we are still touching it when we stop shielding, we get hurt immediately.
         (currentPlayerState as ShieldPlayerState).AddDamagesPlayer(hurtful);
 
@@ -241,33 +268,14 @@ public class PlayerStateManager : MonoBehaviour
     //      2. Not doing anything except running or idle.
     private void AttemptToSetSafePosition()
     {
-
         if (currentPlayerState is not DefaultPlayerState) return;
         int tempLayer = gameObject.layer;
         gameObject.layer = 2; // I am like actually retarded. -_- You can just temporarily set your collider to be ignored.
-        ContactFilter2D contact = new ContactFilter2D()
+        if (!spaceCheck.EvaluateAnything((c) => { }))
         {
-            useTriggers = false,
-            layerMask = 2
-
-        };
-        List<Collider2D> results = new();
-        int hits = Physics2D.OverlapCircle(transform.position, 1.5f, contact, results);
-        gameObject.layer = tempLayer;
-        foreach (Collider2D c in results)
-        {
-            if (c.GetComponent<PlayerStateManager>())
-            {
-                continue;
-            }
-            else
-            {
-                Debug.DrawLine(transform.position, c.transform.position, Color.red, 0.5f);
-                return;
-            }
+            FallReturnPosition = transform.position;
         }
-        FallReturnPosition = transform.position;
-
+        gameObject.layer = tempLayer;
     }
     // This is for custom decrementing of an item when it is ready to be used up
     public void DecrementConsumableItem()

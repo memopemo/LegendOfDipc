@@ -132,9 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations:
   - {fileID: 11400000, guid: 1a3aed75ab00e93468ee9e1d87b3a865, type: 2}
-  currentAnimation: 0
-  currentAnimationFrame: 0
-  finishedFrames: 0
 --- !u!50 &3059982051712426667
 Rigidbody2D:
   serializedVersion: 4
