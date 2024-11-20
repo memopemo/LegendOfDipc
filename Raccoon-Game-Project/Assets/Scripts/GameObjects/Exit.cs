@@ -31,22 +31,48 @@ public class Exit : MonoBehaviour
     }
     void Enter()
     {
-        SceneExitHandler.CurrentSceneExitIndex = entranceNumber;
         if (Random.Range(0, 1_000_000) == 0)
         {
             SceneManager.LoadScene("error");
         }
-        SceneManager.LoadScene(scene);
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
+
+        ExitHandler.ExitChangingRooms(entranceNumber);
     }
 }
 
 //These are to keep our next scene's data global to use it between scenes.
-public static class SceneExitHandler
-{
-    public static int CurrentSceneExitIndex = 0;
-}
-
-public static class KeepUnderwaterPositionExitHandler
+public static class ExitHandler
 {
     public static Vector2 position = Vector2.zero;
+    public static int exitObjectIndex = 0;
+    public enum Type { ChangingRooms, LoadingSavePoint, GoingUnderwater, Surfacing, ViaPipe }
+    public static Type type;
+    public static void ExitChangingRooms(int toEntranceIndex)
+    {
+        type = Type.ChangingRooms;
+        exitObjectIndex = toEntranceIndex;
+    }
+    public static void ExitLoadingSavePoint()
+    {
+        type = Type.LoadingSavePoint;
+        exitObjectIndex = SaveManager.GetSave().SavePoint;
+    }
+    public static void ExitGoingUnderwater(Vector2 positionInSurfaceScene)
+    {
+        type = Type.GoingUnderwater;
+        position = positionInSurfaceScene;
+    }
+    public static void ExitSurfacing(Vector2 positionInUnderwaterScene)
+    {
+        type = Type.Surfacing;
+        position = positionInUnderwaterScene;
+    }
+    public static void ExitViaPipe(int pipeDestinationIndex)
+    {
+        exitObjectIndex = pipeDestinationIndex;
+    }
 }

@@ -24,7 +24,6 @@ public class CameraFocus : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        print(distance);
         if (!target)
         {
             player = FindFirstObjectByType<PlayerStateManager>();

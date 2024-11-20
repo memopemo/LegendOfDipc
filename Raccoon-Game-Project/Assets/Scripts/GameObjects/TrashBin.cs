@@ -8,7 +8,7 @@ public abstract class TrashBin : MonoBehaviour
 {
     Animator2D.Animator2D anim;
     PlayerStateManager player;
-    
+
     private void Start()
     {
         anim = GetComponent<Animator2D.Animator2D>();
@@ -28,6 +28,12 @@ public abstract class TrashBin : MonoBehaviour
         anim.SetAnimation(1);
         Invoke(nameof(OnEnterDone), 1.75f);
     }
+    public void SpitOutPlayerReloadGame(PlayerStateManager player)
+    {
+        player.directionedObject.direction = Vector2Int.right;
+        player.transform.position = transform.position + new Vector3(1.435f, -1.622f, 0);
+        Invoke(nameof(SpitOutPlayer), 0.3f);
+    }
     public void SpitOutPlayer()
     {
         player.directionedObject.direction = Vector2Int.right;
@@ -40,17 +46,17 @@ public abstract class TrashBin : MonoBehaviour
     {
         player.SwitchState(new DefaultPlayerState());
         player.EnableSprite();
-        
+
         anim.SetAnimation(0);
-        
+
     }
     void OnEnterDone()
     {
-        
+
         print("Done Entering");
         OnAction();
     }
     public abstract void OnAction();
-    
+
 }
 

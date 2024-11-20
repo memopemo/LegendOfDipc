@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6155288292061979859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d1dc9a30d3f4f0bbb9e3d7a0cdb71f, type: 3}
+  m_Name: AnaglyphFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 550
+    layerMask:
+      m_Bits: 4294967295
+    shader: {fileID: 4800000, guid: fc7413ff732c8401fad15eadb52546f3, type: 3}
+    spacing: 0.2
+    focalPoint: 10
+    overlayMode: 1
+    blendMode: 0
+    opacityOverlayRenderTextureFormat: 0
+    depthOverlayBufferBitCount: 24
+    material: {fileID: 0}
+--- !u!114 &-3567784574642705648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314a4e34081cdc04cb58db525254ee33, type: 3}
+  m_Name: AnaglyphFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 600
+    layerMask:
+      m_Bits: 4294967295
+    spacing: 0.7
+    focalPoint: 10
+    overlayMode: 0
+    blendMode: 0
+    shader: {fileID: 0}
+    material: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11145981673336645838492a2d98e247, type: 3}
+  m_Name: Underwater
+  m_EditorClassIdentifier: 
+  debugShaders:
+    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
+    hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
+    probeVolumeSamplingDebugComputeShader: {fileID: 7200000, guid: 53626a513ea68ce47b59dc1299fe3959, type: 3}
+  probeVolumeResources:
+    probeVolumeDebugShader: {fileID: 0}
+    probeVolumeFragmentationDebugShader: {fileID: 0}
+    probeVolumeOffsetDebugShader: {fileID: 0}
+    probeVolumeSamplingDebugShader: {fileID: 0}
+    probeSamplingDebugMesh: {fileID: 0}
+    probeSamplingDebugTexture: {fileID: 0}
+    probeVolumeBlendStatesCS: {fileID: 0}
+  m_RendererFeatures:
+  - {fileID: 41102551293088190}
+  m_RendererFeatureMap: bed12f798d069200
+  m_UseNativeRenderPass: 0
+  m_TransparencySortMode: 3
+  m_TransparencySortAxis: {x: 0.01, y: 0.1, z: 3}
+  m_HDREmulationScale: 1
+  m_LightRenderTextureScale: 0.5
+  m_LightBlendStyles:
+  - name: Multiply
+    maskTextureChannel: 0
+    blendMode: 1
+  - name: Additive
+    maskTextureChannel: 0
+    blendMode: 0
+  - name: Multiply with Mask
+    maskTextureChannel: 1
+    blendMode: 1
+  - name: Additive with Mask
+    maskTextureChannel: 1
+    blendMode: 0
+  m_UseDepthStencilBuffer: 1
+  m_UseCameraSortingLayersTexture: 0
+  m_CameraSortingLayersTextureBound: -1
+  m_CameraSortingLayerDownsamplingMethod: 0
+  m_MaxLightRenderTextureCount: 16
+  m_MaxShadowRenderTextureCount: 1
+  m_PostProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  m_DefaultMaterialType: 0
+--- !u!114 &41102551293088190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00045f12942b46c698459096c89274e, type: 3}
+  m_Name: FullScreenPassRendererFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  injectionPoint: 600
+  fetchColorBuffer: 1
+  requirements: 0
+  passMaterial: {fileID: 2100000, guid: 4cd433fe2513bde42a43a18c045f7805, type: 2}
+  passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1

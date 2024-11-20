@@ -90,16 +90,16 @@ MonoBehaviour:
     spriteInsideChest: {fileID: 5779541040229889675, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
     indexOrQuantity: 1
-    spriteInsideChest: {fileID: -6928556903907651944, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
-  - giveWhat: 3
-    indexOrQuantity: 2
     spriteInsideChest: {fileID: -3195384718093436064, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
-    indexOrQuantity: 3
+    indexOrQuantity: 2
     spriteInsideChest: {fileID: 1319909978937901201, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
-    indexOrQuantity: 4
+    indexOrQuantity: 3
     spriteInsideChest: {fileID: -6795231328572613548, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 3
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: -3636148764411824833, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
     indexOrQuantity: 5
     spriteInsideChest: {fileID: -6198458306118065701, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
@@ -135,10 +135,10 @@ MonoBehaviour:
     spriteInsideChest: {fileID: 3792884336495295322, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
     indexOrQuantity: 16
-    spriteInsideChest: {fileID: 3126882371405884934, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+    spriteInsideChest: {fileID: 3578533747115386608, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
     indexOrQuantity: 17
-    spriteInsideChest: {fileID: 3578533747115386608, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+    spriteInsideChest: {fileID: 3126882371405884934, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
   - giveWhat: 3
     indexOrQuantity: 18
     spriteInsideChest: {fileID: 1879688228904176479, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}

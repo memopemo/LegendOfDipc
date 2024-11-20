@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.Rendering.Universal;
 
 // Freezes this object's behaviopurs based on what it will freeze on
@@ -10,11 +11,11 @@ using UnityEngine.Rendering.Universal;
 class Freezer : MonoBehaviour
 {
     List<Behaviour> behavioursFrozen = new();
-    
+
     public void FreezeChildrenAndSelf()
     {
         //dont freeze if this behaviour is turned off.
-        if(!enabled) return;
+        if (!enabled) return;
         //NOTE: only goes 1 child layer deep. I dont think i'll make this recursive.
         // But later on i may have to... fuck...
         Freeze(gameObject);
@@ -30,7 +31,7 @@ class Freezer : MonoBehaviour
         foreach (Behaviour behaviour in gob.GetComponents(typeof(Behaviour)).Cast<Behaviour>())
         {
             // add behaviours as necessary.
-            if( !behaviour.enabled
+            if (!behaviour.enabled
                 || behaviour is Freezer
                 || behaviour is Camera
                 || behaviour is AudioListener
@@ -38,15 +39,18 @@ class Freezer : MonoBehaviour
                 || behaviour is Animator2D.Animator2D
                 || behaviour is Animator2D.SimpleAnimator2D
                 || behaviour is Heightable
-            )   
+                || behaviour is PlayableDirector
+                || behaviour is Animator
+                || behaviour is Collider2D
+            )
             {
                 continue;
             }
             behaviour.enabled = false;
             behavioursFrozen.Add(behaviour);
-        }  
+        }
         //stop rigidbody.
-        if(TryGetComponent(out Rigidbody2D rb) && gob == gameObject)
+        if (TryGetComponent(out Rigidbody2D rb) && gob == gameObject)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
@@ -58,7 +62,7 @@ class Freezer : MonoBehaviour
             frozenBehaviour.enabled = true;
         }
         behavioursFrozen.Clear();
-        if(TryGetComponent(out Rigidbody2D rb))
+        if (TryGetComponent(out Rigidbody2D rb))
         {
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }

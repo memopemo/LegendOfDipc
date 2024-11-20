@@ -16,7 +16,7 @@ MonoBehaviour:
   - Sprite: {fileID: -6986968611964675377, guid: e7de41461d60d5c43a9fc05c2e550d90, type: 3}
     HoldForTicks: 0
   UpAnimationFrames:
-  - Sprite: {fileID: -6986968611964675377, guid: e7de41461d60d5c43a9fc05c2e550d90, type: 3}
+  - Sprite: {fileID: 8798216755044879747, guid: ae8d4f502610dc1449a72b532d02d1f6, type: 3}
     HoldForTicks: 0
   SideAnimationFrames:
   - Sprite: {fileID: 4386795124449070408, guid: 136a92abd09446b4786c7abd1a2c4a18, type: 3}

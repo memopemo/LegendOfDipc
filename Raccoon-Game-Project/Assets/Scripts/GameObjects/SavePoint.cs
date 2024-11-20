@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SavePoint : TrashBin
 {
-    [SerializeField] int SavePointID;
+    public int SavePointID;
     [SerializeField] GameObject particle;
     public override void OnAction()
     {
@@ -13,6 +13,6 @@ public class SavePoint : TrashBin
         SaveManager.Save();
         Instantiate(particle, transform.position - Vector3.one * 0.5f + Vector3.back * 2, quaternion.identity);
         GetComponent<Flasher>().StartFlash();
-        Invoke(nameof(SpitOutPlayer),0.75f);
+        Invoke(nameof(SpitOutPlayer), 0.75f);
     }
 }

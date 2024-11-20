@@ -17,10 +17,10 @@ public class HUD_Heart : MonoBehaviour
     void Update()
     {
         currentHealth = PlayerHealth.currentHealth;
-        currentHealth = Mathf.Clamp(currentHealth, 0, currentMaxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, 32);
 
         currentMaxHealth = (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2;
-        currentMaxHealth = Mathf.Clamp(currentMaxHealth, 0, 48);
+        currentMaxHealth = Mathf.Clamp(currentMaxHealth, 0, 32);
         Image[] hearts = GetComponentsInChildren<Image>(true);
 
 

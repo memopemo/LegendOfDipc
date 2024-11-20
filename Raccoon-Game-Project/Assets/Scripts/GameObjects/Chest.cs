@@ -19,12 +19,12 @@ public class Chest : MonoBehaviour
         SaveFile sf = SaveManager.GetSave();
 
         // //bounds checkers
-        // if(indexIntoChestTreasureList < 0 || indexIntoChestTreasureList >= sf.OverworldTreasure.Length)
-        // {
-        //     Debug.LogError($"index {indexIntoChestTreasureList} into Save File Treasure is not in range! (0, {sf.OverworldTreasure.Length})");
-        //     SetAsUsed(); //unable to open/looks empty.
-        //     return;
-        // }
+        if (indexIntoChestTreasureList < 0 || indexIntoChestTreasureList >= sf.OverworldTreasure.Length)
+        {
+            Debug.LogError($"index {indexIntoChestTreasureList} into Save File Treasure is not in range! (0, {sf.OverworldTreasure.Length})");
+            SetAsUsed(); //unable to open/looks empty.
+            return;
+        }
         if (indexIntoChestTreasureList < 0 || indexIntoChestTreasureList >= chestTreasureList.chestTreasure.Length)
         {
             Debug.LogError($"index {indexIntoChestTreasureList} into Chest is not in range! (0, {chestTreasureList.chestTreasure.Length})");
@@ -33,12 +33,12 @@ public class Chest : MonoBehaviour
         }
 
         //gameplay check if the save already has it as set.
-        // if(sf.OverworldTreasure[indexIntoChestTreasureList])
-        // {
-        //     Debug.Log("Empty because it's already obtained according to save file.");
-        //     SetAsUsed(); //unable to open/looks empty.
-        //     return;
-        // }
+        if (sf.OverworldTreasure[indexIntoChestTreasureList])
+        {
+            Debug.Log("Empty because it's already obtained according to save file.");
+            SetAsUsed(); //unable to open/looks empty.
+            return;
+        }
 
         //check if already opened on this save
         chestTreasure = chestTreasureList.chestTreasure[indexIntoChestTreasureList];
@@ -92,6 +92,7 @@ public class Chest : MonoBehaviour
         Destroy(heldAbovePlayer); //get rid of spawned item.
         FreezeManager.UnfreezeAll<PauseFreezer>(); //return gameplay back to useable state
         SetAsUsed(); //done.
+        SaveManager.GetSave().OverworldTreasure[indexIntoChestTreasureList] = true;
 
     }
 

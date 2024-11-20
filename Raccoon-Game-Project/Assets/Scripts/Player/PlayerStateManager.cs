@@ -64,7 +64,7 @@ public class PlayerStateManager : MonoBehaviour
         };
 #endif
     // Awake is called during initialization of a script. Use for setting up references to gameobjects and components before sending/reading data from them.
-    void Awake()
+    public void Awake()
     {
         //assuming initial place is a safe spot.
         FallReturnPosition = transform.position;
@@ -103,7 +103,10 @@ public class PlayerStateManager : MonoBehaviour
     void Start()
     {
         //State Init
-        currentPlayerState = new DefaultPlayerState();
+        if (currentPlayerState == null)
+        {
+            currentPlayerState = new DefaultPlayerState();
+        }
         currentPlayerState.OnEnter(this);
         InvokeRepeating(nameof(AttemptToSetSafePosition), 2, 2);
     }
@@ -112,7 +115,11 @@ public class PlayerStateManager : MonoBehaviour
     public void RoomInitialize(Vector2 position, Vector2Int direction)
     {
         transform.position = position;
-        GetComponent<DirectionedObject>().direction = direction;
+        directionedObject.direction = direction;
+    }
+    public void SetInitState(IPlayerState state)
+    {
+        currentPlayerState = state;
     }
 
     // Update is called once per frame
@@ -163,16 +170,31 @@ public class PlayerStateManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Equals))
         {
-            PlayerHealth.Heal(1, this);
+            if (Input.GetKey(KeyCode.T))
+            {
+                Time.timeScale += 2f;
+            }
+            else
+            { PlayerHealth.Heal(1, this); }
         }
         if (Input.GetKeyDown(KeyCode.Minus))
         {
-            PlayerHealth.TakeDamage(1, this);
+            if (Input.GetKey(KeyCode.T))
+            {
+                Time.timeScale += 2f;
+            }
+            else
+            {
+                PlayerHealth.TakeDamage(1, this);
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
+
             PlayerHealth.debugLockHealth ^= true;
             PlayerHealth.SetHealth(int.MaxValue);
+
         }
         if (Input.GetKeyDown(KeyCode.PageUp))
         {
@@ -187,6 +209,20 @@ public class PlayerStateManager : MonoBehaviour
             {
                 fl.DecrementLevel(1);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            Die();
+        }
+        if (Input.GetKeyDown(KeyCode.Home))
+        {
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                SceneManager.LoadScene(1);
+                return;
+            }
+            SceneManager.LoadScene(2);
+            ExitHandler.ExitLoadingSavePoint();
         }
 #endif
 
@@ -295,35 +331,51 @@ public class PlayerStateManager : MonoBehaviour
     private void EnterDeepWaterScene()
     {
         string underwaterVariantSceneName = SceneManager.GetActiveScene().name + "_Underwater";
-        KeepUnderwaterPositionExitHandler.position = transform.position;
+
         if (SceneUtility.GetBuildIndexByScenePath(underwaterVariantSceneName) == -1)
         {
             SceneManager.LoadScene("error");
+            ExitHandler.ExitChangingRooms(0);
             return;
         }
         SceneManager.LoadScene(underwaterVariantSceneName);
+        ExitHandler.ExitGoingUnderwater(transform.position);
+    }
+
+    public void RiseToSurface()
+    {
+        FindFirstObjectByType<CircleFadeInUI>().Out();
+        Invoker.InvokeDelayed(() => EnterSurfaceScene(), 1);
+        Cleanuper.ReadyCleanUpForSceneTransition(1);
+        SwitchState(new NoInputPlayerState());
+    }
+    private void EnterSurfaceScene()
+    {
+        string regularSceneName = SceneManager.GetActiveScene().name.Replace("_Underwater", "");
+        if (SceneUtility.GetBuildIndexByScenePath(regularSceneName) == -1)
+        {
+            SceneManager.LoadScene("error");
+            ExitHandler.ExitChangingRooms(0);
+            return;
+        }
+        SceneManager.LoadScene(regularSceneName);
+        ExitHandler.ExitSurfacing(transform.position);
     }
     public void DisableSprite()
     {
-        Transform sprite = transform.Find("Sprite");
-        if (sprite)
-            transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = false;
-        else
+        if (!height.didStart)
         {
-            Debug.LogWarning("No heightable sprite found.");
-            GetComponent<SpriteRenderer>().enabled = false;
+            height.Start();
         }
+        transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = false;
     }
     public void EnableSprite()
     {
-        Transform sprite = transform.Find("Sprite");
-        if (sprite)
-            transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = true;
-        else
+        if (!height.didStart)
         {
-            Debug.LogWarning("No heightable sprite found.");
-            GetComponent<SpriteRenderer>().enabled = true;
+            height.Start();
         }
+        transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = true;
     }
     public void Die()
     {
@@ -331,6 +383,11 @@ public class PlayerStateManager : MonoBehaviour
         SwitchState(new NoInputPlayerState());
         rigidBody.velocity = Vector3.zero;
         Instantiate(deathScreen, transform.position, Quaternion.identity);
+    }
+    public void SetAnimation(int i)
+    {
+        print("called");
+        animator.SetAnimation(i);
     }
     /*
     private void OnDrawGizmos()

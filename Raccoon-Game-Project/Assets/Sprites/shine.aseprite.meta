@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: shine_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 40
+      x: 41
       y: 4
       width: 30
-      height: 24
+      height: 25
     spriteID: 81f537e3061c3da449e5e8901ab2a2f4
     spriteBone: []
     spriteOutline: []
@@ -138,18 +138,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 40, y: 4}
+    uvTransform: {x: 41, y: 4}
   - name: shine_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.47826087}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 77
       width: 28
-      height: 28
+      height: 23
     spriteID: d81f7a5c1a58ea2489cfb2b1d0b73e52
     spriteBone: []
     spriteOutline: []
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 4, y: 77}
   - name: shine_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -166,9 +166,9 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 40
-      y: 68
-      width: 16
+      x: 41
+      y: 37
+      width: 20
       height: 20
     spriteID: 8cb2e182a888f93429f03271296662f7
     spriteBone: []
@@ -178,18 +178,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 40, y: 68}
+    uvTransform: {x: 41, y: 37}
   - name: shine_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51724136, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 76
-      width: 16
-      height: 26
+      y: 4
+      width: 29
+      height: 30
     spriteID: e3f6f3d53ae384c43bfb50d0ed4c33d9
     spriteBone: []
     spriteOutline: []
@@ -198,18 +198,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 76}
+    uvTransform: {x: 4, y: 4}
   - name: shine_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5185185, y: 0.4814815}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 40
-      y: 36
-      width: 30
-      height: 24
+      x: 4
+      y: 42
+      width: 27
+      height: 27
     spriteID: 533b7b776a1b41f4e8b93616299f8662
     spriteBone: []
     spriteOutline: []
@@ -218,18 +218,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 40, y: 36}
+    uvTransform: {x: 4, y: 42}
   - name: shine_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.47368422, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 40
-      width: 28
-      height: 28
+      x: 41
+      y: 65
+      width: 19
+      height: 20
     spriteID: c1b042520ab6c8943950e4da176ddcbf
     spriteBone: []
     spriteOutline: []
@@ -238,27 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 40}
-  - name: shine_Frame_6
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 40
-      y: 96
-      width: 20
-      height: 16
-    spriteID: 9bf24d52f2c07cc45a2e801a5e8d0d97
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 40, y: 96}
+    uvTransform: {x: 41, y: 65}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -272,58 +252,50 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: 1
-        y: 4
+        y: 3
         width: 30
-        height: 24
+        height: 25
       spriteId: 81f537e3061c3da449e5e8901ab2a2f4
     - name: shine_Frame_1
       frameIndex: 1
       cellRect:
         x: 2
-        y: 2
+        y: 5
         width: 28
-        height: 28
+        height: 23
       spriteId: d81f7a5c1a58ea2489cfb2b1d0b73e52
     - name: shine_Frame_2
       frameIndex: 2
       cellRect:
-        x: 8
+        x: 6
         y: 6
-        width: 16
+        width: 20
         height: 20
       spriteId: 8cb2e182a888f93429f03271296662f7
     - name: shine_Frame_3
       frameIndex: 3
       cellRect:
-        x: 8
-        y: 3
-        width: 16
-        height: 26
+        x: 1
+        y: 1
+        width: 29
+        height: 30
       spriteId: e3f6f3d53ae384c43bfb50d0ed4c33d9
     - name: shine_Frame_4
       frameIndex: 4
       cellRect:
-        x: 1
-        y: 4
-        width: 30
-        height: 24
+        x: 2
+        y: 3
+        width: 27
+        height: 27
       spriteId: 533b7b776a1b41f4e8b93616299f8662
     - name: shine_Frame_5
       frameIndex: 5
       cellRect:
-        x: 2
-        y: 2
-        width: 28
-        height: 28
+        x: 7
+        y: 6
+        width: 19
+        height: 20
       spriteId: c1b042520ab6c8943950e4da176ddcbf
-    - name: shine_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 6
-        y: 8
-        width: 20
-        height: 16
-      spriteId: 9bf24d52f2c07cc45a2e801a5e8d0d97
     linkedCells: []
     parentIndex: -1
   platformSettings:

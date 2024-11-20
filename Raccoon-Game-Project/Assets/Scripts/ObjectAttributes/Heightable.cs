@@ -29,8 +29,11 @@ public class Heightable : MonoBehaviour
     SpriteRenderer shadowRenderer;
     public Sprite shadowSprite;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        //player has already started us early, return.
+        if (baseSprite && shadowRenderer) return;
+
         //Component
         baseSprite = GetComponent<SpriteRenderer>();
 

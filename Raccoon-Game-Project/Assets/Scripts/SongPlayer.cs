@@ -36,7 +36,7 @@ public class SongPlayer : MonoBehaviour
 #endif
 
         source.clip = currentSong.song;
-
+        targetVolume = 1;
         source.Play();
         DontDestroyOnLoad(gameObject);
 

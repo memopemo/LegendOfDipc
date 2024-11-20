@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Heightable))]
 public class Pitable : MonoBehaviour
 {
     [SerializeField] GameObject splashParticle;
@@ -25,7 +24,7 @@ public class Pitable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (height.height > 0) return;
+        if (height && height.height > 0) return;
         if (timePitted > 0)
         {
             if (timePitted > TIME_FALLING_BEFORE_DONE)

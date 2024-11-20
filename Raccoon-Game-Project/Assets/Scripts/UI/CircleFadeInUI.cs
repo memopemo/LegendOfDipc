@@ -1,5 +1,8 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+//TODO: thing is fading in way too fast when loading scenes and IDK WHY T-T
 public class CircleFadeInUI : MonoBehaviour
 {
     RectTransform trans;
@@ -9,8 +12,8 @@ public class CircleFadeInUI : MonoBehaviour
     {
         trans = GetComponent<RectTransform>();
         trans.sizeDelta = Vector2.zero;
-        isFadeIn = true;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -19,14 +22,14 @@ public class CircleFadeInUI : MonoBehaviour
         {
             if (trans.sizeDelta.y < 600)
             {
-                trans.sizeDelta += 700 * Time.deltaTime * Vector2.one;
+                trans.sizeDelta += 10 * Vector2.one;
             }
         }
         else
         {
             if (trans.sizeDelta.y > 0)
             {
-                trans.sizeDelta -= 700 * Time.deltaTime * Vector2.one;
+                trans.sizeDelta -= 10 * Vector2.one;
             }
         }
 

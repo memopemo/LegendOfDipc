@@ -29,6 +29,10 @@ public static class SaveManager
 
         return saveManager;
     }
+    public static bool SaveFileExists()
+    {
+        return File.Exists(SaveFilePath);
+    }
 
     public static void Save()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 // Push, pull, lift
@@ -13,6 +14,8 @@ public class GrabbingPlayerState : IPlayerState
     float secsPulling;
     float secsPushing;
     CollisionCheck pushPullCheck;
+    const int GRAB_SFX = 9;
+    const int PUSH_PULL_SFX = 10;
 
     public GrabbingPlayerState(Grabbable grabbable)
     {
@@ -21,6 +24,10 @@ public class GrabbingPlayerState : IPlayerState
 
     public void OnEnter(PlayerStateManager manager)
     {
+        if (grabbable.gameObject.scene != manager.gameObject.scene)
+        {
+            SceneManager.MoveGameObjectToScene(grabbable.gameObject, manager.gameObject.scene);
+        }
         manager.transform.parent = grabbable.transform;
 
         //Snap to grid
@@ -33,6 +40,7 @@ public class GrabbingPlayerState : IPlayerState
             .SetDragPositionFromDirection(-1, manager.directionedObject)
             .SetDebug(true);
         manager.gameObject.AddComponent<ExclusionAttribute>();
+        manager.noiseMaker.Play(GRAB_SFX);
     }
 
     public void OnLeave(PlayerStateManager manager)
@@ -56,6 +64,7 @@ public class GrabbingPlayerState : IPlayerState
             secsPushing = 0;
             if (secsPulling == 0)
             {
+                manager.noiseMaker.Play(PUSH_PULL_SFX);
                 grabbable.StartPull(-manager.directionedObject.direction);
             }
             secsPulling += Time.deltaTime;
@@ -77,6 +86,7 @@ public class GrabbingPlayerState : IPlayerState
             secsPulling = 0;
             if (secsPushing == 0)
             {
+                manager.noiseMaker.Play(PUSH_PULL_SFX);
                 grabbable.StartPush(manager.directionedObject.direction);
             }
             secsPushing += Time.deltaTime;

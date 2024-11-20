@@ -75,8 +75,8 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
-    customPivotPosition: {x: 0.5, y: 0.5}
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.25}
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -87,15 +87,15 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
-    customPivotPosition: {x: 0.5, y: 0.5}
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.25}
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638450862334862286
+  platformSettingsDirtyTick: 638662384768058349
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: rammable_block
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.33333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -129,7 +129,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 16
-      height: 16
+      height: 24
     spriteID: f5c50704c13d4774282a82e9c99085bb
     spriteBone: []
     spriteOutline: []
@@ -154,7 +154,7 @@ ScriptedImporter:
         x: 0
         y: 0
         width: 16
-        height: 16
+        height: 24
       spriteId: f5c50704c13d4774282a82e9c99085bb
     linkedCells: []
     parentIndex: -1
@@ -185,4 +185,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 16, y: 32}

@@ -188,7 +188,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 36
-      y: 53
+      y: 52
       width: 16
       height: 16
     spriteID: c1c6f179585623e4f80725ff8cdd2e02
@@ -208,7 +208,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 52
-      y: 53
+      y: 52
       width: 16
       height: 16
     spriteID: 44d696e4845b3e341929aabf0acdd7b8
@@ -288,7 +288,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 36
-      y: 37
+      y: 36
       width: 16
       height: 16
     spriteID: 644b9fd50e8f4e944b70d9c64b099dbb
@@ -308,7 +308,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 52
-      y: 37
+      y: 36
       width: 16
       height: 16
     spriteID: f60b84327af007440af1439d83937bb8
@@ -328,7 +328,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 36
-      y: 21
+      y: 20
       width: 16
       height: 16
     spriteID: 4bfb8df523c227b4da3128f88c65c449
@@ -348,7 +348,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 52
-      y: 21
+      y: 20
       width: 16
       height: 16
     spriteID: 59aea742d13a6e7499ca2611b77ef42b
@@ -388,7 +388,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 36
-      y: 5
+      y: 4
       width: 16
       height: 16
     spriteID: 60e7b489d451bfc47af066ded457c11d
@@ -508,70 +508,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 26
+      y: 29
       width: 8
       height: 10
     spriteID: 4dcd5d314bf4a2d4d8f5a50657c0e502
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gameplay_ui_19
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 38
-      width: 9
-      height: 9
-    spriteID: 248a733065be2de46b7d952053ca7bcf
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gameplay_ui_20
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 12
-      y: 38
-      width: 9
-      height: 9
-    spriteID: 542e73727dd28b949a014acb8f75ed86
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: gameplay_ui_21
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 20
-      y: 38
-      width: 9
-      height: 9
-    spriteID: ac648ab4f2bedfd4ba9157b93cc99234
     spriteBone: []
     spriteOutline: []
     vertices: []

@@ -13,10 +13,12 @@ namespace Animator2D
         [NonSerialized] private int currentFrameTick; //NOTE: Relying on being 60fps. using faster fps is not accounted for!
         [NonSerialized] public int currentAnimationFrame;
         [NonSerialized] public int finishedFrames;
-
-        public void Start()
+        public void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+        public void Start()
+        {
             spriteRenderer.sprite = GetFrameBasedOnDirection(currentAnimationFrame);
         }
 
