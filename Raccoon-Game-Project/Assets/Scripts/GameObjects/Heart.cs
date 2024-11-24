@@ -8,19 +8,21 @@ public class Heart : MonoBehaviour
     [SerializeField] AnimationCurve bounce;
     float time;
     Vector2 direction;
-    bool doneFalling;
+    bool onFallDone; //bool for only doing things once
+    Bouncing bouncing;
     // Start is called before the first frame update
     void Start()
     {
         direction = Random.onUnitSphere;
+        bouncing = GetComponent<Bouncing>();
     }
 
     // Update is called once per frame
     void Update()
     {
         var player = FindAnyObjectByType<PlayerStateManager>();
-        if(!player) return;
-        if (doneFalling)
+        if (!player) return;
+        if (onFallDone)
         {
             if (Random.Range(1, 100) == 37)
             {
@@ -29,28 +31,26 @@ public class Heart : MonoBehaviour
             return;
         }
 
-        GetComponent<Heightable>().height = bounce.Evaluate(time);
-        time += Time.deltaTime;
-        transform.position += (Vector3)direction * Time.deltaTime*3;
+        transform.position += (Vector3)direction * Time.deltaTime * 3;
 
-        if(time > 0.55f)
+        if (bouncing.IsBounceDone())
         {
-            GetComponent<Animator2D.Animator2D>().SetAnimation(Random.Range(1,3));
+            GetComponent<Animator2D.Animator2D>().SetAnimation(Random.Range(1, 3));
             direction = Vector2.zero;
-            doneFalling = true;
+            onFallDone = true;
         }
-        
-        
+
+
     }
     void OnTriggerStay2D(Collider2D collider)
     {
-        if(!doneFalling) return;
-        if(collider.TryGetComponent(out PlayerStateManager _) || collider.TryGetComponent(out SwordHitBox _))
+        if (!onFallDone) return;
+        if (collider.TryGetComponent(out PlayerStateManager _) || collider.TryGetComponent(out SwordHitBox _))
         {
             gameObject.SetActive(false);
             PlayerHealth.Heal(4, FindFirstObjectByType<PlayerStateManager>());
         }
-        else if(collider.TryGetComponent(out Boomerang b))
+        else if (collider.TryGetComponent(out Boomerang b))
         {
             transform.parent = b.transform;
         }

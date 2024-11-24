@@ -1,6 +1,21 @@
 # Implementation Mental Tag Team Notes
 
+NEW RULE: Submit both tag and Github push by midnight saturdays
+
 Add to the top of the list for the most recent entry.
+
+## Date Nov 20th to Nov 24th
+
+missed the saturday, its sunday lol
+
+- added shops
+- clamped health to max health
+- food does not heal or get used if you are under max health.
+- accidentally made money require the bouncy attribute (heart was saved)
+- tick sound no longer plays on start scene.
+- capped item stack in inventory to 8, may change later
+- edited GDD md to be standard
+- added more stuff in GDD, like item progression
 
 ## Date: from IDK when to November 20th
 

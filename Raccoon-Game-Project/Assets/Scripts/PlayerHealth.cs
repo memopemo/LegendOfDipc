@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 //Player Health referenced throughout the life of the game, in between rooms and areas that may not even have any player in them.
 public static class PlayerHealth
@@ -32,11 +33,14 @@ public static class PlayerHealth
     public static void Heal(int amount, PlayerStateManager player = null)
     {
         currentHealth += amount;
+        Mathf.Clamp(currentHealth, 0, (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2);
         if (player)
         {
             GameObject.Instantiate(player.healParticle, player.transform);
         }
     }
+    public static int GetMaxHealth() => (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2;
+
     public static void SetHealth(int health)
     {
         currentHealth = health;

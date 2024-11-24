@@ -16,7 +16,8 @@ public class Collectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!player)return;
+        if (!player) return;
+        if (TryGetComponent(out Bouncing b) && !b.IsBounceDone()) return;
         if (Vector2.Distance(player.transform.position, transform.position) <= 1)
         {
             OnCollect.Invoke();

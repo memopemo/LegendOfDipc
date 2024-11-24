@@ -58,6 +58,10 @@ See [Campfires](#campfire)
 
 #### Animal Houses
 
+### Cursed Woods Village
+
+These are similar to Animal Villages, but have little mushroom people (not toads!) as villagers.
+
 ### Player's House
 
 #### Equipment Display

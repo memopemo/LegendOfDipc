@@ -4,22 +4,26 @@ public class HUD_Money : MonoBehaviour
 {
     const int NUMBER_OF_DIGITS = 3; // "000"
     int displayValue; //this will be ticked over time to match the actual value.
+    int actualValue;
     [SerializeField] AudioSource ticker;
     void Start()
     {
         displayValue = SaveManager.GetSave().Money; //prevent ticking when we enter a new scene or start the game.
         ticker = GetComponent<AudioSource>();
+        InvokeRepeating(nameof(CheckTickSound), 0, 0.05f);
+        actualValue = SaveManager.GetSave().Money;
+    }
+    void CheckTickSound()
+    {
+        if (displayValue != actualValue || (displayValue + 1 == actualValue))
+        {
+            ticker.Play();
+        }
     }
 
     void Update()
     {
-        int actualValue = SaveManager.GetSave().Money;
-        //Play Tick Sound if ticking and on every 3rd frame.
-        if ((Time.frameCount % 3 == 0 && displayValue != actualValue) || (displayValue + 1 == actualValue))
-        {
-            ticker.Play();
-        }
-
+        actualValue = SaveManager.GetSave().Money;
         //tick the display value up or down over time.
         if (displayValue > actualValue)
         {

@@ -141,7 +141,9 @@ Allows the attraction of metal objects, like the [Metal Block](puzzle-elements.m
 
 ![Alt text](imgs/spr_item_wall_shield.png)
 
-Allows the player to create a solid wall to block projectiles (that can be destroyed when hitting a wall), and stop enemy movement.
+Allows the player to create up to 3 solid walls to reflect projectiles and stop enemy movement.
+
+Puzzles can be made where the player must set up walls to reflect a projectile and hit a switch or something.
 
 - When the key-item button is pressed, the wall-sheild is created.
 - The key-item button is disabled unless near the wall-shield.
@@ -306,6 +308,7 @@ List of all swords:
 ## Shields
 
 When used, protects the player from bullets and/or enemy attacks.
+
 | Name         |Description| ID |
 |--------------|-----------|----|
 | Wooden       | Blocks Solid projectiles.|0|
@@ -324,6 +327,10 @@ When used, protects the player from bullets and/or enemy attacks.
 Used to open the [Final Dungeon](areas.md#dungeon-8)
 
 - Obtained by beating cult followers from [Dungeons](areas.md#dungeons) 1-7.
+
+## Toilet Paper
+
+- Used for paying for [Demon Buffs](demon-buffs.md) found in houses.
 
 ## Heart Containers
 

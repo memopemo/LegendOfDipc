@@ -157,7 +157,7 @@ This is when the player is dashing by using the [Ramming Helmet](obtainables.md#
 
 ### No Input Movement
 
-[todo1]: # (Fill the rest of list of no-input movement)
+TODO: (Fill the rest of list of no-input movement)
 
 This is when the player is either:
 
@@ -167,7 +167,7 @@ This is when the player is either:
 - Lifting or resting a [Liftable Object](puzzle-elements.md#liftable-blocks)
 - Using the [Tape Measurer](obtainables.md#tape-measurer)
 - Wind-up animation while using the [Ramming Helmet](obtainables.md#ramming-helmet)
-- ...And more. See [todo1]
+- ...And more.
 
 | Key        | Button  | Action     |
 |------------|---------|------------|

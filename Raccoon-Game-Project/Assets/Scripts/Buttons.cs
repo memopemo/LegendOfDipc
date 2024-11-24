@@ -21,10 +21,10 @@ public static class Buttons
     static Vector2Int TriggerAxisHeld;
     static Vector2Int TriggerAxisUp;
 
-    
+
     public static bool IsButtonDown(Button buttonThing)
     {
-        if(buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
+        if (buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
         {
             return GetTriggerDown(buttonThing.ControllerName) || Input.GetKeyDown(buttonThing.KeyName);
         }
@@ -32,7 +32,7 @@ public static class Buttons
     }
     public static bool IsButtonHeld(Button buttonThing)
     {
-        if(buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
+        if (buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
         {
             return GetTriggerHeld(buttonThing.ControllerName) || Input.GetKey(buttonThing.KeyName);
         }
@@ -40,7 +40,7 @@ public static class Buttons
     }
     public static bool IsButtonUp(Button buttonThing)
     {
-        if(buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
+        if (buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
         {
             return GetTriggerUp(buttonThing.ControllerName) || Input.GetKeyUp(buttonThing.KeyName);
         }
@@ -57,7 +57,7 @@ public static class Buttons
     public static void UpdateAxis()
     {
         Vector2Int inputtedAxis = Vector2Int.RoundToInt(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized);
-        if(inputtedAxis != AxisHeld)
+        if (inputtedAxis != AxisHeld)
         {
             AxisDown = inputtedAxis;
             AxisUp = AxisHeld;
@@ -71,7 +71,7 @@ public static class Buttons
 
         //do trigger axes.
         Vector2Int inputtedTriggerAxis = Vector2Int.RoundToInt(new Vector2(Input.GetAxisRaw("ZL"), Input.GetAxisRaw("ZR")).normalized);
-        if(inputtedTriggerAxis != TriggerAxisHeld)
+        if (inputtedTriggerAxis != TriggerAxisHeld)
         {
             TriggerAxisDown = inputtedTriggerAxis;
             TriggerAxisUp = TriggerAxisHeld;
@@ -86,20 +86,20 @@ public static class Buttons
     }
     static bool GetTriggerDown(string trigger)
     {
-        if(trigger == "ZL") return TriggerAxisDown.x == 1;
-        else if(trigger == "ZR") return TriggerAxisDown.y == 1;
+        if (trigger == "ZL") return TriggerAxisDown.x == 1;
+        else if (trigger == "ZR") return TriggerAxisDown.y == 1;
         else return false;
     }
     static bool GetTriggerHeld(string trigger)
     {
-        if(trigger == "ZL") return TriggerAxisHeld.x == 1;
-        else if(trigger == "ZR") return TriggerAxisHeld.y == 1;
+        if (trigger == "ZL") return TriggerAxisHeld.x == 1;
+        else if (trigger == "ZR") return TriggerAxisHeld.y == 1;
         else return false;
     }
     static bool GetTriggerUp(string trigger)
     {
-        if(trigger == "ZL") return TriggerAxisUp.x == 1;
-        else if(trigger == "ZR") return TriggerAxisUp.y == 1;
+        if (trigger == "ZL") return TriggerAxisUp.x == 1;
+        else if (trigger == "ZR") return TriggerAxisUp.y == 1;
         else return false;
     }
 }

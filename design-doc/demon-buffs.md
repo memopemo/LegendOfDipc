@@ -30,11 +30,12 @@ So your total buffs to choose from at any time is (pendants_collected)^2
 
 ## Buffs
 
-![demon buffs image]()
+![demon buffs image](imgs/demon_buffs.png)
+
 |Image                                                                                     | Buff Name |Description|
 |----------------------------------------------------------------------------------------- |-----------|-----------|
 |![Attack](imgs/demon_buffs_1.png)![Attack+](imgs/demon_buffs_29.png)                      | Attack    | Up's Attack Damage by 1|
-|![Swing](imgs/demon_buffs_8.png)![Swing+](../imgs/demon_buffs_36.png)                                   | Swing     | Makes you able to Swing any weapon|
+|![Swing](imgs/demon_buffs_8.png)![Swing+](/imgs/demon_buffs_36.png)                                   | Swing     | Makes you able to Swing any weapon|
 |![Vault](imgs/demon_buffs_15.png)                                                            | Vault     | Sligtly longer hang time when jumping|
 |![Swipe](imgs/demon_buffs_22.png)                                                            | Swipe     | Makes you able to Backhand with any weapon|
 |![Triple Hit](imgs/demon_buffs_43.png)                                                            | Triple Hit| Makes you able to Triple swing with any weapon.|
@@ -66,3 +67,25 @@ So your total buffs to choose from at any time is (pendants_collected)^2
 |![Orbiter](imgs/demon_buffs_21.png)                                                            | Orbiter   | Projectiles orbit around player|
 |![Health](imgs/demon_buffs_28.png)![Health+](imgs/demon_buffs_42.png)                              | Health    | Health drops are increased and reward more.|
 |![Plunder](imgs/demon_buffs_49.png)                                                            | Plunder   | Both Health drops and Money drops reward more.|
+
+## Buff Demon
+
+A demon in your [House](/overworld.md#players-house) that can be summoned in order to select buffs.
+
+You summon him after collecting 5 [TP](/obtainables.md#toilet-paper).
+
+- A mystical aura appears around the pentagram of 5 rolls, if you interact with it, a portal opens up in the floor and a demon reaches out his hands and climbs up.
+- Interacting with him opens the menu for selecting demon buffs by paying with [TP](/obtainables.md#toilet-paper)
+
+### Selecting Buffs
+
+Applying a buff costs 1 [TP](/obtainables.md#toilet-paper).
+Up to 3 buffs may be applied at the same time, with some conditions for what buffs can be simultaneously applied.
+
+1. If a tier buff is selected after already choosing another buff in that tier, it replaces the first one.
+2. If a buff is chosen that is incompatible with a previous buff, then the buff chosen replaces the previous buff.
+  a. A marker appears next to the buff while selecting it signaling that its incompatible. (Along with another marker showing what its incompatible with.)
+
+Along with this, the player cannot select the same buff 2 or 3 times. (option is greyed out)
+
+Thus, since both replace previously selected buffs, its best to have a single incompatible set of buffs to look through and figure out if its incompatible.

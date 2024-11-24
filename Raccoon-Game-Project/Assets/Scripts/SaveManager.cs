@@ -118,12 +118,12 @@ public static class SaveManager
     }
 
     //adds a single new item to the inventory
-    public static void AddConsumableItem(int type)
+    public static bool AddConsumableItem(int type)
     {
         if (type <= 0 || type > 18)
         {
             Debug.LogError($"Adding Consumable Item {type} is not 1-18!");
-            return;
+            return false;
         }
         SaveFile sf = GetSave();
         //find either an empty slot or the same type.
@@ -131,16 +131,22 @@ public static class SaveManager
         {
             if (sf.InventoryConsumableType[i] == type)
             {
+                if (sf.InventoryConsumableCount[i] == GameDefinitions.MAX_ITEM_STACK)
+                {
+                    continue;
+                }
                 sf.InventoryConsumableCount[i]++;
-                return;
+                return true;
             }
             else if (sf.InventoryConsumableType[i] == 0)
             {
                 sf.InventoryConsumableType[i] = type;
                 sf.InventoryConsumableCount[i] = 1;
-                return;
+                return true;
             }
         }
+        //item could not fit anywhere.
+        return false;
     }
 
 #if DEBUG

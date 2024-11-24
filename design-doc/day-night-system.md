@@ -5,6 +5,7 @@ Secrets, entering houses, and events can occur based on the time of day.
 The time updates if the player is in the overworld, otherwise, it stands still.
 
 - Day Length:
+
   | In Game (IG)   | Real Life  |
   |----------  |----------- |
   | 1 Minute   | 1 Second   |

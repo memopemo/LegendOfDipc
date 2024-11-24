@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
     }
     public void PlayerCanInteract()
     {
-        if(timeBetweenFlashes > 0.75)
+        if (timeBetweenFlashes > 0.75)
         {
             timeBetweenFlashes = 0;
             flasher.StartFlash();
