@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d234c2559330ad4449bac139e466721c, type: 3}
+  m_Name: DemonBuffSpriteList
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -3861233304021499485, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1599597513, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1286263401, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 425681322, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -790142631, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -6578196, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -653646847, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -479683467, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1004665159, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1765867798, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 702788158, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1266505492, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1682326576, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1478909916, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1469670787, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1457263130, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1830189741, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1574716445, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -237726031, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1669406581, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -774702120, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 862551796, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 483097980, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1659668402, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -100853545, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 450634934, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1108892740, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 666413427, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 82703805, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1099135164, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1884374741, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -687326782, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 251064836, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1594947124, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1349073902, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1400174249, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1078466484, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1990703850, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1592876621, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1974466192, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1828649183, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1331836588, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1615860566, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 135386485, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -1711745246, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 1528255194, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: 949244691, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -2035548731, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}
+  - {fileID: -88028405, guid: a91af13ae2f4a0f40807fe82cf0ac19f, type: 3}

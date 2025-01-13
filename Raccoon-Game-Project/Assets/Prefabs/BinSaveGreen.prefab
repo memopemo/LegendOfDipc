@@ -96,8 +96,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flasher: {fileID: 4649986349182047194}
-  timeBetweenFlashes: 0
+  OnFlashAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4649986349182047194}
+        m_TargetAssemblyTypeName: Flasher, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8570176711510328432
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &161186292411636347
 MonoBehaviour:
   m_ObjectHideFlags: 0

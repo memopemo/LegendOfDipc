@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7342564810054859454}
   - component: {fileID: 3271542451888597425}
   - component: {fileID: -3668685713891613697}
+  - component: {fileID: 895062568327321671}
   m_Layer: 0
   m_Name: ChestMagic
   m_TagString: Untagged
@@ -51,7 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestTreasureList: {fileID: 11400000, guid: 8b03f8ccf5d84f64fb358508e8c18f52, type: 2}
-  itemList: {fileID: 11400000, guid: 834b9f90fa3a1004587c85d34424c9fb, type: 2}
   indexIntoChestTreasureList: 1
   isImportant: 1
   itemHeldUp: {fileID: 4371142976222173633, guid: 09ca29899ba5c614994632f813ff2bb9, type: 3}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38f5191af27251640883be9db58c2755, type: 2}
+  - {fileID: -876546973899608171, guid: c3b016d575f318641a88473c1bcbd1fc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,8 +187,21 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
-  flasher: {fileID: 3271542451888597425}
-  timeBetweenFlashes: 0.5
+  OnFlashAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 895062568327321671}
+        m_TargetAssemblyTypeName: PalleteFlasher, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3271542451888597425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,3 +277,21 @@ MonoBehaviour:
     followNoiseMaker: 0
     spatialBlend: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &895062568327321671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419179453167382290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  find: {r: 0.67058825, g: 0.31764707, b: 0.18823531, a: 0}
+  flashingPattern:
+  - {r: 1, g: 0.68235296, b: 0.43921572, a: 0}
+  - {r: 0.7411765, g: 0.4156863, b: 0.38431376, a: 0}
+  - {r: 0.67058825, g: 0.31764707, b: 0.18823531, a: 0}
+  rate: 0.1

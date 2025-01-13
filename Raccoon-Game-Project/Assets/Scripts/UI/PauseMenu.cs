@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -20,7 +21,7 @@ public class PauseMenu : MonoBehaviour
                 SettingsPanel.SetActive(false);
 
             }
-            else if(DebugPanel.activeSelf)
+            else if (DebugPanel.activeSelf)
             {
                 DebugPanel.SetActive(false);
             }
@@ -29,26 +30,28 @@ public class PauseMenu : MonoBehaviour
                 if (!transform.GetChild(0).gameObject.activeSelf)
                 {
                     FreezeManager.FreezeAll<PauseFreezer>();
+                    FindFirstObjectByType<Inventory>().enabled = false;
                 }
                 else
                 {
                     FreezeManager.UnfreezeAll<PauseFreezer>();
+                    FindFirstObjectByType<Inventory>().enabled = true;
                 }
                 transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
             }
 
         }
-        #if DEBUG
+#if DEBUG
         //Debug pausing without pause screen
-        if(Input.GetKeyDown(KeyCode.Pause))
+        if (Input.GetKeyDown(KeyCode.Pause))
         {
             FreezeManager.FreezeAll<PauseFreezer>();
         }
-        if(Input.GetKeyUp(KeyCode.Pause))
+        if (Input.GetKeyUp(KeyCode.Pause))
         {
             FreezeManager.UnfreezeAll<PauseFreezer>();
         }
-        #endif
+#endif
     }
     public void ButtonUnpause()
     {
@@ -67,8 +70,8 @@ public class PauseMenu : MonoBehaviour
     }
     public void ButtonDebug()
     {
-        #if DEBUG
+#if DEBUG
         DebugPanel.SetActive(true);
-        #endif
+#endif
     }
 }

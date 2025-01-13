@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
     public bool isOn; //is the 
     public bool inTransition;
     float extent;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,46 +27,50 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Transform bg = transform.GetChild(0);
-        
+
         if (Buttons.IsButtonDown(Buttons.Inventory)) //support for exiting via escape.
         {
-            if(inTransition) return;
+            if (inTransition) return;
             Invoke(nameof(ToggleBG), isOn ? flyOut.keys.Last().time : flyIn.keys.Last().time - 0.5f);
             isOn = !isOn;
             timer = 0;
-            if(isOn)
+            if (isOn)
             {
+                FindFirstObjectByType<PlayerStateManager>().enabled = false;
+                FindFirstObjectByType<PauseMenu>().enabled = false;
                 Invoke(nameof(Pause), 0.5f);
             }
             else
             {
+                FindFirstObjectByType<PlayerStateManager>().enabled = true;
+                FindFirstObjectByType<PauseMenu>().enabled = true;
                 FreezeManager.UnfreezeAll<PauseFreezer>();
             }
         }
-        if(isOn)
+        if (isOn)
         {
-            if(UIInput.IsUpPressed || UIInput.IsDownPressed)
+            if (UIInput.IsUpPressed || UIInput.IsDownPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[0],FindFirstObjectByType<Camera>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[0], FindFirstObjectByType<Camera>().transform.position);
             }
-            else if(UIInput.IsLeftPressed || UIInput.IsRightPressed)
+            else if (UIInput.IsLeftPressed || UIInput.IsRightPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[1],FindFirstObjectByType<Camera>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[1], FindFirstObjectByType<Camera>().transform.position);
             }
-            else if(UIInput.IsSwitchPressed)
+            else if (UIInput.IsSwitchPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[2],FindFirstObjectByType<Camera>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[2], FindFirstObjectByType<Camera>().transform.position);
             }
         }
         timer += Time.deltaTime;
         Vector3 tempPos = bg.localPosition;
 
-        bg.localPosition = new Vector3(tempPos.x, isOn ? flyIn.Evaluate(timer)*extent : flyOut.Evaluate(timer)*extent, tempPos.z);
+        bg.localPosition = new Vector3(tempPos.x, isOn ? flyIn.Evaluate(timer) * extent : flyOut.Evaluate(timer) * extent, tempPos.z);
         inTransition = timer < (isOn ? flyIn.keys.Last().time : flyOut.keys.Last().time); //cooldown
 
-        #if DEBUG
+#if DEBUG
         //Debug Keys
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -77,7 +81,7 @@ public class Inventory : MonoBehaviour
             SaveManager.DebugMaxOut();
 
         }
-        #endif
+#endif
         Buttons.UpdateAxis();
     }
     void ToggleBG()

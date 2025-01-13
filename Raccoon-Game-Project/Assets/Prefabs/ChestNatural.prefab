@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1218078649882031590}
   - component: {fileID: 1723828303828828429}
   - component: {fileID: 3231203173263413715}
-  - component: {fileID: 7982392732056903705}
   - component: {fileID: -1441302321849644399}
+  - component: {fileID: 3109691675634892439}
   m_Layer: 0
   m_Name: ChestNatural
   m_TagString: Untagged
@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestTreasureList: {fileID: 11400000, guid: 8b03f8ccf5d84f64fb358508e8c18f52, type: 2}
-  itemList: {fileID: 11400000, guid: 834b9f90fa3a1004587c85d34424c9fb, type: 2}
   indexIntoChestTreasureList: 0
   isImportant: 0
   itemHeldUp: {fileID: 4371142976222173633, guid: 09ca29899ba5c614994632f813ff2bb9, type: 3}
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38f5191af27251640883be9db58c2755, type: 2}
+  - {fileID: -876546973899608171, guid: c3b016d575f318641a88473c1bcbd1fc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,55 +186,21 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls: []
-  flasher: {fileID: 7982392732056903705}
-  timeBetweenFlashes: 0.5
---- !u!114 &7982392732056903705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8848545918143539621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038656bee627c6245bee13a38d6102aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-  flashCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0037727356
-      value: 0.9976425
-      inSlope: -9.745984
-      outSlope: -9.745984
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.105651855
-      value: 0.0047302246
-      inSlope: -9.745984
-      outSlope: 0.000363997
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.20056567
-      value: 0.004764773
-      inSlope: 0.000363997
-      outSlope: 0.000363997
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  flashTime: 0.25
+  OnFlashAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3109691675634892439}
+        m_TargetAssemblyTypeName: PalleteFlasher, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1441302321849644399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,10 +220,30 @@ MonoBehaviour:
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   - pool:
     - {fileID: 8300000, guid: eaf61b1ac31d0d846918588199237bb5, type: 3}
     isCancelable: 0
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &3109691675634892439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8848545918143539621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  find: {r: 0.56078434, g: 0.3019608, b: 0.34117648, a: 0}
+  flashingPattern:
+  - {r: 1, g: 0.68235296, b: 0.43921572, a: 0}
+  - {r: 0.7411765, g: 0.4156863, b: 0.38431376, a: 0}
+  - {r: 0.56078434, g: 0.3019608, b: 0.34117648, a: 0}
+  rate: 0.1

@@ -30,24 +30,26 @@ So your total buffs to choose from at any time is (pendants_collected)^2
 
 ## Buffs
 
+TODO: Single images are outdated and need to be replaced.
+
 ![demon buffs image](imgs/demon_buffs.png)
 
 |Image                                                                                     | Buff Name |Description|
 |----------------------------------------------------------------------------------------- |-----------|-----------|
 |![Attack](imgs/demon_buffs_1.png)![Attack+](imgs/demon_buffs_29.png)                      | Attack    | Up's Attack Damage by 1|
 |![Swing](imgs/demon_buffs_8.png)![Swing+](/imgs/demon_buffs_36.png)                                   | Swing     | Makes you able to Swing any weapon|
-|![Vault](imgs/demon_buffs_15.png)                                                            | Vault     | Sligtly longer hang time when jumping|
+|![Vault](imgs/demon_buffs_15.png)                                                            | Phase     | Attack enemies through walls|
 |![Swipe](imgs/demon_buffs_22.png)                                                            | Swipe     | Makes you able to Backhand with any weapon|
 |![Triple Hit](imgs/demon_buffs_43.png)                                                            | Triple Hit| Makes you able to Triple swing with any weapon.|
 |![Regen](imgs/demon_buffs_2.png)![Regen+](imgs/demon_buffs_23.png)![Regen++](imgs/demon_buffs_44.png) | Regen     | Regenerate Health over time. (1 half every 20s)|
 |![Fasting](imgs/demon_buffs_9.png)![Fasting](imgs/demon_buffs_37.png)                               | Fasting   | Faster Consumption Time|
-|![Teleport](imgs/demon_buffs_16.png)                                                            | Teleport  | Jumping Allows Teleporting in a small radius|
+|![Teleport](imgs/demon_buffs_16.png)                                                            | BackAttack  | Back attacking enemies do more damage|
 |![Focus](imgs/demon_buffs_30.png)                                                            | Focus     | Melee Attacks auto-aim towards closest enemy.|
 |![Speed](imgs/demon_buffs_3.png)![Speed+](imgs/demon_buffs_31.png)                               | Speed     | Faster movement Speed|
 |![Stun](imgs/demon_buffs_10.png)![Stun++](imgs/demon_buffs_38.png)                              | Stun      | Melee Attacks Stun Enemies|
 |![Astir](imgs/demon_buffs_17.png)                                                            | Astir     | Melee Attacks Are Faster|
 |![Miss](imgs/demon_buffs_24.png)                                                            | Miss     | Attacks by Enemies have a 10% chance to miss|
-|![Moment](imgs/demon_buffs_45.png)                                                            | Moment    | Slows down game time.|
+|![Moment](imgs/demon_buffs_45.png)                                                            | Cut    | Destroy projectiles with any attack.|
 |![Defense](imgs/demon_buffs_4.png)![Defense+](imgs/demon_buffs_25.png)![Defense++](imgs/demon_buffs_46.png) | Defense   | Decreases Damage taken by Enemies by 1|
 |![Balance](imgs/demon_buffs_11.png)                                                            | Balance   | No Knockback when hit.|
 |![Punch](imgs/demon_buffs_18.png)![Punch+](imgs/demon_buffs_39.png)                              | Punch     | Higher Knockback to Enemies when using any Stab Weapon|
@@ -61,10 +63,10 @@ So your total buffs to choose from at any time is (pendants_collected)^2
 |![Puncture](imgs/demon_buffs_13.png)![Puncture+](imgs/demon_buffs_41.png)                              | Puncture  | Projectiles go through an enemy.|
 |![Cloak](imgs/demon_buffs_20.png)                                                            | Cloak     | Makes Enemies not notice you for 5 Seconds upon entering.|
 |![Zip](imgs/demon_buffs_27.png)                                                            | Zip       | Projectiles travel faster.|
-|![Distract](imgs/demon_buffs_48.png)                                                            | Distract  | Enemies may start infighting.|
+|![Distract](imgs/demon_buffs_48.png)                                                            | Vision  | Highlights enemies, even if they are hidden.|
 |![Loot](imgs/demon_buffs_7.png)![Loot+](imgs/demon_buffs_35.png)                               | Loot      | Money drops are increased and reward more.|
 |![Vacuum](imgs/demon_buffs_14.png)                                                            | Vacuum    | Hearts and Money go towards player.|
-|![Orbiter](imgs/demon_buffs_21.png)                                                            | Orbiter   | Projectiles orbit around player|
+|![Orbiter](imgs/demon_buffs_21.png)                                                            | ~~Orbiter~~   | ~~Projectiles orbit around player~~|
 |![Health](imgs/demon_buffs_28.png)![Health+](imgs/demon_buffs_42.png)                              | Health    | Health drops are increased and reward more.|
 |![Plunder](imgs/demon_buffs_49.png)                                                            | Plunder   | Both Health drops and Money drops reward more.|
 

@@ -74,11 +74,16 @@ public class DefaultPlayerState : IPlayerState
         //Check Sword
         if (Buttons.IsButtonDown(Buttons.Sword))
         {
+            manager.directionCheck.SetFindTriggers(true);
+            //directly find interactables first. We do this so that even if its behind a wall or some bullshit we dont hit what we dont want and dip if its not an interactable.
+            if (manager.directionCheck.Evaluate<Interactable>((interact) => { interact.Interact(); })) { }
+
             //if we do find something, then activate it, else use sword.
-            if (!manager.directionCheck.EvaluateAnything((col) => { HandleConfirmButtonNearColliderType(manager, col.gameObject, ref nextState); }))
+            else if (!manager.directionCheck.EvaluateAnything((col) => { HandleConfirmButtonNearColliderType(manager, col.gameObject, ref nextState); }))
             {
                 nextState = new SwordPlayerState();
             }
+            manager.directionCheck.SetFindTriggers(false);
         }
 
         //Check Consumable Item Use
@@ -100,7 +105,10 @@ public class DefaultPlayerState : IPlayerState
             nextState = new BoomerangPlayerState();
         }
         manager.waterCheck.Evaluate<Water>((_) => nextState = new SwimPlayerState());
+        //find trigger checks that also have interactable.
+        manager.directionCheck.SetFindTriggers(true);
         manager.directionCheck.Evaluate<Interactable>((interact) => { interact.PlayerCanInteract(); });
+        manager.directionCheck.SetFindTriggers(false);
 
 
         AnimatePlayer(manager);
@@ -144,11 +152,7 @@ public class DefaultPlayerState : IPlayerState
         else if (go.TryGetComponent(out LedgeTop ledgeTop) && (SelectedItem.KeyItem == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
         {
             nextState = new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y);
-        }
-        else if (go.TryGetComponent(out Interactable interactable))
-        {
-            interactable.Interact();
-        }
+        }//removed interactable bc now its directly checked.
         else
         {
             nextState = new SwordPlayerState();

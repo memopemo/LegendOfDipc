@@ -36,4 +36,12 @@ public class DebugPanel : MonoBehaviour
         currentSection.SetActive(true);
 
     }
+    public void TogglePendant(int i)
+    {
+        saveFile.Pendants[i] = !saveFile.Pendants[i];
+    }
+    public void ToggleKey(int i)
+    {
+        saveFile.DemonKeys[i] = !saveFile.DemonKeys[i];
+    }
 }

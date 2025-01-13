@@ -669,10 +669,10 @@ public class __ : MonoBehaviour
     {
         if (_____())
         {
-            FindFirstObjectByType<UniversalAdditionalCameraData>().SetRenderer(Time.frameCount%4 > 1? 0 : 1);
+            FindFirstObjectByType<UniversalAdditionalCameraData>().SetRenderer(Time.frameCount % 4 > 1 ? 0 : 1);
             Invoke(nameof(___), 0.5f);
             Destroy(_______());
-            
+
         }
 
     }

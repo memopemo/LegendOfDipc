@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using UnityEngine.Rendering.Universal;
 class Freezer : MonoBehaviour
 {
     List<Behaviour> behavioursFrozen = new();
+    public List<Behaviour> customIgnore = new();
 
     public void FreezeChildrenAndSelf()
     {
@@ -28,24 +30,14 @@ class Freezer : MonoBehaviour
     void Freeze(GameObject gob)
     {
         //Get everything that can be disabled.
-        foreach (Behaviour behaviour in gob.GetComponents(typeof(Behaviour)).Cast<Behaviour>())
-        {
-            // add behaviours as necessary.
-            if (!behaviour.enabled
-                || behaviour is Freezer
-                || behaviour is Camera
-                || behaviour is AudioListener
-                || behaviour is PixelPerfectCamera
-                || behaviour is Animator2D.Animator2D
-                || behaviour is Animator2D.SimpleAnimator2D
-                || behaviour is Heightable
-                || behaviour is PlayableDirector
-                || behaviour is Animator
-                || behaviour is Collider2D
+        //2 for-layers deep. "For Every Behaviour..."
+        foreach (Behaviour behaviour in gob.GetComponents(typeof(Behaviour)).Cast<Behaviour>().Where(
+            (x) => x.enabled &&
+            !CheckIfCustomIgnored(x) &&
+            x is not (Freezer or Heightable or Animator or Collider2D)
             )
-            {
-                continue;
-            }
+        )
+        {
             behaviour.enabled = false;
             behavioursFrozen.Add(behaviour);
         }
@@ -53,6 +45,19 @@ class Freezer : MonoBehaviour
         if (TryGetComponent(out Rigidbody2D rb) && gob == gameObject)
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        //oh god, were like, what... 3 for-layers deep?! I am a dumbass on how we can simplify this, but its like really dumb
+        bool CheckIfCustomIgnored(Behaviour behaviour)
+        {
+            foreach (Behaviour freezableBehaviours in customIgnore)
+            {
+                if (behaviour.GetType() == freezableBehaviours.GetType())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
     public void Unfreeze()

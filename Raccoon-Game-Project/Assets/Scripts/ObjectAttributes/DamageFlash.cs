@@ -25,7 +25,7 @@ public class Flasher : MonoBehaviour
         StopAllCoroutines();
         flashCoroutine = StartCoroutine(DamageFlasher());
     }
-    IEnumerator DamageFlasher()
+    protected IEnumerator DamageFlasher()
     {
         foreach (var mat in mats)
         {

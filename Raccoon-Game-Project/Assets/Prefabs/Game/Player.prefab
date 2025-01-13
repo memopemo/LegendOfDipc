@@ -351,6 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d30c41fdb283a8439fd1cdc4948c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customIgnore:
+  - {fileID: 8320214111917460670}
 --- !u!114 &8255492644390974018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,6 +565,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20aaa06c6faab9941b33014522a5c264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customIgnore:
+  - {fileID: 8320214111917460670}
 --- !u!95 &9051428271314676948
 Animator:
   serializedVersion: 7

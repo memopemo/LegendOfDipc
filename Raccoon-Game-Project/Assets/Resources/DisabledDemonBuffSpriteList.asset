@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d234c2559330ad4449bac139e466721c, type: 3}
+  m_Name: DisabledDemonBuffSpriteList
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -8315193175587450811, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 786578783, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1379462019, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1588214567, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 938206968, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1985813077, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1558014012, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1009130241, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -856918399, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1353266594, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1827416362, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1744136248, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1230109858, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 61372842, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 590895755, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -733738121, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1466683639, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1709547731, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -687946675, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1528568762, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 725490957, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1126927436, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1776841874, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 563962168, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -167049148, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -669269268, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1362440337, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -704547655, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -422528931, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1080617487, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1864215730, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -229496519, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1562723936, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1765809073, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1849271189, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 967371611, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1775595942, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 456275755, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 418777866, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1831090583, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1600792828, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -1414124050, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 700888240, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1512063138, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 671317396, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 1500542732, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -77357568, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: 888360328, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}
+  - {fileID: -508951650, guid: a1e079f29d7c30b418514831d5f90b99, type: 3}

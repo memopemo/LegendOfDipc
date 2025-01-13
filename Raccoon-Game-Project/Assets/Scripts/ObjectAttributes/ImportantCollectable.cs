@@ -1,7 +1,7 @@
 using UnityEngine;
 public class ImportantCollectable : MonoBehaviour
 {
-    public enum Type {HeartContainer, StoryKey, Pendant, ToiletPaper}
+    public enum Type { HeartContainer, StoryKey, Pendant, ToiletPaper }
     [SerializeField] Type type;
     int index;
     PlayerStateManager player;

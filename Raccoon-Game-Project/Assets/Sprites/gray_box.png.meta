@@ -130,32 +130,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 18
+        y: 16
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9fd0045d95f8b8cb0800000000000000
-      internalID: -4860633756823712263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gray_box_1
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 17
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,57 +147,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gray_box_2
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 18
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ac11064f6265aa40b05aa74923bec91
-      internalID: -1554260339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gray_box_3
+      name: gray_box_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ca2fcaaf0a72a94c936b8ce3feb50b4
-      internalID: 1173248308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gray_box_4
-      rect:
-        serializedVersion: 2
-        x: 1
         y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,27 +163,6 @@ TextureImporter:
       bones: []
       spriteID: 91c3733ede9aed8479cd4fd9adc15a23
       internalID: 605216585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: gray_box_5
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 1
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9ab78e0335e49c4e86705bf3f9a7603
-      internalID: 1685356591
       vertices: []
       indices: 
       edges: []
@@ -262,11 +178,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      gray_box_0: -4860633756823712263
-      gray_box_1: -1614742693
+      gray_box_0: -1614742693
+      gray_box_1: 605216585
       gray_box_2: -1554260339
       gray_box_3: 1173248308
-      gray_box_4: 605216585
       gray_box_5: 1685356591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

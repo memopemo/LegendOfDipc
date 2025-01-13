@@ -4,6 +4,24 @@ NEW RULE: Submit both tag and Github push by midnight saturdays
 
 Add to the top of the list for the most recent entry.
 
+## Date Jan 10th to Jan 12th
+
+Sunday's fine, right?
+
+- Demon Buff Menu
+- Buff Demon Summoning
+- No overlap in menus (eg pausing while inventory, etc)
+- Pallete cycling flasher
+- interactables support non solid objects
+- interactables now use a generic unity event to call a flasher, removing the need for a discrete flasher object.
+- player now directly checks for interactables
+- Demon Buffs can now be added via in game methods
+- snail no longer crashes
+- Player house got a little bigger
+- GreyBoxing tile sprites changed and is now 2 sprites
+- Debug Save Menu supports toggling pendants and keys (barely, it just switches it on or off but doesnt get the state of the button)
+- Some scripts got formatted.
+
 ## Date Nov 20th to Nov 24th
 
 missed the saturday, its sunday lol

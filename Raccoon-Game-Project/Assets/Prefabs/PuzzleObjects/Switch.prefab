@@ -200,8 +200,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flasher: {fileID: 3667140591145180786}
-  timeBetweenFlashes: 0
+  OnFlashAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3667140591145180786}
+        m_TargetAssemblyTypeName: Flasher, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3667140591145180786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +336,10 @@ MonoBehaviour:
   - pool:
     - {fileID: 8300000, guid: f506641372f95374e8cb58144fae2288, type: 3}
     isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}
 --- !u!114 &4080645682001839887
 MonoBehaviour:
@@ -351,3 +368,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isSolid: 0
