@@ -5,16 +5,42 @@ using UnityEngine;
 
 public class DrainWarpPipe : MonoBehaviour
 {
+    bool endWalk;
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.GetComponent<PlayerStateManager>())
         {
-            //FreezeManager.FreezeAll<PauseFreezer>();
-            GameObject go = Instantiate(new GameObject());
-            TextMeshPro tmp = go.AddComponent<TextMeshPro>();
-            tmp.text = "hi";
-            tmp.fontSize = 18;
-
+            FreezeManager.FreezeAll<CutSceneFreezer>();
+            StartCoroutine(nameof(WalkIn));
+            endWalk = false;
+            Invoke(nameof(EndWalk), 1f);
         }
     }
+    IEnumerator WalkIn()
+    {
+        PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+        player.SetAnimation(25);
+        while (!endWalk)
+        {
+            player.transform.position += Vector3.up * Time.deltaTime;
+            yield return null;
+        }
+        UIPipeSelection pipeSelection = FindFirstObjectByType<UIPipeSelection>();
+        pipeSelection.Show();
+
+        yield return new WaitUntil(() => pipeSelection.holdDrainExit == false);
+
+        //walk out
+        endWalk = false;
+        Invoke(nameof(EndWalk), 1f);
+        while (!endWalk)
+        {
+            player.transform.position += Vector3.down * Time.deltaTime;
+            yield return null;
+        }
+        FreezeManager.UnfreezeAll<CutSceneFreezer>();
+        endWalk = false;
+    }
+
+    void EndWalk() => endWalk = true;
 }

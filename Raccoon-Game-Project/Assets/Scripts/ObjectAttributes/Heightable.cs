@@ -17,7 +17,7 @@ public class Heightable : MonoBehaviour
     public float height;
 
     // Sprite thats rendered to the screen.
-    SpriteRenderer decoySprite;
+    public SpriteRenderer decoySprite;
 
     /* This is the base sprite renderer for copying to the decoy. 
      * It also contains all of the necesary components that can collide and move us, among other things.

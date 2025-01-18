@@ -11,6 +11,8 @@ public class Hittable : MonoBehaviour
     [SerializeField] GameObject hurtParticle;
     Rigidbody2D rb;
     Knockbackable knockbackable;
+    Transform tempFrom;
+    const float TRIPLE_HIT_FAIL_TIME = 0.4f;
 
     void Start()
     {
@@ -37,11 +39,42 @@ public class Hittable : MonoBehaviour
     public virtual void OnHit(DamagesEnemy from)
     {
         TakeDamage(from.amount, from.isBuffed);
-        if (knockbackable)
+
+        //dont let trapp
+        if (!DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Trap) && from.knockBack && knockbackable)
         {
+            CancelInvoke();
             knockbackable.ApplyKnockBack(from.transform);
         }
+        else if (knockbackable)
+        {
+            //trapped, but will eventually get out.
+            tempFrom = from.transform;
+            if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Trap))
+            {
+                if (!IsInvoking())
+                {
+                    Invoke(nameof(OopsFailed), TRIPLE_HIT_FAIL_TIME + 1f);
+                    StartCoroutine(nameof(HitStun));
+                }
+                return; //fall to this anyways
+            }
+            CancelInvoke();
+            Invoke(nameof(OopsFailed), TRIPLE_HIT_FAIL_TIME);
+            StopCoroutine(nameof(HitStun));
+            StartCoroutine(nameof(HitStun));
+        }
+
     }
+    public IEnumerator HitStun()
+    {
+        while (IsInvoking())
+        {
+            transform.position += Vector3.left / (Time.frameCount % 4 <= 1 ? 8 : -8);
+            yield return null;
+        }
+    }
+    public void OopsFailed() => knockbackable.ApplyKnockBack(tempFrom);
 
     //TODO: add buff-induced status effects (poison, stun)
     public virtual void TakeDamage(int amount, bool isPlayer)
@@ -67,10 +100,8 @@ public class Hittable : MonoBehaviour
                 myHealth.TakeDamage(amount);
             }
         }
-
-
         //Make sure we cant take more damage for some time.
-        invulnTimer = 0.5f;
+        invulnTimer = 0.06f;
 
         EnemyHealthBar healthBar = GetComponentInChildren<EnemyHealthBar>();
         if (healthBar)

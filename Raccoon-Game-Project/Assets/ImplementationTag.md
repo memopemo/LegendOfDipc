@@ -4,6 +4,34 @@ NEW RULE: Submit both tag and Github push by midnight saturdays
 
 Add to the top of the list for the most recent entry.
 
+## Date: Jan 12th to Jan 18th
+
+- added highligted sprits
+- added wall see-through buff
+- added own UI buttons and selectables
+- added settings menu
+- added audio settings menu
+- added access to pipe selection menu
+- pipe selection works and puts the player in the correct spot
+- added walk in and walkout animations
+- song player plays in music channel
+- health actually clamps
+- debug max out save gives a sword and fills hearts
+- added chests that give heart containers
+- important collectables now play an animation of the player holding it up
+- removed sparkly sound
+- added recover buff
+- added hitstun
+- added trap buff
+- added astir buff
+- circle fade in now uses delta time
+- fixed pulling drain cap bug
+- hud heart sounds
+- new hud money sounds
+- redid logic for pressing A so that it checks the area multiple times for a specific component.
+- added pallete cycling for things that used to flash a single color
+- death screen can work regardless of songplayer
+
 ## Date Jan 10th to Jan 12th
 
 Sunday's fine, right?

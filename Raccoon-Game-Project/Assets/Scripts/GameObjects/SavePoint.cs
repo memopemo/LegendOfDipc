@@ -12,7 +12,7 @@ public class SavePoint : TrashBin
         SaveManager.GetSave().SavePoint = SavePointID;
         SaveManager.Save();
         Instantiate(particle, transform.position - Vector3.one * 0.5f + Vector3.back * 2, quaternion.identity);
-        GetComponent<Flasher>().StartFlash();
+        GetComponent<PalleteFlasher>().StartFlash();
         Invoke(nameof(SpitOutPlayer), 0.75f);
     }
 }

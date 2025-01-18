@@ -12,13 +12,32 @@ public class HUD_Heart : MonoBehaviour
     public Sprite shinyEmptyHeart;
     public int currentMaxHealth;
     public int currentHealth;
+    public int tickerHealth;
+    void Start()
+    {
+        tickerHealth = PlayerHealth.currentHealth;
+        currentHealth = PlayerHealth.currentHealth;
+        InvokeRepeating(nameof(TickHealth), 0.1f, 0.1f);
+    }
+    void TickHealth()
+    {
+        if (tickerHealth > currentHealth)
+        {
+            tickerHealth = currentHealth; //instant decrease
+        }
+        else if (tickerHealth < currentHealth)
+        {
+            tickerHealth++; //slow increase
+            AudioSource AS = GetComponent<AudioSource>();
+            AS.Play();
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
         currentHealth = PlayerHealth.currentHealth;
         currentHealth = Mathf.Clamp(currentHealth, 0, 32);
-
         currentMaxHealth = (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2;
         currentMaxHealth = Mathf.Clamp(currentMaxHealth, 0, 32);
         Image[] hearts = GetComponentsInChildren<Image>(true);
@@ -33,7 +52,7 @@ public class HUD_Heart : MonoBehaviour
         for (int i = 0; i < hearts.Length; i++)
         {
             Image heart = hearts[i];
-            if ((i + 1) * 2 <= currentHealth)
+            if ((i + 1) * 2 <= tickerHealth)
             {
                 if (i < 16)
                     heart.sprite = fullHeart;
@@ -49,12 +68,12 @@ public class HUD_Heart : MonoBehaviour
             }
         }
         //if health is odd, set the boundary one to be half.
-        if (currentHealth % 2 == 1)
+        if (tickerHealth % 2 == 1)
         {
             if (currentHealth / 2 < 16)
-                hearts[Mathf.FloorToInt(currentHealth / 2)].sprite = halfHeart;
+                hearts[Mathf.FloorToInt(tickerHealth / 2)].sprite = halfHeart;
             else
-                hearts[Mathf.FloorToInt(currentHealth / 2)].sprite = shinyHalfHeart;
+                hearts[Mathf.FloorToInt(tickerHealth / 2)].sprite = shinyHalfHeart;
         }
 
     }

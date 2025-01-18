@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SongPlayer : MonoBehaviour
@@ -14,6 +15,11 @@ public class SongPlayer : MonoBehaviour
 
     void Start()
     {
+        AudioMixer mixer = GetComponent<AudioSource>().outputAudioMixerGroup.audioMixer;
+        mixer.SetFloat(UIAudioVolume.exposedNames[0], PlayerPrefs.GetFloat(UIAudioVolume.exposedNames[0]));
+        mixer.SetFloat(UIAudioVolume.exposedNames[1], PlayerPrefs.GetFloat(UIAudioVolume.exposedNames[1]));
+        mixer.SetFloat(UIAudioVolume.exposedNames[2], PlayerPrefs.GetFloat(UIAudioVolume.exposedNames[2]));
+
         source = GetComponent<AudioSource>();
 #if DEBUG
         if (FindObjectsByType<SongPlayer>(FindObjectsSortMode.None).Length > 1)

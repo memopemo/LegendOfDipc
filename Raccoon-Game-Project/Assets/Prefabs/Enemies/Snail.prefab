@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 6527951803102313362}
   - component: {fileID: 6602773357344482250}
   - component: {fileID: 6165497239076543001}
+  - component: {fileID: 117370387770039891}
   m_Layer: 0
   m_Name: Snail
   m_TagString: HurtPlayer
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d30c41fdb283a8439fd1cdc4948c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customIgnore: []
 --- !u!114 &6602773357344482250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,3 +390,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c657f8e1318c5a42926c2c45e55ed9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &117370387770039891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033279567524167474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd07104c7cd28014ca17fc44bd6b0394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightedSprite: {fileID: 4662600926824316172, guid: 4a0488387f472004093e35dad985dd79, type: 3}

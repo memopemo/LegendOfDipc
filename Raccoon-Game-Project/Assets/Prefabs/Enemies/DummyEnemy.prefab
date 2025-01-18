@@ -220,6 +220,9 @@ GameObject:
   - component: {fileID: 8105322531540082707}
   - component: {fileID: 260681841709917732}
   - component: {fileID: 8907817851672235389}
+  - component: {fileID: 6252080653833832033}
+  - component: {fileID: 378727167042749269}
+  - component: {fileID: 8476358192379826763}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: HurtPlayer
@@ -592,25 +595,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClipPools:
   - pool:
-    - {fileID: 8300000, guid: faf99c239f1dc8d40b5826aaf21ff8d9, type: 3}
-    - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
-    - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
-    - {fileID: 8300000, guid: 50b9e0a8c02f48d438262f7c71d96878, type: 3}
-    - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
-    - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
-    isCancelable: 0
+    - {fileID: 8300000, guid: 98f68a907ae715f438480024a48e06c6, type: 3}
+    isCancelable: 1
     varyPitch: 1
     looping: 0
     followNoiseMaker: 0
-    spatialBlend: 1
+    spatialBlend: 0
   - pool:
-    - {fileID: 8300000, guid: 619794d52890ca846a0bcfe66ea46ee5, type: 3}
-    - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
+    - {fileID: 8300000, guid: 98f68a907ae715f438480024a48e06c6, type: 3}
     isCancelable: 0
     varyPitch: 1
     looping: 0
     followNoiseMaker: 0
-    spatialBlend: 1
+    spatialBlend: 0
   interruptableClip: {fileID: 0}
 --- !u!114 &127163695993412773
 MonoBehaviour:
@@ -640,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d30c41fdb283a8439fd1cdc4948c0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customIgnore: []
 --- !u!114 &8305507445192855438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +736,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 0
   shadowSprite: {fileID: -4263704775227353237, guid: 61e40b2623212484e95f9181ed550407, type: 3}
+--- !u!114 &6252080653833832033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd07104c7cd28014ca17fc44bd6b0394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightedSprite: {fileID: 4662600926824316172, guid: 4a0488387f472004093e35dad985dd79, type: 3}
+  findColor: {r: 0.4901961, g: 0.21960786, b: 0.20000002, a: 0}
+--- !u!114 &378727167042749269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7df228bed8d4894f810930cd109d295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dustParticle: {fileID: 3163248320032323169, guid: 01504e7781095d54ea432980efe09345, type: 3}
+  disabledOnKnockBack: []
+--- !u!114 &8476358192379826763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f50c2e36893d8c40a7c1ca4f3a1f07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtParticle: {fileID: 6662679793016555163, guid: edcb8b6d73c00974d9b9fb93ecfbb52e, type: 3}
 --- !u!1 &9212373818536585072
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,10 +7,10 @@ PresetManager:
   m_DefaultPresets:
   - first:
       m_NativeTypeID: 114
-      m_ManagedTypePPtr: {fileID: 11500000, guid: 1b669375777abda42a9c29b54c75b9b8, type: 3}
+      m_ManagedTypePPtr: {fileID: 11500000, guid: 60db0ed147590234cbac1285b0ae62ed, type: 3}
       m_ManagedTypeFallback: 
     second:
-    - m_Preset: {fileID: 2655988077585873504, guid: 0b92b7d83ad2814449ff97379e27a132, type: 2}
+    - m_Preset: {fileID: 2655988077585873504, guid: 37be1bd445c0a0f489b0a4676b750ca0, type: 2}
       m_Filter: 
       m_Disabled: 0
   - first:
@@ -31,17 +31,25 @@ PresetManager:
       m_Disabled: 0
   - first:
       m_NativeTypeID: 114
-      m_ManagedTypePPtr: {fileID: 11500000, guid: 60db0ed147590234cbac1285b0ae62ed, type: 3}
-      m_ManagedTypeFallback: 
-    second:
-    - m_Preset: {fileID: 2655988077585873504, guid: 37be1bd445c0a0f489b0a4676b750ca0, type: 2}
-      m_Filter: 
-      m_Disabled: 0
-  - first:
-      m_NativeTypeID: 114
       m_ManagedTypePPtr: {fileID: 11500000, guid: f3ad14aa867d87a4996431494feeffb2, type: 3}
       m_ManagedTypeFallback: 
     second:
     - m_Preset: {fileID: 2655988077585873504, guid: 7c86a8fedf6d770418bd4fde1b3f25c5, type: 2}
+      m_Filter: 
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 114
+      m_ManagedTypePPtr: {fileID: 11500000, guid: fd07104c7cd28014ca17fc44bd6b0394, type: 3}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 72d30b59d885c3e489a8ac684127ad45, type: 2}
+      m_Filter: 
+      m_Disabled: 0
+  - first:
+      m_NativeTypeID: 114
+      m_ManagedTypePPtr: {fileID: 11500000, guid: 1b669375777abda42a9c29b54c75b9b8, type: 3}
+      m_ManagedTypeFallback: 
+    second:
+    - m_Preset: {fileID: 2655988077585873504, guid: 0b92b7d83ad2814449ff97379e27a132, type: 2}
       m_Filter: 
       m_Disabled: 0

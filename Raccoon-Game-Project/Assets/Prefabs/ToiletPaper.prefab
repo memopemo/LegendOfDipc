@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 4590167525737263189}
   - component: {fileID: 508946565367981076}
   - component: {fileID: 5013040781899181624}
-  - component: {fileID: 7570044377088265587}
   - component: {fileID: 7402005985404920732}
   - component: {fileID: 135303685971766663}
   m_Layer: 0
@@ -222,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
+  decoySprite: {fileID: 0}
   shadowSprite: {fileID: -4263704775227353237, guid: 61e40b2623212484e95f9181ed550407, type: 3}
 --- !u!114 &5013040781899181624
 MonoBehaviour:
@@ -235,34 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342cd626747b5a244999afb05569cb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7570044377088265587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4906058759334518686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClipPools:
-  - pool:
-    - {fileID: 8300000, guid: f069698d31ae7104b979d5a5795eece5, type: 3}
-    isCancelable: 0
-    varyPitch: 0
-    looping: 1
-    followNoiseMaker: 1
-    spatialBlend: 1
-  - pool:
-    - {fileID: 8300000, guid: 4221838547b4bd2469d16e56814de735, type: 3}
-    isCancelable: 0
-    varyPitch: 0
-    looping: 0
-    followNoiseMaker: 0
-    spatialBlend: 0
-  interruptableClip: {fileID: 0}
+  distanceOffGround: 0
 --- !u!114 &7402005985404920732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,18 +267,6 @@ MonoBehaviour:
       - m_Target: {fileID: 7402005985404920732}
         m_TargetAssemblyTypeName: ImportantCollectable, Assembly-CSharp
         m_MethodName: OnCollect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4590167525737263189}
-        m_TargetAssemblyTypeName: PoofDestroy, Assembly-CSharp
-        m_MethodName: PoofAndDestroy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

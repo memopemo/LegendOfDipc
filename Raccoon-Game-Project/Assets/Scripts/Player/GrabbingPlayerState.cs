@@ -128,7 +128,8 @@ public class GrabbingPlayerState : IPlayerState
                 Debug.Log("Pushed a " + grabbable.name);
                 grabbable.Push(manager.directionedObject.direction);
                 secsPushing = 0;
-            };
+            }
+            ;
             grabbable.gameObject.layer = 0;
 
         }

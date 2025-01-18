@@ -96,8 +96,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flasher: {fileID: 6687865056356977955}
-  timeBetweenFlashes: 0
+  OnFlashAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8732804412506741912}
+        m_TargetAssemblyTypeName: PalleteFlasher, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5252512668454070109
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +125,7 @@ GameObject:
   - component: {fileID: 1235500849525811852}
   - component: {fileID: 6003004530384009725}
   - component: {fileID: 1192877095602918002}
-  - component: {fileID: 6687865056356977955}
+  - component: {fileID: 8732804412506741912}
   m_Layer: 3
   m_Name: BinRefillGrey
   m_TagString: Untagged
@@ -172,7 +185,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38f5191af27251640883be9db58c2755, type: 2}
+  - {fileID: -876546973899608171, guid: c3b016d575f318641a88473c1bcbd1fc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -193,12 +206,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4862461382578033196, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
+  m_Sprite: {fileID: 2949881138551798115, guid: a5a85b12fb27f354b9a92ae472df2d21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.5625, y: 3.875}
+  m_Size: {x: 2.3125, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -216,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &6003004530384009725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,6 +248,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a6fafa4512804747811e36c2d7e9433, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
+  finishedFrames: 0
 --- !u!61 &1192877095602918002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -273,14 +288,14 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.7837838, y: 0.75}
     oldSize: {x: 2.3125, y: 4}
-    newSize: {x: 2.5625, y: 3.875}
+    newSize: {x: 2.3125, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 2.3125, y: 4}
   m_EdgeRadius: 0
---- !u!114 &6687865056356977955
+--- !u!114 &8732804412506741912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,41 +304,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5252512668454070109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038656bee627c6245bee13a38d6102aa, type: 3}
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-  flashCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0037727356
-      value: 0.9976425
-      inSlope: -9.745984
-      outSlope: -9.745984
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.105651855
-      value: 0.0047302246
-      inSlope: -9.745984
-      outSlope: 0.000363997
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.20056567
-      value: 0.004764773
-      inSlope: 0.000363997
-      outSlope: 0.000363997
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  flashTime: 0.25
+  find: {r: 0.2627451, g: 0.29411766, b: 0.454902, a: 0}
+  flashingPattern:
+  - {r: 0.89019614, g: 0.8941177, b: 0.9215687, a: 0}
+  - {r: 0.64705884, g: 0.6627451, b: 0.76470596, a: 0}
+  - {r: 0.4156863, g: 0.4431373, b: 0.6039216, a: 0}
+  - {r: 0.2627451, g: 0.29411766, b: 0.454902, a: 0}
+  rate: 0.1

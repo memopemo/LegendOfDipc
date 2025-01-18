@@ -28,6 +28,8 @@ public class DefaultPlayerState : IPlayerState
     int turning; //1 is up, -1 is down, 0 is not.
     const int TURN_HOLD_FRAMES = 5;
     private const double WALK_THRESHOLD = 0.5;
+    private const int WALL_STAPLES_ITEM_INDEX = 17;
+    private const int CLAW_KEY_ITEM_INDEX = 3;
     Vector2Int previousFrameDirection;
     bool playedStepSound;
 
@@ -74,16 +76,7 @@ public class DefaultPlayerState : IPlayerState
         //Check Sword
         if (Buttons.IsButtonDown(Buttons.Sword))
         {
-            manager.directionCheck.SetFindTriggers(true);
-            //directly find interactables first. We do this so that even if its behind a wall or some bullshit we dont hit what we dont want and dip if its not an interactable.
-            if (manager.directionCheck.Evaluate<Interactable>((interact) => { interact.Interact(); })) { }
-
-            //if we do find something, then activate it, else use sword.
-            else if (!manager.directionCheck.EvaluateAnything((col) => { HandleConfirmButtonNearColliderType(manager, col.gameObject, ref nextState); }))
-            {
-                nextState = new SwordPlayerState();
-            }
-            manager.directionCheck.SetFindTriggers(false);
+            nextState = SwordCheck(manager);
         }
 
         //Check Consumable Item Use
@@ -119,6 +112,28 @@ public class DefaultPlayerState : IPlayerState
         }
     }
 
+    private static IPlayerState SwordCheck(PlayerStateManager manager)
+    {
+        IPlayerState nextState;
+        nextState = new SwordPlayerState(); //default, is edited by other lines below.
+        //this was updated to directly find objects of interest, scanning multiple times.
+        manager.directionCheck.SetFindTriggers(true);
+        manager.directionCheck.Evaluate<Interactable>((interact) => { interact.Interact(); nextState = manager.currentPlayerState; });
+        manager.directionCheck.SetFindTriggers(false);
+
+        manager.directionCheck.Evaluate<Grabbable>((grabbable) => { nextState = new GrabbingPlayerState(grabbable); });
+        if (manager.directionedObject.direction.x == 0 && SaveManager.GetSave().ObtainedKeyUnselectableItems[CLAW_KEY_ITEM_INDEX])
+        {
+            manager.directionCheck.Evaluate<ClimbableWall>((wall) => { nextState = new ClimbingPlayerState(wall.transform.position.y, wall.transform.position.y + wall.height); });
+        }
+        else if (SelectedItem.KeyItem == WALL_STAPLES_ITEM_INDEX && SaveManager.GetSave().ObtainedKeyItems[WALL_STAPLES_ITEM_INDEX])
+        {
+            manager.directionCheck.Evaluate<LedgeBottom>((ledge) => { nextState = new ClimbingPlayerState(ledge.transform.position.y, ledge.ledgetop.transform.position.y); });
+            manager.directionCheck.Evaluate<LedgeTop>((ledge) => { nextState = new ClimbingPlayerState(ledge.bottom.transform.position.y, ledge.transform.position.y); });
+        }
+        return nextState;
+    }
+
     public void CheckWallStapleWall(PlayerStateManager manager)
     {
         Collider2D foundCollider = null;
@@ -134,31 +149,6 @@ public class DefaultPlayerState : IPlayerState
             }
         }
     }
-
-    void HandleConfirmButtonNearColliderType(PlayerStateManager manager, GameObject go, ref IPlayerState nextState)
-    {
-        if (go.TryGetComponent(out Grabbable grabbable))
-        {
-            nextState = new GrabbingPlayerState(grabbable);
-        }
-        else if (go.TryGetComponent(out ClimbableWall climbable) && manager.directionedObject.direction.x == 0 && SaveManager.GetSave().ObtainedKeyUnselectableItems[3])
-        {
-            nextState = new ClimbingPlayerState(climbable.transform.position.y, climbable.transform.position.y + climbable.height);
-        }
-        else if (go.TryGetComponent(out LedgeBottom ledgeBottom) && (SelectedItem.KeyItem == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
-        {
-            nextState = new ClimbingPlayerState(ledgeBottom.transform.position.y, ledgeBottom.ledgetop.transform.position.y);
-        }
-        else if (go.TryGetComponent(out LedgeTop ledgeTop) && (SelectedItem.KeyItem == 17 && SaveManager.GetSave().ObtainedKeyItems[17]))
-        {
-            nextState = new ClimbingPlayerState(ledgeTop.bottom.transform.position.y, ledgeTop.transform.position.y);
-        }//removed interactable bc now its directly checked.
-        else
-        {
-            nextState = new SwordPlayerState();
-        }
-    }
-
     private static void CreateConsumableItemObject(PlayerStateManager manager)
     {
         //Get all information of what we want to instantiate

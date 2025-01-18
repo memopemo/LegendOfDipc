@@ -5,21 +5,21 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] GameObject DebugPanel;
+    UISelectable initialSelection;
     // Start is called before the first frame update
     void Start()
     {
-
+        initialSelection = FindFirstObjectByType<UISelectionPage>(FindObjectsInactive.Include).currentlySelected;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Buttons.IsButtonDown(Buttons.Pause))
+        if (Buttons.IsButtonUp(Buttons.Pause))
         {
             if (SettingsPanel.activeSelf)
             {
-                SettingsPanel.SetActive(false);
-
+                return;
             }
             else if (DebugPanel.activeSelf)
             {
@@ -38,6 +38,7 @@ public class PauseMenu : MonoBehaviour
                     FindFirstObjectByType<Inventory>().enabled = true;
                 }
                 transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
+
             }
 
         }

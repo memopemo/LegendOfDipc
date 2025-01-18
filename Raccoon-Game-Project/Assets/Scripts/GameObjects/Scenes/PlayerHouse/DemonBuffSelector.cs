@@ -28,7 +28,7 @@ public class DemonBuffSelector : MonoBehaviour
     {
         RectTransform currentIndexedSlotObject = rectTransform.parent.Find(SLOT_NAME + selectedIndex) as RectTransform;
         rectTransform.position = Vector3.Lerp(rectTransform.position, currentIndexedSlotObject.position, Time.deltaTime * ANIMATION_SCALE);
-        if (Buttons.IsButtonDown(Buttons.Sword) //A
+        if (UIInput.IsConfirmPressed
             && currentIndexedSlotObject.GetComponent<BuffSelector>().state == BuffSelector.State.Selectable
             && !DemonBuffs.IsFull()
             && SaveManager.GetSave().ToiletPaperRolls > 0)
@@ -39,7 +39,7 @@ public class DemonBuffSelector : MonoBehaviour
             buffChosenGhost.transform.position = currentIndexedSlotObject.transform.position;
             Destroy(buffChosenGhost.GetComponent<DemonBuffSelector>());
         }
-        if (Buttons.IsButtonDown(Buttons.KeyItem))
+        if (UIInput.IsBackPressed)
         {
             FindFirstObjectByType<DemonBuffMenu>().Toggle();
         }

@@ -174,6 +174,9 @@ public static class SaveManager
         SetArrayToTrue(ref sf.DemonKeys);
         SetArrayToTrue(ref sf.OverworldTreasure);
         SetArrayToTrue(ref sf.GenericFlags);
+        sf.CurrentSword = 11;
+        sf.CurrentShield = sf.CurrentBoomerang = sf.CurrentArmor = 3;
+        PlayerHealth.Heal(100);
 
     }
 #endif

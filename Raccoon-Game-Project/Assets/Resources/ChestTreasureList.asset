@@ -229,3 +229,42 @@ MonoBehaviour:
   - giveWhat: 9
     indexOrQuantity: 3
     spriteInsideChest: {fileID: -3228991709784080748, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 1
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 2
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 3
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 4
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 5
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 6
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 7
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 8
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 9
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 10
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 11
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 10
+    indexOrQuantity: 12
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 160184726608289889}
   - component: {fileID: 6937215050802508795}
   - component: {fileID: 4312595449001982084}
+  - component: {fileID: 6092986718958276064}
   m_Layer: 3
   m_Name: BinRefillBrown
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38f5191af27251640883be9db58c2755, type: 2}
+  - {fileID: -876546973899608171, guid: c3b016d575f318641a88473c1bcbd1fc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialDirection: {x: 0, y: 0}
 --- !u!114 &160184726608289889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +232,25 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   flashTime: 0.25
+--- !u!114 &6092986718958276064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950477367346442318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  find: {r: 0.23529413, g: 0.12941177, b: 0.15294118, a: 0}
+  flashingPattern:
+  - {r: 0.81568635, g: 0.46274513, b: 0.16862746, a: 0}
+  - {r: 0.67058825, g: 0.31764707, b: 0.18823531, a: 0}
+  - {r: 0.49411768, g: 0.21960786, b: 0.20000002, a: 0}
+  - {r: 0.23529413, g: 0.13333334, b: 0.15686275, a: 0}
+  rate: 0.1
 --- !u!1 &8841165569027889656
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,5 +347,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  flasher: {fileID: 4312595449001982084}
-  timeBetweenFlashes: 0
+  OnFlashAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6092986718958276064}
+        m_TargetAssemblyTypeName: PalleteFlasher, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

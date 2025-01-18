@@ -141,14 +141,14 @@ ScriptedImporter:
     uvTransform: {x: 24, y: 4}
   - name: shields_Frame_1
     originalName: 
-    pivot: {x: 0.54545456, y: 0.5}
+    pivot: {x: 0.49999997, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 43
-      y: 4
-      width: 11
+      x: 36
+      y: 24
+      width: 4
       height: 12
     spriteID: f8282f5e4a1ca9b4da57c40b563d2045
     spriteBone: []
@@ -158,8 +158,48 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 43, y: 4}
+    uvTransform: {x: 36, y: 24}
   - name: shields_Frame_2
+    originalName: 
+    pivot: {x: 0.54545456, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 4
+      width: 11
+      height: 12
+    spriteID: 713efb88b27abfe4192700b6e136425f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 4}
+  - name: shields_Frame_3
+    originalName: 
+    pivot: {x: 0.49999997, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 24
+      width: 4
+      height: 12
+    spriteID: 1e1acdad1e76dd345a990a2bf6a3a695
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 24}
+  - name: shields_Frame_4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
@@ -170,7 +210,7 @@ ScriptedImporter:
       y: 4
       width: 12
       height: 12
-    spriteID: 713efb88b27abfe4192700b6e136425f
+    spriteID: 5240775429de2cd4d80b8d8491259b89
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,7 +219,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: shields_Frame_3
+  - name: shields_Frame_5
+    originalName: 
+    pivot: {x: 0.6, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 23
+      y: 24
+      width: 5
+      height: 12
+    spriteID: 83c3817bc3d1a0c49a477f70080ca622
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 23, y: 24}
+  - name: shields_Frame_6
     originalName: 
     pivot: {x: 0.54545456, y: 0.5}
     alignment: 9
@@ -190,7 +250,7 @@ ScriptedImporter:
       y: 24
       width: 11
       height: 12
-    spriteID: 1e1acdad1e76dd345a990a2bf6a3a695
+    spriteID: 086835a23e8c1d54ea9f5410a243f303
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -199,6 +259,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 24}
+  - name: shields_Frame_7
+    originalName: 
+    pivot: {x: 0.49999997, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 4
+      height: 12
+    spriteID: 12f8d3f09f09fa9498fe2e9a4210d493
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -219,9 +299,9 @@ ScriptedImporter:
     - name: shields_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
+        x: 4
         y: 0
-        width: 11
+        width: 4
         height: 12
       spriteId: f8282f5e4a1ca9b4da57c40b563d2045
     - name: shields_Frame_2
@@ -229,17 +309,49 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 12
+        width: 11
         height: 12
       spriteId: 713efb88b27abfe4192700b6e136425f
     - name: shields_Frame_3
       frameIndex: 3
       cellRect:
+        x: 4
+        y: 0
+        width: 4
+        height: 12
+      spriteId: 1e1acdad1e76dd345a990a2bf6a3a695
+    - name: shields_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 12
+        height: 12
+      spriteId: 5240775429de2cd4d80b8d8491259b89
+    - name: shields_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 3
+        y: 0
+        width: 5
+        height: 12
+      spriteId: 83c3817bc3d1a0c49a477f70080ca622
+    - name: shields_Frame_6
+      frameIndex: 6
+      cellRect:
         x: 0
         y: 0
         width: 11
         height: 12
-      spriteId: 1e1acdad1e76dd345a990a2bf6a3a695
+      spriteId: 086835a23e8c1d54ea9f5410a243f303
+    - name: shields_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 4
+        y: 0
+        width: 4
+        height: 12
+      spriteId: 12f8d3f09f09fa9498fe2e9a4210d493
     linkedCells: []
     parentIndex: -1
   platformSettings:

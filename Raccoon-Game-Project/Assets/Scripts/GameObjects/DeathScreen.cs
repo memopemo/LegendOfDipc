@@ -12,7 +12,7 @@ public class DeathScreen : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         FindFirstObjectByType<Canvas>().gameObject.SetActive(false);
-        FindFirstObjectByType<SongPlayer>().StartFadeOut(0.01f);
+        FindFirstObjectByType<SongPlayer>()?.StartFadeOut(0.01f);
         blackness = 0;
         blueness = 0;
         sr = GetComponent<SpriteRenderer>();

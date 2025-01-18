@@ -2,15 +2,8 @@ using UnityEngine;
 
 public class SwordPlayerState : IPlayerState
 {
-    const int SWING_FORE = 0;
-    const int SWING_BACK = 1;
-    const int SWING_STAB = 2;
-    int typeOfSwing;
-
-    const int SWORD_STAB = 0;
-    const int SWORD_SWING = 1;
-    const int SWORD_3HIT = 2;
-    int typeOfSword;
+    Sword.SwingType typeOfSwing;
+    Sword.Type typeOfSword;
 
     int tripleHitCount = 0; //Number of successful triple-hit inputs.
     float swordTimerSecs = 0; //Time to compare against inputs.
@@ -37,13 +30,13 @@ public class SwordPlayerState : IPlayerState
             return;
         }
         /* Determine type of sword we are using. */
-        typeOfSword = SaveManager.GetSave().CurrentSword % 3;
+        typeOfSword = (Sword.Type)(SaveManager.GetSave().CurrentSword % 3);
 
         int anim = SWORD_ANIM_OFFSET;
 
         if (typeOfSword == 0)
         {
-            anim += SWING_STAB;
+            anim += (int)Sword.SwingType.Stab;
         }
         //both Swing and 3Hit start with the same animation, SWING_FORE = 0, so no need to do anything.
         manager.animator.SetAnimation(anim);
@@ -62,7 +55,7 @@ public class SwordPlayerState : IPlayerState
     {
         swordTimerSecs += Time.deltaTime;
         // Check if player waited too long / cant bc of triple swipe.
-        if (swordTimerSecs > maxTotalSwordAnimation)
+        if (swordTimerSecs > maxTotalSwordAnimation / (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Astir) ? 3 : 1))
         {
             manager.SwitchState(new DefaultPlayerState());
         }
@@ -71,14 +64,14 @@ public class SwordPlayerState : IPlayerState
         // (after triple hit is complete,
         // player is forced to wait until they go back to default state to triple hit again)
         if (!Buttons.IsButtonDown(Buttons.Sword) || tripleHitCount == 2) return;
-        if (typeOfSword == SWORD_3HIT)
+        if (typeOfSword == Sword.Type.TripleHit)
         {
             if (swordTimerSecs < minNextInputSecs || swordTimerSecs > maxNext3SwipeInputSecs) return;
             tripleHitCount++;
             manager.animator.SetAnimation(SWORD_ANIM_OFFSET + tripleHitCount);
             swordTimerSecs = 0;
             NudgeInDirectionToLookCool(manager);
-            swordHitBox.TripleSwipeAgain(tripleHitCount);
+            swordHitBox.TripleSwipeAgain((Sword.SwingType)tripleHitCount);
             manager.noiseMaker.Play(SWORD_SOUND_OFFSET);
         }
         else

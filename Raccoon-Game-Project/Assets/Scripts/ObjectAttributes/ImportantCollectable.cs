@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 public class ImportantCollectable : MonoBehaviour
 {
@@ -38,16 +39,29 @@ public class ImportantCollectable : MonoBehaviour
                 gameObject.SetActive(true);
                 break;
         }
-        GetComponent<NoiseMaker>().Play(0);
     }
 
     public void OnCollect()
     {
+        GetComponent<Collectable>().enabled = false;
+        StartCoroutine(nameof(CollectSequence));
+    }
+
+    public IEnumerator CollectSequence()
+    {
+        FreezeManager.FreezeAll<CutSceneFreezer>();
+        PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+        player.SetAnimation(36);
+        player.directionedObject.direction = Vector2Int.down;
+        transform.position = player.transform.position;
+        GetComponent<MagicHover>().distanceOffGround = 1.25f;
+        yield return new WaitForSeconds(2);
+        FreezeManager.UnfreezeAll<CutSceneFreezer>();
         switch (type)
         {
             case Type.HeartContainer:
                 save.HeartContainersCollected[index] = true;
-                PlayerHealth.Heal(2);
+                PlayerHealth.Heal(100, player);
                 break;
             case Type.StoryKey:
                 save.DemonKeys[index] = true;
@@ -59,6 +73,7 @@ public class ImportantCollectable : MonoBehaviour
                 save.ToiletPaperRolls++;
                 break;
         }
-        GetComponent<NoiseMaker>().Play(1);
+        GetComponent<PoofDestroy>().PoofAndDestroy();
+
     }
 }

@@ -13,8 +13,6 @@ public abstract class TrashBin : MonoBehaviour
     {
         anim = GetComponent<Animator2D.Animator2D>();
         player = FindAnyObjectByType<PlayerStateManager>();
-        GetComponentInChildren<Flasher>().transform.position += Vector3.left * 0.1f;
-        GetComponentInChildren<Flasher>().transform.position -= Vector3.left * 0.1f;
     }
     //hide actual player and show bin enter animation.
     public void OnPlayerUse()

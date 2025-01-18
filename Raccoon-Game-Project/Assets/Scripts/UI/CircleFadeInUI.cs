@@ -22,14 +22,14 @@ public class CircleFadeInUI : MonoBehaviour
         {
             if (trans.sizeDelta.y < 600)
             {
-                trans.sizeDelta += 10 * Vector2.one;
+                trans.sizeDelta += 700 * Vector2.one * Time.deltaTime;
             }
         }
         else
         {
             if (trans.sizeDelta.y > 0)
             {
-                trans.sizeDelta -= 10 * Vector2.one;
+                trans.sizeDelta -= 700 * Vector2.one * Time.deltaTime;
             }
         }
 

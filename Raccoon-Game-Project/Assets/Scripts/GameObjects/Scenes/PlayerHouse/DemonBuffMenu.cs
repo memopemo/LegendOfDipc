@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
 
 public class DemonBuffMenu : MonoBehaviour
@@ -31,15 +27,15 @@ public class DemonBuffMenu : MonoBehaviour
         {
             if (UIInput.IsUpPressed || UIInput.IsDownPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[0], FindFirstObjectByType<Camera>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[0], FindFirstObjectByType<Camera>().transform.position + Vector3.back);
             }
             else if (UIInput.IsLeftPressed || UIInput.IsRightPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[1], FindFirstObjectByType<Camera>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[1], FindFirstObjectByType<Camera>().transform.position + Vector3.back);
             }
-            else if (UIInput.IsSwitchPressed)
+            else if (UIInput.IsConfirmPressed)
             {
-                AudioSource.PlayClipAtPoint(sounds[2], FindFirstObjectByType<Camera>().transform.position);
+                AudioSource.PlayClipAtPoint(sounds[2], FindFirstObjectByType<Camera>().transform.position + Vector3.back);
             }
         }
         timer += Time.deltaTime;

@@ -15,6 +15,11 @@ public class HUD_Money : MonoBehaviour
     }
     void CheckTickSound()
     {
+
+    }
+    void FixedUpdate()
+    {
+        if (Time.frameCount % 5 != 0) return;
         if (displayValue != actualValue || (displayValue + 1 == actualValue))
         {
             ticker.Play();

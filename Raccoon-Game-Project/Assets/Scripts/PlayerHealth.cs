@@ -33,7 +33,7 @@ public static class PlayerHealth
     public static void Heal(int amount, PlayerStateManager player = null)
     {
         currentHealth += amount;
-        Mathf.Clamp(currentHealth, 0, (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2);
+        currentHealth = Mathf.Clamp(currentHealth, 0, (SaveManager.GetSave().HeartContainersCollected.Count((x) => x) + 3) * 2);
         if (player)
         {
             GameObject.Instantiate(player.healParticle, player.transform);

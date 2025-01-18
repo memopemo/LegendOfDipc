@@ -44,6 +44,7 @@ public class PlayerStateManager : MonoBehaviour
     [NonSerialized] public int stateTransitionTimer2;
     [NonSerialized] public int generalTimer1;
     [NonSerialized] public int generalTimer2;
+    float recoverTimer;
     CollisionCheck spaceCheck;
     public CollisionCheck directionCheck;
     public CollisionCheck waterCheck;
@@ -135,6 +136,7 @@ public class PlayerStateManager : MonoBehaviour
         Timer.DecrementTimer(ref stateTransitionTimer2);
         Timer.DecrementTimer(ref generalTimer1);
         Timer.DecrementTimer(ref generalTimer2);
+        Timer.DecrementTimer(ref recoverTimer);
 
 
         if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Speed0))
@@ -149,6 +151,15 @@ public class PlayerStateManager : MonoBehaviour
         {
             additionalSpeed = 0;
         }
+        if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Regen0) || DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Regen1) || DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Regen2))
+        {
+            if (recoverTimer <= 0)
+            {
+                PlayerHealth.Heal(1, this);
+                recoverTimer = DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Regen2) ? 10 : DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Regen1) ? 20 : 30;
+            }
+        }
+        else recoverTimer = 0;
 
         directionCheck
             .MoveFromDirection(0.5f, directionedObject)
@@ -386,7 +397,6 @@ public class PlayerStateManager : MonoBehaviour
     }
     public void SetAnimation(int i)
     {
-        print("called");
         animator.SetAnimation(i);
     }
     /*

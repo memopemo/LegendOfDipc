@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIPipeSelection : MonoBehaviour
 {
     public GameObject previouslySelected;
+    int selection;
+    public bool holdDrainExit;
 
     public void OnButtonPush(GameObject go)
     {
@@ -14,7 +18,8 @@ public class UIPipeSelection : MonoBehaviour
         }
         else if (go == previouslySelected)
         {
-            SelectPipe(GameObjectParser.GetIndexFromName(go));
+            selection = GameObjectParser.GetIndexFromName(go);
+            SelectPipe();
         }
         else
         {
@@ -27,16 +32,25 @@ public class UIPipeSelection : MonoBehaviour
     }
     public void Show()
     {
+        transform.GetChild(0).gameObject.SetActive(true);
+        holdDrainExit = true;
+    }
+    public void Cancel()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+        holdDrainExit = false;
 
     }
-    void SelectPipe(int index)
+    void SelectPipe()
     {
+
         FindFirstObjectByType<CircleFadeInUI>().Out();
 
         Invoke(nameof(Warp), 1f);
     }
     void Warp()
     {
-
+        ExitHandler.ExitViaPipe(selection);
+        SceneManager.LoadScene("SampleScene");
     }
 }

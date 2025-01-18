@@ -5,7 +5,6 @@ using UnityEngine;
 public class DrainCap : MonoBehaviour
 {
     bool pulling;
-    int shaking = 1;
     Vector3 initialPos;
 
     // Start is called before the first frame update
@@ -24,6 +23,7 @@ public class DrainCap : MonoBehaviour
         Grabbable grabbable = GetComponent<Grabbable>();
         grabbable.OnPull.AddListener((_) =>
         {
+            print("yo");
             sf.UncloggedDrainPipes[index] = true;
             transform.DetachChildren();
             Destroy(gameObject);
@@ -39,11 +39,6 @@ public class DrainCap : MonoBehaviour
         if (pulling)
         {
             transform.localPosition += Vector3.down / 2 * Time.deltaTime;
-            if (Time.frameCount % 3 == 0)
-            {
-                transform.localPosition = new Vector3(shaking / 16f, transform.localPosition.y, transform.localPosition.z);
-                shaking *= -1;
-            }
         }
         else
         {

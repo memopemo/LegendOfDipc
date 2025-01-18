@@ -63,7 +63,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
   OnFlashAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4649986349182047194}
-        m_TargetAssemblyTypeName: Flasher, Assembly-CSharp
+      - m_Target: {fileID: 8778929067383696889}
+        m_TargetAssemblyTypeName: PalleteFlasher, Assembly-CSharp
         m_MethodName: StartFlash
         m_Mode: 1
         m_Arguments:
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1954152800458189246}
   - component: {fileID: 161186292411636347}
   - component: {fileID: 6518579091806031628}
-  - component: {fileID: 4649986349182047194}
+  - component: {fileID: 8778929067383696889}
   m_Layer: 3
   m_Name: BinSaveGreen
   m_TagString: Untagged
@@ -186,7 +186,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38f5191af27251640883be9db58c2755, type: 2}
+  - {fileID: -876546973899608171, guid: c3b016d575f318641a88473c1bcbd1fc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -296,7 +296,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3125, y: 4}
   m_EdgeRadius: 0
---- !u!114 &4649986349182047194
+--- !u!114 &8778929067383696889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,41 +305,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8570176711510328432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038656bee627c6245bee13a38d6102aa, type: 3}
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-  flashCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0037727356
-      value: 0.9976425
-      inSlope: -9.745984
-      outSlope: -9.745984
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.105651855
-      value: 0.0047302246
-      inSlope: -9.745984
-      outSlope: 0.000363997
-      tangentMode: 69
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.20056567
-      value: 0.004764773
-      inSlope: 0.000363997
-      outSlope: 0.000363997
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  flashTime: 0.25
+  find: {r: 0.19215688, g: 0.34901962, b: 0.32941177, a: 0}
+  flashingPattern:
+  - {r: 0.78823537, g: 0.83921576, b: 0.36862746, a: 0}
+  - {r: 0.39607847, g: 0.6745098, b: 0.24705884, a: 0}
+  - {r: 0.23529413, g: 0.49411768, b: 0.3137255, a: 0}
+  - {r: 0.19215688, g: 0.34901962, b: 0.32941177, a: 0}
+  rate: 0.1

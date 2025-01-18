@@ -147,6 +147,10 @@ public class Chest : MonoBehaviour
                 save.Armors[indexOrQuantity] = true;
                 save.CurrentArmor = indexOrQuantity;
                 break;
+            case ChestTreasureList.GiveWhat.HeartContainer:
+                save.HeartContainersCollected[indexOrQuantity] = true;
+                PlayerHealth.Heal(2);
+                break;
 
         }
     }

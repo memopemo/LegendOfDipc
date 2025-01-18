@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,8 @@ public class Exit : MonoBehaviour
 {
     [SerializeField] SceneReference scene;
     [SerializeField] int entranceNumber; // The place we want to exit out to
+    enum ExitDirection { Up, Down, Left, Right };
+    [SerializeField] ExitDirection exitDirection;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (IsInvoking())
@@ -16,10 +19,10 @@ public class Exit : MonoBehaviour
         {
             FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
             FreezeManager.FreezeAll<PauseFreezer>();
-
+            StartCoroutine(nameof(WalkPlayerOut));
             try
             {
-                FindAnyObjectByType<SongPlayer>().OnSceneChange(scene);
+                FindAnyObjectByType<SongPlayer>()?.OnSceneChange(scene);
             }
             catch
             {
@@ -29,9 +32,28 @@ public class Exit : MonoBehaviour
             Invoke(nameof(Enter), 1); //exit scene and enter next scene.
         }
     }
+    IEnumerator WalkPlayerOut()
+    {
+        PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
+        player.SetAnimation(25);
+        //huh, ive never seen this. this is really cool!
+        var exitDirectionVector = exitDirection switch
+        {
+            ExitDirection.Up => Vector3.up,
+            ExitDirection.Down => Vector3.down,
+            ExitDirection.Left => Vector3.left,
+            ExitDirection.Right => Vector3.right,
+            _ => Vector3.zero,
+        };
+        while (true)
+        {
+            player.transform.position += exitDirectionVector * Time.deltaTime;
+            yield return null;
+        }
+    }
     void Enter()
     {
-        if (Random.Range(0, 1_000_000) == 0)
+        if (Random.value == 0)
         {
             SceneManager.LoadScene("error");
         }
@@ -73,6 +95,7 @@ public static class ExitHandler
     }
     public static void ExitViaPipe(int pipeDestinationIndex)
     {
+        type = Type.ViaPipe;
         exitObjectIndex = pipeDestinationIndex;
     }
 }

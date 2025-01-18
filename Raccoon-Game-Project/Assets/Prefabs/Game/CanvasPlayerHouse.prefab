@@ -100,7 +100,7 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: bd7b639e09e396e40bf6ea7244e7a6c6, type: 3}
   - {fileID: 8300000, guid: aa4d76ec0e9aeba49aaa8d6105a2e704, type: 3}
-  - {fileID: 8300000, guid: e2f13eb2137d9784e8b342ed7fd89cec, type: 3}
+  - {fileID: 8300000, guid: 597f77c1a54bca74d8d9b3fb767a75e1, type: 3}
   cameraTarget: {fileID: 0}
 --- !u!1 &128580058525465090
 GameObject:

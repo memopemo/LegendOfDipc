@@ -58,6 +58,7 @@ public class Room : MonoBehaviour
                 if (potentialPipe && potentialPipe.GetComponentInChildren<DrainWarpPipe>())
                 {
                     player.RoomInitialize(potentialPipe.transform.position + Vector3.down * 2, Vector2Int.down);
+                    cameraFocus.InitializeCameraPosition(Vector2.down);
                     return;
                 }
                 Debug.LogWarning($"No Pipe found with index {ExitHandler.exitObjectIndex}, loading entrance 0");
