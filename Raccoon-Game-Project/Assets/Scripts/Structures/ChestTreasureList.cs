@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ChestTreasureList", menuName = "Chest List", order = 2)]
 public class ChestTreasureList : ScriptableObject
 {
-    public enum GiveWhat { Nothing, KeySelectableItem, KeyUnselectableItem, ConsumableItem, Money, Furniture, Sword, Shield, Boomerang, Armor, HeartContainer }
+    public enum GiveWhat { Nothing, KeySelectableItem, KeyUnselectableItem, ConsumableItem, Money, Furniture, Sword, Shield, Boomerang, Armor, HeartContainer, Key, SkeletonKey, BossKey }
     [System.Serializable]
     public class ChestTreasure
     {

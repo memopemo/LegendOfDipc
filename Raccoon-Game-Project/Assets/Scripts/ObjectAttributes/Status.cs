@@ -27,7 +27,7 @@ public class Status : MonoBehaviour
         health = GetComponent<Health>();
         rb = GetComponent<Rigidbody2D>();
         statusTicks = new float[3];
-        ogMass = rb.drag;
+        ogMass = rb.linearDamping;
 
     }
     void Start()
@@ -55,7 +55,7 @@ public class Status : MonoBehaviour
     void StunTick()
     {
         if(statusTicks[(int)Effect.Stun] <= 0) return;
-        rb.drag = 9999;
+        rb.linearDamping = 9999;
         DecrementStatus(Effect.Stun);
         CreateParticle(Effect.Stun);
         Invoke(nameof(RemoveStun), 0.5f);
@@ -86,7 +86,7 @@ public class Status : MonoBehaviour
     }
     void RemoveStun()
     {
-        rb.drag = ogMass;
+        rb.linearDamping = ogMass;
     }
     void TakeDamage()
     {

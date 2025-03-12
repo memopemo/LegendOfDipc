@@ -57,7 +57,7 @@ public class JumpingLedgePlayerState : IPlayerState
         manager.animator.SetAnimation(ANIM_JUMP);
         //Disable rigidbody and keep it still.
         manager.rigidBody.bodyType = RigidbodyType2D.Kinematic;
-        manager.rigidBody.velocity = Vector2.zero;
+        manager.rigidBody.linearVelocity = Vector2.zero;
 
         originalY = manager.transform.position.y;
 
@@ -76,7 +76,7 @@ public class JumpingLedgePlayerState : IPlayerState
     {
         // Enable rigidbody still keep it still.
         manager.rigidBody.bodyType = RigidbodyType2D.Dynamic;
-        manager.rigidBody.velocity = Vector2.zero;
+        manager.rigidBody.linearVelocity = Vector2.zero;
 
         //we separate increment and decrement to maintain a good z value (so we dont look like we are underneath anything.
         if (manager.TryGetComponent(out FloorLevel fl) && DecrementLevel != -1 && LedgeType == -1)
@@ -94,7 +94,7 @@ public class JumpingLedgePlayerState : IPlayerState
                 const float DEFAULT_SPEED = 1f;
                 const float MAX_JUMP_TIME = 0.5f;
                 //Constantly move player
-                manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction * (DEFAULT_SPEED + manager.additionalSpeed);
+                manager.rigidBody.linearVelocity = (Vector2)manager.directionedObject.direction * (DEFAULT_SPEED + manager.additionalSpeed);
 
                 //Tick jump timer
                 jumpSex += Time.deltaTime;

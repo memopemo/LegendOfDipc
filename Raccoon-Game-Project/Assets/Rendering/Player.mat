@@ -72,13 +72,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flash: {r: 6.9074125, g: 6.9074125, b: 6.9074125, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ReplaceColor1: {r: 0.6915272, g: 0.6920307, b: 0.7924528, a: 0}
-    - _ReplaceColor2: {r: 0.537046, g: 0.43244928, b: 0.8113208, a: 0}
-    - _ReplaceColor3: {r: 0.43716028, g: 0.29803923, b: 0.52156866, a: 0}
-    - _ReplaceColor4: {r: 0.2171742, g: 0.16862746, b: 0.27058825, a: 0}
-    - _SampleColor1: {r: 1, g: 0.682353, b: 0.43921566, a: 1}
-    - _SampleColor2: {r: 0.7411765, g: 0.41568628, b: 0.38431373, a: 1}
-    - _SampleColor3: {r: 0.5607843, g: 0.30196077, b: 0.34117648, a: 1}
-    - _SampleColor4: {r: 0.32156855, g: 0.19999996, b: 0.24705875, a: 1}
+    - _ReplaceColor1: {r: 0, g: 0, b: 0, a: 0}
+    - _ReplaceColor2: {r: 0, g: 0, b: 0, a: 0}
+    - _ReplaceColor3: {r: 0, g: 0, b: 0, a: 0}
+    - _ReplaceColor4: {r: 0, g: 0, b: 0, a: 0}
+    - _SampleColor1: {r: 0, g: 0, b: 0, a: 1}
+    - _SampleColor2: {r: 0, g: 0, b: 0, a: 1}
+    - _SampleColor3: {r: 0, g: 0, b: 0, a: 1}
+    - _SampleColor4: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

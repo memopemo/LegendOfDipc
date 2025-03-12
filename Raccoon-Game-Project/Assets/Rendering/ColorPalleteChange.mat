@@ -74,12 +74,12 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ReplaceColor1: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-    - _ReplaceColor2: {r: 0.6392157, g: 0.654902, b: 0.7607844, a: 0}
+    - _ReplaceColor1: {r: 0.90196085, g: 0.27058825, b: 0.22352943, a: 1}
+    - _ReplaceColor2: {r: 1, g: 0.5372549, b: 0.20000002, a: 0}
     - _ReplaceColor3: {r: 0.40784317, g: 0.43529415, b: 0.6, a: 0}
     - _ReplaceColor4: {r: 0.9607844, g: 1, b: 0.909804, a: 0}
-    - _SampleColor1: {r: 0.40784317, g: 0.43529415, b: 0.6, a: 1}
-    - _SampleColor2: {r: 0.7364602, g: 0, b: 1, a: 1}
+    - _SampleColor1: {r: 0.90196085, g: 0.27058825, b: 0.22352943, a: 1}
+    - _SampleColor2: {r: 1, g: 0.5372549, b: 0.20000002, a: 1}
     - _SampleColor3: {r: 0.7372549, g: 0, b: 1, a: 1}
     - _SampleColor4: {r: 0.7372549, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []

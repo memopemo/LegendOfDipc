@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f9dbda45e38cb04897bb6429a4b5371, type: 3}
-  m_Name: Forest
+  m_Name: MagicForest
   m_EditorClassIdentifier: 
-  song: {fileID: 8300000, guid: c2b966ed1b7cd4844951df78be69c411, type: 3}
-  LoopStartSamples: 2458969
-  LoopEndSamples: 6145254
+  song: {fileID: 8300000, guid: 18e2fffc2d35a6e4baeaca098a465e05, type: 3}
+  LoopStartSamples: 2259147
+  LoopEndSamples: 5646077

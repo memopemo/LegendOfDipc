@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.46774194, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.4603175, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -184,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -204,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.58000004, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -224,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -244,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.80555564, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -264,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -284,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.8108108, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -304,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -324,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.75609756, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -344,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.76315796, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -364,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.64444447, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -384,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.55769235, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -404,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.46774194, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -424,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.4603175, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -444,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -464,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.58000004, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -484,6 +506,7 @@ ScriptedImporter:
     pivot: {x: 0.80555564, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -504,6 +527,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -524,6 +548,7 @@ ScriptedImporter:
     pivot: {x: 0.8108108, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -544,6 +569,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -564,6 +590,7 @@ ScriptedImporter:
     pivot: {x: 0.75609756, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -584,6 +611,7 @@ ScriptedImporter:
     pivot: {x: 0.76315796, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -604,6 +632,7 @@ ScriptedImporter:
     pivot: {x: 0.64444447, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -624,6 +653,7 @@ ScriptedImporter:
     pivot: {x: 0.55769235, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -644,6 +674,7 @@ ScriptedImporter:
     pivot: {x: 0.46774194, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -664,6 +695,7 @@ ScriptedImporter:
     pivot: {x: 0.4603175, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -684,6 +716,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -704,6 +737,7 @@ ScriptedImporter:
     pivot: {x: 0.58000004, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -724,6 +758,7 @@ ScriptedImporter:
     pivot: {x: 0.80555564, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -744,6 +779,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -764,6 +800,7 @@ ScriptedImporter:
     pivot: {x: 0.8108108, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -784,6 +821,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -804,6 +842,7 @@ ScriptedImporter:
     pivot: {x: 0.75609756, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -824,6 +863,7 @@ ScriptedImporter:
     pivot: {x: 0.76315796, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -844,6 +884,7 @@ ScriptedImporter:
     pivot: {x: 0.64444447, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -864,6 +905,7 @@ ScriptedImporter:
     pivot: {x: 0.55769235, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -884,6 +926,7 @@ ScriptedImporter:
     pivot: {x: 0.46774194, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -904,6 +947,7 @@ ScriptedImporter:
     pivot: {x: 0.4603175, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -924,6 +968,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -944,6 +989,7 @@ ScriptedImporter:
     pivot: {x: 0.58000004, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -964,6 +1010,7 @@ ScriptedImporter:
     pivot: {x: 0.80555564, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -984,6 +1031,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -1004,6 +1052,7 @@ ScriptedImporter:
     pivot: {x: 0.8108108, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -1024,6 +1073,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -1044,6 +1094,7 @@ ScriptedImporter:
     pivot: {x: 0.75609756, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -1064,6 +1115,7 @@ ScriptedImporter:
     pivot: {x: 0.76315796, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -1084,6 +1136,7 @@ ScriptedImporter:
     pivot: {x: 0.64444447, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -1104,6 +1157,7 @@ ScriptedImporter:
     pivot: {x: 0.55769235, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -1124,6 +1178,7 @@ ScriptedImporter:
     pivot: {x: 0.6304348, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -1144,6 +1199,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 321
@@ -1164,6 +1220,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1184,6 +1241,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1204,6 +1262,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1224,6 +1283,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1244,6 +1304,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1264,6 +1325,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1284,6 +1346,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -1304,6 +1367,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -1324,6 +1388,7 @@ ScriptedImporter:
     pivot: {x: 0.48333335, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -1344,6 +1409,7 @@ ScriptedImporter:
     pivot: {x: 0.49152544, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -1364,6 +1430,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -1384,6 +1451,7 @@ ScriptedImporter:
     pivot: {x: 0.6304348, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -1404,6 +1472,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -1424,6 +1493,7 @@ ScriptedImporter:
     pivot: {x: 0.80487806, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -1444,6 +1514,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1464,6 +1535,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1484,6 +1556,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1504,6 +1577,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1524,6 +1598,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1544,6 +1619,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1564,6 +1640,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1584,6 +1661,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -1604,6 +1682,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -1624,6 +1703,7 @@ ScriptedImporter:
     pivot: {x: 0.48333335, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -1644,6 +1724,7 @@ ScriptedImporter:
     pivot: {x: 0.49152544, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -1664,6 +1745,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -1684,6 +1766,7 @@ ScriptedImporter:
     pivot: {x: 0.6304348, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -1704,6 +1787,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -1724,6 +1808,7 @@ ScriptedImporter:
     pivot: {x: 0.78048784, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -1744,6 +1829,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 416
@@ -1764,6 +1850,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -1784,6 +1871,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -1804,6 +1892,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -1824,6 +1913,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -1844,6 +1934,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -1864,6 +1955,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -1884,6 +1976,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -1904,6 +1997,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -1924,6 +2018,7 @@ ScriptedImporter:
     pivot: {x: 0.48333335, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -1944,6 +2039,7 @@ ScriptedImporter:
     pivot: {x: 0.49152544, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -1964,6 +2060,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -1984,6 +2081,7 @@ ScriptedImporter:
     pivot: {x: 0.6304348, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -2004,6 +2102,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.52747256}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -2024,6 +2123,7 @@ ScriptedImporter:
     pivot: {x: 0.78048784, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -2044,6 +2144,7 @@ ScriptedImporter:
     pivot: {x: 0.7567567, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2064,6 +2165,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2084,6 +2186,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2104,6 +2207,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2124,6 +2228,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2144,6 +2249,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2164,6 +2270,7 @@ ScriptedImporter:
     pivot: {x: 0.7837838, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 461
@@ -2184,6 +2291,7 @@ ScriptedImporter:
     pivot: {x: 0.7073171, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 64
@@ -2204,6 +2312,7 @@ ScriptedImporter:
     pivot: {x: 0.50877196, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -2224,6 +2333,7 @@ ScriptedImporter:
     pivot: {x: 0.48333335, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 118
@@ -2244,6 +2354,7 @@ ScriptedImporter:
     pivot: {x: 0.49152544, y: 0.75}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 189
@@ -2264,6 +2375,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.7619048}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -2284,6 +2396,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.7619048}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -2304,6 +2417,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.7619048}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -2324,6 +2438,7 @@ ScriptedImporter:
     pivot: {x: 0.5535714, y: 0.7619048}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 256
@@ -2344,6 +2459,7 @@ ScriptedImporter:
     pivot: {x: 0.78048784, y: 0.7741935}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 367
@@ -2362,902 +2478,1014 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1622056882
+    guid: 937128710
     name: trashcan
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: trashcan_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 62
         height: 64
       spriteId: 07bf13f66aeec53439fb47cec1f39469
-    - name: trashcan_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 63
         height: 64
       spriteId: 16efe4b03c96d31409da620f72ddfaf2
-    - name: trashcan_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: b9fda689c9d043146824bea261097fb6
-    - name: trashcan_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 64
       spriteId: 9ae032ca72df40346ba82e6e6485722c
-    - name: trashcan_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 50
         height: 91
       spriteId: 4f704a37f10d6cf4db9d47b1c6416944
-    - name: trashcan_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 91
       spriteId: 535bb367c7935084db520fba790ad0d2
-    - name: trashcan_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 36
         height: 91
       spriteId: f59359775063fd84588dd67df81bdfa3
-    - name: trashcan_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: c5fef90473ec80d4a8dc66087ebcc140
-    - name: trashcan_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 0
         width: 37
         height: 64
       spriteId: 589a55d19b9550c4587810ea6c8fb8b1
-    - name: trashcan_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 85079874c47612b40b8bed7246df7e63
-    - name: trashcan_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 41
         height: 62
       spriteId: 70d1958aafaa62d4a9a01212a3817bfc
-    - name: trashcan_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 38
         height: 91
       spriteId: fb7b15a89a27d394dbf4b0f8b8ce14ce
-    - name: trashcan_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 45
         height: 91
       spriteId: bc5208fc4ec17c742907c65118d3b03a
-    - name: trashcan_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 52
         height: 91
       spriteId: b279f5c798060f646b0ace0ea59ba4f3
-    - name: trashcan_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 62
         height: 64
       spriteId: 2207fae89ac8d2d4fa1df80eaf3f2469
-    - name: trashcan_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 63
         height: 64
       spriteId: 6386e85aca8a0334cb59588df9a9fb8c
-    - name: trashcan_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: 890179185acd35241a709be5dd898ca7
-    - name: trashcan_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 50
         height: 91
       spriteId: 6cd5509a2bbbe2a4ea744ab81cc699c1
-    - name: trashcan_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 36
         height: 91
       spriteId: 5b05a5b9c159f6f4ca0f6ab871634ce4
-    - name: trashcan_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: 362d5fd7bf423334daf2b306762f3f42
-    - name: trashcan_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 0
         width: 37
         height: 64
       spriteId: 5fbd70e41bf663042b470aec1dafd4c4
-    - name: trashcan_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: ee88fcee3824ad040a25c8f74a01e12b
-    - name: trashcan_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 41
         height: 62
       spriteId: bc31ebb8e8bed704b8a4334f37bc02cf
-    - name: trashcan_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 38
         height: 91
       spriteId: 31698e14928890148ac619022e4c2013
-    - name: trashcan_Frame_50
+    - name: Frame_50
       frameIndex: 50
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 45
         height: 91
       spriteId: 6eac5766f14c3d949a4c9cc4ec766455
-    - name: trashcan_Frame_51
+    - name: Frame_51
       frameIndex: 51
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 52
         height: 91
       spriteId: b49c460b3ff896248b59fc6f97fd95a4
-    - name: trashcan_Frame_56
+    - name: Frame_56
       frameIndex: 56
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 62
         height: 64
       spriteId: eebc0d5934d370446ac2e25ffaf1c0e8
-    - name: trashcan_Frame_57
+    - name: Frame_57
       frameIndex: 57
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 63
         height: 64
       spriteId: 6e64a3581bd5aac45b9f336ce5f965f9
-    - name: trashcan_Frame_58
+    - name: Frame_58
       frameIndex: 58
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: 4dcdf4386f66d264dadd253eb9b20b37
-    - name: trashcan_Frame_60
+    - name: Frame_60
       frameIndex: 60
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 50
         height: 91
       spriteId: 48bce2ea1f11e6c4fa176ff0f6174706
-    - name: trashcan_Frame_63
+    - name: Frame_63
       frameIndex: 63
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 36
         height: 91
       spriteId: ebd80055745d56346bc54d0948c0547b
-    - name: trashcan_Frame_72
+    - name: Frame_72
       frameIndex: 72
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: 96ece5da9d4be254faeb5c9c72b5c520
-    - name: trashcan_Frame_73
+    - name: Frame_73
       frameIndex: 73
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 0
         width: 37
         height: 64
       spriteId: c3d021479f925e14fb765838852fde2c
-    - name: trashcan_Frame_74
+    - name: Frame_74
       frameIndex: 74
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: a7b3255cffed6f84e952a1539f3aa9ec
-    - name: trashcan_Frame_75
+    - name: Frame_75
       frameIndex: 75
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 41
         height: 62
       spriteId: 46f281f6c2af4c6428f783299422ac11
-    - name: trashcan_Frame_76
+    - name: Frame_76
       frameIndex: 76
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 38
         height: 91
       spriteId: 84280ff111c77c8459418863ff7bd8cf
-    - name: trashcan_Frame_78
+    - name: Frame_78
       frameIndex: 78
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 45
         height: 91
       spriteId: 32980eec6595a7f4f8a9b006dc8c113c
-    - name: trashcan_Frame_79
+    - name: Frame_79
       frameIndex: 79
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 52
         height: 91
       spriteId: 9700f25ef2f78444abefc6e7f942fc5d
-    - name: trashcan_Frame_84
+    - name: Frame_84
       frameIndex: 84
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 62
         height: 64
       spriteId: ea841f36df14cd0449b2fe828c37ec75
-    - name: trashcan_Frame_85
+    - name: Frame_85
       frameIndex: 85
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 63
         height: 64
       spriteId: a8d88028e1030c0459634b7f98cf471c
-    - name: trashcan_Frame_86
+    - name: Frame_86
       frameIndex: 86
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: bff1c0cf0d4cb6941a90ded7766d55dc
-    - name: trashcan_Frame_88
+    - name: Frame_88
       frameIndex: 88
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 50
         height: 91
       spriteId: 820a47699c031704aa0a56568c7d4421
-    - name: trashcan_Frame_91
+    - name: Frame_91
       frameIndex: 91
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 36
         height: 91
       spriteId: 8ee1ed4bfdceb364cadf0df4ca8e075f
-    - name: trashcan_Frame_100
+    - name: Frame_100
       frameIndex: 100
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: 0664a88dd0e699e439cb1e9e73adf664
-    - name: trashcan_Frame_101
+    - name: Frame_101
       frameIndex: 101
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 0
         width: 37
         height: 64
       spriteId: 605ef6c2123654347afcefbb10b0d8cd
-    - name: trashcan_Frame_102
+    - name: Frame_102
       frameIndex: 102
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 8f269357b37d99f47a1c6656770095f5
-    - name: trashcan_Frame_103
+    - name: Frame_103
       frameIndex: 103
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 41
         height: 62
       spriteId: 6bbf7bb4a9f4ebf468084ccf68c622e8
-    - name: trashcan_Frame_104
+    - name: Frame_104
       frameIndex: 104
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 38
         height: 91
       spriteId: cbc4957e70b55dd49a94922778e604f2
-    - name: trashcan_Frame_106
+    - name: Frame_106
       frameIndex: 106
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 45
         height: 91
       spriteId: 0ee1b28e03f86cb469b9288ec405aab6
-    - name: trashcan_Frame_107
+    - name: Frame_107
       frameIndex: 107
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 52
         height: 91
       spriteId: 9934af3adc1958348bd5adc2e52115ff
-    - name: trashcan_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 46
         height: 92
       spriteId: 1829687aad602cf49b4f50a2a5688bc1
-    - name: trashcan_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: ccc036d1c9c8757489d970d46b3c5427
-    - name: trashcan_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: cb335ab6323d79547abc852e08abc79a
-    - name: trashcan_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: dd796ee15c0d9c440932437aaaabd705
-    - name: trashcan_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: dd2b50e74f259844784f8b6a9e40e8cd
-    - name: trashcan_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: d9af1d7e7ad212743907e99731700366
-    - name: trashcan_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: bc3b95d34476dcc438e478799cfb8374
-    - name: trashcan_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 86a326900d64eb54fa6494045091cc54
-    - name: trashcan_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 92
       spriteId: ddb522878c3f48c4796c7e7f474d1e63
-    - name: trashcan_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: dc884ac994e6bd342a52d994653101af
-    - name: trashcan_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 60
         height: 64
       spriteId: d4136fc6436f3f940adf0d8e98d86d43
-    - name: trashcan_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 59
         height: 64
       spriteId: 8f5466f0c4cead744a4e6c35aba69fb6
-    - name: trashcan_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 64
       spriteId: 93451b146fee57a4f8236ddcb19ed3a5
-    - name: trashcan_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 46
         height: 92
       spriteId: 08e77210ff87e7340a8fbbc288f80b3b
-    - name: trashcan_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 91
       spriteId: d1a57d3cba1f10349b3c6b6fa7ad6398
-    - name: trashcan_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 0
         width: 41
         height: 62
       spriteId: 5aad2dfdd8f1d2046b461a47a1936350
-    - name: trashcan_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: 2692c667a9161fa438dea1a50711a91f
-    - name: trashcan_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 1377f85c4a992d945aa7203f21b6fb6e
-    - name: trashcan_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 921f90ec5ee15c94bbcac7a51aac7143
-    - name: trashcan_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: e64d42a30d292cb4f8fcad4814ab8516
-    - name: trashcan_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: e7409be9236158549bca1d5771154d18
-    - name: trashcan_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 2a1abcce738ab50439bbd8058066271e
-    - name: trashcan_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 776d238311da7dd418cbc68179247834
-    - name: trashcan_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 92
       spriteId: 1ef30c5b7efa6f4419a8dd2d7192a809
-    - name: trashcan_Frame_53
+    - name: Frame_53
       frameIndex: 53
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: c6c8c26e985b4d2448d5470e54ab3dfb
-    - name: trashcan_Frame_54
+    - name: Frame_54
       frameIndex: 54
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 60
         height: 64
       spriteId: 7a1b93535e312c94e8e6067e6e1a0d36
-    - name: trashcan_Frame_55
+    - name: Frame_55
       frameIndex: 55
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 59
         height: 64
       spriteId: c49a95635b5ea7745baa28dfb2ae4d56
-    - name: trashcan_Frame_59
+    - name: Frame_59
       frameIndex: 59
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 64
       spriteId: 60f6227ceb632524193863a4f0b46145
-    - name: trashcan_Frame_61
+    - name: Frame_61
       frameIndex: 61
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 46
         height: 92
       spriteId: 4ec34890c80d2854b93df087ffc38157
-    - name: trashcan_Frame_62
+    - name: Frame_62
       frameIndex: 62
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 91
       spriteId: 08dc1f1402b7f4642b0e6483e7f74b95
-    - name: trashcan_Frame_64
+    - name: Frame_64
       frameIndex: 64
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 0
         width: 41
         height: 62
       spriteId: e5b41ba3095e35c4d806a97e44549db8
-    - name: trashcan_Frame_65
+    - name: Frame_65
       frameIndex: 65
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: 8d91cce243dbf9a4086f553cffbcca19
-    - name: trashcan_Frame_66
+    - name: Frame_66
       frameIndex: 66
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 37af0f542f88c734db1d1610af6c1078
-    - name: trashcan_Frame_67
+    - name: Frame_67
       frameIndex: 67
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 709f805e4d9658e46925bbac1e641366
-    - name: trashcan_Frame_68
+    - name: Frame_68
       frameIndex: 68
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 003640562b4983d4a9c7f94d91792859
-    - name: trashcan_Frame_69
+    - name: Frame_69
       frameIndex: 69
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: ae76367a6c182c8419095085f8fd1047
-    - name: trashcan_Frame_70
+    - name: Frame_70
       frameIndex: 70
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: a550c18575d5f5f46953edfeb219e5e2
-    - name: trashcan_Frame_71
+    - name: Frame_71
       frameIndex: 71
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 9858467e63207cd49bef9f044cc750de
-    - name: trashcan_Frame_77
+    - name: Frame_77
       frameIndex: 77
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 92
       spriteId: ec27b2f15c9825246b91ec3582947530
-    - name: trashcan_Frame_81
+    - name: Frame_81
       frameIndex: 81
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: a765d2c4a88bd1b468ae52299613b080
-    - name: trashcan_Frame_82
+    - name: Frame_82
       frameIndex: 82
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 60
         height: 64
       spriteId: 46600f9ac03693e4cbbe46443c2858fd
-    - name: trashcan_Frame_83
+    - name: Frame_83
       frameIndex: 83
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 59
         height: 64
       spriteId: f186c7f4d575ff0409c147be21811c4d
-    - name: trashcan_Frame_87
+    - name: Frame_87
       frameIndex: 87
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 64
       spriteId: e64a481517d578d448325225b6e4e8f9
-    - name: trashcan_Frame_89
+    - name: Frame_89
       frameIndex: 89
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 46
         height: 92
       spriteId: ac40d8a5fef9c154d9df55fa74d09c57
-    - name: trashcan_Frame_90
+    - name: Frame_90
       frameIndex: 90
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 91
       spriteId: dd3d5187ffcfa8242a324dcb0c1647fb
-    - name: trashcan_Frame_92
+    - name: Frame_92
       frameIndex: 92
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 0
         width: 41
         height: 62
       spriteId: 09fa2f603c1fa2244b527ef05d7ba624
-    - name: trashcan_Frame_93
+    - name: Frame_93
       frameIndex: 93
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 37
         height: 64
       spriteId: bbd6afe433b7d49468879ea293c1589f
-    - name: trashcan_Frame_94
+    - name: Frame_94
       frameIndex: 94
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 94871c82003fa5c41bc0cdf012616b36
-    - name: trashcan_Frame_95
+    - name: Frame_95
       frameIndex: 95
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 8023619de00ad4342b73353e51281366
-    - name: trashcan_Frame_96
+    - name: Frame_96
       frameIndex: 96
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 0c506f4616ac6664c8558090c91509b2
-    - name: trashcan_Frame_97
+    - name: Frame_97
       frameIndex: 97
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: e6bde53be0fd850418d6e6110d6fac3e
-    - name: trashcan_Frame_98
+    - name: Frame_98
       frameIndex: 98
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: ef238c8227cdd1a45876fa8c5db76c57
-    - name: trashcan_Frame_99
+    - name: Frame_99
       frameIndex: 99
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 37
         height: 64
       spriteId: 577bc016d978ea14292d52ad3f77d23f
-    - name: trashcan_Frame_105
+    - name: Frame_105
       frameIndex: 105
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 41
         height: 92
       spriteId: e4656ed8913e0c94fa5cd84c6d06df9e
-    - name: trashcan_Frame_109
+    - name: Frame_109
       frameIndex: 109
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 57
         height: 64
       spriteId: 7c59cc89e9fb9774aaf61ee190cb0351
-    - name: trashcan_Frame_110
+    - name: Frame_110
       frameIndex: 110
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 60
         height: 64
       spriteId: bd878407c1dd15b43acb551898d3a23d
-    - name: trashcan_Frame_111
+    - name: Frame_111
       frameIndex: 111
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 59
         height: 64
       spriteId: 9a0574b308e4c0747b7b1bd5ba41a1db
-    - name: trashcan_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 63
       spriteId: d28044650cdece04e94c01d26d0f436b
-    - name: trashcan_Frame_52
+    - name: Frame_52
       frameIndex: 52
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 63
       spriteId: 85ab040055d62f443a03127741e23435
-    - name: trashcan_Frame_80
+    - name: Frame_80
       frameIndex: 80
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 63
       spriteId: 2d8345f46ec5e934597c8b8a75814a21
-    - name: trashcan_Frame_108
+    - name: Frame_108
       frameIndex: 108
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 0
         width: 56
         height: 63
       spriteId: 87f11da287e96ee42906ad141e92400d
-    - name: trashcan_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 0
@@ -3291,6 +3519,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 80, y: 96}
+  previousTextureSize: {x: 512, y: 1024}

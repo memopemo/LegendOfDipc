@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45454547}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45454547}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 20
@@ -181,9 +188,10 @@ ScriptedImporter:
     uvTransform: {x: 20, y: 22}
   - name: tape_measurer_Frame_3
     originalName: 
-    pivot: {x: 0, y: 0.5}
-    alignment: 4
+    pivot: {x: 0.5, y: 0.6}
+    alignment: 9
     border: {x: 4, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 36
@@ -201,9 +209,10 @@ ScriptedImporter:
     uvTransform: {x: 36, y: 22}
   - name: tape_measurer_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 1}
-    alignment: 2
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 4, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -221,9 +230,10 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 41}
   - name: tape_measurer_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
     border: {x: 0, y: 4, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 16
@@ -242,54 +252,60 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 386120965
+    guid: -150487207
     name: tape_measurer
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: tape_measurer_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 3
         width: 10
         height: 10
       spriteId: 6896ed3291efb294ca9e6f8a64174dea
-    - name: tape_measurer_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3
         width: 8
         height: 11
       spriteId: f334e11157b51a442a91a07d1faf0a56
-    - name: tape_measurer_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3
         width: 8
         height: 11
       spriteId: 566c4e05eb6d60943b836a64dab4019b
-    - name: tape_measurer_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 5
         width: 16
         height: 5
       spriteId: cad335df13ed5d946a9e5a6456ff3d55
-    - name: tape_measurer_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 0
         width: 4
         height: 16
       spriteId: 2b9adafc2d3a998418baa35e95c5b697
-    - name: tape_measurer_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 0
@@ -323,6 +339,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 64, y: 64}

@@ -57,4 +57,5 @@ public class Dungeon
     public bool SkeletonKeyObtained;
     public bool[] KeyObtained = new bool[16];
     public bool[] ChestOpened = new bool[16];
+    public bool[] DoorsUnlocked = new bool[32];
 }

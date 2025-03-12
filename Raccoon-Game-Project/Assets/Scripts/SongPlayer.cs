@@ -9,6 +9,7 @@ public class SongPlayer : MonoBehaviour
     Song currentSong;
     AudioSource source;
     float targetVolume;
+    int previousFrameTimeSamples;
 
     // velocity is 1/volumeChangeInSecs
     float volumeChangeInSecs; //how many seconds should it take to go from max to mute and vice versa?
@@ -49,13 +50,20 @@ public class SongPlayer : MonoBehaviour
     }
     void Update()
     {
-
+        //skip by 4 seconds.
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            source.timeSamples += 44100 * 4;
+        }
         //print(source.timeSamples);
         if (!currentSong) return; //this is shit but i have no idea why its causing a fit.
+
+        //ok so in order to have the song loop properly, your loop point should still be a ways into the song, and have some of the other side of the loop point sticking out at the end.
+        // else it may try to loop and fail.
         if (source.timeSamples >= currentSong.LoopEndSamples)
         {
-            source.timeSamples = currentSong.LoopStartSamples + (source.timeSamples - currentSong.LoopEndSamples);
-            source.Play();
+            int samplesMissed = source.timeSamples - currentSong.LoopEndSamples; //seamless looping
+            source.timeSamples = currentSong.LoopStartSamples + samplesMissed;
         }
         if (source.volume < targetVolume)
         {

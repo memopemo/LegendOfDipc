@@ -56,7 +56,7 @@ public class Drone : MonoBehaviour
             heightable.height = curve.Evaluate(timer)*HEIGHT;
 
             //position and rotation
-            transform.GetChild(0).rotation = Quaternion.Euler(0,0,Rotation.DirectionToAngle(rb.velocity));
+            transform.GetChild(0).rotation = Quaternion.Euler(0,0,Rotation.DirectionToAngle(rb.linearVelocity));
             rb.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))*40);
         }
     

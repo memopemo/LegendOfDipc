@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 48
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -184,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 92
@@ -204,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 48
@@ -224,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 26
@@ -244,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -264,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 92
@@ -282,70 +294,78 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1321400508
+    guid: 916248916
     name: player_hold_walk_d
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: player_hold_walk_d_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 5
         width: 14
         height: 24
       spriteId: 2c25c17712026cc45a5b510f52677dd1
-    - name: player_hold_walk_d_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 3
         width: 14
         height: 25
       spriteId: 223fa534f1166d347a12bb0e4f75aa64
-    - name: player_hold_walk_d_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 4
         width: 14
         height: 24
       spriteId: 0854f9129d3ae9f43ad80398166d6b64
-    - name: player_hold_walk_d_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 5
         width: 14
         height: 24
       spriteId: 298dd442bc8028e4985df7e695560ac6
-    - name: player_hold_walk_d_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 5
         width: 14
         height: 24
       spriteId: bcd133a144897c749aa7906730cce861
-    - name: player_hold_walk_d_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 3
         width: 14
         height: 25
       spriteId: b8e16d132f6b62b4ca47af178279b3ba
-    - name: player_hold_walk_d_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 4
         width: 14
         height: 24
       spriteId: 3a996d1fbd359c44789c6c3492085a9e
-    - name: player_hold_walk_d_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 5
@@ -379,6 +399,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 128, y: 64}

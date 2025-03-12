@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 40
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.4074074}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.45833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 84
@@ -184,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.56, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 36
@@ -204,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.5357143, y: 0.44444445}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 69
@@ -224,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.516129, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -244,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5217391}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 44
@@ -264,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.59999996}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -284,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.52}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -302,78 +315,87 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 597332586
+    guid: 899444882
     name: player_swimming_d
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: player_swimming_d_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 7
         width: 26
         height: 24
       spriteId: 4e0a9a3e0a2774345ada8229584ba274
-    - name: player_swimming_d_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 5
         width: 28
         height: 27
       spriteId: 9f2cf578217eb6e4384a0190dd84d38f
-    - name: player_swimming_d_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 5
         width: 28
         height: 24
       spriteId: 897f8b63bf6d3324b83378ce96dcbd3a
-    - name: player_swimming_d_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 4
         width: 25
         height: 21
       spriteId: 18ef396f58b19f54cba0b437257259f5
-    - name: player_swimming_d_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 8
         width: 28
         height: 18
       spriteId: 7a99fd511d3e6654b93effc8eb101388
-    - name: player_swimming_d_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 6
         width: 31
         height: 20
       spriteId: 39cc0f351de4ca74f9dc633cc19a0741
-    - name: player_swimming_d_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 4
         width: 32
         height: 23
       spriteId: 24d602e85ac807b4babc307e5de98166
-    - name: player_swimming_d_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 1
         width: 32
         height: 25
       spriteId: 17fc28f5e2233d14fb210b8a1cdfc1a3
-    - name: player_swimming_d_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 3
@@ -407,6 +429,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 128, y: 128}

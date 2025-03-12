@@ -76,7 +76,7 @@ class HeldItemPlayerState : IPlayerState
             return;
         }
          //play regular animation depending if we are walking or moving 
-        manager.animator.SetAnimation(manager.rigidBody.velocity == Vector2.zero ? HOLD_IDLE : HOLD_WALK);
+        manager.animator.SetAnimation(manager.rigidBody.linearVelocity == Vector2.zero ? HOLD_IDLE : HOLD_WALK);
 
         //Do not change directions.
     }

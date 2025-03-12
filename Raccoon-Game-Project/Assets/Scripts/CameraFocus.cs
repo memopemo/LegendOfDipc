@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CameraFocus : MonoBehaviour
@@ -20,6 +21,7 @@ public class CameraFocus : MonoBehaviour
 #if DEBUG
     bool noScrolling = false;
 #endif
+    bool lerpToNewBoundsActive = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -54,6 +56,7 @@ public class CameraFocus : MonoBehaviour
         if (bounds != null && !bounds.bounds.Contains(transform.position))
         {
             Vector2 _closest = bounds.ClosestPoint(transform.position);
+            if (bounds.bounds.extents == Vector3.zero) _closest = bounds.bounds.center;
             transform.position = new Vector3(_closest.x, _closest.y, transform.position.z);
         }
 
@@ -85,6 +88,21 @@ public class CameraFocus : MonoBehaviour
             }
         }
 
+
+
+        if (lerpToNewBoundsActive && !bounds.bounds.Contains(transform.position))
+        {
+            Vector2 _closest = bounds.ClosestPoint(transform.position);
+            if (bounds.bounds.extents == Vector3.zero) _closest = bounds.bounds.center;
+            transform.position = Vector3.Lerp(transform.position, _closest, Time.deltaTime * followSpeed * 4);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -ORTHO_CAMERA_DISTANCE);
+            return; // skip player lerp.
+        }
+        else
+        {
+            lerpToNewBoundsActive = false;
+        }
+
         //position camera with regards to previous position.
         transform.position = Vector3.Lerp(transform.position, target.position + (Vector3)offset + (Vector3)playerLookAhead, Time.deltaTime * followSpeed);
 
@@ -94,6 +112,7 @@ public class CameraFocus : MonoBehaviour
         if (bounds && !bounds.bounds.Contains(transform.position))
         {
             Vector2 _closest = bounds.ClosestPoint(transform.position);
+            if (bounds.bounds.extents == Vector3.zero) _closest = bounds.bounds.center;
             transform.position = new Vector3(_closest.x, _closest.y, transform.position.z);
         }
 
@@ -127,5 +146,15 @@ public class CameraFocus : MonoBehaviour
             center = transform.position
         };
         return rect.Contains(position);
+    }
+    public void ChangeBounds(Collider2D newBounds)
+    {
+        bounds = newBounds;
+        lerpToNewBoundsActive = true;
+        Invoke(nameof(RemoveLerp), 1f);
+    }
+    void RemoveLerp()
+    {
+        lerpToNewBoundsActive = false;
     }
 }

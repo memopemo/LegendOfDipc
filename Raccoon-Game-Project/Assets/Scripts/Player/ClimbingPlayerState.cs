@@ -38,7 +38,7 @@ public class ClimbingPlayerState : IPlayerState
     public void OnUpdate(PlayerStateManager manager)
     {
         
-        manager.rigidBody.velocityY = manager.inputY * CLIMB_SPEED + manager.additionalSpeed;
+        manager.rigidBody.linearVelocityY = manager.inputY * CLIMB_SPEED + manager.additionalSpeed;
         CommonPlayerState.UpdateDirection(manager); //Player can look left/right (bc it looks cute :)
 
         if (manager.transform.position.y > topY+0.5f)
@@ -63,7 +63,7 @@ public class ClimbingPlayerState : IPlayerState
                 manager.transform.position.y),
             Time.deltaTime);
 
-        if (manager.rigidBody.velocityY != 0) 
+        if (manager.rigidBody.linearVelocityY != 0) 
         {
             manager.animator.SetAnimation(9);
         }

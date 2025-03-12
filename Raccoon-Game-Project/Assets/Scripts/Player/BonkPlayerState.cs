@@ -21,7 +21,7 @@ public class BonkPlayerState : IPlayerState
     {
         jumpSecs += Time.deltaTime;
 
-        manager.rigidBody.velocity = -manager.directionedObject.direction*5; //move back slightly
+        manager.rigidBody.linearVelocity = -manager.directionedObject.direction*5; //move back slightly
 
         manager.height.height = ((float)(-4 * (float)JUMP_HEIGHT / (MAX_JUMP_TIME * MAX_JUMP_TIME)) * jumpSecs * jumpSecs) + ((float)(4 * (float)JUMP_HEIGHT / MAX_JUMP_TIME) * jumpSecs);
 

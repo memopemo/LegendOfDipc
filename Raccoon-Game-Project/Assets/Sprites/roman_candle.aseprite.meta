@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.8181819, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.8181819, y: 0.33333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.8181819, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -184,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.90000004, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -204,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 1, y: 0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 17
@@ -224,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.90000004, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -244,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: 0.3846154}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -264,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.3846154}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -284,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.6, y: 0.4166667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -304,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -324,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.6}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 17
@@ -344,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 17
@@ -364,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.4, y: 0.79310346}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -384,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.79310346}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -404,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.4, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 35
@@ -424,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 17
@@ -444,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.3}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 17
@@ -464,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.4}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 17
@@ -482,150 +504,168 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1650529605
+    guid: -363673447
     name: roman_candle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: roman_candle_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 13
         width: 11
         height: 6
       spriteId: 1aaa5623795a88e45a784d857371fc16
-    - name: roman_candle_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 14
         width: 11
         height: 6
       spriteId: 52fb5d98ca42b6b43b9484f2a3b0007f
-    - name: roman_candle_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 14
         width: 11
         height: 5
       spriteId: e4ecbafcc3817554db45ddc7b4162e85
-    - name: roman_candle_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 14
         width: 10
         height: 4
       spriteId: 76bac6f761f538647a3d739a5500a190
-    - name: roman_candle_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 14
         width: 10
         height: 7
       spriteId: 19b0f5dab0db83b41a91da37b644375f
-    - name: roman_candle_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 14
         width: 10
         height: 5
       spriteId: 253c4961dd7fa3b439810479e0237034
-    - name: roman_candle_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 11
         width: 5
         height: 13
       spriteId: 15f4e0d03ae29d14b9fb08944de5e848
-    - name: roman_candle_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 11
         width: 4
         height: 13
       spriteId: 282787b182053884898d03e7b0c873c9
-    - name: roman_candle_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 11
         width: 5
         height: 12
       spriteId: b3ba9e414dfd2de458fdac863e420f30
-    - name: roman_candle_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 11
         width: 4
         height: 10
       spriteId: e8ba95b46f2bbfa48907876c4262fabf
-    - name: roman_candle_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 10
         width: 4
         height: 10
       spriteId: abb0bf134860ee642b284018bc047c04
-    - name: roman_candle_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 11
         width: 4
         height: 10
       spriteId: 97108e76d1eeb1c42b24ce8289ba5720
-    - name: roman_candle_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: -7
         width: 5
         height: 29
       spriteId: 907013fdce28ccc42a7e2d9f34794586
-    - name: roman_candle_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: -7
         width: 4
         height: 29
       spriteId: dc594b9355996544ab2392b836035410
-    - name: roman_candle_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 10
         width: 5
         height: 12
       spriteId: 07bb66b465345b04eb7a5bb32f27f691
-    - name: roman_candle_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 12
         width: 4
         height: 10
       spriteId: 813a3f000b63db24c9a0bb9aa354f378
-    - name: roman_candle_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 13
         width: 4
         height: 10
       spriteId: c73e56390a228594fb41b24c4f457bd6
-    - name: roman_candle_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 12
@@ -659,6 +699,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

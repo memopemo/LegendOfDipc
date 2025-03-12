@@ -13,7 +13,7 @@ public class GrapplePlayerState : IPlayerState
     public void OnEnter(PlayerStateManager manager)
     {
         manager.animator.SetAnimation(GRAPPLE_ANIM);
-        manager.rigidBody.velocity = Vector2.zero;
+        manager.rigidBody.linearVelocity = Vector2.zero;
     }
 
     public void OnLeave(PlayerStateManager manager)

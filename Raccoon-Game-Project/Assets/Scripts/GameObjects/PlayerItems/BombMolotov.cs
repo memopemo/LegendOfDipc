@@ -50,7 +50,7 @@ public class BombMolotov : MonoBehaviour
     {
         if(!isSpreadingFire)
         {
-            rb.velocity = direction;
+            rb.linearVelocity = direction;
             time += Time.deltaTime;
             if(time >= throwHeight.keys.Last().time)
             {
@@ -58,7 +58,7 @@ public class BombMolotov : MonoBehaviour
                 transform.position = SnapGrid.SnapToGridCentered(transform.position);
                 Instantiate(fire, gameObject.transform.position, Quaternion.identity);
                 InvokeRepeating(nameof(SpreadFire),1,1);
-                rb.velocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
             }
             heightable.height = throwHeight.Evaluate(time);
         }

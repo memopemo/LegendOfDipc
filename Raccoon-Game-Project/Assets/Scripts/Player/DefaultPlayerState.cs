@@ -235,6 +235,10 @@ public class DefaultPlayerState : IPlayerState
                 nextState = new JumpingLedgePlayerState(height, bLedge.ledgetop.transform.position.y, bLedge.ledgetop.layersToDecrease);
             }
         }
+        else if (manager.waterCheck.Evaluate<NoJump>((_) => { }))
+        {
+            return;
+        }
         else
         {
             // if all ledge checks fail or we just arent near one, do a regular jump.
@@ -252,7 +256,7 @@ public class DefaultPlayerState : IPlayerState
         }
 
         // Moving
-        if (manager.rigidBody.velocity != Vector2.zero)
+        if (manager.rigidBody.linearVelocity != Vector2.zero)
         {
             //Turning (yes its complicated.)
             if (turnFrames > 0)
@@ -303,7 +307,7 @@ public class DefaultPlayerState : IPlayerState
                 {
                     if (!playedStepSound)
                     {
-                        manager.noiseMaker.Play(0);
+                        manager.waterCheck.Evaluate<FloorSound>((sound) => sound.Play(manager.transform.position));
                         playedStepSound = true;
                     }
                 }
@@ -321,7 +325,7 @@ public class DefaultPlayerState : IPlayerState
             return;
         }
         // Transitioning From Moving to Idle
-        if (manager.rigidBody.velocity == Vector2.zero && runToIdleTransitionFrames > 0)
+        if (manager.rigidBody.linearVelocity == Vector2.zero && runToIdleTransitionFrames > 0)
         {
             manager.animator.RestartAnimation();
             //Debug.Log(runToIdleTransitionFrames);

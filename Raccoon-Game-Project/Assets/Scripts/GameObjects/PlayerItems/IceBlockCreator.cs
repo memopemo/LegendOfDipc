@@ -38,7 +38,7 @@ public class IceBlock : MonoBehaviour
         }
         time += Time.deltaTime;
         heightable.height = reactionJump.Evaluate(time);//starting jump.
-        rb.velocity = directionedObject.direction * SPEED; //only move if direction is set. 
+        rb.linearVelocity = directionedObject.direction * SPEED; //only move if direction is set. 
 
         damagesEnemy.enabled = kickable(); //only can hurt enemies if kicked.
 

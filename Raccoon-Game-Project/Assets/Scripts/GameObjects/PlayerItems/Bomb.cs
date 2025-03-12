@@ -10,7 +10,7 @@ public class Bomb : MonoBehaviour
         PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
         if(player)
         {
-            GetComponent<Rigidbody2D>().velocity = player.directionedObject.direction;
+            GetComponent<Rigidbody2D>().linearVelocity = player.directionedObject.direction;
         }
         
     }

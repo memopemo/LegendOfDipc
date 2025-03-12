@@ -65,7 +65,7 @@ public class JumpingPlayerState : IPlayerState
             }
         }
         //Constantly move player
-        manager.rigidBody.velocity = actualMovement * (DEFAULT_SPEED + manager.additionalSpeed);
+        manager.rigidBody.linearVelocity = actualMovement * (DEFAULT_SPEED + manager.additionalSpeed);
 
         //Tick jump timer
         jumpSecs += Time.deltaTime;

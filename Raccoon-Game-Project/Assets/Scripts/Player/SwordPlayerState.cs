@@ -87,7 +87,7 @@ public class SwordPlayerState : IPlayerState
     // nudges the player a little bit forward to give some weight to swinging.
     public void NudgeInDirectionToLookCool(PlayerStateManager manager)
     {
-        if (manager.rigidBody.velocity == Vector2.zero) return; //prevent nudging if the player started swinging from a standstill.
-        manager.rigidBody.velocity += (Vector2)manager.directionedObject.direction * nudgeSword;
+        if (manager.rigidBody.linearVelocity == Vector2.zero) return; //prevent nudging if the player started swinging from a standstill.
+        manager.rigidBody.linearVelocity += (Vector2)manager.directionedObject.direction * nudgeSword;
     }
 }

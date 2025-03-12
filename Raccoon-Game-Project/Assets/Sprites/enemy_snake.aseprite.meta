@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -184,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -204,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -224,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -244,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -264,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -284,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -304,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -324,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -344,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 52
@@ -364,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -384,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -404,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -424,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -444,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -464,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -484,6 +506,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.61538464}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -504,6 +527,7 @@ ScriptedImporter:
     pivot: {x: 0.3846154, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -524,6 +548,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.53333336}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -544,6 +569,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -564,6 +590,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -584,6 +611,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 52
@@ -604,6 +632,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.42857146}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -624,6 +653,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.42857146}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -644,6 +674,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.53333336}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -664,6 +695,7 @@ ScriptedImporter:
     pivot: {x: 0.61538464, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -684,6 +716,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -704,6 +737,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -724,6 +758,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 98
@@ -744,6 +779,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -764,6 +800,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -784,6 +821,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -804,6 +842,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -824,6 +863,7 @@ ScriptedImporter:
     pivot: {x: 0.4666667, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -844,6 +884,7 @@ ScriptedImporter:
     pivot: {x: 0.53333336, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 28
@@ -864,6 +905,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -884,6 +926,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -904,6 +947,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -924,6 +968,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 74
@@ -944,6 +989,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -962,342 +1008,384 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1448943477
+    guid: -1323513737
     name: enemy_snake
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: enemy_snake_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: df20f91a34c3411459ec17e7fab0c50f
-    - name: enemy_snake_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 65a7627245143114381ef9175f1c1bce
-    - name: enemy_snake_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: c5ba6d00b0f11e6438c8f8d1959708b5
-    - name: enemy_snake_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: bbcf329cd5c59b84398b36ff8eac8316
-    - name: enemy_snake_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: f7e4365e1e59d1645916211410dbb0f7
-    - name: enemy_snake_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 52ca7629ba1a2e34181ce87977b6b3c4
-    - name: enemy_snake_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: ca3154106d8c5c9479775adec1828353
-    - name: enemy_snake_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 7d5b4d89961cc554b80b36f9e221d0b9
-    - name: enemy_snake_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: d92f0580e9d435b458a76061be6d83f8
-    - name: enemy_snake_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 39cfe6052a3dbf74e94d376abc608e0d
-    - name: enemy_snake_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 0949f55c39a83b841b107abf95025f58
-    - name: enemy_snake_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 227f2763289561649a0c84d6a159ac4c
-    - name: enemy_snake_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: fb45167ab92115f448c39cf56e31ced4
-    - name: enemy_snake_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 9022bca23c9bca545829c4dc87c1e4e4
-    - name: enemy_snake_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: e850e9031a2c6e44287e9e98bbe7aabc
-    - name: enemy_snake_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: a94316bc4c2d49e4998de0b9216626fa
-    - name: enemy_snake_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 82b2840c2bc28ee4da41c841157d19f1
-    - name: enemy_snake_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 5209187b6c6c81349a924bd545de6cdf
-    - name: enemy_snake_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 0914baf97a1aa6c429235ed433b1cb74
-    - name: enemy_snake_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 0a83351b14d02ce46b7b50290bc0f72b
-    - name: enemy_snake_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 0f28bf4ff46ebc348957ebfd8eebb35f
-    - name: enemy_snake_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: b2864095b6628aa4a99c45ba2556c04d
-    - name: enemy_snake_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: dab6cb014a429354085a8afdb31f6c51
-    - name: enemy_snake_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 7c728f8cce46b6b4c89b55ad128ea636
-    - name: enemy_snake_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: a4745da2a346ea54c95e9237237c0576
-    - name: enemy_snake_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 5acaaf538439db34c884a98138603fb0
-    - name: enemy_snake_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 457ed66d6824286458fcb6539390cb8e
-    - name: enemy_snake_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 85b66a4a540e9134e935a97919421b5c
-    - name: enemy_snake_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: eec2986a3b45cc24ea5996b436f89cf5
-    - name: enemy_snake_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: aacf28690059e9a44bb6add0a28bc347
-    - name: enemy_snake_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: cb41056fbe261a642a32dcd67ad45487
-    - name: enemy_snake_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: db6d469b80273664c9b720979d3be962
-    - name: enemy_snake_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 222c9cb2fcc6ca7448a9baf36aaefa89
-    - name: enemy_snake_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 3ad349fa1b2ec7c47a349716409d1d87
-    - name: enemy_snake_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: f081b1e4d88c17d47b03768203c022be
-    - name: enemy_snake_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 8fc70207fc5b86e4d95f2e33fae03876
-    - name: enemy_snake_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: cf5a84570d29d99409a1e99ab508849b
-    - name: enemy_snake_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 852032457a430654a9e4b914727316b0
-    - name: enemy_snake_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 00568eec665aafc44bfad2e26cf2a6d4
-    - name: enemy_snake_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: 5ce8594e01a6b42488c83fb0cb723650
-    - name: enemy_snake_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 16
         height: 16
       spriteId: ddd55fe0ab7f21347a156fbf71bdd75e
-    - name: enemy_snake_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -1331,6 +1419,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 128, y: 256}

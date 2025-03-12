@@ -26,7 +26,7 @@ public class ColorPalleteHandler : MonoBehaviour
         SetColors(4, color4ReplaceAnimation);
         void SetColors(int replaceIndex, Color[] colorAnimation)
         {
-            material.SetColor("_ReplaceColor" + replaceIndex, color1ReplaceAnimation[animationIndex % color1ReplaceAnimation.Length]);
+            material.SetColor("_ReplaceColor" + replaceIndex, colorAnimation[animationIndex % colorAnimation.Length]);
         }
     }
 

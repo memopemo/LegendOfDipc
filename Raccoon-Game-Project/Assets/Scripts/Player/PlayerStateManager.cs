@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,6 +49,7 @@ public class PlayerStateManager : MonoBehaviour
     CollisionCheck spaceCheck;
     public CollisionCheck directionCheck;
     public CollisionCheck waterCheck;
+    bool walkEnterFlag;
 
 #if DEBUG
     //* Debug Variables *//
@@ -115,12 +117,32 @@ public class PlayerStateManager : MonoBehaviour
     //Set player at specified place with direction on scene load.
     public void RoomInitialize(Vector2 position, Vector2Int direction)
     {
-        transform.position = position;
+        transform.position = position - direction;
         directionedObject.direction = direction;
+        walkEnterFlag = true;
+        Invoke(nameof(EndWalkOut), 1f);
+        StartCoroutine(WalkOut());
+
     }
     public void SetInitState(IPlayerState state)
     {
         currentPlayerState = state;
+    }
+    public IEnumerator WalkOut()
+    {
+        yield return new WaitUntil(() => directionedObject.didStart);
+        FreezeManager.FreezeAll<CutSceneFreezer>();
+        animator.SetAnimation(25);
+        while (walkEnterFlag)
+        {
+            transform.position += (Vector3)(Vector2)directionedObject.direction * Time.deltaTime;
+            yield return null;
+        }
+        FreezeManager.UnfreezeAll<CutSceneFreezer>();
+    }
+    void EndWalkOut()
+    {
+        walkEnterFlag = false;
     }
 
     // Update is called once per frame
@@ -392,7 +414,7 @@ public class PlayerStateManager : MonoBehaviour
     {
         DisableSprite();
         SwitchState(new NoInputPlayerState());
-        rigidBody.velocity = Vector3.zero;
+        rigidBody.linearVelocity = Vector3.zero;
         Instantiate(deathScreen, transform.position, Quaternion.identity);
     }
     public void SetAnimation(int i)

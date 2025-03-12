@@ -58,6 +58,7 @@ public class PauseMenu : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(false);
         FreezeManager.UnfreezeAll<PauseFreezer>();
+        FindFirstObjectByType<Inventory>().enabled = true;
     }
     public void ButtonSettings()
     {

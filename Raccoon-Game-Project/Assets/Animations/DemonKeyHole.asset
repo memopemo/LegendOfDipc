@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: DemonKeyHole
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: 6925077166454092819, guid: 43693c6873e9b4f48bdfc7375a5b9325, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6249287938640552460, guid: 43693c6873e9b4f48bdfc7375a5b9325, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -6815458944610824912, guid: 43693c6873e9b4f48bdfc7375a5b9325, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -2641394717797280524, guid: 43693c6873e9b4f48bdfc7375a5b9325, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: -8564229406666915389, guid: 43693c6873e9b4f48bdfc7375a5b9325, type: 3}
+    HoldForTicks: 15
+  - Sprite: {fileID: 8532768705234788468, guid: 43693c6873e9b4f48bdfc7375a5b9325, type: 3}
+    HoldForTicks: 15
+  Looping: 1
+  LoopStart: 0
+  LoopEnd: 6

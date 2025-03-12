@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c706966ea51e7ac4f8c999938fa30be0, type: 3}
+  m_Name: Dungeon1List
+  m_EditorClassIdentifier: 
+  chestTreasure:
+  - giveWhat: 0
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 0}
+  - giveWhat: 11
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 7980551899773068073, guid: b5dfc3a0056e26f4e88e2819c2c454ec, type: 3}
+  - giveWhat: 12
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 0}
+  - giveWhat: 13
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 0}
+  - giveWhat: 10
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: -3203618664440671315, guid: 3010cc0be36ba724099f7e9a5754049b, type: 3}
+  - giveWhat: 1
+    indexOrQuantity: 0
+    spriteInsideChest: {fileID: 0}

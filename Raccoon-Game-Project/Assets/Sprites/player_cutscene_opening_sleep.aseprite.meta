@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 0
     generateAnimationClips: 0
@@ -103,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 136
@@ -144,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 169
@@ -164,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 202
@@ -184,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -204,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 37
@@ -224,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -244,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 37
@@ -264,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -284,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 103
@@ -304,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 136
@@ -324,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 169
@@ -344,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 202
@@ -364,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -384,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 103
@@ -404,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 136
@@ -424,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 169
@@ -444,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 202
@@ -464,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -484,6 +506,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 37
@@ -504,6 +527,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -524,6 +548,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 37
@@ -544,6 +569,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -564,6 +590,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 103
@@ -584,6 +611,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 136
@@ -604,6 +632,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 169
@@ -624,6 +653,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 202
@@ -644,6 +674,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -664,6 +695,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -684,6 +716,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 136
@@ -704,6 +737,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 170
@@ -724,6 +758,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 204
@@ -744,6 +779,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -764,6 +800,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 38
@@ -784,6 +821,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 72
@@ -804,6 +842,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 106
@@ -824,6 +863,7 @@ ScriptedImporter:
     pivot: {x: 0.53846157, y: 0.7058824}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 140
@@ -844,6 +884,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 103
@@ -864,6 +905,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 37
@@ -884,6 +926,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 70
@@ -904,6 +947,7 @@ ScriptedImporter:
     pivot: {x: 0.5199999, y: 0.6315789}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 103
@@ -922,326 +966,366 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 29298403
+    guid: -2044633553
     name: player_cutscene_opening_sleep
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: player_cutscene_opening_sleep_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: c94512deaa9dff847933332137c22d7c
-    - name: player_cutscene_opening_sleep_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 3a4125a0271bc3e44a9dd882c12ef2c6
-    - name: player_cutscene_opening_sleep_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: cc448f94af6a207419f73c976f1a04a5
-    - name: player_cutscene_opening_sleep_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 32331fd45d771a74ca23fa13fcac3c94
-    - name: player_cutscene_opening_sleep_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 19b9c645f43b2b14f98ea049aa8bfc04
-    - name: player_cutscene_opening_sleep_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 2d4a1644aabfd94489df0e15009f6a3c
-    - name: player_cutscene_opening_sleep_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 561aa77d2ae5fd440beb8a2869ac1042
-    - name: player_cutscene_opening_sleep_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 11280a8353ded4942a4f715654b0af3c
-    - name: player_cutscene_opening_sleep_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 41d0b1fa030c58147a37ce3992cb6e71
-    - name: player_cutscene_opening_sleep_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: e6184a38f3168c842b41171d6af1da2d
-    - name: player_cutscene_opening_sleep_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 33ee8cd7d28c5fb4da944accac254d6f
-    - name: player_cutscene_opening_sleep_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 8ce61d5fd736b6f409bb572bfa3d84fe
-    - name: player_cutscene_opening_sleep_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 76851e8d8ccf5054099a420bd135281c
-    - name: player_cutscene_opening_sleep_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 502c869fd8307da42b980d20675fc7e9
-    - name: player_cutscene_opening_sleep_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 4ed40a738a4050340b88641eace294ac
-    - name: player_cutscene_opening_sleep_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: e63885e0368f8fc448e6eccbb55f89f8
-    - name: player_cutscene_opening_sleep_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 5bd6f35ea8d466a43b63dff5bdc830b0
-    - name: player_cutscene_opening_sleep_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 11a3c7516321a3140875903642de1020
-    - name: player_cutscene_opening_sleep_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 416982719eb106c41b2eabf8ef9412d7
-    - name: player_cutscene_opening_sleep_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 4a67a093cfc52a9498581b821c520aaa
-    - name: player_cutscene_opening_sleep_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 06b82c711589cbb4eb867d13a2ddf1a2
-    - name: player_cutscene_opening_sleep_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 07e084beb37b1ff47a67475e9a0e261e
-    - name: player_cutscene_opening_sleep_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: d72e8c97bb2334a469549689acea44eb
-    - name: player_cutscene_opening_sleep_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 72addd6686479c44d8209ac8a771e272
-    - name: player_cutscene_opening_sleep_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 521eef459c5c478469714b9fac5d485b
-    - name: player_cutscene_opening_sleep_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: c715cb70abaedca48ad6db5391a0f392
-    - name: player_cutscene_opening_sleep_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 66110778bafbc3f49adb7899806d86ec
-    - name: player_cutscene_opening_sleep_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 0319a42427ade73438320871d97b3973
-    - name: player_cutscene_opening_sleep_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: af7818e5b23b0624c932795d0f1dcaa9
-    - name: player_cutscene_opening_sleep_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: 08605cc2d2b6ba046ac090167641cc91
-    - name: player_cutscene_opening_sleep_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: 319eab7df7137dc468c8e999e8140972
-    - name: player_cutscene_opening_sleep_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: aaf3b95b799ce6c4bab7d8cc67b5de20
-    - name: player_cutscene_opening_sleep_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: 7dd71463261741c4f83ce7aa181f4644
-    - name: player_cutscene_opening_sleep_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: 836660f5314c7af47bf27f13c403ff9e
-    - name: player_cutscene_opening_sleep_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: 43d5fc9dddd884a41b1f128aae9ff7c4
-    - name: player_cutscene_opening_sleep_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 12
         width: 26
         height: 17
       spriteId: 858709b8c3fbbba4ab8ab85f36bc45a8
-    - name: player_cutscene_opening_sleep_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 18
       spriteId: 6d9e836e4f1044f499e3f96ec338c3a9
-    - name: player_cutscene_opening_sleep_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 7a9c52e46b8ff5640bb09989b864f141
-    - name: player_cutscene_opening_sleep_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
         width: 25
         height: 19
       spriteId: 4d1bcf3a94212674182f11e8d4f80291
-    - name: player_cutscene_opening_sleep_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 12
@@ -1275,6 +1359,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 48, y: 48}
+  previousTextureSize: {x: 256, y: 256}

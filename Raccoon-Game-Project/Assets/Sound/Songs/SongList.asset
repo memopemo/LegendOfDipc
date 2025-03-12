@@ -17,7 +17,7 @@ MonoBehaviour:
     - Key:
         sceneAsset: {fileID: 102900000, guid: cdb53de5487f990419ed8ae251587a0e, type: 3}
         scenePath: Assets/Scenes/Title.unity
-      Value: {fileID: 11400000, guid: 0806ae155a93bc5478e7c981bb048227, type: 2}
+      Value: {fileID: 11400000, guid: 9ec44445e8391554eadf7c38f4698d90, type: 2}
     - Key:
         sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
         scenePath: Assets/Scenes/SampleScene.unity

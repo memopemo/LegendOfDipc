@@ -59,23 +59,23 @@ public class RammingPlayerState : IPlayerState
         if (isFreezeImpacting())
         {
             //movement, but no direction
-            manager.rigidBody.velocity = (Vector2)manager.directionedObject.direction
+            manager.rigidBody.linearVelocity = (Vector2)manager.directionedObject.direction
                 * (!isWindingUp() ? MAX_DASH_SPEED : windupTimeAndSpeed + manager.additionalSpeed);
         }
         else
         {
             framesImpactingCount--;
-            manager.rigidBody.velocity = Vector2.zero;
+            manager.rigidBody.linearVelocity = Vector2.zero;
         }
 
         // allow strafing perpendicular
         if (manager.directionedObject.direction.x != 0) //if x direction is active...
         {
-            manager.rigidBody.velocity += new Vector2(0, manager.rawInput.y); //then use input y.
+            manager.rigidBody.linearVelocity += new Vector2(0, manager.rawInput.y); //then use input y.
         }
         else //use input x.
         {
-            manager.rigidBody.velocity += new Vector2(manager.rawInput.x, 0);
+            manager.rigidBody.linearVelocity += new Vector2(manager.rawInput.x, 0);
         }
 
         manager.animator.SetAnimation(isWindingUp() ? WINDUP_ANIM : DASH_ANIM); //animation
@@ -103,7 +103,7 @@ public class RammingPlayerState : IPlayerState
         Physics2D.queriesHitTriggers = true;
         RaycastHit2D[] hits = Physics2D.BoxCastAll((Vector2)manager.transform.position
             + (Vector2)manager.directionedObject.direction
-            * 0.7f, Vector2.one, 0, Vector2.zero);
+            * 0.7f, Vector2.one * 0.5f, 0, Vector2.zero);
         Physics2D.queriesHitTriggers = false;
         foreach (var hit in hits)
         {

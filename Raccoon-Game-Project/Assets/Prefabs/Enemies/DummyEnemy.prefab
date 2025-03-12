@@ -419,9 +419,9 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2475357800452509570}
         m_TargetAssemblyTypeName: Switch, Assembly-CSharp
-        m_MethodName: ActivateOnDead
+        m_MethodName: Poof
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
+  decoySprite: {fileID: 0}
   shadowSprite: {fileID: -4263704775227353237, guid: 61e40b2623212484e95f9181ed550407, type: 3}
 --- !u!114 &6252080653833832033
 MonoBehaviour:
