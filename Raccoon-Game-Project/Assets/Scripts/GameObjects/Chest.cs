@@ -79,7 +79,8 @@ public class Chest : MonoBehaviour
     public IEnumerator OpenChestSteps()
     {
         noiseMaker.Play(0); //play open sound
-        FindAnyObjectByType<SongPlayer>().StartFadeOut(0.75f);
+        SongPlayer songPlayer = FindAnyObjectByType<SongPlayer>();
+        songPlayer?.StartFadeOut(0.75f);
         PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>(); //get player reference for later.
         FreezeManager.FreezeAll<PauseFreezer>(); //pause game
         simpleAnimator2D.SetAnimation(1); //open box
@@ -103,7 +104,7 @@ public class Chest : MonoBehaviour
 
         ApplyChestsContents();
         yield return new WaitForSeconds(1.5f);
-        FindAnyObjectByType<SongPlayer>().StartFadeIn(1);
+        songPlayer?.StartFadeIn(1);
 
         yield return new WaitForSeconds(0.5f);
 

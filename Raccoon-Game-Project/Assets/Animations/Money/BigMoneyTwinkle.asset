@@ -20,7 +20,7 @@ MonoBehaviour:
   - Sprite: {fileID: -6421643503473776153, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15
   UpAnimationFrames:
-  - Sprite: {fileID: -7397355034127034627, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
+  - Sprite: {fileID: 7270816221199864016, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 150
   - Sprite: {fileID: 841883440940584978, guid: 64624d8e97331f4459a04927012afa3f, type: 3}
     HoldForTicks: 15

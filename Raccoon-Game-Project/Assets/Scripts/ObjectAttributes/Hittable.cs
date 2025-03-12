@@ -59,10 +59,13 @@ public class Hittable : MonoBehaviour
                 }
                 return; //fall to this anyways
             }
-            CancelInvoke();
-            Invoke(nameof(OopsFailed), TRIPLE_HIT_FAIL_TIME);
-            StopCoroutine(nameof(HitStun));
-            StartCoroutine(nameof(HitStun));
+            if (gameObject.activeSelf)
+            {
+                CancelInvoke();
+                Invoke(nameof(OopsFailed), TRIPLE_HIT_FAIL_TIME);
+                StopCoroutine(nameof(HitStun));
+                StartCoroutine(nameof(HitStun));
+            }
         }
 
     }

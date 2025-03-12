@@ -4,6 +4,12 @@ NEW RULE: Submit both tag and Github push by midnight saturdays
 
 Add to the top of the list for the most recent entry.
 
+## Jan 18th to March 12th
+
+god fucking dammit school
+
+- added basic dungeon objects and dungeon doors
+
 ## Date: Jan 12th to Jan 18th
 
 - added highligted sprits

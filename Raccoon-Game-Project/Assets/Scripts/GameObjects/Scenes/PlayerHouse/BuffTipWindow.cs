@@ -11,7 +11,7 @@ public class BuffTipWindow : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         csv = CSVReader.GetCSV("BuffDescriptions");
         title = GetComponentInChildren<TMP_Text>();
