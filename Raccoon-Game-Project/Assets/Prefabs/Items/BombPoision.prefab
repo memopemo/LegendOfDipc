@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4021099713888170107}
   - component: {fileID: 3059982051712426667}
   - component: {fileID: 6389351580630090061}
+  - component: {fileID: -3634554318846225238}
   m_Layer: 0
   m_Name: BombPoision
   m_TagString: Untagged
@@ -60,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 72ab7a80bd5856845a956214f317662b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,7 +135,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a3aed75ab00e93468ee9e1d87b3a865, type: 2}
 --- !u!50 &3059982051712426667
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -145,8 +146,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -195,3 +196,22 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-3634554318846225238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786590383965031118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  find: {r: 0.8000001, g: 0.18431373, b: 0.48235297, a: 0}
+  flashingPattern:
+  - {r: 0.94117653, g: 0.94117653, b: 0.94117653, a: 0}
+  - {r: 0.8000001, g: 0.18431373, b: 0.48235297, a: 1}
+  - {r: 0.94117653, g: 0.94117653, b: 0.94117653, a: 1}
+  - {r: 0.8000001, g: 0.18431373, b: 0.48235297, a: 1}
+  rate: 0.125

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,9 +10,16 @@ public class UIAudioVolume : MonoBehaviour
     int index;
     [SerializeField] AudioMixer audioMixer;
     RectTransform rectTransform;
-    int volAsInt;
+    int volIndex;
     public static readonly string[] exposedNames = { "MasterParam", "EffectsParam", "MusicParam" };
+    public static int[] volumes = {-80, -65, -51, -39, -29 ,-20, -13, -7, -3, -1, 0}; //precalculated parabola for f(x) = (x-10^2)/-1.25
+
     // Start is called before the first frame update
+    void Awake()
+    {
+        volIndex = PlayerPrefs.GetInt(exposedNames[index], volIndex);
+        audioMixer.SetFloat(exposedNames[index], volumes[volIndex] );
+    }
     void Start()
     {
         index = GameObjectParser.GetIndexFromName(gameObject);
@@ -20,29 +28,26 @@ public class UIAudioVolume : MonoBehaviour
 
     void Update()
     {
-        audioMixer.GetFloat(exposedNames[index], out float tempVolume);
-        volAsInt = Mathf.RoundToInt(tempVolume) / 10;
-        volAsInt += 10;
-        rectTransform.sizeDelta = new Vector2(volAsInt * 8, 8);
+        volIndex = PlayerPrefs.GetInt(exposedNames[index], volIndex);
+        rectTransform.sizeDelta = new Vector2(volIndex * 8, 8);
     }
     public void IncreaseVolume()
     {
-        volAsInt++;
+        volIndex++;
         SaveVolume();
 
     }
     public void DecreaseVolume()
     {
-        volAsInt--;
+        volIndex--;
         SaveVolume();
     }
 
     private void SaveVolume()
     {
-        volAsInt = Mathf.Clamp(volAsInt, 0, 10);
-        volAsInt = (volAsInt - 10) * 10;
-        audioMixer.SetFloat(exposedNames[index], volAsInt);
-        PlayerPrefs.SetFloat(exposedNames[index], volAsInt);
+        volIndex = Mathf.Clamp(volIndex, 0, 10);
+        audioMixer.SetFloat(exposedNames[index], volumes[volIndex] );
+        PlayerPrefs.SetInt(exposedNames[index], volIndex);
         PlayerPrefs.Save();
     }
 }

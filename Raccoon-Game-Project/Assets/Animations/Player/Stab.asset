@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Stab
   m_EditorClassIdentifier: 
   DownAnimationFrames:
-  - Sprite: {fileID: 3616639432859006386, guid: 861348d60df279141b40915b69d4d264, type: 3}
+  - Sprite: {fileID: -3060218226740564771, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: -4844614488903156879, guid: 861348d60df279141b40915b69d4d264, type: 3}
+  - Sprite: {fileID: -7390979659409325895, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: -3854607811616848207, guid: 861348d60df279141b40915b69d4d264, type: 3}
+  - Sprite: {fileID: -3256288410550435697, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 60
-  - Sprite: {fileID: -2407320044005788326, guid: 861348d60df279141b40915b69d4d264, type: 3}
+  - Sprite: {fileID: 7366067510830881783, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 10
   UpAnimationFrames:
   - Sprite: {fileID: 8075586811939807411, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
@@ -31,13 +31,13 @@ MonoBehaviour:
   - Sprite: {fileID: -4623408998867497263, guid: f526c622033477546948fb3bc5ad9ccd, type: 3}
     HoldForTicks: 10
   SideAnimationFrames:
-  - Sprite: {fileID: -8921579436809361785, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+  - Sprite: {fileID: -6994630910068834809, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: -1978633678478430922, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+  - Sprite: {fileID: -6306655173293542914, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 10
-  - Sprite: {fileID: 8889992473566797544, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+  - Sprite: {fileID: -5915198239705424465, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 60
-  - Sprite: {fileID: -4072134236709778853, guid: 14f7716ad7736e24586003569ade51f6, type: 3}
+  - Sprite: {fileID: -8849482607823121018, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
     HoldForTicks: 10
   Looping: 0
   LoopStart: 0

@@ -1,11 +1,13 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject SettingsPanel;
     [SerializeField] GameObject DebugPanel;
     UISelectable initialSelection;
+    [SerializeField] SceneReference titleScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +70,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void ButtonTitle()
     {
-        Application.Quit();
+        SceneManager.LoadScene(titleScreen);
     }
     public void ButtonDebug()
     {

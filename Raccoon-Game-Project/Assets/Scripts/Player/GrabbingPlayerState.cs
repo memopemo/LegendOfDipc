@@ -31,16 +31,33 @@ public class GrabbingPlayerState : IPlayerState
         manager.transform.parent = grabbable.transform;
 
         //Snap to grid
-        manager.transform.localPosition = -(Vector3)(Vector2)manager.directionedObject.direction;
+        BoxCollider2D boxCollider = grabbable.GetComponent<BoxCollider2D>();
+        manager.transform.position = GetGrabPoint(manager.transform.position, boxCollider.bounds) - (Vector3)(Vector2)manager.directionedObject.direction;
         manager.transform.position = SnapGrid.SnapToGridCentered(manager.transform.position);
         pushPullCheck = new(grabbable.GetComponent<Collider2D>());
         pushPullCheck
             .SetType(CollisionCheck.CollisionType.DraggedBox)
-            .SetBoxSize(0.90f)
+            .SetBoxSize(boxCollider.size * 0.90f)
+            .SetRelativePosition(boxCollider.offset)
             .SetDragPositionFromDirection(-1, manager.directionedObject)
             .SetDebug(true);
         manager.gameObject.AddComponent<ExclusionAttribute>();
         manager.noiseMaker.Play(GRAB_SFX);
+        grabbable.Grab();
+    }
+
+    /*  Assumptions:
+            - Grabbable is a Box Collider
+            - Grabbable is positioned integer-wise
+            - Grabbable is sized integer-wise
+            - Grabbable's origin is in the top left tile center.
+    */
+    Vector3 GetGrabPoint(Vector3 position, Bounds grabbingBox)
+    {
+        grabbingBox.size -= (Vector3)Vector2.one;
+        Vector2 closestPoint = grabbingBox.ClosestPoint(position);
+        Vector2 grabPoint = SnapGrid.SnapToGridCentered(closestPoint);
+        return grabPoint;
     }
 
     public void OnLeave(PlayerStateManager manager)

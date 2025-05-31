@@ -9,7 +9,7 @@ using UnityEngine.Events;
 
 public class DungeonDoor : MonoBehaviour
 {
-    public enum LockType { Switch, Key, BossKey }
+    public enum LockType { Switch, Key, DefeatAllEnemies, BossKey }
     public enum State { Closed, Open }
     public LockType type;
     public State state;
@@ -30,8 +30,14 @@ public class DungeonDoor : MonoBehaviour
         }
 
     }
+    public void OnValidate()
+    {
+        //mapping visual help
+        GetComponent<SpriteRenderer>().sprite = GetComponent<SimpleAnimator2D>().animations[(int)type * 2 + (int)state].AnimationFrames.Last().Sprite;
+    }
     public void Update()
     {
+        GetComponent<Interactable>().enabled = state == State.Closed && type is LockType.Key or LockType.BossKey;
         if (parentThruDoor && state == State.Open)
         {
             parentThruDoor.enabled = state == State.Open;

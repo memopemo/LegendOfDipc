@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 6252080653833832033}
   - component: {fileID: 378727167042749269}
   - component: {fileID: 8476358192379826763}
+  - component: {fileID: -1544699336777738802}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: HurtPlayer
@@ -366,7 +367,7 @@ MonoBehaviour:
   particle: {fileID: 3429116829816334627, guid: 8e616a6293b9e1243901898736323821, type: 3}
 --- !u!50 &3755897252113582533
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -377,8 +378,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
-  m_LinearDrag: 10
-  m_AngularDrag: 0.05
+  m_LinearDamping: 10
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -486,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8981a2ef9d5adf549add7f97899da96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDirection: {x: 0, y: 0}
+  initialDirection: {x: 0, y: -1}
 --- !u!114 &1381766346318566656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +779,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtParticle: {fileID: 6662679793016555163, guid: edcb8b6d73c00974d9b9fb93ecfbb52e, type: 3}
+--- !u!114 &-1544699336777738802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637332251370423602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20aaa06c6faab9941b33014522a5c264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customIgnore: []
 --- !u!1 &9212373818536585072
 GameObject:
   m_ObjectHideFlags: 0

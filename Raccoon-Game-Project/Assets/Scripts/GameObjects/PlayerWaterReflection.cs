@@ -51,7 +51,7 @@ public class PlayerWaterReflection : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (a.currentPlayerState is SwimPlayerState)
+        if (a.currentPlayerState is SwimPlayerState or FallPlayerState)
         {
             spriteRenderer.enabled = false;
         }

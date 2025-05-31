@@ -17,7 +17,8 @@ public class Collectable : MonoBehaviour
     void Update()
     {
         if (!player) return;
-        if (TryGetComponent(out Bouncing b) && !b.IsBounceDone()) return;
+        if (TryGetComponent(out Bouncing b) && !b.IsCollectable()) return;
+        if( player.height.height > 0 ) return;
         if (Vector2.Distance(player.transform.position, transform.position) <= 1)
         {
             OnCollect.Invoke();

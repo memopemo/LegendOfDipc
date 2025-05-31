@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         noiseMaker = GetComponent<NoiseMaker>();
+        
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class Health : MonoBehaviour
 
         currentHealth -= amount;
         if (currentHealth <= 0)
-        {   
+        {
             Die();
             return;
         }
@@ -43,10 +44,15 @@ public class Health : MonoBehaviour
     }
     public virtual void Die()
     {
+        if(TryGetComponent(out Switch switch_))
+        {
+            switch_.ActivateOnDead();
+        }
         currentHealth = 0;
         noiseMaker.Play(1);
         OnDie.Invoke();
         gameObject.SetActive(false);
+        
     }
     public void SetHeath(int health)
     {
@@ -56,5 +62,13 @@ public class Health : MonoBehaviour
             return;
         }
         currentHealth = health;
+    }
+    void OnEnable()
+    {
+        if (currentHealth == 0)
+        {
+            //go back to sleep
+            gameObject.SetActive(false);
+        }
     }
 }

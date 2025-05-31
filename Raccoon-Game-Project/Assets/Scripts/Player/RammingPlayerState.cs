@@ -101,9 +101,8 @@ public class RammingPlayerState : IPlayerState
          * Using a small box collider instead of a point protects us from this. (edge wont work since it could skip over the wall's edge collider.)
          */
         Physics2D.queriesHitTriggers = true;
-        RaycastHit2D[] hits = Physics2D.BoxCastAll((Vector2)manager.transform.position
-            + (Vector2)manager.directionedObject.direction
-            * 0.7f, Vector2.one * 0.5f, 0, Vector2.zero);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll((Vector2)manager.transform.position + Vector2.down * 0.2f, Vector2.one * 0.4f, 0, (Vector2)manager.directionedObject.direction, 1f);
+        
         Physics2D.queriesHitTriggers = false;
         foreach (var hit in hits)
         {

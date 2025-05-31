@@ -28,6 +28,8 @@ public class Heightable : MonoBehaviour
     //Shadow helps show where the "ground" is
     SpriteRenderer shadowRenderer;
     public Sprite shadowSprite;
+    int initialLayer;
+    const int JUMP_LAYER = 11;
     // Start is called before the first frame update
     public void Start()
     {
@@ -54,7 +56,7 @@ public class Heightable : MonoBehaviour
         shadowRenderer.transform.parent = transform;
         shadowRenderer.transform.localPosition = Vector3.forward * 0.1f;
         shadowRenderer.sprite = shadowSprite;
-
+        initialLayer = gameObject.layer;
     }
 
     // Update is called once per frame
@@ -67,8 +69,8 @@ public class Heightable : MonoBehaviour
         }
 
         //apply shadow properties
-        shadowRenderer.enabled = height > 0;
-        shadowRenderer.color = new Color(1, 1, 1, 1 / (height + 1f));
+        shadowRenderer.enabled = height >= 0;
+        shadowRenderer.color = new Color(1, 1, 1, 1 / (height + 2f));
 
         //position decoy sprite
 
@@ -91,6 +93,8 @@ public class Heightable : MonoBehaviour
         decoySprite.flipX = baseSprite.flipX;
         decoySprite.flipY = baseSprite.flipY;
         decoySprite.color = baseSprite.color;
+
+        gameObject.layer = height > 0 ? JUMP_LAYER : initialLayer;
 
     }
 

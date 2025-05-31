@@ -335,7 +335,7 @@ MonoBehaviour:
   audioClipPools:
   - pool:
     - {fileID: 8300000, guid: f506641372f95374e8cb58144fae2288, type: 3}
-    isCancelable: 0
+    isCancelable: 1
     varyPitch: 0
     looping: 0
     followNoiseMaker: 0

@@ -7,19 +7,24 @@ public class SongPlayer : MonoBehaviour
 {
     [SerializeField] SceneSongs sceneSongs;
     Song currentSong;
+    Song nextSong;
     AudioSource source;
     float targetVolume;
     int previousFrameTimeSamples;
 
     // velocity is 1/volumeChangeInSecs
     float volumeChangeInSecs; //how many seconds should it take to go from max to mute and vice versa?
+    AudioMixer mixer;
 
     void Start()
     {
-        AudioMixer mixer = GetComponent<AudioSource>().outputAudioMixerGroup.audioMixer;
-        mixer.SetFloat(UIAudioVolume.exposedNames[0], PlayerPrefs.GetFloat(UIAudioVolume.exposedNames[0]));
-        mixer.SetFloat(UIAudioVolume.exposedNames[1], PlayerPrefs.GetFloat(UIAudioVolume.exposedNames[1]));
-        mixer.SetFloat(UIAudioVolume.exposedNames[2], PlayerPrefs.GetFloat(UIAudioVolume.exposedNames[2]));
+        mixer = GetComponent<AudioSource>().outputAudioMixerGroup.audioMixer;
+        mixer.SetFloat(UIAudioVolume.exposedNames[0], UIAudioVolume.volumes[PlayerPrefs.GetInt(UIAudioVolume.exposedNames[0], 10)]);
+        mixer.SetFloat(UIAudioVolume.exposedNames[1], UIAudioVolume.volumes[PlayerPrefs.GetInt(UIAudioVolume.exposedNames[1], 7)]);
+        mixer.SetFloat(UIAudioVolume.exposedNames[2], UIAudioVolume.volumes[PlayerPrefs.GetInt(UIAudioVolume.exposedNames[2], 7)]);
+        PlayerPrefs.SetInt(UIAudioVolume.exposedNames[0], PlayerPrefs.GetInt(UIAudioVolume.exposedNames[0], 10));
+        PlayerPrefs.SetInt(UIAudioVolume.exposedNames[1], PlayerPrefs.GetInt(UIAudioVolume.exposedNames[1], 7));
+        PlayerPrefs.SetInt(UIAudioVolume.exposedNames[2], PlayerPrefs.GetInt(UIAudioVolume.exposedNames[2], 7));
 
         source = GetComponent<AudioSource>();
 #if DEBUG
@@ -67,37 +72,50 @@ public class SongPlayer : MonoBehaviour
         }
         if (source.volume < targetVolume)
         {
+            print("a");
             source.volume += 1 / volumeChangeInSecs * Time.deltaTime;
         }
         else if (source.volume > targetVolume)
         {
+            print("b");
             source.volume -= 1 / volumeChangeInSecs * Time.deltaTime;
         }
+
+        //on lost focus, dim volume
+        mixer.SetFloat(UIAudioVolume.exposedNames[0], UIAudioVolume.volumes[PlayerPrefs.GetInt(UIAudioVolume.exposedNames[0])]-(Application.isFocused?0f:10f));
     }
     public void OnSceneChange(SceneReference sceneReference)
     {
-        Song nextSong = sceneSongs.GetSong(sceneReference);
-        if (nextSong == currentSong)
+        MidGameSwitchSong(sceneSongs.GetSong(sceneReference));
+    }
+    public void RevertScenesSong()
+    {
+        MidGameSwitchSong(sceneSongs.GetSong(new SceneReference
         {
-            return;
-        }
-        else
-        {
-            currentSong = nextSong;
-            StartCoroutine(nameof(FadeAndSwitchSong));
-        }
+            ScenePath = SceneManager.GetActiveScene().path
+        }));
+    }
+    public void MidGameSwitchSong(Song song)
+    {
+        if(song == currentSong) return;
+        // we use a new variable so that the looping still applies for the current song, not the next song.
+        // this is so that (as a random hypothetical example that never happened) if someone were to try a 0 second loop for silence, when fading out it wouldn't stutter.
+        nextSong = song; 
+        StartCoroutine(nameof(FadeAndSwitchSong));
     }
     IEnumerator FadeAndSwitchSong()
     {
         const float speed = 1;
         StartFadeOut(speed);
         yield return new WaitForSeconds(speed);
-        source.clip = currentSong.song;
+        source.clip = nextSong.song;
         source.Play();
+        currentSong = nextSong;
         StartFadeIn(speed);
     }
     public void StartFadeOut(float inSecs = 1)
     {
+        
         targetVolume = 0;
         volumeChangeInSecs = inSecs;
     }
@@ -105,5 +123,10 @@ public class SongPlayer : MonoBehaviour
     {
         targetVolume = 1;
         volumeChangeInSecs = inSecs;
+    }
+    public void Restart()
+    {
+        StartFadeIn();
+        source.Play();
     }
 }

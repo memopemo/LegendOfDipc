@@ -39,6 +39,7 @@ public class Fire : MonoBehaviour
         {
             attachedObject = burnable;
             transform.parent = attachedObject.transform;
+            burnable.StartBurn();
         }, new((b) => b.GetComponentInChildren<Fire>() == null));
     }
     void Update()
@@ -94,7 +95,7 @@ public class Fire : MonoBehaviour
             newFire.transform.position = transform.position;
         }, new((b) => b.GetComponentInChildren<Fire>() == null));
     }
-    void Die()
+    public void Die()
     {
         if (attachedObject)
         { attachedObject.Burn(); }

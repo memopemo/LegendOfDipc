@@ -8,6 +8,7 @@ public class DeathScreen : MonoBehaviour
     const float SPEED = 1;
     float blackness;
     float blueness;
+    [SerializeField] SceneReference overworldScene;
     IEnumerator Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -18,7 +19,7 @@ public class DeathScreen : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         sr.color = new Color(1, 0, 0, 1);
         FreezeManager.FreezeAll<CutSceneFreezer>();
-
+        
         yield return new WaitForSeconds(0.5f); //reaction to getting hit
 
         //fade clear to red
@@ -35,7 +36,8 @@ public class DeathScreen : MonoBehaviour
         //load scene
 
         ExitHandler.ExitLoadingSavePoint();
-        SceneManager.LoadScene("SampleScene"); //loadSceneAsync() causes the circle fade in to not work
+        SceneManager.LoadScene(overworldScene); //loadSceneAsync() causes the circle fade in to not work
+        
         //subscribe to whent the active scene actually does change.
         SceneManager.activeSceneChanged += UnDie;
 
@@ -44,6 +46,7 @@ public class DeathScreen : MonoBehaviour
     {
         PlayerHealth.UnDie();
         SceneManager.activeSceneChanged -= UnDie;
+        FindAnyObjectByType<SongPlayer>()?.Restart();
         Destroy(gameObject);
 
     }

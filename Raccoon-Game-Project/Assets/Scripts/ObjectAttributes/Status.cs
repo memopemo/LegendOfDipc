@@ -8,7 +8,8 @@ public class Status : MonoBehaviour
     const float FIRE_LENGTH_TICKS = 4;
     const float POISON_LENGTH_TICKS = 4;
     const float STUN_LENGTH_TICKS = 8;
-    public enum Effect {
+    public enum Effect
+    {
         Fire,   //being on fire damages more often but goes out quicker.
         Poison, //being poisoned damages less often but is extended.
         Stun    //being stunned slows movement and occasionally stops. Is as long as 
@@ -17,7 +18,7 @@ public class Status : MonoBehaviour
     Rigidbody2D rb;
     PlayerStateManager player; //may be null if we aren't the player!
     [NonSerialized] public float[] statusTicks;
-    float[] statusLength = new float[]{FIRE_LENGTH_TICKS, POISON_LENGTH_TICKS, STUN_LENGTH_TICKS};
+    float[] statusLength = new float[] { FIRE_LENGTH_TICKS, POISON_LENGTH_TICKS, STUN_LENGTH_TICKS };
     public GameObject[] statusParticles;
     float ogMass;
 
@@ -33,12 +34,13 @@ public class Status : MonoBehaviour
     void Start()
     {
         InvokeRepeating(nameof(FireTick), 0, 1);
-        InvokeRepeating(nameof(PoisonTick),0, 1.5f);
+        InvokeRepeating(nameof(PoisonTick), 0, 1.5f);
         InvokeRepeating(nameof(StunTick), 0, 2f);
     }
     void FireTick()
     {
-        if(statusTicks[(int)Effect.Fire] <= 0) return;
+        if (!isActiveAndEnabled) return;
+        if (statusTicks[(int)Effect.Fire] <= 0) return;
         DecrementStatus(Effect.Fire);
         CreateParticle(Effect.Fire);
         TakeDamage();
@@ -46,7 +48,8 @@ public class Status : MonoBehaviour
 
     void PoisonTick()
     {
-        if(statusTicks[(int)Effect.Poison] <= 0) return;
+        if (!isActiveAndEnabled) return;
+        if (statusTicks[(int)Effect.Poison] <= 0) return;
         DecrementStatus(Effect.Poison);
         CreateParticle(Effect.Poison);
         TakeDamage();
@@ -54,8 +57,10 @@ public class Status : MonoBehaviour
 
     void StunTick()
     {
-        if(statusTicks[(int)Effect.Stun] <= 0) return;
+        if (!isActiveAndEnabled) return;
+        if (statusTicks[(int)Effect.Stun] <= 0) return;
         rb.linearDamping = 9999;
+        
         DecrementStatus(Effect.Stun);
         CreateParticle(Effect.Stun);
         Invoke(nameof(RemoveStun), 0.5f);
@@ -73,7 +78,7 @@ public class Status : MonoBehaviour
     {
         for (int i = 0; i < statusTicks.Length; i++)
         {
-           statusTicks[i] = 0;
+            statusTicks[i] = 0;
         }
     }
     void DecrementStatus(Effect effect)
@@ -90,11 +95,11 @@ public class Status : MonoBehaviour
     }
     void TakeDamage()
     {
-        if(player)
+        if (player)
         {
             PlayerHealth.TakeDamage(1, player);
         }
-        else if(health)
+        else if (health)
         {
             health.TakeDamage(1);
         }

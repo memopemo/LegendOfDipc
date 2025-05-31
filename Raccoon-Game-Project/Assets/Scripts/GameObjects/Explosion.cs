@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] int amount;
+    DamagesPlayer damagesPlayer;
     void Start()
     {
         FindAnyObjectByType<CameraFocus>().ShakeScreen(2);
         GetComponent<NoiseMaker>().Play(0);
+        damagesPlayer = GetComponent<DamagesPlayer>();
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.TryGetComponent(out Health health))
+        if(collider.TryGetComponent(out PlayerStateManager player))
         {
-            //apply damage.
-            health.TakeDamage(amount);
-            //if enemy, apply knockback aswell.
-            if(collider.TryGetComponent(out Knockbackable knockbackable))
-            {
-                knockbackable.ApplyKnockBack(transform);
-            }
+           player.TakeDamage(damagesPlayer);
         }
     }
 }

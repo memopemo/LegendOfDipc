@@ -23,21 +23,6 @@ public class DemonBuffMenu : MonoBehaviour
 
         Transform bg = transform.GetChild(0);
 
-        if (isOn)
-        {
-            if (UIInput.IsUpPressed || UIInput.IsDownPressed)
-            {
-                AudioSource.PlayClipAtPoint(sounds[0], FindFirstObjectByType<Camera>().transform.position + Vector3.back);
-            }
-            else if (UIInput.IsLeftPressed || UIInput.IsRightPressed)
-            {
-                AudioSource.PlayClipAtPoint(sounds[1], FindFirstObjectByType<Camera>().transform.position + Vector3.back);
-            }
-            else if (UIInput.IsConfirmPressed)
-            {
-                AudioSource.PlayClipAtPoint(sounds[2], FindFirstObjectByType<Camera>().transform.position + Vector3.back);
-            }
-        }
         timer += Time.deltaTime;
         Vector3 tempPos = bg.localPosition;
 

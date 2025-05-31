@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player
-  m_Shader: {fileID: -6465566751694194690, guid: 9f7dfb1857d278949a2c541f2fcae912, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6fa78204d4245054082b87cb049cbafb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -8328923581568760697, guid: 7de659ab3129f374aae86c7c16bc3847, type: 3}
+        m_Texture: {fileID: -8328923581568760697, guid: 5e7d8cecd2d216647be246b47502d0f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -71,6 +71,10 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flash: {r: 6.9074125, g: 6.9074125, b: 6.9074125, a: 0}
+    - _PlayerColor1: {r: 1, g: 0.682353, b: 0.43921566, a: 1}
+    - _PlayerColor2: {r: 0.7411765, g: 0.41568628, b: 0.38431373, a: 1}
+    - _PlayerColor3: {r: 0.5607843, g: 0.30196077, b: 0.34117648, a: 1}
+    - _PlayerColor4: {r: 0.32156855, g: 0.19999996, b: 0.24705875, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReplaceColor1: {r: 0, g: 0, b: 0, a: 0}
     - _ReplaceColor2: {r: 0, g: 0, b: 0, a: 0}
@@ -80,5 +84,13 @@ Material:
     - _SampleColor2: {r: 0, g: 0, b: 0, a: 1}
     - _SampleColor3: {r: 0, g: 0, b: 0, a: 1}
     - _SampleColor4: {r: 0, g: 0, b: 0, a: 1}
+    - _ShieldColor1: {r: 1, g: 0.682353, b: 0.43921566, a: 1}
+    - _ShieldColor2: {r: 0.7411765, g: 0.41568628, b: 0.38431373, a: 1}
+    - _ShieldColor3: {r: 0.5607843, g: 0.30196077, b: 0.34117648, a: 1}
+    - _ShieldColor4: {r: 0.32156864, g: 0.20000002, b: 0.24705884, a: 1}
+    - _SwordColor1: {r: 1, g: 0.682353, b: 0.43921566, a: 1}
+    - _SwordColor2: {r: 0.7411765, g: 0.41568628, b: 0.38431373, a: 1}
+    - _SwordColor3: {r: 0.5607843, g: 0.30196077, b: 0.34117648, a: 1}
+    - _SwordColor4: {r: 0.32156864, g: 0.20000002, b: 0.24705884, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

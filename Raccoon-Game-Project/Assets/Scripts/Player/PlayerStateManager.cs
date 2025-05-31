@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,6 +34,7 @@ public class PlayerStateManager : MonoBehaviour
     public Vector2 FallReturnPosition;
 
     public ItemList itemGameObjectLookup;
+    public PlayerColors colors;
 
 
     //* Helpful Variables *//
@@ -111,6 +113,7 @@ public class PlayerStateManager : MonoBehaviour
             currentPlayerState = new DefaultPlayerState();
         }
         currentPlayerState.OnEnter(this);
+        UpdateColors();
         InvokeRepeating(nameof(AttemptToSetSafePosition), 2, 2);
     }
 
@@ -130,12 +133,14 @@ public class PlayerStateManager : MonoBehaviour
     }
     public IEnumerator WalkOut()
     {
+        //prevent updating walkout until we are set.
+        Vector3 walkoutDirection = (Vector3)(Vector2)directionedObject.direction;
         yield return new WaitUntil(() => directionedObject.didStart);
         FreezeManager.FreezeAll<CutSceneFreezer>();
         animator.SetAnimation(25);
         while (walkEnterFlag)
         {
-            transform.position += (Vector3)(Vector2)directionedObject.direction * Time.deltaTime;
+            transform.position += walkoutDirection * Time.deltaTime;
             yield return null;
         }
         FreezeManager.UnfreezeAll<CutSceneFreezer>();
@@ -186,6 +191,7 @@ public class PlayerStateManager : MonoBehaviour
         directionCheck
             .MoveFromDirection(0.5f, directionedObject)
             .SetDragPositionFromDirection(0.5f, directionedObject);
+
 
         // Switch State
         currentPlayerState.OnUpdate(this);
@@ -420,6 +426,20 @@ public class PlayerStateManager : MonoBehaviour
     public void SetAnimation(int i)
     {
         animator.SetAnimation(i);
+    }
+    public void UpdateColors(bool clear = false)
+    {
+        Material mat = GetComponent<Renderer>().material;
+        PlayerColors.Palette currentSwordPalette = colors.swordPalettes[clear?0:SaveManager.GetSave().CurrentSword + 1];
+        PlayerColors.Palette currentShieldPalette = colors.shieldPalettes[clear?0:SaveManager.GetSave().CurrentShield + 1];
+        mat.SetColor($"_SwordColor1", currentSwordPalette.white);
+        mat.SetColor($"_SwordColor2", currentSwordPalette.light);
+        mat.SetColor($"_SwordColor3", currentSwordPalette.dark);
+        mat.SetColor($"_SwordColor4", currentSwordPalette.black);
+        mat.SetColor($"_ShieldColor1", currentShieldPalette.white);
+        mat.SetColor($"_ShieldColor2", currentShieldPalette.light);
+        mat.SetColor($"_ShieldColor3", currentShieldPalette.dark);
+        mat.SetColor($"_ShieldColor4", currentShieldPalette.black);
     }
     /*
     private void OnDrawGizmos()

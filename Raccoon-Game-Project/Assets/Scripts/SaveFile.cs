@@ -8,6 +8,8 @@ public class SaveFile
     public int TimePlayed;
     public int Money;
     public int SavePoint;
+    public float TimeOfDay;
+    public int Days;
     public bool[] HeartContainersCollected = new bool[13];
     public int ToiletPaperRolls;
     public int ComputerParts;
@@ -41,10 +43,13 @@ public class SaveFile
 
 
     // Dungeons
-    public Dungeon[] dungeons = new Dungeon[14];
+    public const int NUM_DUNGEONS = 14;
+    public Dungeon[] dungeons = new Dungeon[NUM_DUNGEONS];
+    
 
     //etc flags
-    public bool[] OverworldTreasure = new bool[100];
+    public const int NUM_CHESTS = 128;
+    public bool[] ChestOpened = new bool[NUM_CHESTS];
     public bool[] GenericFlags = new bool[10];
 }
 
@@ -55,7 +60,8 @@ public class Dungeon
     public bool MiniBossDefeated;
     public bool BossKeyObtained;
     public bool SkeletonKeyObtained;
+    public const int MAX_KEYS = 16;
+    public const int MAX_DOORS = 32;
     public bool[] KeyObtained = new bool[16];
-    public bool[] ChestOpened = new bool[16];
     public bool[] DoorsUnlocked = new bool[32];
 }

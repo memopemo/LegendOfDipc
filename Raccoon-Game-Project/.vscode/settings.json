@@ -56,5 +56,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Raccoon-Game-Project.sln"
+    "dotnet.defaultSolution": "Raccoon-Game-Project.sln",
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "workbench.preferredLightColorTheme": "Gruvbox Dark Soft",
+    "window.autoDetectColorScheme": true
 }

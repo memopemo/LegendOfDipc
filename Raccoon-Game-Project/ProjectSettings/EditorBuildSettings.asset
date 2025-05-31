@@ -36,28 +36,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Ending.unity
     guid: 17055867f48ef224a95846f00a9db951
   - enabled: 1
-    path: Assets/Scenes/Dungeon1.unity
+    path: Assets/Scenes/Dungeon0.unity
     guid: 54b64c77eb87543488fb161bb8665e19
   - enabled: 1
-    path: Assets/Scenes/Dungeon2.unity
+    path: Assets/Scenes/Dungeon1.unity
     guid: cf73455f0927e714b8724149ad97dfd1
   - enabled: 1
-    path: Assets/Scenes/Dungeon3.unity
+    path: Assets/Scenes/Dungeon2.unity
     guid: 9be8eb8866e96284bacba0e34ae4a8b5
   - enabled: 1
-    path: Assets/Scenes/Dungeon4.unity
+    path: Assets/Scenes/Dungeon3.unity
     guid: aa27a3cff02a6b34997fabbef62171ae
   - enabled: 1
-    path: Assets/Scenes/Dungeon5.unity
+    path: Assets/Scenes/Dungeon4.unity
     guid: 8446a7758e85209449ba7f797840c5cb
   - enabled: 1
-    path: Assets/Scenes/Dungeon6.unity
+    path: Assets/Scenes/Dungeon5.unity
     guid: f80c22c4218833e46ad688c54307ae4a
   - enabled: 1
-    path: Assets/Scenes/Dungeon7.unity
+    path: Assets/Scenes/Dungeon6.unity
     guid: 2ddd45c87d716aa44a149cd7a053f4f6
   - enabled: 1
-    path: Assets/Scenes/Dungeon8.unity
+    path: Assets/Scenes/Dungeon7.unity
     guid: 51ae91e6ce732fe4986b84d715bc8030
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

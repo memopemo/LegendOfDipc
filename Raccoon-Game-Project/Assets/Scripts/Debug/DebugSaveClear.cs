@@ -8,6 +8,7 @@ public class DebugSaveClear : MonoBehaviour
     public void ClearSave()
     {
         SaveManager.ResetSave();
+        Randomizer.StartRando(0);
     }
     #endif
 }

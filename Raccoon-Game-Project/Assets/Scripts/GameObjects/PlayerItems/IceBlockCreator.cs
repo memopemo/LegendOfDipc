@@ -15,10 +15,13 @@ public class IceBlock : MonoBehaviour
     const int BLOCK_POOF_PARTICLE = 0;
     const int BREAK_DESTROY_PARTICLE = 1;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         transform.position += (Vector3)(Vector2)FindFirstObjectByType<PlayerStateManager>().directionedObject.direction * 0.5f;
         transform.GetChild(0).SetParent(null, true);
+    }
+    void Start()
+    {
         heightable = GetComponent<Heightable>();
         directionedObject = GetComponent<DirectionedObject>();
         rb = GetComponent<Rigidbody2D>();

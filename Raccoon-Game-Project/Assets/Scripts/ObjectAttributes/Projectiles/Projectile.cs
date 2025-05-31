@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
 {
     public bool IsMagic;
     public UnityEvent<Vector2> OnHit;
+    public UnityEvent OnDie;
     public bool isHitting;
     float boxSize;
     void Start()
@@ -32,6 +33,14 @@ public class Projectile : MonoBehaviour
                 {
                     return;
                 }
+                if(TryGetComponent(out WandProjectile wandProjectile) && raycastHit.collider.gameObject.TryGetComponent(out WandHittable magicHittable))
+                {
+                    magicHittable.OnMagicHit(wandProjectile);
+                }
+                if(raycastHit.collider.gameObject.TryGetComponent(out Hittable hittable) && TryGetComponent(out DamagesEnemy damagesEnemy))
+                {
+                    hittable.OnHit(damagesEnemy);
+                }
                 OnHit.Invoke(raycastHit.normal);
                 isHitting = true;
                 return;
@@ -46,6 +55,14 @@ public class Projectile : MonoBehaviour
             {
                 return;
             }
+            if(TryGetComponent(out WandProjectile wandProjectile) && hit.gameObject.TryGetComponent(out WandHittable wandHittable))
+            {
+                wandHittable.OnMagicHit(wandProjectile);
+            }
+            if(hit.gameObject.TryGetComponent(out Hittable hittable) && TryGetComponent(out DamagesEnemy damagesEnemy))
+            {
+                hittable.OnHit(damagesEnemy);
+            }
             Vector2 normal = (hit.ClosestPoint(transform.position) - (Vector2)transform.position).normalized;
             print(normal);
             OnHit.Invoke(normal);
@@ -54,7 +71,6 @@ public class Projectile : MonoBehaviour
     }
     public void Die()
     {
-        GetComponent<PoofDestroy>()?.Poof();
-        Destroy(gameObject);
+        OnDie.Invoke();
     }
 }

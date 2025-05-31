@@ -126,6 +126,7 @@ MonoBehaviour:
   deathScreen: {fileID: 7989062862067326716, guid: fc97fc6a41d843c49a6d61abac882b28, type: 3}
   FallReturnPosition: {x: 0, y: 0}
   itemGameObjectLookup: {fileID: 11400000, guid: 834b9f90fa3a1004587c85d34424c9fb, type: 2}
+  colors: {fileID: 11400000, guid: f40368291d637da448388ff3a1aa78ca, type: 2}
 --- !u!114 &3190259427268747365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +157,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a2e454e70ad25424a9e4da1c97b3843a, type: 2}
   - {fileID: 11400000, guid: e05048a9cb8f61247840b6f96ca24968, type: 2}
   - {fileID: 11400000, guid: 686b9396e4c9dfc4f861f13693a4aa7b, type: 2}
-  - {fileID: 11400000, guid: 13cc03a7274e2b04cbd20727f2a9dd2f, type: 2}
-  - {fileID: 11400000, guid: 13cc03a7274e2b04cbd20727f2a9dd2f, type: 2}
+  - {fileID: 11400000, guid: feb2114fd2fa29446aa4d791f2f9c304, type: 2}
+  - {fileID: 11400000, guid: 7c8e89862a3482943b98dcddea79a989, type: 2}
   - {fileID: 11400000, guid: 13cc03a7274e2b04cbd20727f2a9dd2f, type: 2}
   - {fileID: 11400000, guid: 8d8cec1e303d7ba4cb227b54ade511c1, type: 2}
   - {fileID: 11400000, guid: 17fbcf7e56591194b901dde028f642cf, type: 2}
@@ -182,13 +183,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 186ae5d4e0d69ea40acb5509e67f3dab, type: 2}
   - {fileID: 11400000, guid: 72265e7fb5a3019468e183d79211570c, type: 2}
   - {fileID: 11400000, guid: eb6599df7ebc9ea48817106409fd8198, type: 2}
-  - {fileID: 11400000, guid: 176e1ecfbb788944585e04e2cbe0bccf, type: 2}
+  - {fileID: 11400000, guid: 432d0ca95ccd22240ab11454e974222f, type: 2}
   - {fileID: 11400000, guid: 176e1ecfbb788944585e04e2cbe0bccf, type: 2}
   - {fileID: 11400000, guid: 686b9396e4c9dfc4f861f13693a4aa7b, type: 2}
   - {fileID: 11400000, guid: c7dda762757896148aa17dee798702af, type: 2}
   - {fileID: 11400000, guid: b175aa29b33c0bc4f8ffac402a593529, type: 2}
   - {fileID: 11400000, guid: 48c432c827622f24b9305041dfb9d47b, type: 2}
   - {fileID: 11400000, guid: bf7bd0ddb680fe24a87a6090dae31cff, type: 2}
+  - {fileID: 11400000, guid: acf52e5b35f19284a866bce1e4ca318c, type: 2}
+  - {fileID: 11400000, guid: 3cdaff6306f675f4e80111f45ded2820, type: 2}
+  - {fileID: 11400000, guid: a23fb7676f4e20447b42a9e1bce75d32, type: 2}
   currentAnimation: 0
   currentAnimationFrame: 0
   finishedFrames: 0
@@ -230,7 +234,7 @@ CircleCollider2D:
   m_Radius: 0.49
 --- !u!50 &79721193425402657
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -241,8 +245,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
-  m_LinearDrag: 10
-  m_AngularDrag: 0.05
+  m_LinearDamping: 10
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -416,19 +420,6 @@ MonoBehaviour:
     followNoiseMaker: 0
     spatialBlend: 0
   - pool:
-    - {fileID: 8300000, guid: 4b9d1835ca837314c9d29c3c15a97275, type: 3}
-    - {fileID: 8300000, guid: 6f56a46611f784346acf31b27b0b4a66, type: 3}
-    - {fileID: 8300000, guid: c175d3050b31e914db638e61ead125f3, type: 3}
-    - {fileID: 8300000, guid: ff957be48c7adc14b836d8bd2706af80, type: 3}
-    - {fileID: 8300000, guid: 279837bff09a139499daabdd30fc9e0b, type: 3}
-    - {fileID: 8300000, guid: e47c08da08b09a34eba3a70106588994, type: 3}
-    - {fileID: 8300000, guid: 0c43de1f7fdf3784794b556c098fb5eb, type: 3}
-    isCancelable: 0
-    varyPitch: 1
-    looping: 0
-    followNoiseMaker: 0
-    spatialBlend: 0
-  - pool:
     - {fileID: 8300000, guid: b3646e2b5cf5244448b2adeedd122570, type: 3}
     - {fileID: 8300000, guid: 2ff99965f7a676244b951d400cdf885a, type: 3}
     - {fileID: 8300000, guid: f21bbbfb920c5024b9748b0beafb1d07, type: 3}
@@ -455,6 +446,19 @@ MonoBehaviour:
     followNoiseMaker: 0
     spatialBlend: 0
   - pool:
+    - {fileID: 8300000, guid: 4b9d1835ca837314c9d29c3c15a97275, type: 3}
+    - {fileID: 8300000, guid: 6f56a46611f784346acf31b27b0b4a66, type: 3}
+    - {fileID: 8300000, guid: c175d3050b31e914db638e61ead125f3, type: 3}
+    - {fileID: 8300000, guid: ff957be48c7adc14b836d8bd2706af80, type: 3}
+    - {fileID: 8300000, guid: 279837bff09a139499daabdd30fc9e0b, type: 3}
+    - {fileID: 8300000, guid: e47c08da08b09a34eba3a70106588994, type: 3}
+    - {fileID: 8300000, guid: 0c43de1f7fdf3784794b556c098fb5eb, type: 3}
+    isCancelable: 0
+    varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
     - {fileID: 8300000, guid: 7cac6675f71b74b4697caa18b5779e72, type: 3}
     isCancelable: 0
     varyPitch: 1
@@ -465,6 +469,27 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d44b3c1e4371b8642b16c682dc454efe, type: 3}
     isCancelable: 0
     varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: c45ba70fcb867be43a7d0d2a67dec99e, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: 172ec86c265aa1a4096e880e4d656b50, type: 3}
+    isCancelable: 0
+    varyPitch: 0
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
+  - pool:
+    - {fileID: 8300000, guid: 777b2fc9c18cedb47b0513ef985d5672, type: 3}
+    isCancelable: 0
+    varyPitch: 0
     looping: 0
     followNoiseMaker: 0
     spatialBlend: 0
@@ -554,6 +579,7 @@ MonoBehaviour:
   - {fileID: 7070755822354513567, guid: 2de64bf4df91d7947b10e8d49466657e, type: 3}
   - {fileID: 6662679793016555163, guid: edcb8b6d73c00974d9b9fb93ecfbb52e, type: 3}
   - {fileID: 418876962899451831, guid: 8ee4b73b32d2a2748b7d4fc9ce2ef0f2, type: 3}
+  - {fileID: 136942867248966014, guid: 2da1b62b88f0c80418a000f2dcb972aa, type: 3}
 --- !u!114 &1385383592143083572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +657,6 @@ GameObject:
   - component: {fileID: 1697914056731706096}
   - component: {fileID: 5578908937437648385}
   - component: {fileID: 6638730345853251109}
-  - component: {fileID: 6292541919496504444}
   - component: {fileID: 7077562964732921564}
   m_Layer: 0
   m_Name: SwordHitBox
@@ -713,61 +738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bca5d0ae6fdf08408256d0a9d560fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &6292541919496504444
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3817215317610549563}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 5698033361212879630, guid: 2d66423f8c7652d4a86dc9e0db6ae8ad, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!114 &7077562964732921564
 MonoBehaviour:
   m_ObjectHideFlags: 0

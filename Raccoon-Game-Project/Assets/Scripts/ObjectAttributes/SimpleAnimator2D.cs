@@ -56,7 +56,7 @@ namespace Animator2D
             spriteRenderer.sprite = GetFrameBasedOnDirection(currentAnimationFrame);
         }
 
-        public void SetAnimation(int animationIndex, int frame = 0)
+        public void SetAnimation(int animationIndex, int frame)
         {
             if (animationIndex == currentAnimation) return;
             if (animations.GetUpperBound(0) < animationIndex)
@@ -74,6 +74,10 @@ namespace Animator2D
             spriteRenderer.sprite = GetFrameBasedOnDirection(frame);
             currentFrameTick = 0;
             finishedFrames = 0;
+        }
+        public void SetAnimation(int animationIndex)
+        {
+            SetAnimation(animationIndex, 0);
         }
         public void RestartAnimation(int frame = 0)
         {

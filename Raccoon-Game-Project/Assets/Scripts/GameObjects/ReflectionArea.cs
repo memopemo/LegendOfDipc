@@ -6,28 +6,28 @@ public class ReflectionArea : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collider)
     {
-        
-        if(collider.TryGetComponent(out PlayerStateManager player))
+
+        if (collider.TryGetComponent(out PlayerStateManager player))
         {
             _ = new GameObject("PlayerReflection", typeof(PlayerWaterReflection));
 
         }
-        else
+        else if(collider.TryGetComponent(out SpriteRenderer r))
         {
-            GameObject WaterReflectionObj = new ("ObjReflection", typeof(WaterReflection));
+            GameObject WaterReflectionObj = new("ObjReflection", typeof(WaterReflection));
             WaterReflectionObj.transform.parent = collider.transform;
         }
-        
+
     }
     void OnTriggerExit2D(Collider2D collider)
     {
-        if(collider.TryGetComponent(out PlayerStateManager player))
+        if (collider.TryGetComponent(out PlayerStateManager player))
         {
             FindFirstObjectByType<PlayerWaterReflection>().Exit();
         }
-        else
+        else if (collider.TryGetComponent(out WaterReflection waterReflection))
         {
-            collider.gameObject.GetComponentInChildren<WaterReflection>().Exit();
+            waterReflection.Exit();
         }
     }
 }

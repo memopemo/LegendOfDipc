@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab6bb17916223447993fdc96b0188e9, type: 3}
+  m_Name: SongList
+  m_EditorClassIdentifier: 
+  sceneSongs:
+    _serializedList:
+    - Key:
+        sceneAsset: {fileID: 102900000, guid: cdb53de5487f990419ed8ae251587a0e, type: 3}
+        scenePath: Assets/Scenes/Title.unity
+      Value: {fileID: 11400000, guid: c77283105d4654e4f9c9380dbeb15afb, type: 2}
+    - Key:
+        sceneAsset: {fileID: 102900000, guid: ab96923b61658fe49bdef3813b4b2acd, type: 3}
+        scenePath: Assets/Scenes/Preload.unity
+      Value: {fileID: 11400000, guid: c77283105d4654e4f9c9380dbeb15afb, type: 2}
+    - Key:
+        sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+        scenePath: Assets/Scenes/SampleScene.unity
+      Value: {fileID: 11400000, guid: 8ff6a478e9992c14a82e16ca2f69f861, type: 2}
+    - Key:
+        sceneAsset: {fileID: 102900000, guid: 369ceb200c2b6a048b7edf5de5ad3c54, type: 3}
+        scenePath: Assets/Scenes/PlayerHouse.unity
+      Value: {fileID: 11400000, guid: 9ec44445e8391554eadf7c38f4698d90, type: 2}
+  errorSong: {fileID: 11400000, guid: 0806ae155a93bc5478e7c981bb048227, type: 2}

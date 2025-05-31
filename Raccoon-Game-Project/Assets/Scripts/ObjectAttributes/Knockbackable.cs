@@ -3,30 +3,23 @@ using UnityEngine;
 class Knockbackable : MonoBehaviour
 {
     Vector2 knockBackDirection; //direction to be knocked back in.
-    float knockBackTimer; //timer before being able to be knocked back again.
     [SerializeField] GameObject dustParticle;
     Rigidbody2D rb;
     [SerializeField] MonoBehaviour[] disabledOnKnockBack;
-    bool componentsEnabled;
+    bool componentsEnabled = true;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    void Update()
-    {
-        Timer.DecrementTimer(ref knockBackTimer);
-        if(!componentsEnabled && knockBackTimer <= 0)
-        {
-            ReenableComponents();
-        }
-    }
     //Applies knockback while facing in the direction we were hit from.
-    public void ApplyKnockBack(Transform from)
+    public void ApplyKnockBack(Vector2 from)
     {
-        if (knockBackTimer > 0) return;
+        if (IsInvoking()) return;
 
         // This is which direction to move in after we were hit, opposite from where we were hit.
-        knockBackDirection = (transform.position - from.position).normalized;
+        knockBackDirection = ((Vector2)transform.position - from).normalized;
+
+        SetComponents(false);
 
         // Some objects may not have a direction, but if they do, we face the character towards the hit source.
         if (TryGetComponent(out DirectionedObject direction))
@@ -37,26 +30,27 @@ class Knockbackable : MonoBehaviour
         Instantiate(
             dustParticle,
             transform.position + Vector3.down * 0.5f,
-            Rotation.Get2DAngleFromPoints(transform.position, from.parent ? from.parent.position: from.position), transform);
+            Rotation.Get2DAngleFromPoints(transform.position, from), transform);
 
         // Set knockback timer.
-        knockBackTimer = 0.2f;
+        Invoke(nameof(Unknockback), 0.2f);
 
         // Actually knock back.
         rb.AddForce(knockBackDirection * 3, ForceMode2D.Impulse);
 
-        foreach (var item in disabledOnKnockBack)
-        {
-            item.enabled = false;
-        }
-        componentsEnabled = false;
+
     }
-    public void ReenableComponents()
+    void Unknockback()
     {
+        SetComponents(true);
+    }
+    public void SetComponents(bool On)
+    {
+        if (componentsEnabled == On) return;
         foreach (var item in disabledOnKnockBack)
         {
-            item.enabled = true;
+            item.enabled = On;
         }
-        componentsEnabled = true;
+        componentsEnabled = On;
     }
 }

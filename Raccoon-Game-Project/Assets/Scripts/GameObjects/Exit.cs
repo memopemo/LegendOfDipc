@@ -17,25 +17,32 @@ public class Exit : MonoBehaviour
         }
         if (collision.TryGetComponent(out PlayerStateManager _))
         {
-            FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
-            FreezeManager.FreezeAll<PauseFreezer>();
-            StartCoroutine(nameof(WalkPlayerOut));
-            try
-            {
-                FindAnyObjectByType<SongPlayer>()?.OnSceneChange(scene);
-            }
-            catch
-            {
-                Debug.Log("No Song Player.");
-            }
-
-            Invoke(nameof(Enter), 1); //exit scene and enter next scene.
+            StartCoroutine(nameof(WalkPlayerOut)); //we only walk out when we are using the exit directly.
+            UseExit();
         }
+    }
+
+    //this allows us to indirectly use the exit if we need to (like for exiting a dungeon)
+    public void UseExit()
+    {
+        FindFirstObjectByType<CircleFadeInUI>().Out(); //play fadeout animation
+        FreezeManager.FreezeAll<PauseFreezer>();
+        try
+        {
+            FindAnyObjectByType<SongPlayer>()?.OnSceneChange(scene);
+        }
+        catch
+        {
+            Debug.Log("No Song Player.");
+        }
+
+        Invoke(nameof(Enter), 1); //exit scene and enter next scene.
     }
     IEnumerator WalkPlayerOut()
     {
         PlayerStateManager player = FindFirstObjectByType<PlayerStateManager>();
         player.SetAnimation(25);
+        
         //huh, ive never seen this. this is really cool!
         var exitDirectionVector = exitDirection switch
         {
@@ -45,6 +52,7 @@ public class Exit : MonoBehaviour
             ExitDirection.Right => Vector3.right,
             _ => Vector3.zero,
         };
+        player.directionedObject.direction = Vector2Int.RoundToInt(exitDirectionVector);
         while (true)
         {
             player.transform.position += exitDirectionVector * Time.deltaTime;
@@ -73,6 +81,7 @@ public static class ExitHandler
     public static int exitObjectIndex = 0;
     public enum Type { ChangingRooms, LoadingSavePoint, GoingUnderwater, Surfacing, ViaPipe }
     public static Type type;
+
     public static void ExitChangingRooms(int toEntranceIndex)
     {
         type = Type.ChangingRooms;

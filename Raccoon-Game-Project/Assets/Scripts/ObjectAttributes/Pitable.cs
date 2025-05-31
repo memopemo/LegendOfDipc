@@ -11,6 +11,8 @@ public class Pitable : MonoBehaviour
     bool FallingDownPit; // False is Drowning.
 
     PlayerStateManager player;
+    Platform currentPlatform;
+    Collider2D box;
 
 
     // Start is called before the first frame update
@@ -18,13 +20,22 @@ public class Pitable : MonoBehaviour
     {
         height = GetComponent<Heightable>();
         TryGetComponent(out player);
+        TryGetComponent(out box);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (height && height.height > 0) return;
+        if (height && height.height > 0) 
+        {
+            if(currentPlatform != null)
+            {
+                currentPlatform = null;
+                transform.parent = null;
+            }
+            return;
+        }
         if (timePitted > 0)
         {
             if (timePitted > TIME_FALLING_BEFORE_DONE)
@@ -40,11 +51,15 @@ public class Pitable : MonoBehaviour
         else
         {
             if (Time.frameCount % 3 != 0) return; //only run every 3 frames.
-            CollisionCheck pitCheck = new(GetComponent<Collider2D>());
+            CollisionCheck pitCheck = new(box);
             pitCheck
             .SetType(CollisionCheck.CollisionType.Point)
             .SetFindTriggers(true)
-            .SetDebug(true);
+            .SetDebug(true).SetRelativePosition(box.offset);
+            if(pitCheck.Evaluate<Platform>((t)=>{currentPlatform = t; transform.parent = t.transform;}))
+            {
+                return;
+            }
             pitCheck.Evaluate<Pit>((p) =>
             {
                 if (p.TryGetComponent(out Water _))

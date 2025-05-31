@@ -13,6 +13,8 @@ public class Drone : MonoBehaviour
     public bool isReturning;
     public PlayerStateManager player;
     Inventory inventory; //for if we change items.
+
+    AudioSource flySound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class Drone : MonoBehaviour
         player = FindAnyObjectByType<PlayerStateManager>();
         player.SwitchState(new NoInputPlayerState());
         inventory = FindFirstObjectByType<Inventory>();
+        flySound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,7 +35,8 @@ public class Drone : MonoBehaviour
         if(isReturning)
         {
             transform.position = Vector3.Lerp(transform.position, player.transform.position, Time.deltaTime*10);
-            heightable.height = Mathf.MoveTowards(heightable.height, 0, Time.deltaTime*10);
+            heightable.height = Mathf.Lerp(heightable.height, 0, Time.deltaTime*10);
+            flySound.pitch = Mathf.Clamp(Vector2.Distance(transform.position, player.transform.position)/10, 0.75f, 1.5f);
             if(Vector2.Distance(transform.position, player.transform.position) < 1)
             {
                 player.SwitchState(new DefaultPlayerState());
@@ -52,13 +56,20 @@ public class Drone : MonoBehaviour
             if(timer > curve.keys.Last().time)
             {
                 timer = curve.keys[1].time;
+                flySound.pitch = Mathf.Clamp(rb.linearVelocity.magnitude/4f, 0.75f, 1.5f);
+            }
+            else
+            {
+                flySound.pitch = Mathf.Clamp(heightable.height, 0.75f, 1.5f);
             }
             heightable.height = curve.Evaluate(timer)*HEIGHT;
 
             //position and rotation
             transform.GetChild(0).rotation = Quaternion.Euler(0,0,Rotation.DirectionToAngle(rb.linearVelocity));
             rb.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))*40);
+            
         }
-    
+        
+        
     }
 }

@@ -12,6 +12,9 @@ public class DefaultPlayerState : IPlayerState
     const int ANIM_STOP_RUN = 1;
     const int ANIM_LAND = 3;
     const int ANIM_WALK = 22;
+    const int ANIM_IDLE_EQUIPMENT = 37;
+    const int ANIM_RUN_EQUIPMENT = 38;
+    const int ANIM_WALK_EQUIPMENT = 39;
 
     //We specify left to up and up to left because they flip differently for a brief moment.
     const int ANIM_TURN_DIAG_LEFT_TO_UP = 15;
@@ -35,11 +38,12 @@ public class DefaultPlayerState : IPlayerState
 
     void IPlayerState.OnEnter(PlayerStateManager manager)
     {
-
+        manager.UpdateColors();
     }
 
     void IPlayerState.OnLeave(PlayerStateManager manager)
     {
+        manager.UpdateColors(true);
     }
 
     //there will be a HELLA ton of SwitchState then early return statements everywhere.
@@ -248,6 +252,7 @@ public class DefaultPlayerState : IPlayerState
 
     void AnimatePlayer(PlayerStateManager manager)
     {
+        bool hasEquipment = SaveManager.GetSave().CurrentSword >= 0 && SaveManager.GetSave().CurrentShield >= 0;
         // Landing
         if (manager.stateTransitionTimer1 > 0 && manager.previousState is JumpingPlayerState or JumpingLedgePlayerState)
         {
@@ -302,7 +307,7 @@ public class DefaultPlayerState : IPlayerState
             }
             if (manager.rawInput.magnitude > WALK_THRESHOLD)
             {
-                manager.animator.SetAnimation(ANIM_RUN);
+                manager.animator.SetAnimation(hasEquipment ? ANIM_RUN_EQUIPMENT : ANIM_RUN);
                 if (manager.animator.currentAnimationFrame == 0 || manager.animator.currentAnimationFrame == 3)
                 {
                     if (!playedStepSound)
@@ -318,7 +323,7 @@ public class DefaultPlayerState : IPlayerState
             }
             else
             {
-                manager.animator.SetAnimation(ANIM_WALK);
+                manager.animator.SetAnimation(hasEquipment ? ANIM_WALK_EQUIPMENT : ANIM_WALK);
             }
 
             runToIdleTransitionFrames = RUN_TO_IDLE_HOLD_FRAMES;
@@ -334,7 +339,7 @@ public class DefaultPlayerState : IPlayerState
         }
 
         //Idle
-        manager.animator.SetAnimation(ANIM_IDLE);
+        manager.animator.SetAnimation(hasEquipment ? ANIM_IDLE_EQUIPMENT : ANIM_IDLE);
 
     }
 }

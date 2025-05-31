@@ -40,15 +40,17 @@ public class SwordPlayerState : IPlayerState
         }
         //both Swing and 3Hit start with the same animation, SWING_FORE = 0, so no need to do anything.
         manager.animator.SetAnimation(anim);
-        NudgeInDirectionToLookCool(manager);
+        //NudgeInDirectionToLookCool(manager);
         manager.swordHitBoxObject.SetActive(true);
         swordHitBox = manager.swordHitBoxObject.GetComponent<SwordHitBox>();
-        manager.noiseMaker.Play(SWORD_SOUND_OFFSET);
+        manager.noiseMaker.Play(SWORD_SOUND_OFFSET+(typeOfSword == 0 ? 2 : 0));
+        manager.UpdateColors();
     }
 
     public void OnLeave(PlayerStateManager manager)
     {
         manager.swordHitBoxObject.SetActive(false);
+        manager.UpdateColors(true);
     }
 
     public void OnUpdate(PlayerStateManager manager)
@@ -72,7 +74,7 @@ public class SwordPlayerState : IPlayerState
             swordTimerSecs = 0;
             NudgeInDirectionToLookCool(manager);
             swordHitBox.TripleSwipeAgain((Sword.SwingType)tripleHitCount);
-            manager.noiseMaker.Play(SWORD_SOUND_OFFSET);
+            manager.noiseMaker.Play(SWORD_SOUND_OFFSET+tripleHitCount);
         }
         else
         {
@@ -87,7 +89,7 @@ public class SwordPlayerState : IPlayerState
     // nudges the player a little bit forward to give some weight to swinging.
     public void NudgeInDirectionToLookCool(PlayerStateManager manager)
     {
-        if (manager.rigidBody.linearVelocity == Vector2.zero) return; //prevent nudging if the player started swinging from a standstill.
-        manager.rigidBody.linearVelocity += (Vector2)manager.directionedObject.direction * nudgeSword;
+        // if (manager.rigidBody.linearVelocity == Vector2.zero) return; //prevent nudging if the player started swinging from a standstill.
+        // manager.rigidBody.linearVelocity += (Vector2)manager.directionedObject.direction * nudgeSword;
     }
 }

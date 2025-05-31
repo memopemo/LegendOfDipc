@@ -12,6 +12,10 @@ public class ParticleMaker : MonoBehaviour
         Debug.Assert(index >= 0, "index is below 0");
         return Instantiate(particles[index], transform.position, transform.rotation);
     }
+    public void BasicCreateParticle(int index)
+    {
+        CreateParticle(index);
+    }
     public GameObject CreateCustomParticle(GameObject go)
     {
         return Instantiate(go, transform.position, transform.rotation);

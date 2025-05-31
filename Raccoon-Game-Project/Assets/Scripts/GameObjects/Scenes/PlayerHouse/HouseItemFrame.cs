@@ -109,5 +109,6 @@ public class HouseItemFrame : MonoBehaviour
                 break;
 
         }
+        FindFirstObjectByType<PlayerStateManager>().UpdateColors();
     }
 }

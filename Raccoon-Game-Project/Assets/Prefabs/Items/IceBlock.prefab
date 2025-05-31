@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
+  decoySprite: {fileID: 0}
   shadowSprite: {fileID: -4263704775227353237, guid: 61e40b2623212484e95f9181ed550407, type: 3}
 --- !u!114 &7067369080221476513
 MonoBehaviour:
@@ -184,8 +185,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5625}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.42857143}
+    oldSize: {x: 1, y: 1.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -195,7 +196,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!50 &7831485992898277150
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -206,8 +207,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 5
   isBuffed: 0
+  knockBack: 0
 --- !u!114 &4908142751785376895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles:
   - {fileID: 2992529691740880293, guid: 76f8f67ad8fe67b4bb3a98038c90182a, type: 3}
-  - {fileID: 7648112213651410753, guid: e9d7c5e64fdf52b468b789df8f1b19c6, type: 3}
+  - {fileID: 7648112213651410753, guid: 05214bcda087e8848875f9a446bdf2ad, type: 3}
 --- !u!1 &5276420470543536522
 GameObject:
   m_ObjectHideFlags: 0

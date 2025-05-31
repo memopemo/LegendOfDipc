@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1062853960548882410}
   - component: {fileID: 8826119594314395301}
   - component: {fileID: 8425162700311290020}
+  - component: {fileID: 730783204931303751}
+  - component: {fileID: -250856855178486030}
   m_Layer: 0
   m_Name: SmallExplosion
   m_TagString: Untagged
@@ -4890,7 +4892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6971517ef8f68f541b8b7fe64831ad28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 4
 --- !u!114 &8425162700311290020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4908,4 +4909,35 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 16cace571d96e25449641b8efc9cd251, type: 3}
     isCancelable: 0
     varyPitch: 1
+    looping: 0
+    followNoiseMaker: 0
+    spatialBlend: 0
   interruptableClip: {fileID: 0}
+--- !u!114 &730783204931303751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071764436163082100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0897895d53d3a948b0256f357e983ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 4
+  isBuffed: 0
+  knockBack: 1
+--- !u!114 &-250856855178486030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071764436163082100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ddbd9fb9708c94b9b24ab6ed1760ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 4

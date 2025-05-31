@@ -1,12 +1,16 @@
 using System.Collections;
 using UnityEngine;
+
 public class ImportantCollectable : MonoBehaviour
 {
-    public enum Type { HeartContainer, StoryKey, Pendant, ToiletPaper }
+    public enum Type { HeartContainer, Pendant, ToiletPaper, BossKey, SkeletonKey }
+
+    private const float RAISE_HEIGHT = 1.25f;
     [SerializeField] Type type;
     int index;
     PlayerStateManager player;
     SaveFile save;
+    
     void Start()
     {
         index = GameObjectParser.GetIndexFromName(gameObject);
@@ -18,27 +22,25 @@ public class ImportantCollectable : MonoBehaviour
         switch (type)
         {
             case Type.HeartContainer:
-                if (!save.HeartContainersCollected[index])
-                {
-                    gameObject.SetActive(true);
-                }
-                break;
-            case Type.StoryKey:
-                if (!save.DemonKeys[index])
-                {
-                    gameObject.SetActive(true);
-                }
+                if (save.HeartContainersCollected[index])
+                    return;
                 break;
             case Type.Pendant:
-                if (!save.Pendants[index])
-                {
-                    gameObject.SetActive(true);
-                }
+                if (save.Pendants[index])
+                    return;
                 break;
-            case Type.ToiletPaper:
-                gameObject.SetActive(true);
+            case Type.BossKey:
+                if (save.dungeons[index].BossKeyObtained)
+                    return;
+                break;
+            case Type.SkeletonKey:
+                if (save.dungeons[index].SkeletonKeyObtained)
+                    return;
+                break;
+            default:
                 break;
         }
+        gameObject.SetActive(true);
     }
 
     public void OnCollect()
@@ -54,7 +56,15 @@ public class ImportantCollectable : MonoBehaviour
         player.SetAnimation(36);
         player.directionedObject.direction = Vector2Int.down;
         transform.position = player.transform.position;
-        GetComponent<MagicHover>().distanceOffGround = 1.25f;
+        if(TryGetComponent(out MagicHover magicHover))
+        {
+            magicHover.distanceOffGround = RAISE_HEIGHT;
+        }
+        else if(TryGetComponent(out Heightable heightable))
+        {
+            heightable.height = RAISE_HEIGHT;
+        }
+        
         yield return new WaitForSeconds(2);
         FreezeManager.UnfreezeAll<CutSceneFreezer>();
         switch (type)
@@ -63,14 +73,17 @@ public class ImportantCollectable : MonoBehaviour
                 save.HeartContainersCollected[index] = true;
                 PlayerHealth.Heal(100, player);
                 break;
-            case Type.StoryKey:
-                save.DemonKeys[index] = true;
-                break;
             case Type.Pendant:
                 save.Pendants[index] = true;
                 break;
             case Type.ToiletPaper:
                 save.ToiletPaperRolls++;
+                break;
+            case Type.BossKey:
+                save.dungeons[index].BossKeyObtained = true;
+                break;
+            case Type.SkeletonKey:
+                save.dungeons[index].SkeletonKeyObtained = true;
                 break;
         }
         GetComponent<PoofDestroy>().PoofAndDestroy();

@@ -7,23 +7,23 @@ public class Chest : MonoBehaviour
 {
     SimpleAnimator2D simpleAnimator2D;
     [SerializeField] ChestTreasureList chestTreasureList;
-    [SerializeField] int indexIntoChestTreasureList;
-    ChestTreasureList.ChestTreasure chestTreasure;
+    [SerializeField] int indexIntoChestTreasureList; //this is the treasure to give.
+    Treasure chestTreasure;
     [SerializeField] bool isImportant; //if important, player holds both hands up.
     [SerializeField] GameObject itemHeldUp;
     NoiseMaker noiseMaker;
-    int dungeon = -1;
-    const int WHAT_CHAR_INDEX_IS_AFTER_THE_STRING_DUNGEON = 7;
+    SaveFile saveFile;
     void Start()
     {
-        if (gameObject.scene.name.StartsWith("Dungeon"))
+        //chest index in name is used for telling the save file that this chest has been opened.
+        if(Randomizer.isRandoActive)
         {
-            dungeon = int.Parse(gameObject.scene.name[7].ToString());
+            indexIntoChestTreasureList = Randomizer.randomizedChestIndexMapping[indexIntoChestTreasureList];
         }
         noiseMaker = GetComponent<NoiseMaker>();
         simpleAnimator2D = GetComponent<SimpleAnimator2D>();
         GetComponent<Interactable>().OnInteract.AddListener(OpenChest);
-        SaveFile sf = SaveManager.GetSave();
+        saveFile = SaveManager.GetSave();
 
         if (indexIntoChestTreasureList < 0 || indexIntoChestTreasureList >= chestTreasureList.chestTreasure.Length)
         {
@@ -31,29 +31,15 @@ public class Chest : MonoBehaviour
             SetAsUsed();
             return;
         }
-        if (InDungeon)
-        {
-            if (sf.dungeons[dungeon].ChestOpened[indexIntoChestTreasureList])
-            {
-                Debug.Log("Empty because dungeon treasure already obtained according to save file.");
-                SetAsUsed();
-            }
-            ChestTreasureList.ChestTreasure ct = chestTreasureList.chestTreasure[indexIntoChestTreasureList];
-            if (ct.giveWhat == ChestTreasureList.GiveWhat.Key && sf.dungeons[dungeon].KeyObtained[ct.indexOrQuantity])
-            {
-                Debug.Log("Empty because key loot is already obtained according to save file.");
-                SetAsUsed();
-            }
-        }
         else
         {
-            if (indexIntoChestTreasureList < 0 || indexIntoChestTreasureList >= sf.OverworldTreasure.Length)
+            if (indexIntoChestTreasureList < 0 || indexIntoChestTreasureList >= saveFile.ChestOpened.Length)
             {
-                Debug.LogError($"index {indexIntoChestTreasureList} into Overworld Save File Treasure is not in range! (0, {sf.OverworldTreasure.Length})");
+                Debug.LogError($"index {indexIntoChestTreasureList} into Overworld Save File Treasure is not in range! (0, {saveFile.ChestOpened.Length})");
                 SetAsUsed();
                 return;
             }
-            if (sf.OverworldTreasure[indexIntoChestTreasureList])
+            if (saveFile.ChestOpened[indexIntoChestTreasureList])
             {
                 Debug.Log("Empty because overworld treasure already obtained according to save file.");
                 SetAsUsed();
@@ -113,90 +99,12 @@ public class Chest : MonoBehaviour
         FreezeManager.UnfreezeAll<PauseFreezer>(); //return gameplay back to useable state
         SetAsUsed(); //done.
 
-        if (InDungeon)
-        {
-            SaveManager.GetSave().dungeons[dungeon].ChestOpened[indexIntoChestTreasureList] = true;
-        }
-        else
-        {
-            SaveManager.GetSave().OverworldTreasure[indexIntoChestTreasureList] = true;
-        }
-
-
+        saveFile.ChestOpened[indexIntoChestTreasureList] = true;
     }
-
-    private bool InDungeon => dungeon >= 0;
 
     void ApplyChestsContents()
     {
-        int indexOrQuantity = chestTreasure.indexOrQuantity; // saving on typing
-
-        SaveFile save = SaveManager.GetSave();
-        Dungeon dungeonData = null;
-        if (InDungeon)
-        {
-            dungeonData = save.dungeons[dungeon];
-        }
-
-
-        switch (chestTreasure.giveWhat)
-        {
-            case ChestTreasureList.GiveWhat.Nothing:
-                break;
-
-            case ChestTreasureList.GiveWhat.KeySelectableItem:
-                save.ObtainedKeyItems[indexOrQuantity] = true;
-                SelectedItem.KeyItem = indexOrQuantity; //select new item as ease to find out what it does.
-                break;
-
-            case ChestTreasureList.GiveWhat.KeyUnselectableItem:
-                save.ObtainedKeyUnselectableItems[indexOrQuantity] = true;
-                break;
-
-            case ChestTreasureList.GiveWhat.ConsumableItem:
-                SaveManager.AddConsumableItem(indexOrQuantity); //used as index.
-                break;
-
-            case ChestTreasureList.GiveWhat.Money:
-                save.Money += indexOrQuantity;
-                break;
-
-            case ChestTreasureList.GiveWhat.Furniture:
-                save.HouseItems[indexOrQuantity] = true;
-                break;
-
-            case ChestTreasureList.GiveWhat.Sword:
-                save.Swords[indexOrQuantity] = true;
-                save.CurrentSword = indexOrQuantity;
-                break;
-
-            case ChestTreasureList.GiveWhat.Shield:
-                save.Shields[indexOrQuantity] = true;
-                save.CurrentShield = indexOrQuantity;
-                break;
-
-            case ChestTreasureList.GiveWhat.Boomerang:
-                save.Boomerangs[indexOrQuantity] = true;
-                save.CurrentBoomerang = indexOrQuantity;
-                break;
-
-            case ChestTreasureList.GiveWhat.Armor:
-                save.Armors[indexOrQuantity] = true;
-                save.CurrentArmor = indexOrQuantity;
-                break;
-            case ChestTreasureList.GiveWhat.HeartContainer:
-                save.HeartContainersCollected[indexOrQuantity] = true;
-                PlayerHealth.Heal(2);
-                break;
-            case ChestTreasureList.GiveWhat.Key when InDungeon:
-                dungeonData.KeyObtained[indexOrQuantity] = true;
-                break;
-            case ChestTreasureList.GiveWhat.SkeletonKey when InDungeon:
-                dungeonData.SkeletonKeyObtained = true;
-                break;
-            case ChestTreasureList.GiveWhat.BossKey when InDungeon:
-                dungeonData.BossKeyObtained = true;
-                break;
-        }
+        chestTreasure.OnRecieved();
+        FindFirstObjectByType<PlayerStateManager>().UpdateColors(); //update colors if sword/cheild/player were changed.
     }
 }

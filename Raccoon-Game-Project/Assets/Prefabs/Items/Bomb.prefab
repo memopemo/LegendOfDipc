@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5157601079322347037}
   - component: {fileID: 2607276324154197000}
   - component: {fileID: 7401782279436208148}
+  - component: {fileID: -2681593250662289642}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -60,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 72ab7a80bd5856845a956214f317662b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,7 +157,7 @@ CircleCollider2D:
   m_Radius: 0.4
 --- !u!50 &2607276324154197000
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -167,8 +168,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.0001
-  m_LinearDrag: 1000
-  m_AngularDrag: 0.05
+  m_LinearDamping: 1000
+  m_AngularDamping: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -195,3 +196,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animations:
   - {fileID: 11400000, guid: 79fd2254d75f2d14196b939b8a091a3f, type: 2}
+--- !u!114 &-2681593250662289642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351216812619621673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8911d3c8b3ca6489e0c9ffc36a5bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  find: {r: 0.90196085, g: 0.27058825, b: 0.22352943, a: 0}
+  flashingPattern:
+  - {r: 0.94117653, g: 0.94117653, b: 0.94117653, a: 0}
+  - {r: 0.90196085, g: 0.27058825, b: 0.22352943, a: 1}
+  - {r: 0.94117653, g: 0.94117653, b: 0.94117653, a: 1}
+  - {r: 0.90196085, g: 0.27058825, b: 0.22352943, a: 1}
+  rate: 0.125

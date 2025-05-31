@@ -11,6 +11,7 @@ public class HoverPlayerState : IPlayerState
     const float MAX_JUMP_TIME = 0.5f;
     const float MAX_FLOAT_TIME = 3f;
     const float MOVEMENT_SPEED = 6f;
+    private const int SPARKLE = 3;
 
     public HoverPlayerState(HoverType hoverType)
     {
@@ -59,6 +60,11 @@ public class HoverPlayerState : IPlayerState
         if (hoverType == HoverType.Feather)
         {
             CommonPlayerState.MovePlayerRaw(manager, MOVEMENT_SPEED); //hover feather allows all directional movement.
+            if(Time.frameCount % 5 == 0)
+            {
+                GameObject sparkle = manager.GetComponent<ParticleMaker>().CreateParticle(SPARKLE);
+                sparkle.transform.position += Vector3.up * (manager.height.height-0.5f);
+            }
         }
         else //umbrella only allows movement in the axis of the entering direction.
         {

@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 //a remappable button thing for easy access.
 public static class Buttons
 {
+    public static bool isUsingButtons;
     public static Button Sword = new("A", KeyCode.Z);
     public static Button KeyItem = new("B", KeyCode.X);
     public static Button ConsumableItem = new("X", KeyCode.C);
@@ -28,6 +30,14 @@ public static class Buttons
         {
             return GetTriggerDown(buttonThing.ControllerName) || Input.GetKeyDown(buttonThing.KeyName);
         }
+        if (Input.GetButton(buttonThing.ControllerName))
+        {
+            isUsingButtons = true;
+        }
+        else if (Input.GetKey(buttonThing.KeyName))
+        {
+            isUsingButtons = false;
+        }
         return Input.GetButtonDown(buttonThing.ControllerName) || Input.GetKeyDown(buttonThing.KeyName);
     }
     public static bool IsButtonHeld(Button buttonThing)
@@ -36,6 +46,15 @@ public static class Buttons
         {
             return GetTriggerHeld(buttonThing.ControllerName) || Input.GetKey(buttonThing.KeyName);
         }
+
+        if (Input.GetButton(buttonThing.ControllerName))
+        {
+            isUsingButtons = true;
+        }
+        else if (Input.GetKey(buttonThing.KeyName))
+        {
+            isUsingButtons = false;
+        }
         return Input.GetButton(buttonThing.ControllerName) || Input.GetKey(buttonThing.KeyName);
     }
     public static bool IsButtonUp(Button buttonThing)
@@ -43,6 +62,14 @@ public static class Buttons
         if (buttonThing.ControllerName == "ZL" || buttonThing.ControllerName == "ZR")
         {
             return GetTriggerUp(buttonThing.ControllerName) || Input.GetKeyUp(buttonThing.KeyName);
+        }
+        if (Input.GetButton(buttonThing.ControllerName))
+        {
+            isUsingButtons = true;
+        }
+        else if (Input.GetKey(buttonThing.KeyName))
+        {
+            isUsingButtons = false;
         }
         return Input.GetButtonUp(buttonThing.ControllerName) || Input.GetKeyUp(buttonThing.KeyName);
     }
@@ -83,6 +110,11 @@ public static class Buttons
         }
         TriggerAxisHeld = inputtedTriggerAxis;
         //Debug.Log($"Held:{AxisHeld} Down:{AxisDown} Up:{AxisUp}");
+
+        if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            isUsingButtons = false;
+        }
     }
     static bool GetTriggerDown(string trigger)
     {
@@ -104,6 +136,7 @@ public static class Buttons
     }
 }
 
+[Serializable]
 public class Button
 {
     public Button(string controllerName, KeyCode keyCode)

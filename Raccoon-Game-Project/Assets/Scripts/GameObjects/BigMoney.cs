@@ -41,6 +41,7 @@ public class Money : MonoBehaviour
     public void OnCollect()
     {
         SaveManager.GetSave().Money += isBig ? 10 : 1;
+        GetComponent<NoiseMaker>().Play(0);
     }
 
 }

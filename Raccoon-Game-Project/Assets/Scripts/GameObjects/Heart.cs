@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Heightable))]
 public class Heart : MonoBehaviour
 {
-    [SerializeField] AnimationCurve bounce;
     float time;
     Vector2 direction;
     bool onFallDone; //bool for only doing things once

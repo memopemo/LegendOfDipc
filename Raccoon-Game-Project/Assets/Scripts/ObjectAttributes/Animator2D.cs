@@ -108,7 +108,7 @@ namespace Animator2D
     public class AnimFrame
     {
         public Sprite Sprite;
-        public int HoldForTicks;
+        public int HoldForTicks = 10;
     }
 }
 

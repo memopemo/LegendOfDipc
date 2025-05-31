@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEngine;
 
 /* how it works
@@ -19,6 +20,7 @@ public static class SaveManager
 {
     private static SaveFile saveManager;
     public static string SaveFilePath = Application.persistentDataPath + "/SaveFile.json";
+    public static float timeSinceLastSave;
 
     public static SaveFile GetSave()
     {
@@ -52,6 +54,7 @@ public static class SaveManager
          * That may be easy?
          */
         File.WriteAllText(SaveFilePath, JsonUtility.ToJson(GetSave(), true));
+        timeSinceLastSave = Time.realtimeSinceStartup;
     }
     static void Load()
     {
@@ -158,8 +161,21 @@ public static class SaveManager
         sf.ToiletPaperRolls = 99;
         sf.ComputerBombs = 99;
         sf.ComputerParts = 99;
-        sf.InventoryConsumableCount[0] = 10;
-        sf.InventoryConsumableType[0] = 1;
+        for(int i = 0; i < sf.InventoryConsumableCount.Length; i++)
+        {
+            sf.InventoryConsumableType[i] = i < sf.InventoryConsumableCount.Length/2?12:(i%5+13);
+            sf.InventoryConsumableCount[i] = 8;
+        }
+        for(int i = 0; i < sf.dungeons.Length; i++)
+        {
+            Dungeon dungeon = sf.dungeons[i];
+            SetArrayToTrue(ref sf.dungeons[i].DoorsUnlocked);
+            SetArrayToTrue(ref sf.dungeons[i].KeyObtained);
+            dungeon.MiniBossDefeated = true;
+            dungeon.BossDefeated = true;
+            dungeon.SkeletonKeyObtained = true;
+            dungeon.BossKeyObtained = true;
+        }
         SetArrayToTrue(ref sf.HeartContainersCollected);
         SetArrayToTrue(ref sf.SecretsFound);
         SetArrayToTrue(ref sf.ObtainedKeyItems);
@@ -172,7 +188,7 @@ public static class SaveManager
         SetArrayToTrue(ref sf.Boomerangs);
         SetArrayToTrue(ref sf.Pendants);
         SetArrayToTrue(ref sf.DemonKeys);
-        SetArrayToTrue(ref sf.OverworldTreasure);
+        SetArrayToTrue(ref sf.ChestOpened);
         SetArrayToTrue(ref sf.GenericFlags);
         sf.CurrentSword = 11;
         sf.CurrentShield = sf.CurrentBoomerang = sf.CurrentArmor = 3;

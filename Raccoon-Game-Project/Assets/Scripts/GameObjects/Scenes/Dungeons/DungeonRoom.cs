@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,13 @@ public class DungeonRoom : MonoBehaviour
     public UnityEvent OnUnload; //called after room transition to new room (unloading enemies, etc)
     public UnityEvent OnKillAllEnemies;
     public int enemiesRemaining;
-    public CutsceneMaker cutsceneMaker;
+    [SerializeField] bool isStartRoom = false;
+    [NonSerialized] public CutsceneMaker cutsceneMaker;
     void Start()
     {
+        OnLoad.AddListener(LoadRoomObjectsAuto);
+        OnUnload.AddListener(UnloadRoomObjectsAuto);
+        (isStartRoom ? OnLoad : OnUnload).Invoke();
         cutsceneMaker = GetComponent<CutsceneMaker>();
     }
     public void StartPotentialCutscene()
@@ -26,6 +31,20 @@ public class DungeonRoom : MonoBehaviour
         if (enemiesRemaining == 0) OnKillAllEnemies.Invoke();
     }
     public Collider2D Bounds() => GetComponent<Collider2D>();
+    public void LoadRoomObjectsAuto()
+    {
+        foreach (Transform item in transform)
+        {
+            item.gameObject.SetActive(true);
+        }
+    }
+    public void UnloadRoomObjectsAuto()
+    {
+        foreach (Transform item in transform)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
 
 
 }

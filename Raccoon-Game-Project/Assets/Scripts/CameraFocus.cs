@@ -26,10 +26,10 @@ public class CameraFocus : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        player = FindFirstObjectByType<PlayerStateManager>();
+        Debug.Assert(player, "No Player Found to focus Camera on.");
         if (!target)
         {
-            player = FindFirstObjectByType<PlayerStateManager>();
-            Debug.Assert(player, "No Player Found to focus Camera on.");
             if (player)
             {
                 target = player.transform;
@@ -80,11 +80,11 @@ public class CameraFocus : MonoBehaviour
         {
             if (target.gameObject == player.gameObject)
             {
-                playerLookAhead = Vector2.SmoothDamp(playerLookAhead, player.directionedObject.direction, ref lookaheadVelocity, lookaheadTime);
+                //playerLookAhead = Vector2.SmoothDamp(playerLookAhead, player.directionedObject.direction, ref lookaheadVelocity, lookaheadTime);
             }
             else
             {
-                playerLookAhead = Vector2.SmoothDamp(playerLookAhead, Vector2.zero, ref lookaheadVelocity, followSpeed);
+                //playerLookAhead = Vector2.SmoothDamp(playerLookAhead, Vector2.zero, ref lookaheadVelocity, followSpeed);
             }
         }
 

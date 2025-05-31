@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Pushblock : MonoBehaviour
 {
     Vector3 nextPosition;
-    [SerializeField] UnityEvent OnMoveDone;
+    public UnityEvent OnMoveDone;
     bool done;
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,9 @@ public class Pushblock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(done) return;
-        transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime*2);
-        if(transform.position == nextPosition)
+        if (done) return;
+        transform.position = Vector3.MoveTowards(transform.position, nextPosition, Time.deltaTime * 2);
+        if (transform.position == nextPosition)
         {
 
             //Snap to grid
@@ -36,8 +36,8 @@ public class Pushblock : MonoBehaviour
             OnMoveDone.Invoke();
         }
     }
-    
-    public void Move(Vector2 direction) 
+
+    public void Move(Vector2 direction)
     {
         nextPosition = transform.position + (Vector3)direction;
         done = false;

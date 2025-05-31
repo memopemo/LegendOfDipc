@@ -5,6 +5,10 @@ using UnityEngine.PlayerLoop;
 
 public class ColorPalleteHandler : MonoBehaviour
 {
+    Color color1Find;
+    Color color2Find;
+    Color color3Find;
+    Color color4Find;
     [SerializeField] Color[] color1ReplaceAnimation;
     [SerializeField] Color[] color2ReplaceAnimation;
     [SerializeField] Color[] color3ReplaceAnimation;

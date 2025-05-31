@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - HurtPlayer
   - HurtEnemy
@@ -19,8 +19,8 @@ TagManager:
   - Top
   - Ceiling
   - Magic
-  - 
-  - 
+  - Airborne
+  - Ground
   - 
   - 
   - 
@@ -64,34 +64,3 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 

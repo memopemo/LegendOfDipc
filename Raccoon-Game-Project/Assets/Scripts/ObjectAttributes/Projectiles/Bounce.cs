@@ -6,7 +6,7 @@ public class Bounce : MonoBehaviour
 {
     FineDirectionedObject fineDirectionedObject;
     Projectile projectile;
-    [SerializeField] int bounces;
+    public int bounces;
     void Start()
     {
         fineDirectionedObject = GetComponent<FineDirectionedObject>();

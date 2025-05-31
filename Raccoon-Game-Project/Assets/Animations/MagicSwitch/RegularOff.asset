@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029c768b3de2cd64798d92405abba7a6, type: 3}
+  m_Name: RegularOff
+  m_EditorClassIdentifier: 
+  AnimationFrames:
+  - Sprite: {fileID: -9196127130053344076, guid: 3bfd8be4c834dee47b876f12d4b67bf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -1449669151553040372, guid: 3bfd8be4c834dee47b876f12d4b67bf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -628401914557017875, guid: 3bfd8be4c834dee47b876f12d4b67bf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: 9221645767956741778, guid: 3bfd8be4c834dee47b876f12d4b67bf1, type: 3}
+    HoldForTicks: 20
+  - Sprite: {fileID: -628401914557017875, guid: 3bfd8be4c834dee47b876f12d4b67bf1, type: 3}
+    HoldForTicks: 20
+  Looping: 1
+  LoopStart: 1
+  LoopEnd: 4

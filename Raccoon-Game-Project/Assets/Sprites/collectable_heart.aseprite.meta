@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: collectable_heart_Frame_0
     originalName: 
-    pivot: {x: 0.49999997, y: 0.5}
+    pivot: {x: 0.45454547, y: 0.27272728}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -146,7 +146,7 @@ ScriptedImporter:
     uvTransform: {x: 45, y: 4}
   - name: collectable_heart_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5714286, y: 0.27272728}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -167,7 +167,7 @@ ScriptedImporter:
     uvTransform: {x: 20, y: 40}
   - name: collectable_heart_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5714286, y: 0.27272728}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -188,7 +188,7 @@ ScriptedImporter:
     uvTransform: {x: 38, y: 40}
   - name: collectable_heart_Frame_3
     originalName: 
-    pivot: {x: 0.49999997, y: 0.5}
+    pivot: {x: 0.54545456, y: 0.33333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -209,7 +209,7 @@ ScriptedImporter:
     uvTransform: {x: 3, y: 22}
   - name: collectable_heart_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.53846157, y: 0.27272728}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -230,7 +230,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: collectable_heart_Frame_5
     originalName: 
-    pivot: {x: 0.49999997, y: 0.5}
+    pivot: {x: 0.54545456, y: 0.33333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -251,7 +251,7 @@ ScriptedImporter:
     uvTransform: {x: 22, y: 22}
   - name: collectable_heart_Frame_6
     originalName: 
-    pivot: {x: 0.49999997, y: 0.5}
+    pivot: {x: 0.54545456, y: 0.44444445}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -272,7 +272,7 @@ ScriptedImporter:
     uvTransform: {x: 41, y: 22}
   - name: collectable_heart_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.53846157, y: 0.27272728}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -293,7 +293,7 @@ ScriptedImporter:
     uvTransform: {x: 25, y: 4}
   - name: collectable_heart_Frame_8
     originalName: 
-    pivot: {x: 0.49999997, y: 0.5}
+    pivot: {x: 0.54545456, y: 0.44444445}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -321,7 +321,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: collectable_heart_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -330,7 +330,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 25481b30f6dec104e8bd7c4215d167a5
-    - name: Frame_1
+    - name: collectable_heart_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -339,7 +339,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 5b05c3bbe22ac0246b420ecb19850969
-    - name: Frame_2
+    - name: collectable_heart_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -348,7 +348,7 @@ ScriptedImporter:
         width: 7
         height: 11
       spriteId: 6b284295559c9ef458cae4091d457488
-    - name: Frame_3
+    - name: collectable_heart_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -357,7 +357,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 75bb1cef49fc6e542ab90c07cba30bfc
-    - name: Frame_4
+    - name: collectable_heart_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -366,7 +366,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 371e762e10a3c0048bc0d8ac9c6820ef
-    - name: Frame_5
+    - name: collectable_heart_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -375,7 +375,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 0938e2538a7478c4ba692829380045cc
-    - name: Frame_6
+    - name: collectable_heart_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -384,7 +384,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 1d36fc1605019484d803c5e001e85778
-    - name: Frame_7
+    - name: collectable_heart_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -393,7 +393,7 @@ ScriptedImporter:
         width: 13
         height: 11
       spriteId: 605d9dcf1425d944bbf93567b334c8c6
-    - name: Frame_8
+    - name: collectable_heart_Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:

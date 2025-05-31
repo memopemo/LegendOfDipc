@@ -12,11 +12,11 @@ class CommonPlayerState
     public const int JUMP_HEIGHT_SUPER = 2;
     public static void MovePlayerRaw(PlayerStateManager manager, float speed)
     {
-        manager.rigidBody.linearVelocity = manager.rawInput * (speed + manager.additionalSpeed);
+        manager.rigidBody.linearVelocity = manager.rawInput.normalized * (speed + manager.additionalSpeed);
     }
     public static void MovePlayerSmooth(PlayerStateManager manager, float speed)
     {
-        manager.rigidBody.AddForce(manager.rawInput * (speed + manager.additionalSpeed) * Time.deltaTime * 60);
+        manager.rigidBody.AddForce(manager.rawInput.normalized * (speed + manager.additionalSpeed) * Time.deltaTime * 60);
     }
 
     public static void UpdateDirection(PlayerStateManager manager)

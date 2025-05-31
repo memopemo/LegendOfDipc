@@ -15,6 +15,11 @@ public class Bouncing : MonoBehaviour
     }
     public bool IsBounceDone()
     {
+        return time > bounce.keys.Last().time;
+    }
+    public bool IsCollectable()
+    {
         return time > bounce.keys.Last().time / 2;
     }
+
 }

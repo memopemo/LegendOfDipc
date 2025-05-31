@@ -11,7 +11,8 @@ public class Hittable : MonoBehaviour
     [SerializeField] GameObject hurtParticle;
     Rigidbody2D rb;
     Knockbackable knockbackable;
-    Transform tempFrom;
+    Vector2 tempFrom;
+    DamagesEnemy preventMoreHurt;
     const float TRIPLE_HIT_FAIL_TIME = 0.4f;
 
     void Start()
@@ -24,6 +25,8 @@ public class Hittable : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out DamagesEnemy hurtful))
         {
+            if (hurtful == preventMoreHurt) return;
+            preventMoreHurt = hurtful;
             OnHit(hurtful);
             return;
         }
@@ -40,20 +43,24 @@ public class Hittable : MonoBehaviour
     {
         TakeDamage(from.amount, from.isBuffed);
 
+        //use player as knockback point instead of sword.
+        Vector2 position = from.transform.parent ? from.transform.parent.position : from.transform.position;
+
         //dont let trapp
         if (!DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Trap) && from.knockBack && knockbackable)
         {
             CancelInvoke();
-            knockbackable.ApplyKnockBack(from.transform);
+            knockbackable.ApplyKnockBack(position);
         }
         else if (knockbackable)
         {
             //trapped, but will eventually get out.
-            tempFrom = from.transform;
+            tempFrom = position;
             if (DemonBuffs.HasBuff(DemonBuffs.DemonBuff.Trap))
             {
                 if (!IsInvoking())
                 {
+                    knockbackable.SetComponents(false);
                     Invoke(nameof(OopsFailed), TRIPLE_HIT_FAIL_TIME + 1f);
                     StartCoroutine(nameof(HitStun));
                 }
@@ -61,6 +68,7 @@ public class Hittable : MonoBehaviour
             }
             if (gameObject.activeSelf)
             {
+                knockbackable.SetComponents(false);
                 CancelInvoke();
                 Invoke(nameof(OopsFailed), TRIPLE_HIT_FAIL_TIME);
                 StopCoroutine(nameof(HitStun));
@@ -114,6 +122,10 @@ public class Hittable : MonoBehaviour
     }
     void Update()
     {
+        if (Buttons.IsButtonDown(Buttons.Sword))
+        {
+            preventMoreHurt = null;
+        }
         Timer.DecrementTimer(ref invulnTimer);
     }
 

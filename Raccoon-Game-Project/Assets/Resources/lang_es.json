@@ -1,0 +1,584 @@
+{
+    "furniture": {
+        "info": [
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            },
+            {
+                "title": "",
+                "description": ""
+            }
+        ],
+        "placingFurniture": {
+            "tooltips": [
+                {
+                    "button": {
+                        "ControllerName": "A",
+                        "KeyName": 122
+                    },
+                    "action": "Place"
+                },
+                {
+                    "button": {
+                        "ControllerName": "B",
+                        "KeyName": 120
+                    },
+                    "action": "Stop Placing"
+                }
+            ]
+        },
+        "selectingFurniture": {
+            "tooltips": [
+                {
+                    "button": {
+                        "ControllerName": "A",
+                        "KeyName": 122
+                    },
+                    "action": "Select"
+                },
+                {
+                    "button": {
+                        "ControllerName": "B",
+                        "KeyName": 120
+                    },
+                    "action": "Back"
+                }
+            ]
+        }
+    },
+    "buffText": {
+        "title": "DEMON BUFFS",
+        "blank": {
+            "name": "???",
+            "description": "???"
+        },
+        "buffInfos": [
+            {
+                "name": "ATTACK",
+                "description": "Ups Attack by 1"
+            },
+            {
+                "name": "REGEN",
+                "description": "Heal every 20 secs"
+            },
+            {
+                "name": "SPEED",
+                "description": "Ups Speed by 1"
+            },
+            {
+                "name": "DEFENSE",
+                "description": "Ups Defense by 1"
+            },
+            {
+                "name": "POISON",
+                "description": "Attacks poison enemies"
+            },
+            {
+                "name": "TARGET",
+                "description": "PJs home in on enemies"
+            },
+            {
+                "name": "LOOT",
+                "description": "Favor money drops"
+            },
+            {
+                "name": "SWING",
+                "description": "Swing any weapon"
+            },
+            {
+                "name": "FASTING",
+                "description": "Faster consumption time"
+            },
+            {
+                "name": "STUN",
+                "description": "Attacks paralyze enemies"
+            },
+            {
+                "name": "BALANCE",
+                "description": "No knockback"
+            },
+            {
+                "name": "FLAME",
+                "description": "Attacks flame enemies"
+            },
+            {
+                "name": "PUNCTURE",
+                "description": "PJs go through 1 enemy"
+            },
+            {
+                "name": "VACUUM",
+                "description": "Attract enemy drops"
+            },
+            {
+                "name": "PHASE",
+                "description": "Attack through walls"
+            },
+            {
+                "name": "BACKATK",
+                "description": "Back atks damage more"
+            },
+            {
+                "name": "ASTIR",
+                "description": "Faster attack speed"
+            },
+            {
+                "name": "PUNCH",
+                "description": "Deal higher knockback"
+            },
+            {
+                "name": "REFLECT",
+                "description": "Attack to reflect PJs"
+            },
+            {
+                "name": "CLOAK",
+                "description": "Be unnoticed"
+            },
+            {
+                "name": "PLUNDER",
+                "description": "Higher drop chance"
+            },
+            {
+                "name": "SWING+",
+                "description": "Larger Area"
+            },
+            {
+                "name": "REGEN+",
+                "description": "Heal every 10 secs"
+            },
+            {
+                "name": "MISS",
+                "description": "Enemy attacks may miss"
+            },
+            {
+                "name": "DEFENSE+",
+                "description": "Ups Defense by 2"
+            },
+            {
+                "name": "TRAP",
+                "description": "Combo enemies"
+            },
+            {
+                "name": "ZIP",
+                "description": "Pjs travel faster"
+            },
+            {
+                "name": "HEALTH",
+                "description": "Favor heart drops"
+            },
+            {
+                "name": "ATTACK+",
+                "description": "Ups Attack by 2"
+            },
+            {
+                "name": "FOCUS",
+                "description": "Autotarget nearby enemies"
+            },
+            {
+                "name": "SPEED+",
+                "description": "Ups Speed by 2"
+            },
+            {
+                "name": "RESILIENT",
+                "description": "No damage for 3 hits"
+            },
+            {
+                "name": "POISON+",
+                "description": "Poison lasts longer"
+            },
+            {
+                "name": "TARGET+",
+                "description": "Homing PJs turn quicker"
+            },
+            {
+                "name": "LOOT+",
+                "description": "More money"
+            },
+            {
+                "name": "SWIPE",
+                "description": "Swipe any weapon twice"
+            },
+            {
+                "name": "FASTING+",
+                "description": "Instant consumption time"
+            },
+            {
+                "name": "STUN+",
+                "description": "longer paralyze time"
+            },
+            {
+                "name": "PUNCH+",
+                "description": "Farther knockback"
+            },
+            {
+                "name": "FLAME+",
+                "description": "Fire lasts longer"
+            },
+            {
+                "name": "PUNCTURE+",
+                "description": "PJs go through 2 enemies"
+            },
+            {
+                "name": "HEALTH+",
+                "description": "More hearts"
+            },
+            {
+                "name": "TRIPLEHIT",
+                "description": "Triple hit any weapon"
+            },
+            {
+                "name": "REGEN++",
+                "description": "Heal every 5 secs"
+            },
+            {
+                "name": "TELEPORT",
+                "description": "Jump to teleport"
+            },
+            {
+                "name": "DEFENSE++",
+                "description": "Ups Defense by 3"
+            },
+            {
+                "name": "DOCILE",
+                "description": "Enemies may lose interest"
+            },
+            {
+                "name": "VISION",
+                "description": "Highlight enemies"
+            },
+            {
+                "name": "PLUNDER+",
+                "description": "More of both"
+            }
+        ],
+        "tooltip": {
+            "tooltips": [
+                {
+                    "button": {
+                        "ControllerName": "A",
+                        "KeyName": 122
+                    },
+                    "action": "Confirm"
+                },
+                {
+                    "button": {
+                        "ControllerName": "B",
+                        "KeyName": 120
+                    },
+                    "action": "Cancel"
+                }
+            ]
+        }
+    },
+    // test to see if anyone cares
+    "inventory": {
+        "consumables": "CONSUMIBLES",
+        "equipment": "EQUIPO",
+        "keyItems": "OBJETO IMPORTANTE",
+        "tooltip": {
+            "tooltips": [
+                {
+                    "button": {
+                        "ControllerName": "A/B/X/Y",
+                        "KeyName": 122
+                    },
+                    "action": "CAMBIAR PANEL"
+                },
+                {
+                    "button": {
+                        "ControllerName": "COMENZAR",
+                        "KeyName": 101
+                    },
+                    "action": "CIERRE"
+                }
+            ]
+        }
+    },
+    "pipeText": {
+        "title": "SELECT A PATH",
+        "confirmSelection": "Travel to here?",
+        "tooltip": {
+            "tooltips": [
+                {
+                    "button": {
+                        "ControllerName": "A",
+                        "KeyName": 122
+                    },
+                    "action": "Select"
+                },
+                {
+                    "button": {
+                        "ControllerName": "B",
+                        "KeyName": 120
+                    },
+                    "action": "Exit"
+                }
+            ]
+        }
+    },
+    "pauseMenu": {
+        "title": "PAUSED",
+        "returnToGame": "Return To Game",
+        "settings": "Settings",
+        "quit": "Quit Game",
+        "saveEditor": "Save Editor",
+        "lastSaved": "Last Saved: /0 ago"
+    },
+    "settings": {
+        "title": "Settings",
+        "audioSettings": {
+            "title": "Audio Settings",
+            "masterVolume": "Master Volume",
+            "musicVolume": "Music Volume",
+            "effectsVolume": "Effects Volume"
+        }
+    }
+}

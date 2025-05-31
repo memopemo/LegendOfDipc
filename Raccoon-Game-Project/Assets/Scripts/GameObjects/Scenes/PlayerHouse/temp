@@ -1,0 +1,227 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
+
+public class HouseFurnitureCreator : MonoBehaviour
+{
+    [SerializeField] FurnitureList furnitureList;
+    public List<GameObject> trackedFurniture;
+    public FurnitureObject[] furnitures = new FurnitureObject[128];
+    public List<int> takingUpSpace;
+    List<int> tabledFurniture = new();
+    SaveFile saveFile;
+
+    //load 1 furniture item per frame to reduce load.
+    IEnumerator Start()
+    {
+        saveFile = SaveManager.GetSave();
+
+        for (int index = 0; index < saveFile.HouseLayout.Length; index++)
+        {
+            if (tabledFurniture.Contains(index)) continue;
+            if (furnitures[index]) continue;
+            if (saveFile.HouseLayout[index] == 0) continue;
+            Furniture furniture = GetFurnitureInList(index);
+            FurnitureObject instantiatedFurniture = Instantiate(furniture.GObject, GetPosition(index), Quaternion.identity).GetComponent<FurnitureObject>();
+            instantiatedFurniture.gameObject.name += index;
+            furnitures[index] = instantiatedFurniture;
+            if (furniture.type == Furniture.Type.Container)
+            {
+                PlaceContainedFurnitures(index);
+            }
+            takingUpSpace.AddRange(GetIndicies(index, furniture.size));
+            // break up for loop
+            if (index % 16 == 15) yield return null;
+        }
+    }
+    public bool IsAreaFree(List<int> indicies) => takingUpSpace.Intersect(indicies).Count() == 0;
+    public bool IsAreaFree(int i) => takingUpSpace.Contains(i);
+    public FurnitureObject IsOpenSlot(Vector2Int v2)
+    {
+        foreach (var furnitureObj in FindObjectsByType<FurnitureObject>(FindObjectsSortMode.None))
+        {
+            if (furnitureObj.furniture.type == Furniture.Type.Container)
+            {
+                return furnitureObj.IsContainerSlotOpen(v2);
+            }
+        }
+        return false;
+    }
+    public void OnDrawGizmos()
+    {
+
+        for (int index = 0; index < 128; index++)
+        {
+            int item = saveFile.HouseLayout[index];
+
+            Gizmos.color = new Color(0, 0.5f, 1, 0.5f);
+
+            if (item == 0)
+                Gizmos.color = Color.clear;
+
+            if (tabledFurniture.Contains(index))
+                Gizmos.color = new Color(1, 0.5f, 0, 0.5f);
+            GUIStyle gUIStyle = new();
+            gUIStyle.clipping = TextClipping.Overflow;
+            Gizmos.DrawCube(GetPosition(index), Vector3.one);
+            Handles.Label(GetPosition(index), saveFile.HouseLayout[index].ToString());
+            Handles.Label(GetPosition(index) + Vector2.one * 0.30f, index.ToString(), gUIStyle);
+        }
+    }
+
+    public void MoveFurniture(Vector2 position, Vector2 direction, Pushblock block)
+    {
+
+        int oldOriginIndex = GetIndex(position);
+        int newOriginIndex = GetIndex(position + direction);
+        Furniture originFurniture = GetFurnitureInList(oldOriginIndex);
+        var x = GetIndicies(newOriginIndex, originFurniture.size).Except(GetIndicies(oldOriginIndex, originFurniture.size)).Intersect(takingUpSpace);
+        if (x.Count() > 0)
+        {
+            return;
+        }
+
+
+        if (originFurniture.type != Furniture.Type.Container)
+        {
+            if (originFurniture.size == Vector2Int.one)
+            {
+                saveFile.HouseLayout[newOriginIndex] = saveFile.HouseLayout[oldOriginIndex];
+                saveFile.HouseLayout[oldOriginIndex] = 0;
+            }
+        }
+        else
+        {
+            MoveFurnitureWithThingsOnTopOfIt(oldOriginIndex, newOriginIndex, originFurniture);
+        }
+        block.Move(direction);
+
+    }
+    public void OnGrab()
+    {
+
+    }
+    public List<int> GetIndicies(int origin, Vector2Int size)
+    {
+        List<int> indexes = new List<int>();
+        for (int i = 0; i < size.x * size.y; i++)
+        {
+            indexes.Add(GetLocalIndexFromOrigin(origin, i, size));
+        }
+        return indexes;
+    }
+
+    private void MoveFurnitureWithThingsOnTopOfIt(int oldOriginIndex, int newOriginIndex, Furniture originFurniture)
+    {
+        int area = originFurniture.size.x * originFurniture.size.y;
+
+        int[] oldFurnitureIDs = new int[area];
+        int[] indexesChanged = new int[area];
+        FurnitureObject[] furnituresChanged = new FurnitureObject[area];
+
+        //we'd need to do two for loops because we dont want to read already written data
+        //store info and delete
+        for (int nearby = 0; nearby < area; nearby++)
+        {
+            int oldLocalIndex = GetLocalIndexFromOrigin(oldOriginIndex, nearby, originFurniture.size);
+            oldFurnitureIDs[nearby] = saveFile.HouseLayout[oldLocalIndex];
+            saveFile.HouseLayout[oldLocalIndex] = 0;
+            furnituresChanged[nearby] = furnitures[oldLocalIndex];
+            furnitures[oldLocalIndex] = null;
+            takingUpSpace.RemoveAll((x) => x == oldLocalIndex);
+
+            indexesChanged[nearby] = oldLocalIndex;
+        }
+
+        //write over the 0'd out things
+        for (int nearby = 0; nearby < area; nearby++)
+        {
+            int newLocalIndex = GetLocalIndexFromOrigin(newOriginIndex, nearby, originFurniture.size);
+            saveFile.HouseLayout[newLocalIndex] = oldFurnitureIDs[nearby];
+            furnitures[newLocalIndex] = furnituresChanged[nearby];
+            takingUpSpace.Add(newLocalIndex);
+
+            // im sorry.
+            if (nearby == 0) continue;
+            tabledFurniture[tabledFurniture.IndexOf(indexesChanged[nearby])] = newLocalIndex;
+        }
+
+    }
+
+    public void DestroyFurniture(Vector2 position)
+    {
+        int index = GetIndex(SnapGrid.SnapToGridCentered(position));
+        print(position);
+        print(index);
+        Furniture furniture = GetFurnitureInList(index);
+        //unparent contained furniture
+        if (furniture.type == Furniture.Type.Container)
+        {
+            for (int i = 0; i < furniture.size.x * furniture.size.y; i++)
+            {
+                int localI = GetLocalIndexFromOrigin(index, i, furniture.size);
+                if (saveFile.HouseLayout[localI] > 0)
+                {
+                    furnitures[localI].transform.parent = null;
+                    furnitures[localI].transform.position = GetPosition(localI);
+                    furnitures[localI].GetComponent<BoxCollider2D>().isTrigger = false;
+                    tabledFurniture.Remove(localI);
+                }
+            }
+        }
+        saveFile.HouseLayout[index] = 0;
+        Destroy(furnitures[index].gameObject);
+        furnitures[index] = null;
+
+    }
+    public bool PlaceFurniture(Vector2 position, int furniture)
+    {
+        return true;
+    }
+    public Furniture GetFurnitureInList(int index)
+    {
+        return furnitureList.allFurniture[saveFile.HouseLayout[index]];
+    }
+    public int GetIndex(Vector2 position)
+    {
+        Vector2 relativePos = position - (Vector2)transform.position;
+        return Mathf.RoundToInt(relativePos.x + (relativePos.y * -16));
+    }
+    public Vector2 GetPosition(int index)
+    {
+        return (Vector2)transform.position + new Vector2(index % GameDefinitions.UNIT_PIXELS, index / -GameDefinitions.UNIT_PIXELS); //minus y because we are going top down
+    }
+
+    private void PlaceContainedFurnitures(int index)
+    {
+        Furniture furniture = GetFurnitureInList(index);
+        for (int nearby = 1; nearby < furniture.size.y * furniture.size.x; nearby++)
+        {
+            int localPosition = GetLocalIndexFromOrigin(index, nearby, furniture.size);
+            Furniture smallFurniture = furnitureList.allFurniture[saveFile.HouseLayout[localPosition]];
+            if (smallFurniture.type == Furniture.Type.Small)
+            {
+                FurnitureObject smallFurnitureObj = Instantiate(smallFurniture.GObject, Vector3.zero, Quaternion.identity).GetComponent<FurnitureObject>();
+                try
+                {
+                    smallFurnitureObj.transform.SetParent(furnitures[index].transform.GetChild(nearby - 1));
+                }
+                catch
+                {
+                    Debug.Log("No child slot available.");
+                }
+                smallFurnitureObj.transform.localPosition = Vector3.zero;
+                smallFurnitureObj.GetComponent<BoxCollider2D>().isTrigger = true;
+                furnitures[localPosition] = smallFurnitureObj;
+                tabledFurniture.Add(localPosition);
+            }
+        }
+    }
+    private int GetLocalIndexFromOrigin(int index, int subIndex, Vector2Int size)
+    {
+        return index + 16 * (subIndex / size.y) + (subIndex % size.x);
+    }
+}

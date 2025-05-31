@@ -6,9 +6,15 @@ using UnityEngine.Events;
 public class Burnable : MonoBehaviour
 {
     [SerializeField] UnityEvent OnBurn;
+    [SerializeField] UnityEvent OnStartBurn;
+
     public void Burn()
     {
         OnBurn.Invoke();
+    }
+    public void StartBurn()
+    {
+        OnStartBurn.Invoke();
     }
 
     //Some standard burn event functions for you :)
@@ -20,6 +26,10 @@ public class Burnable : MonoBehaviour
     public void ChangeSprite(Sprite sprite)
     {
         GetComponent<SpriteRenderer>().sprite = sprite;
+    }
+    public void PrematurelyEndFire()
+    {
+        GetComponentInChildren<Fire>().Die();
     }
 
     //remove this burnable script.

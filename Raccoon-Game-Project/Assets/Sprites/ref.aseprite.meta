@@ -73,7 +73,7 @@ ScriptedImporter:
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
     fileImportMode: 0
-    importHiddenLayers: 0
+    importHiddenLayers: 1
     layerImportMode: 1
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
@@ -86,7 +86,7 @@ ScriptedImporter:
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 0
-    importHiddenLayers: 0
+    importHiddenLayers: 1
     layerImportMode: 1
     defaultPivotSpace: 0
     defaultPivotAlignment: 0
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638572525407412865
+  platformSettingsDirtyTick: 638834223763944360
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -300,7 +300,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: ref_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -309,7 +309,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 7f10ed32e1fad0e49b2c9a7dae84784e
-    - name: Frame_1
+    - name: ref_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -318,7 +318,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 4ea118b120fc8d8418b5ce14212d8d6a
-    - name: Frame_2
+    - name: ref_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -327,7 +327,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 0829ee6cad25fe840bd60208d013fbfb
-    - name: Frame_3
+    - name: ref_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -336,7 +336,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 59bb19324f24c9f4e87f180fb871836e
-    - name: Frame_4
+    - name: ref_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -345,7 +345,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 9279649d57c4c904ab95056d894856ed
-    - name: Frame_5
+    - name: ref_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -354,7 +354,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 94f75f0798bc8414786a4d736f7d3393
-    - name: Frame_6
+    - name: ref_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -363,7 +363,7 @@ ScriptedImporter:
         width: 125
         height: 63
       spriteId: 5744332ac1d314c428c43baf9d172c7a
-    - name: Frame_7
+    - name: ref_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -399,7 +399,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  generatePhysicsShape: 0
+  generatePhysicsShape: 1
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 128, y: 64}

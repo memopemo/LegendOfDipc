@@ -88,9 +88,79 @@ This allows the player to percieve enemies as incredibly easy if they backtrack 
 
 The health scaling is linearly. +(CONST * Level) health
 
+## Overworld Enemy List
+
+### Deemlit
+
+![img](imgs/enemies/en_1.gif)
+
+Health:
+
+Loot Group:
+
+Action:
+
+- Moves around randomly.
+
+Purpose:
+
+- essentially plays the role of the goomba
+- First enemy the player encounters
+- Punching bag
+- underling servant for other enemies
+- modular, can create other types of enemies by modifying it
+
+### Grass Mound
+
+![img](imgs/enemies/en_3.png)
+
+Health:
+
+Loot Group:
+
+Action:
+
+- on spawn, grow out from ground and grow mouth
+- Follows player
+
+Purpose:
+
+- other standard enemy
+- sorta tough but manageable
+
+Location:
+
+- [Forests](/design-doc/overworld.md/#forest)
+- anywhere theres natural green grass essentially.
+
+### Cursed Grass Mound
+
+![img](imgs/enemies/en_7.png)
+
+Health:
+
+Loot Group:
+
+Action:
+
+- similar to [Grass Mound](#grass-mound)
+- __on spawn, wait until player gets near and then grow__
+- Follows player
+
+Purpose:
+
+- other standard enemy
+- sorta tough but manageable
+
+Location:
+
+- [Cursed Forest](/design-doc/overworld.md/#cursed-woods)
+
 ## Dungeon Enemy List
 
 ### Slime
+
+![img](imgs/enemies/en_5.gif)
 
 Health:
 
@@ -110,7 +180,9 @@ Physical Description:
 
 ---
 
-### Imp Skeleton
+### Skeleton
+
+![img](imgs/enemies/en_2.gif)
 
 Health:
 
@@ -174,6 +246,8 @@ Physical Description
 
 ### Bat
 
+![img](imgs/enemies/en_4.gif)
+
 Health:
 
 Loot Group:
@@ -187,7 +261,9 @@ Action
 
 Physical Description
 
-- A purple bat with fangs and a devilish smile
+- A red bat with fangs and a devilish smile
+
+---
 
 ### Hoppy Boi
 
@@ -200,3 +276,83 @@ Action
 - Jumps around (4d)
 
 Physical Description
+
+---
+
+### Wall Shooter
+
+![img](imgs/enemies/en_6.gif)
+
+Heath:
+
+Loot Group:
+
+Action
+
+- shoots a projectile from a wall, then jumps off and spins around until it hits another wall.
+
+Physical Description
+
+- spider-like thing with a giant eye
+- eye glows
+- blinks twice before shooting
+- blinks and crouches before jumping
+
+---
+
+### Shield Dog
+
+![img](imgs/enemies/en_10.gif)
+
+Heath:
+
+Loot Group:
+
+Action
+
+- walks around
+- stabs if near player
+
+Physical Description
+
+- pink dog
+- holding shield and strapping shield to tail
+- knife
+
+---
+
+### Snake Enemy
+
+![img](imgs/enemies/en_9.png)
+
+Heath:
+
+Loot Group:
+
+Action
+
+- moves 1 block towards player periodically in a grid-fashion
+- stabs if near player
+
+Physical Description
+
+- snake
+
+---
+
+### 3-Way Shielder
+
+![img](imgs/enemies/en_8.gif)
+
+Heath:
+
+Loot Group:
+
+Action
+
+- walks around
+
+Physical Description
+
+- guy with a shield covering his front and sides, but not his butt.
+- his big, juicy butt.

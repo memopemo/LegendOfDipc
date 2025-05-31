@@ -79,6 +79,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             SaveManager.DebugMaxOut();
+            FindFirstObjectByType<PlayerStateManager>().UpdateColors();
 
         }
 #endif

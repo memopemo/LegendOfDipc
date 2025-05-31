@@ -31,6 +31,7 @@ public class SwipableGrass : MonoBehaviour
         if(collider2D.TryGetComponent(out PlayerStateManager player))
         {
             animator2D.RestartAnimation();
+            GetComponent<NoiseMaker>().Play(0);
         }
         if(collider2D.TryGetComponent(out SwordHitBox _))
         {

@@ -5,28 +5,22 @@ using UnityEngine;
 
 public class BuffTipWindow : MonoBehaviour
 {
-    TMP_Text title;
-    TMP_Text description;
-    string[][] csv;
+    UILanguagedText title;
+    UILanguagedText description;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        csv = CSVReader.GetCSV("BuffDescriptions");
-        title = GetComponentInChildren<TMP_Text>();
-        description = title.transform.GetChild(0).GetComponent<TMP_Text>();
+        title = GetComponentInChildren<UILanguagedText>();
+        description = title.transform.GetChild(0).GetComponent<UILanguagedText>();
     }
 
     public void SetSelectedBuff(int selectedIndex)
     {
-        if (GameObject.Find("Button_" + selectedIndex.ToString()).GetComponent<BuffSelector>().state == BuffSelector.State.Inactive)
-        {
-            title.text = "???";
-            description.text = "???";
-            return;
-        }
-        title.text = csv[selectedIndex][0];
-        description.text = csv[selectedIndex][1];
+        BuffSelector.State state = GameObject.Find("Buff_" + selectedIndex.ToString()).GetComponent<BuffSelector>().state;
+        title.SetPath(state == BuffSelector.State.Inactive ? "buffText.blank.name" : $"buffText.buffInfos[{selectedIndex}].name");
+        description.SetPath(state == BuffSelector.State.Inactive ? "buffText.blank.description" : $"buffText.buffInfos[{selectedIndex}].description");
+
     }
 }

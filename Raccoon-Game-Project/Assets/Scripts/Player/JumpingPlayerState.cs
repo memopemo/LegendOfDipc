@@ -13,6 +13,8 @@ public class JumpingPlayerState : IPlayerState
     Vector2Int initialDirection;
     GameObject isIceStompingAndWithWhat;
     float actualMaxJumpTime;
+    const int JUMP_SOUND_INDEX = 11;
+    
     public JumpingPlayerState(GameObject createAtEnd = null)
     {
         isIceStompingAndWithWhat = createAtEnd;
@@ -31,6 +33,7 @@ public class JumpingPlayerState : IPlayerState
         manager.animator.SetAnimation(ANIM_JUMP);
         initialDirection = Vector2Int.RoundToInt(manager.rawInput);
         actualMaxJumpTime = MAX_JUMP_TIME + (JUMP_TIME_MULTIPLIER * CommonPlayerState.GetJumpHeight()); //0 = 0.3f, 1 = 0.475, 2 = 0.65;
+        manager.noiseMaker.Play(JUMP_SOUND_INDEX+(int)CommonPlayerState.GetJumpHeight());
     }
 
     public void OnLeave(PlayerStateManager manager)
@@ -42,6 +45,7 @@ public class JumpingPlayerState : IPlayerState
         {
             Object.Instantiate(isIceStompingAndWithWhat, manager.transform.position + (Vector3)(Vector2)manager.directionedObject.direction, Quaternion.identity);
         }
+        manager.waterCheck.Evaluate<FloorSound>((sound) => sound.Play(manager.transform.position));
     }
 
     public void OnUpdate(PlayerStateManager manager)
@@ -52,7 +56,7 @@ public class JumpingPlayerState : IPlayerState
             framesGrounded++;
             return;
         }
-        Vector2 actualMovement = manager.rawInput;
+        Vector2 actualMovement = manager.rawInput.normalized;
         if (tryingToCorrect)
         {
             actualMovement /= 2;

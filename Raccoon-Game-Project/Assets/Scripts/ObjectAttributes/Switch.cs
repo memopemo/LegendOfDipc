@@ -51,4 +51,16 @@ public class Switch : MonoBehaviour
         switchB = 0;
         OnDeactivateB.Invoke();
     }
+    public void ToggleA(int code)
+    {
+        if(switchA == 0)
+        {
+            ActivateSwitchA(switchA>0?0:code);
+        }
+        else
+        {
+            DeactivateSwitchA();
+        }
+    }
+
 }

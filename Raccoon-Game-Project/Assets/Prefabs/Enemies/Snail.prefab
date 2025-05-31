@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 2789386156812418857}
   - component: {fileID: 3527283390595321470}
   - component: {fileID: 2860615694886787705}
-  - component: {fileID: 6311468865982566860}
-  - component: {fileID: 5170204515489524366}
   - component: {fileID: 5229706028007720771}
   - component: {fileID: 6527951803102313362}
   - component: {fileID: 6602773357344482250}
@@ -151,7 +149,7 @@ MonoBehaviour:
   fallingEffect: {fileID: 7769745493347907057, guid: 50cc7c1fc13b75048846643b553e0940, type: 3}
 --- !u!50 &2789386156812418857
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,8 +160,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
-  m_LinearDrag: 10
-  m_AngularDrag: 0.05
+  m_LinearDamping: 10
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -206,96 +204,6 @@ MonoBehaviour:
   currentAnimation: 0
   currentAnimationFrame: 0
   finishedFrames: 0
---- !u!114 &6311468865982566860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9033279567524167474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038656bee627c6245bee13a38d6102aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashColor: {r: 5.9921575, g: 5.9921575, b: 5.9921575, a: 1}
-  flashCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.00090026855
-      value: 0.49292374
-      inSlope: -10.739473
-      outSlope: -10.739473
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.09896595
-    - serializedVersion: 3
-      time: 0.103602804
-      value: 0.004783052
-      inSlope: -0.07436594
-      outSlope: Infinity
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.29563242
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.10415828
-      value: 0.50206757
-      inSlope: 4995.912
-      outSlope: -9.092031
-      tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.17065245
-    - serializedVersion: 3
-      time: 0.25
-      value: 0
-      inSlope: 0.079616904
-      outSlope: 0.079616904
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.20631203
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  flashTime: 0.25
---- !u!114 &5170204515489524366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9033279567524167474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eb16f120f8336b4ea3d7949de02c93a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClipPools:
-  - pool:
-    - {fileID: 8300000, guid: faf99c239f1dc8d40b5826aaf21ff8d9, type: 3}
-    - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
-    - {fileID: 8300000, guid: e2ff1910816919a4f8c019e963a86c44, type: 3}
-    - {fileID: 8300000, guid: 50b9e0a8c02f48d438262f7c71d96878, type: 3}
-    - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
-    - {fileID: 8300000, guid: f8f793729bce6444d9a25a1e07ccacdd, type: 3}
-    isCancelable: 0
-    varyPitch: 1
-    looping: 0
-    followNoiseMaker: 0
-    spatialBlend: 1
-  - pool:
-    - {fileID: 8300000, guid: 619794d52890ca846a0bcfe66ea46ee5, type: 3}
-    - {fileID: 8300000, guid: bc42e876fa8377147bc54c772154902b, type: 3}
-    isCancelable: 0
-    varyPitch: 1
-    looping: 0
-    followNoiseMaker: 0
-    spatialBlend: 1
-  interruptableClip: {fileID: 0}
 --- !u!114 &5229706028007720771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,3 +311,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightedSprite: {fileID: 4662600926824316172, guid: 4a0488387f472004093e35dad985dd79, type: 3}
+  findColor: {r: 0, g: 0, b: 0, a: 0}

@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 480, y: 269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5051104947371687749
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8996014790651960635}
   - component: {fileID: 8650588794421406375}
   m_Layer: 5
-  m_Name: Button_18
+  m_Name: Buff_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 5188719655233268620}
   - component: {fileID: 8306932171368455673}
   m_Layer: 5
-  m_Name: Button_48
+  m_Name: Buff_48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 7336471377032173986}
   - component: {fileID: 4725076425018598925}
   m_Layer: 5
-  m_Name: Button_30
+  m_Name: Buff_30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 5509804382409814719}
   - component: {fileID: 344954081764211341}
   m_Layer: 5
-  m_Name: Button_36
+  m_Name: Buff_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 6093286894352113141}
   - component: {fileID: 3775273089399420219}
   m_Layer: 5
-  m_Name: Button_25
+  m_Name: Buff_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 8299809107880440312}
   - component: {fileID: 1058472123481631835}
   m_Layer: 5
-  m_Name: Button_41
+  m_Name: Buff_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 7065526165143816053}
   - component: {fileID: 6368702498875489508}
   m_Layer: 5
-  m_Name: Button_17
+  m_Name: Buff_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 460988999624963655}
   - component: {fileID: 6632782105435653439}
   m_Layer: 5
-  m_Name: Button_45
+  m_Name: Buff_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 8225758824671613427}
   - component: {fileID: 6999114707086949358}
   m_Layer: 5
-  m_Name: Button_44
+  m_Name: Buff_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 5071950182513154732}
   - component: {fileID: 3056480773350665020}
   m_Layer: 5
-  m_Name: Button_13
+  m_Name: Buff_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1387,7 +1387,7 @@ GameObject:
   - component: {fileID: 2674633468118667449}
   - component: {fileID: 891196534060440032}
   m_Layer: 5
-  m_Name: Button_9
+  m_Name: Buff_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1479,7 +1479,7 @@ GameObject:
   - component: {fileID: 5106746980665327953}
   - component: {fileID: 8206477734142784996}
   m_Layer: 5
-  m_Name: Button_3
+  m_Name: Buff_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 6310697958867252063}
   - component: {fileID: 2996113870951483708}
   m_Layer: 5
-  m_Name: Button_7
+  m_Name: Buff_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 8808479139577733327}
   - component: {fileID: 5199835643126490882}
   m_Layer: 5
-  m_Name: Button_39
+  m_Name: Buff_39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1755,7 +1755,7 @@ GameObject:
   - component: {fileID: 8425607251527579247}
   - component: {fileID: 943240657541460774}
   m_Layer: 5
-  m_Name: Button_5
+  m_Name: Buff_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 6263248537183177786}
   - component: {fileID: 7337212406093504108}
   m_Layer: 5
-  m_Name: Button_14
+  m_Name: Buff_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1939,7 +1939,7 @@ GameObject:
   - component: {fileID: 2802545273793294422}
   - component: {fileID: 3940269113328578094}
   m_Layer: 5
-  m_Name: Button_37
+  m_Name: Buff_37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 1977535842063357960}
   - component: {fileID: 4398772455419398161}
   m_Layer: 5
-  m_Name: Button_47
+  m_Name: Buff_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2212,7 +2212,7 @@ GameObject:
   - component: {fileID: 5507543902566897719}
   - component: {fileID: 7844133083806133335}
   m_Layer: 5
-  m_Name: Button_33
+  m_Name: Buff_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2392,7 +2392,7 @@ GameObject:
   - component: {fileID: 8380318411570459031}
   - component: {fileID: 215646775782711969}
   m_Layer: 5
-  m_Name: Button_40
+  m_Name: Buff_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2484,7 +2484,7 @@ GameObject:
   - component: {fileID: 8180373152863517079}
   - component: {fileID: 9030830516683942086}
   m_Layer: 5
-  m_Name: Button_23
+  m_Name: Buff_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2576,7 +2576,7 @@ GameObject:
   - component: {fileID: 8269481443774592798}
   - component: {fileID: 5108404997554952649}
   m_Layer: 5
-  m_Name: Button_15
+  m_Name: Buff_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,7 +2668,7 @@ GameObject:
   - component: {fileID: 5721378777080785770}
   - component: {fileID: 2280453844752737451}
   m_Layer: 5
-  m_Name: Button_24
+  m_Name: Buff_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2760,7 +2760,7 @@ GameObject:
   - component: {fileID: 486101162686954381}
   - component: {fileID: 7078825345486420553}
   m_Layer: 5
-  m_Name: Button_20
+  m_Name: Buff_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2852,7 +2852,7 @@ GameObject:
   - component: {fileID: 3780006099343450944}
   - component: {fileID: 6557715421149283159}
   m_Layer: 5
-  m_Name: Button_28
+  m_Name: Buff_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3032,7 +3032,7 @@ GameObject:
   - component: {fileID: 4344009635156823930}
   - component: {fileID: 5072597583318392678}
   m_Layer: 5
-  m_Name: Button_22
+  m_Name: Buff_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3124,7 +3124,7 @@ GameObject:
   - component: {fileID: 142054088598353174}
   - component: {fileID: 6250183742551671513}
   m_Layer: 5
-  m_Name: Button_31
+  m_Name: Buff_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3304,7 +3304,7 @@ GameObject:
   - component: {fileID: 4079705850449828194}
   - component: {fileID: 9185417455447592458}
   m_Layer: 5
-  m_Name: Button_19
+  m_Name: Buff_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3484,7 +3484,7 @@ GameObject:
   - component: {fileID: 4503640058064415185}
   - component: {fileID: 2060577815810411790}
   m_Layer: 5
-  m_Name: Button_4
+  m_Name: Buff_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3664,7 +3664,7 @@ GameObject:
   - component: {fileID: 203911240525493524}
   - component: {fileID: 4192813653907979792}
   m_Layer: 5
-  m_Name: Button_42
+  m_Name: Buff_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3756,7 +3756,7 @@ GameObject:
   - component: {fileID: 3138838972787684188}
   - component: {fileID: 6034468561847440578}
   m_Layer: 5
-  m_Name: Button_16
+  m_Name: Buff_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3933,7 +3933,7 @@ GameObject:
   - component: {fileID: 5583432255946702229}
   - component: {fileID: 8455059084388221833}
   m_Layer: 5
-  m_Name: Button_12
+  m_Name: Buff_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4025,7 +4025,7 @@ GameObject:
   - component: {fileID: 4309618172989837298}
   - component: {fileID: 2763048451283406446}
   m_Layer: 5
-  m_Name: Button_38
+  m_Name: Buff_38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4205,7 +4205,7 @@ GameObject:
   - component: {fileID: 7675511783378407600}
   - component: {fileID: 2630331616556943728}
   m_Layer: 5
-  m_Name: Button_35
+  m_Name: Buff_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,7 +4299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1690546583556150915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4333,7 +4333,7 @@ GameObject:
   - component: {fileID: 938401145656619576}
   - component: {fileID: 3591837696857558919}
   m_Layer: 5
-  m_Name: Button_1
+  m_Name: Buff_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4513,7 +4513,7 @@ GameObject:
   - component: {fileID: 8395798149951293307}
   - component: {fileID: 3213730558206221747}
   m_Layer: 5
-  m_Name: Button_43
+  m_Name: Buff_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4731,6 +4731,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedIndex: 0
+  sounds:
+  - {fileID: 8300000, guid: bd7b639e09e396e40bf6ea7244e7a6c6, type: 3}
+  - {fileID: 8300000, guid: aa4d76ec0e9aeba49aaa8d6105a2e704, type: 3}
+  - {fileID: 8300000, guid: e2f13eb2137d9784e8b342ed7fd89cec, type: 3}
+  - {fileID: 8300000, guid: eb833041758eaf448bf9538c34f29b0a, type: 3}
+  TPText: {fileID: 8695183340385412685}
 --- !u!222 &9109398435099202614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4782,7 +4788,7 @@ GameObject:
   - component: {fileID: 5457769685148008025}
   - component: {fileID: 2798513504025672239}
   m_Layer: 5
-  m_Name: Button_11
+  m_Name: Buff_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4874,7 +4880,7 @@ GameObject:
   - component: {fileID: 976790764823183477}
   - component: {fileID: 2051564324289968621}
   m_Layer: 5
-  m_Name: Button_0
+  m_Name: Buff_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4966,7 +4972,7 @@ GameObject:
   - component: {fileID: 1612753664679331496}
   - component: {fileID: 4495895783436734260}
   m_Layer: 5
-  m_Name: Button_6
+  m_Name: Buff_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5058,7 +5064,7 @@ GameObject:
   - component: {fileID: 2463327804884589667}
   - component: {fileID: 8625866333077456175}
   m_Layer: 5
-  m_Name: Button_21
+  m_Name: Buff_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5150,7 +5156,7 @@ GameObject:
   - component: {fileID: 3722420345260131697}
   - component: {fileID: 6764093718047143373}
   m_Layer: 5
-  m_Name: Button_10
+  m_Name: Buff_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5330,7 +5336,7 @@ GameObject:
   - component: {fileID: 3024685577739362425}
   - component: {fileID: 5213089038279912046}
   m_Layer: 5
-  m_Name: Button_34
+  m_Name: Buff_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5422,7 +5428,7 @@ GameObject:
   - component: {fileID: 7548046764220469053}
   - component: {fileID: 4977079302769847665}
   m_Layer: 5
-  m_Name: Button_26
+  m_Name: Buff_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5514,7 +5520,7 @@ GameObject:
   - component: {fileID: 8256115399393343296}
   - component: {fileID: 5224805374992639228}
   m_Layer: 5
-  m_Name: Button_29
+  m_Name: Buff_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5694,7 +5700,7 @@ GameObject:
   - component: {fileID: 8998989414917077380}
   - component: {fileID: 89197036574915709}
   m_Layer: 5
-  m_Name: Button_46
+  m_Name: Buff_46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5786,7 +5792,7 @@ GameObject:
   - component: {fileID: 5555351704140223813}
   - component: {fileID: 5428591126827209872}
   m_Layer: 5
-  m_Name: Button_27
+  m_Name: Buff_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5878,7 +5884,7 @@ GameObject:
   - component: {fileID: 4445823039618648489}
   - component: {fileID: 3881340344863121042}
   m_Layer: 5
-  m_Name: Button_8
+  m_Name: Buff_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5970,7 +5976,7 @@ GameObject:
   - component: {fileID: 4555730710351449578}
   - component: {fileID: 2668434092898787341}
   m_Layer: 5
-  m_Name: Button_2
+  m_Name: Buff_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6062,7 +6068,7 @@ GameObject:
   - component: {fileID: 2157678411170380011}
   - component: {fileID: 4271494050063142797}
   m_Layer: 5
-  m_Name: Button_32
+  m_Name: Buff_32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6450,6 +6456,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e98a4b55e77a64e80ddeaa74e4d072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8695183340385412685 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6053140806214938564, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+  m_PrefabInstance: {fileID: 3218503991160588681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047065397628538857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4164078829421329000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6492,7 +6509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6549,13 +6566,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2568173150606042024}
   m_SourcePrefab: {fileID: 100100000, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
 --- !u!224 &3561156639272205492 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
   m_PrefabInstance: {fileID: 4164078829421329000}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4551716609846459400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+  m_PrefabInstance: {fileID: 4164078829421329000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2568173150606042024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551716609846459400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9bb5aad86207b147b2d82840b487366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: buffText.title
+  emergencySmallFont: {fileID: 11400000, guid: d0a8e030dc32c0841b021b064d5ca827, type: 2}
 --- !u!1001 &4506781027548254172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6598,7 +6637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 24
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6650,18 +6689,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6053140806214938564, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_text
-      value: 
+      value: hello hi abcdefg aa
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1874528125525590955}
   m_SourcePrefab: {fileID: 100100000, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
 --- !u!224 &3902738294488549632 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
   m_PrefabInstance: {fileID: 4506781027548254172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4064631641916475836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+  m_PrefabInstance: {fileID: 4506781027548254172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1874528125525590955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064631641916475836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9bb5aad86207b147b2d82840b487366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: 
+  emergencySmallFont: {fileID: 11400000, guid: d0a8e030dc32c0841b021b064d5ca827, type: 2}
 --- !u!1001 &6795997550615822073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6704,7 +6765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 8
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6764,13 +6825,35 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3902738294488549632}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 848212800416898677}
   m_SourcePrefab: {fileID: 100100000, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
 --- !u!224 &6265133226027087909 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
   m_PrefabInstance: {fileID: 6795997550615822073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6391467989688137881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+  m_PrefabInstance: {fileID: 6795997550615822073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &848212800416898677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391467989688137881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9bb5aad86207b147b2d82840b487366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: 
+  emergencySmallFont: {fileID: 11400000, guid: d0a8e030dc32c0841b021b064d5ca827, type: 2}
 --- !u!1001 &7770614002746673457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6813,7 +6896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6870,13 +6953,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 869364258884015821}
   m_SourcePrefab: {fileID: 100100000, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
 --- !u!224 &7166571682844528621 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 622062698249979612, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
   m_PrefabInstance: {fileID: 7770614002746673457}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7869461755735379793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496299233922860640, guid: d4cd48efc978f1344b5a83e9481c9768, type: 3}
+  m_PrefabInstance: {fileID: 7770614002746673457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &869364258884015821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869461755735379793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339ae4d88ecc2404c91b4006b8a8b9c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: buffText.tooltip
+  emergencySmallFont: {fileID: 11400000, guid: d0a8e030dc32c0841b021b064d5ca827, type: 2}
 --- !u!1001 &8305535868983841595
 PrefabInstance:
   m_ObjectHideFlags: 0

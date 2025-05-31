@@ -12,7 +12,7 @@ public class Liftable : MonoBehaviour
     float downVelocity = -4f;
     CollisionCheck collisionCheck;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         colider = GetComponent<Collider2D>();
         direction = GetComponent<DirectionedObject>();
@@ -56,7 +56,7 @@ public class Liftable : MonoBehaviour
     }
     public void OnSetDown()
     {
-        GetComponent<PoofDestroy>().Poof();
+        GetComponent<PoofDestroy>()?.Poof();
     }
 
     public void OnThrown(Vector2Int d)

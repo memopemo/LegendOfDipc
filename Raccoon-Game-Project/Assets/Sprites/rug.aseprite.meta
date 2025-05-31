@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: rug
     originalName: 
-    pivot: {x: 0.516129, y: 0.47826087}
+    pivot: {x: 0.16129032, y: 0.76086956}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

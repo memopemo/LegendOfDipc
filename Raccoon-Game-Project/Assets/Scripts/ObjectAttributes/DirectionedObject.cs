@@ -30,17 +30,15 @@ public class DirectionedObject : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if(initialDirection != Vector2Int.zero)
+        if (initialDirection != Vector2Int.zero)
         {
             Direction = initialDirection;
         }
-        
     }
 
     // Update is called once per frame
     private void Update()
     {
-        
         // This requires that every sprite asset with a direction must be right facing for their side.
         // I use < 0 instead of <= 0 because left would show for like a split second.
         spriteRenderer.flipX = Direction.x < 0;
