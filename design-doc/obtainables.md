@@ -356,3 +356,7 @@ A key that can open any door within the dungeon. Useful after you have gotten pa
 ### Boss Key
 
 A key that opens the Dungeon's [Boss-Key Door](obstacles.md#boss-key-door)
+
+## Furniture
+
+To be placed

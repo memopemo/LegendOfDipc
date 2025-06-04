@@ -88,7 +88,7 @@ Location: Top right
 
 Shows how many keys the player has
 
-Location: Top Left, beneath [Hearts](#health-bar)
+Location: Top Right, beneath [Money](#money-count)
 
 - Only if in a dungeon, and respective to each dungeon.
 - Eg: if i get some keys from each dungeon, the corresponding keys to each dungeon only shows up when inside the respective dungeons.
@@ -188,3 +188,9 @@ TODO: think of some
 ### Difficulty Settings
 
 Allow Slowing: Default False
+
+## Player House
+
+### Furniture Selector
+
+### Demon Buff Selector

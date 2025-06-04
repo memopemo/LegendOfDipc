@@ -1,0 +1,260 @@
+World
+    Waterfront
+        Cave
+            Secret Text (Easy)
+        Cave
+            Secret Text
+        Cave
+            Cave Dungeon
+        Cave
+            Reward (Money)
+        Cave
+            Cave Dungeon
+        Swamp
+            Cave (Bombable Wall (Obvious))
+            Cave (Open)
+                Secret Text
+            Cave (Switch Wall)
+                
+        Lake
+            Underwater
+                Village
+                    Campfire
+                    Shop
+                    Villager
+                        Hint
+                    Villager
+                        Hint
+                    Villager
+                        Hint
+                    Villager
+                        Hint
+                    Villager
+                        Hint
+                    Villager
+                        Hint
+                    Villager
+                        Hint
+                    Villager
+                    Hint
+        Lake Houses
+            House
+                Toilet Paper
+            House
+                Toilet Paper
+            House
+                Toilet Paper
+            House
+                Dungeon 3
+                    Pendant 
+                    Story Key
+            House
+                Toilet Paper
+            House
+                Toilet Paper
+            House
+                Toilet Paper
+            House
+                Toilet Paper
+            House
+                Dungeon 7
+                Pendant
+                Story Key
+            House
+                Toilet Paper
+    Fields
+        Cave
+            Secret Text
+        Cave
+            Reward (Money)
+        Cave
+            Reward (Money)
+        Cave
+            Cave Dungeon
+        Cave
+            Reward (Money)
+        Cave
+            Reward (Money)
+        Corn Maze
+            Thing
+                Cave
+            Thing
+            Thing
+            Thing
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+            Village
+                Campfire
+                Shop
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+        House
+            Toilet Paper
+        House
+            Dungeon 5
+                Pendant
+                Story Key
+    Urban Sprawl
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        House
+            Dungeon 4
+                Pendant
+                Story Key
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        House
+            Dungeon 1
+                Pendant
+                Story Key
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        House
+            Toilet Paper
+        Village
+            Campfire
+            Shop
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+        Cave
+        Cave
+        Cave
+        Cave
+        Cave
+    Cursed Woods
+        Cave
+            Secret Text (Easy)
+        Cave
+            Reward (Money)
+        Cave
+            Cave Dungeon
+        Cave
+            Reward (Money)
+        Cave
+            Reward (Money)
+        Cave
+            Secret Text (Easy)
+        Cave
+            Cave Dungeon
+        Cave
+            Reward (Money)
+        House
+            Dungeon 6
+                Pendant
+                Story Key
+        Village
+            Campfire
+            Shop
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+            Villager
+                Hint
+    Forests
+        Center Forest
+            Final Boss House
+                Final Boss House Door
+                Final Dungeon
+                    Final Boss
+                        End Game Door
+                            End Of Game
+            Start Stump
+            Cave
+                Reward (Money)
+            Cave
+                Reward (Money)
+            Cave
+                Reward (Money)
+            Cave
+                Secret Text
+            Cave
+                Reward (Money)
+            Player House
+                Buff Demon
+                Furniture Placed
+            Village
+                Campfire
+                Shop
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                    Hint
+                Villager
+                Hint
+        Top Left Forest
+            House
+                Dungeon 2
+                Pendant
+                Story Key
+            Cave
+                Reward (Money)
+            Cave
+                Cave Dungeon
+            Cave
+                Reward (Money)
+            Cave
+                Secret Text
+    Highways
